@@ -8,8 +8,6 @@ const headers = {
     "content-type": "application/json"
 };
 
-const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
-const askQuestion = (query) => new Promise(resolve => rl.question(query, resolve));
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 const fetchWithRetry = async (url, payload, headers, maxRetries = 5) => {
@@ -20,7 +18,7 @@ const fetchWithRetry = async (url, payload, headers, maxRetries = 5) => {
         } catch (err) {
             if (i < maxRetries) {
                 const waitTime = Math.pow(2, i) * 1000;
-                process.stdout.write(`\n⚠️ Mạng chậm, đang thử lại lần ${i + 1}...`);
+                console.log(`\n⚠️ Mạng chậm, đang thử lại lần ${i + 1}...`);
                 await delay(waitTime);
             } else throw err;
         }
@@ -53,39 +51,22 @@ function parseFormalityCaseLevel(detail) {
 }
 
 async function main() {
-    console.log('\n=== CÔNG CỤ XÂY DỰNG DATA JSON CHO ẤM SIÊU TỐC ===\n');
+    console.log('\n=== CÔNG CỤ XÂY DỰNG DATA JSON (BẢN CLOUD - GITHUB ACTIONS) ===\n');
 
-    // 1. Cấu hình đích đến (Dùng đường dẫn tương đối để chạy trên mây)
+    // CẤU HÌNH ĐƯỜNG DẪN MÁY CHỦ ẢO (LINUX)
     const DATA_DIR = './data';
     const DETAILS_DIR = `${DATA_DIR}/details`;
     
-    // Nếu chạy trên GitHub Actions, tự động xóa sạch thư mục data cũ để không lưu rác TTHC đã bị hủy
-    if (process.env.GITHUB_ACTIONS && fs.existsSync(DATA_DIR)) {
-        fs.rmSync(DATA_DIR, { recursive: true, force: true });
-    }
+    // Xóa sạch data cũ mỗi lần cào mới để kho lưu trữ không bị rác
+    if (fs.existsSync(DATA_DIR)) fs.rmSync(DATA_DIR, { recursive: true, force: true });
     
-    if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
-    if (!fs.existsSync(DETAILS_DIR)) fs.mkdirSync(DETAILS_DIR, { recursive: true });
-    
-    // Quản lý Cache
-    const CACHE_FILE = `${DATA_DIR}/master_cache.json`;
-    let localCache = {};
-    
-    // Tự động bỏ qua Cache, quét mới 100% nếu đang chạy trên mây
-    if (process.env.GITHUB_ACTIONS) {
-        console.log("🤖 Đang chạy trên GitHub Actions: Tự động chọn Quét mới 100% và ghi đè dữ liệu.");
-    } else if (fs.existsSync(CACHE_FILE)) {
-        try {
-            localCache = JSON.parse(fs.readFileSync(CACHE_FILE, 'utf8'));
-            const choice = await askQuestion('❓ Chạy chế độ nào? [1] Quét mới 100% | [2] Dùng Cache siêu tốc: ');
-            if (choice.trim() === '1') localCache = {}; 
-        } catch (e) {}
-    }
-    rl.close();
+    fs.mkdirSync(DATA_DIR, { recursive: true });
+    fs.mkdirSync(DETAILS_DIR, { recursive: true });
 
     let rawList = [];
     let lastId = "";
-    console.log(`\n🚀 Đang lấy danh mục TTHC toàn quốc...`);
+    console.log(`🚀 Đang lấy danh mục TTHC toàn quốc...`);
+    
     while (true) {
         const payload = { limit: 200, lastId: lastId, q: "", categoryId: "", departmentCode: "" };
         const res = await fetchWithRetry('https://dichvucong.gov.vn/api/v1/submitting/formality/list-all-public-formality-by-citizen', payload, headers);
@@ -93,67 +74,58 @@ async function main() {
         res.data.items.forEach(item => rawList.push(item));
         if (!res.data.lastId || res.data.lastId === lastId) break;
         lastId = res.data.lastId;
-        process.stdout.write(`\r   Đã tìm thấy: ${rawList.length} mã`);
+        console.log(`   Đã tìm thấy: ${rawList.length} mã`);
         await delay(100);
     }
-    console.log(`\n✅ Tổng số TTHC gốc: ${rawList.length}`);
+    console.log(`✅ Tổng số TTHC gốc: ${rawList.length}`);
 
-    const fidsToFetch = rawList.map(i => i.id).filter(id => !localCache[id]);
-    if (fidsToFetch.length > 0) {
-        console.log(`⚡ Tiến hành tải chi tiết cho: ${fidsToFetch.length} thủ tục mới.`);
+    if (rawList.length > 0) {
+        console.log(`⚡ Tiến hành tải chi tiết cho: ${rawList.length} thủ tục.`);
         const chunkSize = 20; 
-        for (let i = 0; i < fidsToFetch.length; i += chunkSize) {
-            const chunk = fidsToFetch.slice(i, i + chunkSize);
-            const promises = chunk.map(async (fid) => {
+        
+        let indexData = [];
+
+        for (let i = 0; i < rawList.length; i += chunkSize) {
+            const chunk = rawList.slice(i, i + chunkSize);
+            const promises = chunk.map(async (item) => {
                 try {
-                    const res = await fetchWithRetry('https://dichvucong.gov.vn/api/v1/configuring/formality/get-formality-by-citizen', { id: fid }, headers);
-                    if (res && res.data) localCache[fid] = res.data.data || res.data;
+                    const res = await fetchWithRetry('https://dichvucong.gov.vn/api/v1/configuring/formality/get-formality-by-citizen', { id: item.id }, headers);
+                    if (res && res.data) {
+                        let detail = res.data.data || res.data;
+                        
+                        // 1. Tạo dữ liệu cho file Index
+                        const formalityItem = {
+                            id: item.id,
+                            ma_tthc: item.code,
+                            ten_tthc: item.name,
+                            cap_thuc_hien: parseFormalityCaseLevel(detail),
+                            loai_tthc: parseFormalityType(item.type || detail.formalityType),
+                            linh_vuc: (item.categories && item.categories.length > 0) ? item.categories.join(', ') : '',
+                            co_quan_thuc_hien: detail.executingAgencies || (item.departments ? item.departments.join(', ') : '')
+                        };
+                        indexData.push(formalityItem);
+
+                        // 2. Xuất file chi tiết
+                        const cleanDetail = sanitizeBase64(detail);
+                        fs.writeFileSync(`${DETAILS_DIR}/${item.id}.json`, JSON.stringify(cleanDetail));
+                    }
                 } catch (e) { } 
             });
             await Promise.all(promises);
-            process.stdout.write(`\r   Tải chi tiết: ${Math.min(i + chunkSize, fidsToFetch.length)}/${fidsToFetch.length}`);
+            console.log(`   Tải chi tiết & Lưu file: ${Math.min(i + chunkSize, rawList.length)}/${rawList.length}`);
             await delay(150); 
         }
-        fs.writeFileSync(CACHE_FILE, JSON.stringify(localCache));
-        console.log(`\n💾 Đã lưu Cache vào ổ cứng.`);
-    }
 
-    console.log(`\n🚀 Đang kết xuất dữ liệu ra hệ thống File JSON...`);
-    let indexData = [];
-
-    rawList.forEach((item) => {
-        const detail = localCache[item.id];
-        if (!detail) return; 
-
-        // Trích xuất File Index
-        const formalityItem = {
-            id: item.id,
-            ma_tthc: item.code,
-            ten_tthc: item.name,
-            cap_thuc_hien: parseFormalityCaseLevel(detail),
-            loai_tthc: parseFormalityType(item.type || detail.formalityType),
-            linh_vuc: (item.categories && item.categories.length > 0) ? item.categories.join(', ') : '',
-            co_quan_thuc_hien: detail.executingAgencies || (item.departments ? item.departments.join(', ') : '')
+        // Xuất file cấu trúc Index
+        fs.writeFileSync(`${DATA_DIR}/index.json`, JSON.stringify(indexData));
+        const versionInfo = { 
+            last_updated: new Date().toISOString(),
+            total_records: indexData.length 
         };
-        indexData.push(formalityItem);
+        fs.writeFileSync(`${DATA_DIR}/version.json`, JSON.stringify(versionInfo));
 
-        // Xuất file chi tiết
-        const cleanDetail = sanitizeBase64(detail);
-        fs.writeFileSync(`${DETAILS_DIR}/${item.id}.json`, JSON.stringify(cleanDetail));
-    });
-
-    // Xuất file cấu trúc
-    fs.writeFileSync(`${DATA_DIR}/index.json`, JSON.stringify(indexData));
-    const versionInfo = { 
-        last_updated: new Date().toISOString(),
-        total_records: indexData.length 
-    };
-    fs.writeFileSync(`${DATA_DIR}/version.json`, JSON.stringify(versionInfo));
-
-    console.log(`🎉 HOÀN TẤT TUYỆT ĐỐI!`);
-    console.log(`📁 File tra cứu tổng: ${DATA_DIR}/index.json`);
-    console.log(`📁 File cấu hình version: ${DATA_DIR}/version.json`);
-    console.log(`📁 Thư mục chi tiết: ${DETAILS_DIR} (Chứa ${indexData.length} file .json)`);
+        console.log(`🎉 HOÀN TẤT TUYỆT ĐỐI! Toàn bộ dữ liệu đã sẵn sàng để đẩy ra nhánh data.`);
+    }
 }
 
 main();
