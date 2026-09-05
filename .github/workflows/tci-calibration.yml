@@ -9,6 +9,8 @@ on:
       - 'tci/select-golden-cases.js'
       - 'tci/export-golden-review.js'
       - 'tci/analyze-golden-calibration.js'
+      - 'tci/build-calibration-matrix.js'
+      - 'tci-results/tci-calibration-matrix-v1.json'
       - 'details/**'
 
 permissions:
@@ -22,28 +24,24 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: tci-calibration
-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
-
       - name: Select TCI calibration cases
         run: node tci/select-tci-calibration.js
-
       - name: Select Golden Cases
         run: node tci/select-golden-cases.js
-
       - name: Export Golden Review Evidence
         run: node tci/export-golden-review.js
-
-      - name: Analyze Golden Calibration (text-first)
+      - name: Analyze Golden Calibration
         run: node tci/analyze-golden-calibration.js
-
+      - name: Build Calibration Matrix
+        run: node tci/build-calibration-matrix.js
       - name: Commit calibration results
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add tci-results
-          git diff --cached --quiet || git commit -m "TCI: generate text-first Golden calibration analysis"
+          git diff --cached --quiet || git commit -m "TCI: generate calibration matrix and refined Golden analysis"
           git push origin HEAD:tci-calibration
