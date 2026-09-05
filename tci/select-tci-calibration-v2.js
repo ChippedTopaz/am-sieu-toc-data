@@ -14,8 +14,7 @@ const num = v => { const n = Number(v); return Number.isFinite(n) ? n : null; };
 
 function flattenProfiles(x) {
   const fromCases = arr(x.executionCases).flatMap(c => obj(c) ? arr(c.profileComponents) : []);
-  const topLevel = arr(x.profileComponents);
-  return [...fromCases, ...topLevel];
+  return [...fromCases, ...arr(x.profileComponents)];
 }
 
 function extractAuthorization(text) {
@@ -38,6 +37,14 @@ function parseExplicitSteps(text) {
 }
 
 function count(re, text) { return (txt(text).match(re) || []).length; }
+
+function normalizeImplementLevel(x) {
+  const raw = txt(x.implementLevel).toUpperCase();
+  if (raw === 'FULL' || raw === 'PARTIAL' || raw === 'NONE') return raw;
+  // V1 business rule: a missing implementLevel means the TTHC has no online public-service level.
+  if (!(Object.prototype.hasOwnProperty.call(x, 'implementLevel')) || x.implementLevel == null || raw === '') return 'NONE';
+  return 'INVALID';
+}
 
 function extract(id, x) {
   const steps = arr(x.executionSteps);
@@ -104,7 +111,7 @@ function extract(id, x) {
   const handoffCount = count(/\b(?:chuyển(?: sang)?|gửi(?: cho)?|trình(?: lên)?|xin ý kiến|lấy ý kiến|phối hợp với)\b/gi, stepText);
 
   const authorization = extractAuthorization(conditionsText);
-  const implementLevel = ['FULL','PARTIAL','NONE'].includes(txt(x.implementLevel).toUpperCase()) ? txt(x.implementLevel).toUpperCase() : (x.implementLevel == null ? 'UNKNOWN' : 'INVALID');
+  const implementLevel = normalizeImplementLevel(x);
   const isFullProcess = typeof x.isFullProcess === 'boolean' ? x.isFullProcess : (x.isFullProcess == null ? null : 'INVALID');
   const isNonTerritorial = typeof x.isNonTerritorial === 'boolean' ? x.isNonTerritorial : (x.isNonTerritorial == null ? null : 'INVALID');
   const isOfflineOnly = typeof x.isOfflineOnly === 'boolean' ? x.isOfflineOnly : (x.isOfflineOnly == null ? null : 'INVALID');
@@ -115,6 +122,9 @@ function extract(id, x) {
     if (!(f in x)) warnings.push(`MISSING_FIELD:${f}`);
     else if (x[f] === null) warnings.push(`NULL_FIELD:${f}`);
   }
+  if (implementLevel === 'NONE' && !(Object.prototype.hasOwnProperty.call(x, 'implementLevel')))
+    warnings.push('IMPLEMENT_LEVEL_MISSING_TREATED_AS_NONE');
+  if (implementLevel === 'INVALID') warnings.push('INVALID_IMPLEMENT_LEVEL');
   if (!arr(x.executionCases).length) warnings.push('EMPTY_EXECUTION_CASES');
   if (!profiles.length) warnings.push('EMPTY_PROFILE_COMPONENTS');
   if (!steps.length) warnings.push('EMPTY_EXECUTION_STEPS');
@@ -217,8 +227,7 @@ groups.G14_C5_DIGITAL = records.filter(r => r.features.isFullProcess === true).s
 groups.G15_C5_NON_TERRITORIAL = records.filter(r => r.features.isNonTerritorial === true).slice(0,15);
 groups.G16_AUTHORIZATION = records.filter(r => r.features.authorization !== 'UNKNOWN').slice(0,15);
 groups.G17_ANOMALIES = desc(records, r => r.features.dataWarnings.length).slice(0,20);
-groups.G18_VERY_COMPLEX = desc(records, r => r.features.complexitySignal + r.features.conditionSignal*2 + r.features.actorCount*2 + r.features.profileComponents + r.features.processingMax/10 || 0).slice(0,15);
-
+groups.G18_VERY_COMPLEX = desc(records, r => r.features.complexitySignal + r.features.conditionSignal*2 + r.features.actorCount*2 + r.features.profileComponents + (r.features.processingMax || 0)/10).slice(0,15);
 groups.G19_CROSS_C5_GUARDS = records.filter(r =>
   (r.features.implementLevel === 'FULL' && r.features.isFullProcess === false) ||
   (r.features.implementLevel === 'PARTIAL' && r.features.isFullProcess === true) ||
@@ -229,7 +238,6 @@ const pool = new Map();
 for (const [g,list] of Object.entries(groups)) for (const r of list) add(pool,r,g,`Chọn từ ${g}`);
 
 const selected = new Map();
-const coverage = {};
 const quotas = {
   G01_VERY_SIMPLE:3,G02_MANY_STEPS:3,G03_FEW_PROFILES:2,G04_MANY_PROFILES:3,
   G05_SHORT_TIME:2,G06_LONG_TIME:3,G07_TIME_VARIANT:2,G08_COMPLEX_CONDITIONS:3,
@@ -241,65 +249,74 @@ function choose(r, reason) {
   if (!r || selected.has(r.id) || selected.size >= TARGET) return false;
   const p = pool.get(r.id);
   if (!p) return false;
-  selected.set(r.id, { record:r, groups:p.groups, reasons:[...p.reasons, reason] });
+  selected.set(r.id, { record: r, groups: [...p.groups], reasons: [...p.reasons, reason] });
   return true;
 }
 
 for (const [g,q] of Object.entries(quotas)) {
-  const candidates = [...(groups[g] || [])];
+  const candidates = groups[g] || [];
+  let k = 0;
   for (const r of candidates) {
-    if (selected.size >= TARGET) break;
-    if (!choose(r, `Coverage ${g}`)) continue;
-    coverage[g] = (coverage[g]||0) + 1;
-    if (coverage[g] >= q) break;
+    if (k >= q || selected.size >= TARGET) break;
+    if (choose(r, `Quota ${g}`)) k++;
   }
+  console.log(`${g}: ${k}/${q}`);
+  if (k < q) console.warn(`WARN ${g}: ${k}/${q}`);
 }
 
-// Fill remaining slots with deterministic diversity across the pool.
-const remaining = [...pool.values()].filter(p => !selected.has(p.record.id)).map(p => p.record).sort((a,b) => a.code.localeCompare(b.code,'vi'));
-while (selected.size < TARGET && remaining.length) {
-  let best = null, bestScore = -Infinity;
-  for (const r of remaining) {
-    if (selected.has(r.id)) continue;
-    const f = r.features;
-    const groupNovelty = f.implementLevel !== 'UNKNOWN' ? 2 : 0;
-    const anomalyBoost = f.dataWarnings.length * 2;
-    const variantBoost = f.timeVariant ? 2 : 0;
-    const score = Math.min(f.complexitySignal,100)/100 + Math.min(f.conditionSignal,50)/50 + Math.min(f.actorCount,10)/10 + groupNovelty + anomalyBoost + variantBoost;
-    if (score > bestScore) { bestScore = score; best = r; }
-  }
-  if (!best) break;
-  choose(best, 'Bổ sung diversity deterministic');
+const leftovers = records.filter(r => !selected.has(r.id));
+const selectedArr = () => [...selected.values()].map(x => x.record);
+function vector(s) {
+  const f = s.features || {};
+  return [Number(f.steps)||0,Number(f.profileComponents)||0,Number(f.methods)||0,Number(f.executionCases)||0,Number(f.conditionSignal)||0,Number(f.actorCount)||0,Number(f.handoffCount)||0,Number(f.narrativeLength)||0,Number(f.processingMax)||0,Number(f.processingMin)||0];
+}
+function dist(a,b){
+  const x=vector(a),y=vector(b),scales=[20,50,3,10,50,10,10,10000,100,100];
+  return x.reduce((sum,v,i)=>sum+Math.min(1,Math.abs(v-y[i])/(scales[i]||1)),0);
+}
+while (selected.size < TARGET && leftovers.length) {
+  const current = selectedArr();
+  let bestIndex = 0, bestScore = -Infinity;
+  leftovers.forEach((r,i) => {
+    const minDist = current.length ? Math.min(...current.map(s => dist(r,s))) : 1;
+    const unusual = ((r.features.dataWarnings||[]).length*2) + (r.features.timeVariant?2:0);
+    const c5Boost = ['FULL','PARTIAL','NONE'].includes(r.features.implementLevel) ? 1 : 0;
+    const score = minDist*10 + unusual + c5Boost;
+    if (score > bestScore) { bestScore = score; bestIndex = i; }
+  });
+  const [r] = leftovers.splice(bestIndex,1);
+  choose(r, 'Bổ sung diversity');
 }
 
-const samples = [...selected.values()].map((p,i) => ({
-  sampleNo:i+1,
-  id:p.record.id,
-  code:p.record.code,
-  name:p.record.name,
-  category:p.record.category,
-  groups:p.groups,
-  reasons:uniq(p.reasons),
-  features:p.record.features
-})).sort((a,b)=>a.code.localeCompare(b.code,'vi'));
+const samples = selectedArr().map((r,i) => {
+  const p = selected.get(r.id);
+  return {
+    sampleNo: i+1,
+    id: r.id,
+    code: r.code,
+    name: r.name,
+    category: r.category,
+    groups: p.groups,
+    reasons: uniq(p.reasons),
+    features: r.features
+  };
+});
+
+const coverage = {};
+for (const g of Object.keys(quotas)) coverage[g] = samples.filter(s => (s.groups||[]).includes(g)).length;
+const c5Counts = {
+  FULL: records.filter(r => r.features.implementLevel === 'FULL').length,
+  PARTIAL: records.filter(r => r.features.implementLevel === 'PARTIAL').length,
+  NONE: records.filter(r => r.features.implementLevel === 'NONE').length,
+  INVALID: records.filter(r => r.features.implementLevel === 'INVALID').length
+};
+console.log(`C5 implementLevel counts: FULL=${c5Counts.FULL}, PARTIAL=${c5Counts.PARTIAL}, NONE=${c5Counts.NONE}, INVALID=${c5Counts.INVALID}`);
+console.log(`ĐÃ CHỌN ${samples.length} SAMPLE V2.`);
 
 fs.mkdirSync(OUT_DIR,{recursive:true});
-const output = {
-  metadata:{version:'TCI_V1_CALIBRATION_SELECTOR_V2_1.0',generatedAt:new Date().toISOString(),source:'details/*.json',totalJsonFiles:files.length,totalParsed:records.length,target:TARGET,selected:samples.length,random:false,note:'Feature extraction V2; chưa tính TCI score.'},
-  quotas,
+fs.writeFileSync(path.join(OUT_DIR,'tci-calibration-selection-v2.json'), JSON.stringify({
+  metadata:{version:'TCI_V1_CALIBRATION_SELECTOR_V2_1.2',totalRecords:records.length,target:TARGET,random:false,implementLevelMissingRule:'MISSING_OR_NULL_OR_EMPTY => NONE'},
   coverage,
+  c5Counts,
   samples
-};
-fs.writeFileSync(path.join(OUT_DIR,'tci-calibration-selection-v2.json'),JSON.stringify(output,null,2));
-fs.writeFileSync(path.join(OUT_DIR,'tci-calibration-manifest-v2.json'),JSON.stringify(samples.map(s=>({sampleNo:s.sampleNo,id:s.id,file:`details/${s.id}.json`,code:s.code,name:s.name})),null,2));
-let md = '# TCI V1 — Calibration Selection V2\n\n';
-md += `- JSON: **${files.length}**\n- Parsed: **${records.length}**\n- Selected: **${samples.length}**\n- Random: **No**\n- TCI score: **not calculated**\n\n`;
-md += '## Coverage\n\n';
-for (const [g,q] of Object.entries(quotas)) md += `- ${coverage[g] >= q ? '✅' : '⚠️'} ${g}: ${coverage[g]||0}/${q}\n`;
-md += '\n## Samples\n\n';
-for (const s of samples) {
-  const f=s.features;
-  md += `${s.sampleNo}. **${s.code} — ${s.name}**\n   - C2: steps=${f.steps}, actions=${f.actionCount}, branches=${f.branchCount}, verification=${f.verificationCount}, approval=${f.approvalCount}\n   - C1: profiles=${f.profileComponents}, required=${f.requiredProfiles}, conditional=${f.conditionalProfiles}, originals=${f.originalQtyTotal}, copies=${f.copyQtyTotal}\n   - C3: conditionSignal=${f.conditionSignal}\n   - C4: min=${f.processingMin??'UNKNOWN'}, max=${f.processingMax??'UNKNOWN'}, variant=${f.timeVariant}\n   - C5: implementLevel=${f.implementLevel}, fullProcess=${f.isFullProcess}, nonTerritorial=${f.isNonTerritorial}, authorization=${f.authorization}, returns=${(f.returningMethods||[]).join(',')||'UNKNOWN'}\n   - C6: actors=${f.actorCount}, handoffs=${f.handoffCount}\n   - warnings=${(f.dataWarnings||[]).join(', ')||'none'}\n   - groups=${s.groups.join(', ')}\n\n`;
-}
-fs.writeFileSync(path.join(OUT_DIR,'tci-calibration-summary-v2.md'),md);
-console.log(`ĐÃ CHỌN ${samples.length} SAMPLE V2.`);
+}, null, 2));
