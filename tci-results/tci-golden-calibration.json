@@ -1,8 +1,8 @@
 {
   "metadata": {
-    "version": "TCI_V1_GOLDEN_CALIBRATION_DRAFT_1.1",
+    "version": "TCI_V1_GOLDEN_CALIBRATION_DRAFT_1.2",
     "goldenCount": 30,
-    "note": "Điểm nháp để hiệu chuẩn; text của trình tự thực hiện là nguồn chính cho C2/C6. Cấu trúc JSON dùng để đối chiếu và audit; chưa khóa công thức sản xuất."
+    "note": "C4 phân biệt TIME_VARIANT với CONFLICT; C5 coi Direct/Online/Postal là phương thức mặc định; C6 chỉ tính tác nhân hoạt động trong text của luồng xử lý, không dùng số cơ quan được trao quyền làm điểm chính."
   },
   "weights": {
     "C1": 0.2,
@@ -65,6 +65,8 @@
             "value": 2,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "ONLINE",
+            "text": "Các đề xuất và kiến nghị, gửi Chủ tịch hoặc Phó Chủ tịch UBND tỉnh ít nhất 02 ngày làm việc, trước ngày dự kiến tiếp.",
             "days": 2
           }
         ]
@@ -75,28 +77,38 @@
         "uniqueMethods": [
           "ONLINE"
         ],
-        "conditionalRouteSignals": 0,
+        "standardOnly": true,
+        "specialSignals": {
+          "conditional": 0,
+          "original": 0,
+          "certification": 0,
+          "supplement": 0
+        },
+        "specialTotal": 0,
         "returnMethodCount": 0
       },
       "c6": {
-        "score": 4,
-        "state": "KNOWN_WITH_TEXT",
-        "roleCounts": {
-          "executing": 4,
-          "authority": 0,
-          "authorized": 0,
-          "coordinating": 0
-        },
-        "coordinationSignals": 8,
-        "actorMentions": 31,
-        "crossRole": false
+        "score": 5,
+        "state": "TEXT_BASED",
+        "activeActors": [
+          "Lãnh đạo UBND",
+          "UBND cấp có thẩm quyền",
+          "Văn phòng UBND",
+          "Cơ quan chuyên môn",
+          "Cơ quan/Hội đồng liên quan"
+        ],
+        "activeActorCount": 5,
+        "coordinationSignals": 2,
+        "handoffSignals": 4,
+        "approvalSignals": 2,
+        "metadataDepartments": 4
       },
-      "weightedScore": 1.75,
-      "score100": 35,
+      "weightedScore": 1.9500000000000002,
+      "score100": 39,
+      "stars": 2,
       "warnings": [
         "STEP_TEXT_STRUCTURE_MISMATCH"
-      ],
-      "stars": 2
+      ]
     },
     {
       "goldenNo": 2,
@@ -150,6 +162,8 @@
             "value": 2,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "DIRECT",
+            "text": "Tiếp xã giao, gặp mặt các đoàn đại biểu, khách đến thăm, làm việc tại địa phương.\nCác đề xuất và kiến nghị, gửi Chủ tịch hoặc Phó Chủ tịch UBND tỉnh ít nhất 02 ngày làm việc, trước ngày dự kiến tiếp.",
             "days": 2
           }
         ]
@@ -160,28 +174,38 @@
         "uniqueMethods": [
           "DIRECT"
         ],
-        "conditionalRouteSignals": 0,
+        "standardOnly": true,
+        "specialSignals": {
+          "conditional": 0,
+          "original": 0,
+          "certification": 0,
+          "supplement": 0
+        },
+        "specialTotal": 0,
         "returnMethodCount": 0
       },
       "c6": {
-        "score": 4,
-        "state": "KNOWN_WITH_TEXT",
-        "roleCounts": {
-          "executing": 4,
-          "authority": 0,
-          "authorized": 0,
-          "coordinating": 0
-        },
-        "coordinationSignals": 11,
-        "actorMentions": 41,
-        "crossRole": false
+        "score": 5,
+        "state": "TEXT_BASED",
+        "activeActors": [
+          "Lãnh đạo UBND",
+          "UBND cấp có thẩm quyền",
+          "Cơ quan/Hội đồng liên quan",
+          "Văn phòng UBND",
+          "Cơ quan chuyên môn"
+        ],
+        "activeActorCount": 5,
+        "coordinationSignals": 5,
+        "handoffSignals": 4,
+        "approvalSignals": 1,
+        "metadataDepartments": 4
       },
-      "weightedScore": 1.75,
-      "score100": 35,
+      "weightedScore": 1.9500000000000002,
+      "score100": 39,
+      "stars": 2,
       "warnings": [
         "STEP_TEXT_STRUCTURE_MISMATCH"
-      ],
-      "stars": 2
+      ]
     },
     {
       "goldenNo": 3,
@@ -248,6 +272,7 @@
             "value": 7,
             "unit": "DAY",
             "source": "executionMethods",
+            "method": "DIRECT",
             "days": 7
           }
         ]
@@ -258,28 +283,35 @@
         "uniqueMethods": [
           "DIRECT"
         ],
-        "conditionalRouteSignals": 0,
+        "standardOnly": true,
+        "specialSignals": {
+          "conditional": 0,
+          "original": 0,
+          "certification": 0,
+          "supplement": 0
+        },
+        "specialTotal": 0,
         "returnMethodCount": 1
       },
       "c6": {
-        "score": 3,
-        "state": "KNOWN_WITH_TEXT",
-        "roleCounts": {
-          "executing": 1,
-          "authority": 1,
-          "authorized": 0,
-          "coordinating": 0
-        },
+        "score": 2,
+        "state": "TEXT_BASED",
+        "activeActors": [
+          "Cơ quan chuyên môn",
+          "Cơ quan chuyên biệt"
+        ],
+        "activeActorCount": 2,
         "coordinationSignals": 0,
-        "actorMentions": 12,
-        "crossRole": true
+        "handoffSignals": 1,
+        "approvalSignals": 0,
+        "metadataDepartments": 1
       },
-      "weightedScore": 2.0500000000000003,
-      "score100": 41,
+      "weightedScore": 1.85,
+      "score100": 37,
+      "stars": 2,
       "warnings": [
         "STEP_TEXT_STRUCTURE_MISMATCH"
-      ],
-      "stars": 3
+      ]
     },
     {
       "goldenNo": 4,
@@ -346,8 +378,8 @@
         "totalSignal": 6
       },
       "c4": {
-        "score": 4,
-        "state": "CONFLICT",
+        "score": 3,
+        "state": "TIME_VARIANT",
         "minDays": 5,
         "maxDays": 15,
         "distinctValues": [
@@ -360,89 +392,111 @@
             "value": 5,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "ONLINE",
             "days": 5
           },
           {
             "value": 5,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "ONLINE",
+            "text": "không quá 05 ngày làm việc kể từ ngày Cục Quản lý xuất nhập cảnh nhận đủ hồ sơ hợp lệ và phí đề nghị. Đối với hồ sơ qua thẩm định chưa đủ điều kiện giải quyết, sau 15 ngày kể từ khi thông báo, nếu người đề nghị không hoàn thành việc hoàn thiện hồ sơ thì hồ sơ sẽ bị đóng trên Hệ thống thông tin giải quyết thủ tục hành chính.",
             "days": 5
           },
           {
             "value": 15,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "ONLINE",
+            "text": "không quá 05 ngày làm việc kể từ ngày Cục Quản lý xuất nhập cảnh nhận đủ hồ sơ hợp lệ và phí đề nghị. Đối với hồ sơ qua thẩm định chưa đủ điều kiện giải quyết, sau 15 ngày kể từ khi thông báo, nếu người đề nghị không hoàn thành việc hoàn thiện hồ sơ thì hồ sơ sẽ bị đóng trên Hệ thống thông tin giải quyết thủ tục hành chính.",
             "days": 15
           },
           {
             "value": 5,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "POSTAL",
             "days": 5
           },
           {
             "value": 5,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "POSTAL",
+            "text": "không quá 05 ngày làm việc kể từ ngày Cục Quản lý xuất nhập cảnh nhận đủ hồ sơ hợp lệ và phí đề nghị. Đối với hồ sơ qua thẩm định chưa đủ điều kiện giải quyết, sau 15 ngày kể từ khi thông báo, nếu người đề nghị không hoàn thành việc hoàn thiện hồ sơ thì hồ sơ sẽ bị đóng trên Hệ thống thông tin giải quyết thủ tục hành chính.",
             "days": 5
           },
           {
             "value": 15,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "POSTAL",
+            "text": "không quá 05 ngày làm việc kể từ ngày Cục Quản lý xuất nhập cảnh nhận đủ hồ sơ hợp lệ và phí đề nghị. Đối với hồ sơ qua thẩm định chưa đủ điều kiện giải quyết, sau 15 ngày kể từ khi thông báo, nếu người đề nghị không hoàn thành việc hoàn thiện hồ sơ thì hồ sơ sẽ bị đóng trên Hệ thống thông tin giải quyết thủ tục hành chính.",
             "days": 15
           },
           {
             "value": 5,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "DIRECT",
             "days": 5
           },
           {
             "value": 5,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "DIRECT",
+            "text": "không quá 05 ngày làm việc kể từ ngày Cục Quản lý xuất nhập cảnh nhận đủ hồ sơ hợp lệ và phí đề nghị. Đối với hồ sơ qua thẩm định chưa đủ điều kiện giải quyết, sau 15 ngày kể từ khi thông báo, nếu người đề nghị không hoàn thành việc hoàn thiện hồ sơ thì hồ sơ sẽ bị đóng trên Hệ thống thông tin giải quyết thủ tục hành chính.",
             "days": 5
           },
           {
             "value": 15,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "DIRECT",
+            "text": "không quá 05 ngày làm việc kể từ ngày Cục Quản lý xuất nhập cảnh nhận đủ hồ sơ hợp lệ và phí đề nghị. Đối với hồ sơ qua thẩm định chưa đủ điều kiện giải quyết, sau 15 ngày kể từ khi thông báo, nếu người đề nghị không hoàn thành việc hoàn thiện hồ sơ thì hồ sơ sẽ bị đóng trên Hệ thống thông tin giải quyết thủ tục hành chính.",
             "days": 15
           }
         ]
       },
       "c5": {
-        "score": 4,
+        "score": 5,
         "state": "KNOWN",
         "uniqueMethods": [
           "ONLINE",
           "POSTAL",
           "DIRECT"
         ],
-        "conditionalRouteSignals": 3,
+        "standardOnly": true,
+        "specialSignals": {
+          "conditional": 3,
+          "original": 0,
+          "certification": 0,
+          "supplement": 3
+        },
+        "specialTotal": 6,
         "returnMethodCount": 2
       },
       "c6": {
-        "score": 3,
-        "state": "KNOWN_WITH_TEXT",
-        "roleCounts": {
-          "executing": 1,
-          "authority": 1,
-          "authorized": 0,
-          "coordinating": 0
-        },
+        "score": 2,
+        "state": "TEXT_BASED",
+        "activeActors": [
+          "Cơ quan chuyên môn",
+          "Cơ quan chuyên biệt"
+        ],
+        "activeActorCount": 2,
         "coordinationSignals": 1,
-        "actorMentions": 28,
-        "crossRole": true
+        "handoffSignals": 2,
+        "approvalSignals": 1,
+        "metadataDepartments": 1
       },
-      "weightedScore": 2.9,
-      "score100": 58,
+      "weightedScore": 2.65,
+      "score100": 53,
+      "stars": 3,
       "warnings": [
         "STEP_TEXT_STRUCTURE_MISMATCH",
-        "PROCESSING_TIME_CONFLICT"
-      ],
-      "stars": 3
+        "PROCESSING_TIME_VARIANT"
+      ]
     },
     {
       "goldenNo": 5,
@@ -503,52 +557,61 @@
             "value": 1,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "ONLINE",
             "days": 1
           },
           {
             "value": 1,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "POSTAL",
             "days": 1
           },
           {
             "value": 1,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "DIRECT",
             "days": 1
           }
         ]
       },
       "c5": {
-        "score": 3,
+        "score": 2,
         "state": "KNOWN",
         "uniqueMethods": [
           "ONLINE",
           "POSTAL",
           "DIRECT"
         ],
-        "conditionalRouteSignals": 0,
+        "standardOnly": true,
+        "specialSignals": {
+          "conditional": 0,
+          "original": 0,
+          "certification": 0,
+          "supplement": 0
+        },
+        "specialTotal": 0,
         "returnMethodCount": 2
       },
       "c6": {
         "score": 2,
-        "state": "KNOWN_WITH_TEXT",
-        "roleCounts": {
-          "executing": 1,
-          "authority": 1,
-          "authorized": 0,
-          "coordinating": 0
-        },
-        "coordinationSignals": 3,
-        "actorMentions": 9,
-        "crossRole": true
+        "state": "TEXT_BASED",
+        "activeActors": [
+          "Cơ quan chuyên biệt"
+        ],
+        "activeActorCount": 1,
+        "coordinationSignals": 1,
+        "handoffSignals": 4,
+        "approvalSignals": 0,
+        "metadataDepartments": 1
       },
-      "weightedScore": 1.75,
-      "score100": 35,
+      "weightedScore": 1.65,
+      "score100": 33,
+      "stars": 2,
       "warnings": [
         "STEP_TEXT_STRUCTURE_MISMATCH"
-      ],
-      "stars": 2
+      ]
     },
     {
       "goldenNo": 6,
@@ -609,52 +672,62 @@
             "value": 1,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "ONLINE",
             "days": 1
           },
           {
             "value": 1,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "POSTAL",
             "days": 1
           },
           {
             "value": 1,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "DIRECT",
             "days": 1
           }
         ]
       },
       "c5": {
-        "score": 3,
+        "score": 2,
         "state": "KNOWN",
         "uniqueMethods": [
           "ONLINE",
           "POSTAL",
           "DIRECT"
         ],
-        "conditionalRouteSignals": 1,
+        "standardOnly": true,
+        "specialSignals": {
+          "conditional": 0,
+          "original": 0,
+          "certification": 0,
+          "supplement": 0
+        },
+        "specialTotal": 0,
         "returnMethodCount": 2
       },
       "c6": {
         "score": 3,
-        "state": "KNOWN_WITH_TEXT",
-        "roleCounts": {
-          "executing": 1,
-          "authority": 1,
-          "authorized": 0,
-          "coordinating": 0
-        },
-        "coordinationSignals": 5,
-        "actorMentions": 11,
-        "crossRole": true
+        "state": "TEXT_BASED",
+        "activeActors": [
+          "Cơ quan chuyên môn",
+          "Cơ quan chuyên biệt"
+        ],
+        "activeActorCount": 2,
+        "coordinationSignals": 1,
+        "handoffSignals": 8,
+        "approvalSignals": 0,
+        "metadataDepartments": 1
       },
-      "weightedScore": 1.9500000000000002,
-      "score100": 39,
+      "weightedScore": 1.85,
+      "score100": 37,
+      "stars": 2,
       "warnings": [
         "STEP_TEXT_STRUCTURE_MISMATCH"
-      ],
-      "stars": 2
+      ]
     },
     {
       "goldenNo": 7,
@@ -772,8 +845,8 @@
         "totalSignal": 48
       },
       "c4": {
-        "score": 5,
-        "state": "CONFLICT",
+        "score": 4,
+        "state": "TIME_VARIANT",
         "minDays": 5,
         "maxDays": 24,
         "distinctValues": [
@@ -791,324 +864,414 @@
             "value": 15,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "DIRECT",
             "days": 15
           },
           {
             "value": 10,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "DIRECT",
+            "text": "- Trường hợp giao đất, cho thuê đất thông qua hình thức đấu giá quyền sử dụng đất:\n+ Đối với các xã, phường thông thường: Không quá 10 ngày làm việc.\n+ Thời gian xác định nghĩa vụ tài chính của cơ quan thuế: Không quá 05 ngày làm việc.",
             "days": 10
           },
           {
             "value": 5,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "DIRECT",
+            "text": "- Trường hợp giao đất, cho thuê đất thông qua hình thức đấu giá quyền sử dụng đất:\n+ Đối với các xã, phường thông thường: Không quá 10 ngày làm việc.\n+ Thời gian xác định nghĩa vụ tài chính của cơ quan thuế: Không quá 05 ngày làm việc.",
             "days": 5
           },
           {
             "value": 15,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "ONLINE",
             "days": 15
           },
           {
             "value": 10,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "ONLINE",
+            "text": "- Trường hợp giao đất, cho thuê đất thông qua hình thức đấu giá quyền sử dụng đất:\n+ Đối với các xã, phường thông thường: Không quá 10 ngày làm việc.\n+ Thời gian xác định nghĩa vụ tài chính của cơ quan thuế: Không quá 05 ngày làm việc.",
             "days": 10
           },
           {
             "value": 5,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "ONLINE",
+            "text": "- Trường hợp giao đất, cho thuê đất thông qua hình thức đấu giá quyền sử dụng đất:\n+ Đối với các xã, phường thông thường: Không quá 10 ngày làm việc.\n+ Thời gian xác định nghĩa vụ tài chính của cơ quan thuế: Không quá 05 ngày làm việc.",
             "days": 5
           },
           {
             "value": 15,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "POSTAL",
             "days": 15
           },
           {
             "value": 10,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "POSTAL",
+            "text": "- Trường hợp giao đất, cho thuê đất thông qua hình thức đấu giá quyền sử dụng đất:\n+ Đối với các xã, phường thông thường: Không quá 10 ngày làm việc.\n+ Thời gian xác định nghĩa vụ tài chính của cơ quan thuế: Không quá 05 ngày làm việc.",
             "days": 10
           },
           {
             "value": 5,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "POSTAL",
+            "text": "- Trường hợp giao đất, cho thuê đất thông qua hình thức đấu giá quyền sử dụng đất:\n+ Đối với các xã, phường thông thường: Không quá 10 ngày làm việc.\n+ Thời gian xác định nghĩa vụ tài chính của cơ quan thuế: Không quá 05 ngày làm việc.",
             "days": 5
           },
           {
             "value": 22,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "DIRECT",
             "days": 22
           },
           {
             "value": 17,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "DIRECT",
+            "text": "- Trường hợp giao đất, cho thuê đất thông qua hình thức đấu giá quyền sử dụng đất:\n+ Đối với các xã biên giới, hải đảo, vùng sâu, vùng xa, vùng có điều kiện kinh tế - xã hội khó khăn, vùng có điều kiện kinh tế - xã hội đặc biệt khó khăn: Không quá 17 ngày làm việc.\n+ Thời gian xác định nghĩa vụ tài chính của cơ quan thuế: Không quá 05 ngày làm việc.",
             "days": 17
           },
           {
             "value": 5,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "DIRECT",
+            "text": "- Trường hợp giao đất, cho thuê đất thông qua hình thức đấu giá quyền sử dụng đất:\n+ Đối với các xã biên giới, hải đảo, vùng sâu, vùng xa, vùng có điều kiện kinh tế - xã hội khó khăn, vùng có điều kiện kinh tế - xã hội đặc biệt khó khăn: Không quá 17 ngày làm việc.\n+ Thời gian xác định nghĩa vụ tài chính của cơ quan thuế: Không quá 05 ngày làm việc.",
             "days": 5
           },
           {
             "value": 22,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "ONLINE",
             "days": 22
           },
           {
             "value": 17,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "ONLINE",
+            "text": "- Trường hợp giao đất, cho thuê đất thông qua hình thức đấu giá quyền sử dụng đất:\n+ Đối với các xã biên giới, hải đảo, vùng sâu, vùng xa, vùng có điều kiện kinh tế - xã hội khó khăn, vùng có điều kiện kinh tế - xã hội đặc biệt khó khăn: Không quá 17 ngày làm việc.\n+ Thời gian xác định nghĩa vụ tài chính của cơ quan thuế: Không quá 05 ngày làm việc.",
             "days": 17
           },
           {
             "value": 5,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "ONLINE",
+            "text": "- Trường hợp giao đất, cho thuê đất thông qua hình thức đấu giá quyền sử dụng đất:\n+ Đối với các xã biên giới, hải đảo, vùng sâu, vùng xa, vùng có điều kiện kinh tế - xã hội khó khăn, vùng có điều kiện kinh tế - xã hội đặc biệt khó khăn: Không quá 17 ngày làm việc.\n+ Thời gian xác định nghĩa vụ tài chính của cơ quan thuế: Không quá 05 ngày làm việc.",
             "days": 5
           },
           {
             "value": 22,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "POSTAL",
             "days": 22
           },
           {
             "value": 17,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "POSTAL",
+            "text": "- Trường hợp giao đất, cho thuê đất thông qua hình thức đấu giá quyền sử dụng đất:\n+ Đối với các xã biên giới, hải đảo, vùng sâu, vùng xa, vùng có điều kiện kinh tế - xã hội khó khăn, vùng có điều kiện kinh tế - xã hội đặc biệt khó khăn: Không quá 17 ngày làm việc.\n+ Thời gian xác định nghĩa vụ tài chính của cơ quan thuế: Không quá 05 ngày làm việc.",
             "days": 17
           },
           {
             "value": 5,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "POSTAL",
+            "text": "- Trường hợp giao đất, cho thuê đất thông qua hình thức đấu giá quyền sử dụng đất:\n+ Đối với các xã biên giới, hải đảo, vùng sâu, vùng xa, vùng có điều kiện kinh tế - xã hội khó khăn, vùng có điều kiện kinh tế - xã hội đặc biệt khó khăn: Không quá 17 ngày làm việc.\n+ Thời gian xác định nghĩa vụ tài chính của cơ quan thuế: Không quá 05 ngày làm việc.",
             "days": 5
           },
           {
             "value": 15,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "DIRECT",
             "days": 15
           },
           {
             "value": 10,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "DIRECT",
+            "text": "- Đối với trường hợp giao đất, cho thuê đất, giao đất và giao rừng; cho thuê đất và cho thuê rừng; chuyển mục đích sử dụng đất, gia hạn sử dụng đất khi hết thời hạn sử dụng đất; trường hợp người sử dụng đất thuộc trường hợp giao đất không thu tiền sử dụng đất, nhưng phải nộp một khoản tiền để nhà nước bổ sung diện tích đất chuyên trồng lúa bị mất hoặc tăng hiệu quả sử dụng đất trồng lúa:\n+ Đối với các xã, phường thông thường: Không quá 10 ngày làm việc.\n+ Thời gian xác định nghĩa vụ tài chính của cơ quan thuế: Không quá 05 ngày làm việc (trừ trường hợp hồ sơ giao đất, chuyển mục đích sử dụng đất của tổ chức kinh tế, tổ chức có vốn đầu tư nước ngoài, người gốc Việt Nam định cư ở nước ngoài)",
             "days": 10
           },
           {
             "value": 5,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "DIRECT",
+            "text": "- Đối với trường hợp giao đất, cho thuê đất, giao đất và giao rừng; cho thuê đất và cho thuê rừng; chuyển mục đích sử dụng đất, gia hạn sử dụng đất khi hết thời hạn sử dụng đất; trường hợp người sử dụng đất thuộc trường hợp giao đất không thu tiền sử dụng đất, nhưng phải nộp một khoản tiền để nhà nước bổ sung diện tích đất chuyên trồng lúa bị mất hoặc tăng hiệu quả sử dụng đất trồng lúa:\n+ Đối với các xã, phường thông thường: Không quá 10 ngày làm việc.\n+ Thời gian xác định nghĩa vụ tài chính của cơ quan thuế: Không quá 05 ngày làm việc (trừ trường hợp hồ sơ giao đất, chuyển mục đích sử dụng đất của tổ chức kinh tế, tổ chức có vốn đầu tư nước ngoài, người gốc Việt Nam định cư ở nước ngoài)",
             "days": 5
           },
           {
             "value": 15,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "ONLINE",
             "days": 15
           },
           {
             "value": 10,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "ONLINE",
+            "text": "- Đối với trường hợp giao đất, cho thuê đất, giao đất và giao rừng; cho thuê đất và cho thuê rừng; chuyển mục đích sử dụng đất, gia hạn sử dụng đất khi hết thời hạn sử dụng đất; trường hợp người sử dụng đất thuộc trường hợp giao đất không thu tiền sử dụng đất, nhưng phải nộp một khoản tiền để nhà nước bổ sung diện tích đất chuyên trồng lúa bị mất hoặc tăng hiệu quả sử dụng đất trồng lúa:\n+ Đối với các xã, phường thông thường: Không quá 10 ngày làm việc.\n+ Thời gian xác định nghĩa vụ tài chính của cơ quan thuế: Không quá 05 ngày làm việc (trừ trường hợp hồ sơ giao đất, chuyển mục đích sử dụng đất của tổ chức kinh tế, tổ chức có vốn đầu tư nước ngoài, người gốc Việt Nam định cư ở nước ngoài)",
             "days": 10
           },
           {
             "value": 5,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "ONLINE",
+            "text": "- Đối với trường hợp giao đất, cho thuê đất, giao đất và giao rừng; cho thuê đất và cho thuê rừng; chuyển mục đích sử dụng đất, gia hạn sử dụng đất khi hết thời hạn sử dụng đất; trường hợp người sử dụng đất thuộc trường hợp giao đất không thu tiền sử dụng đất, nhưng phải nộp một khoản tiền để nhà nước bổ sung diện tích đất chuyên trồng lúa bị mất hoặc tăng hiệu quả sử dụng đất trồng lúa:\n+ Đối với các xã, phường thông thường: Không quá 10 ngày làm việc.\n+ Thời gian xác định nghĩa vụ tài chính của cơ quan thuế: Không quá 05 ngày làm việc (trừ trường hợp hồ sơ giao đất, chuyển mục đích sử dụng đất của tổ chức kinh tế, tổ chức có vốn đầu tư nước ngoài, người gốc Việt Nam định cư ở nước ngoài)",
             "days": 5
           },
           {
             "value": 15,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "POSTAL",
             "days": 15
           },
           {
             "value": 10,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "POSTAL",
+            "text": "- Đối với trường hợp giao đất, cho thuê đất, giao đất và giao rừng; cho thuê đất và cho thuê rừng; chuyển mục đích sử dụng đất, gia hạn sử dụng đất khi hết thời hạn sử dụng đất; trường hợp người sử dụng đất thuộc trường hợp giao đất không thu tiền sử dụng đất, nhưng phải nộp một khoản tiền để nhà nước bổ sung diện tích đất chuyên trồng lúa bị mất hoặc tăng hiệu quả sử dụng đất trồng lúa:\n+ Đối với các xã, phường thông thường: Không quá 10 ngày làm việc.\n+ Thời gian xác định nghĩa vụ tài chính của cơ quan thuế: Không quá 05 ngày làm việc (trừ trường hợp hồ sơ giao đất, chuyển mục đích sử dụng đất của tổ chức kinh tế, tổ chức có vốn đầu tư nước ngoài, người gốc Việt Nam định cư ở nước ngoài)",
             "days": 10
           },
           {
             "value": 5,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "POSTAL",
+            "text": "- Đối với trường hợp giao đất, cho thuê đất, giao đất và giao rừng; cho thuê đất và cho thuê rừng; chuyển mục đích sử dụng đất, gia hạn sử dụng đất khi hết thời hạn sử dụng đất; trường hợp người sử dụng đất thuộc trường hợp giao đất không thu tiền sử dụng đất, nhưng phải nộp một khoản tiền để nhà nước bổ sung diện tích đất chuyên trồng lúa bị mất hoặc tăng hiệu quả sử dụng đất trồng lúa:\n+ Đối với các xã, phường thông thường: Không quá 10 ngày làm việc.\n+ Thời gian xác định nghĩa vụ tài chính của cơ quan thuế: Không quá 05 ngày làm việc (trừ trường hợp hồ sơ giao đất, chuyển mục đích sử dụng đất của tổ chức kinh tế, tổ chức có vốn đầu tư nước ngoài, người gốc Việt Nam định cư ở nước ngoài)",
             "days": 5
           },
           {
             "value": 17,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "DIRECT",
             "days": 17
           },
           {
             "value": 10,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "DIRECT",
+            "text": "- Đối với trường hợp giao đất, cho thuê đất, giao đất và giao rừng; cho thuê đất và cho thuê rừng; chuyển mục đích sử dụng đất, gia hạn sử dụng đất khi hết thời hạn sử dụng đất; trường hợp người sử dụng đất thuộc trường hợp giao đất không thu tiền sử dụng đất, nhưng phải nộp một khoản tiền để nhà nước bổ sung diện tích đất chuyên trồng lúa bị mất hoặc tăng hiệu quả sử dụng đất trồng lúa:\n+ Đối với các xã, phường thông thường: Không quá 10 ngày làm việc.\n+ Thời gian xác định nghĩa vụ tài chính của cơ quan thuế: Không quá 07 ngày làm việc (đối với trường hợp hồ sơ giao đất, chuyển mục đích sử dụng đất của tổ chức kinh tế, tổ chức có vốn đầu tư nước ngoài, người gốc Việt Nam định cư ở nước ngoài)",
             "days": 10
           },
           {
             "value": 7,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "DIRECT",
+            "text": "- Đối với trường hợp giao đất, cho thuê đất, giao đất và giao rừng; cho thuê đất và cho thuê rừng; chuyển mục đích sử dụng đất, gia hạn sử dụng đất khi hết thời hạn sử dụng đất; trường hợp người sử dụng đất thuộc trường hợp giao đất không thu tiền sử dụng đất, nhưng phải nộp một khoản tiền để nhà nước bổ sung diện tích đất chuyên trồng lúa bị mất hoặc tăng hiệu quả sử dụng đất trồng lúa:\n+ Đối với các xã, phường thông thường: Không quá 10 ngày làm việc.\n+ Thời gian xác định nghĩa vụ tài chính của cơ quan thuế: Không quá 07 ngày làm việc (đối với trường hợp hồ sơ giao đất, chuyển mục đích sử dụng đất của tổ chức kinh tế, tổ chức có vốn đầu tư nước ngoài, người gốc Việt Nam định cư ở nước ngoài)",
             "days": 7
           },
           {
             "value": 17,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "ONLINE",
             "days": 17
           },
           {
             "value": 10,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "ONLINE",
+            "text": "- Đối với trường hợp giao đất, cho thuê đất, giao đất và giao rừng; cho thuê đất và cho thuê rừng; chuyển mục đích sử dụng đất, gia hạn sử dụng đất khi hết thời hạn sử dụng đất; trường hợp người sử dụng đất thuộc trường hợp giao đất không thu tiền sử dụng đất, nhưng phải nộp một khoản tiền để nhà nước bổ sung diện tích đất chuyên trồng lúa bị mất hoặc tăng hiệu quả sử dụng đất trồng lúa:\n+ Đối với các xã, phường thông thường: Không quá 10 ngày làm việc.\n+ Thời gian xác định nghĩa vụ tài chính của cơ quan thuế: Không quá 07 ngày làm việc (đối với trường hợp hồ sơ giao đất, chuyển mục đích sử dụng đất của tổ chức kinh tế, tổ chức có vốn đầu tư nước ngoài, người gốc Việt Nam định cư ở nước ngoài)",
             "days": 10
           },
           {
             "value": 7,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "ONLINE",
+            "text": "- Đối với trường hợp giao đất, cho thuê đất, giao đất và giao rừng; cho thuê đất và cho thuê rừng; chuyển mục đích sử dụng đất, gia hạn sử dụng đất khi hết thời hạn sử dụng đất; trường hợp người sử dụng đất thuộc trường hợp giao đất không thu tiền sử dụng đất, nhưng phải nộp một khoản tiền để nhà nước bổ sung diện tích đất chuyên trồng lúa bị mất hoặc tăng hiệu quả sử dụng đất trồng lúa:\n+ Đối với các xã, phường thông thường: Không quá 10 ngày làm việc.\n+ Thời gian xác định nghĩa vụ tài chính của cơ quan thuế: Không quá 07 ngày làm việc (đối với trường hợp hồ sơ giao đất, chuyển mục đích sử dụng đất của tổ chức kinh tế, tổ chức có vốn đầu tư nước ngoài, người gốc Việt Nam định cư ở nước ngoài)",
             "days": 7
           },
           {
             "value": 17,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "POSTAL",
             "days": 17
           },
           {
             "value": 10,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "POSTAL",
+            "text": "- Đối với trường hợp giao đất, cho thuê đất, giao đất và giao rừng; cho thuê đất và cho thuê rừng; chuyển mục đích sử dụng đất, gia hạn sử dụng đất khi hết thời hạn sử dụng đất; trường hợp người sử dụng đất thuộc trường hợp giao đất không thu tiền sử dụng đất, nhưng phải nộp một khoản tiền để nhà nước bổ sung diện tích đất chuyên trồng lúa bị mất hoặc tăng hiệu quả sử dụng đất trồng lúa:\n+ Đối với các xã, phường thông thường: Không quá 10 ngày làm việc.\n+ Thời gian xác định nghĩa vụ tài chính của cơ quan thuế: Không quá 07 ngày làm việc (đối với trường hợp hồ sơ giao đất, chuyển mục đích sử dụng đất của tổ chức kinh tế, tổ chức có vốn đầu tư nước ngoài, người gốc Việt Nam định cư ở nước ngoài)",
             "days": 10
           },
           {
             "value": 7,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "POSTAL",
+            "text": "- Đối với trường hợp giao đất, cho thuê đất, giao đất và giao rừng; cho thuê đất và cho thuê rừng; chuyển mục đích sử dụng đất, gia hạn sử dụng đất khi hết thời hạn sử dụng đất; trường hợp người sử dụng đất thuộc trường hợp giao đất không thu tiền sử dụng đất, nhưng phải nộp một khoản tiền để nhà nước bổ sung diện tích đất chuyên trồng lúa bị mất hoặc tăng hiệu quả sử dụng đất trồng lúa:\n+ Đối với các xã, phường thông thường: Không quá 10 ngày làm việc.\n+ Thời gian xác định nghĩa vụ tài chính của cơ quan thuế: Không quá 07 ngày làm việc (đối với trường hợp hồ sơ giao đất, chuyển mục đích sử dụng đất của tổ chức kinh tế, tổ chức có vốn đầu tư nước ngoài, người gốc Việt Nam định cư ở nước ngoài)",
             "days": 7
           },
           {
             "value": 22,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "DIRECT",
             "days": 22
           },
           {
             "value": 17,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "DIRECT",
+            "text": "- Đối với trường hợp giao đất, cho thuê đất, giao đất và giao rừng; cho thuê đất và cho thuê rừng; chuyển mục đích sử dụng đất, gia hạn sử dụng đất khi hết thời hạn sử dụng đất; trường hợp người sử dụng đất thuộc trường hợp giao đất không thu tiền sử dụng đất, nhưng phải nộp một khoản tiền để nhà nước bổ sung diện tích đất chuyên trồng lúa bị mất hoặc tăng hiệu quả sử dụng đất trồng lúa:\n+ Đối với các xã biên giới, hải đảo, vùng sâu, vùng xa, vùng có điều kiện kinh tế - xã hội khó khăn, vùng có điều kiện kinh tế - xã hội đặc biệt khó khăn: Không quá 17 ngày làm việc.\n+ Thời gian xác định nghĩa vụ tài chính của cơ quan thuế: Không quá 05 ngày làm việc (trừ trường hợp hồ sơ giao đất, chuyển mục đích sử dụng đất của tổ chức kinh tế, tổ chức có vốn đầu tư nước ngoài, người gốc Việt Nam định cư ở nước ngoài)",
             "days": 17
           },
           {
             "value": 5,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "DIRECT",
+            "text": "- Đối với trường hợp giao đất, cho thuê đất, giao đất và giao rừng; cho thuê đất và cho thuê rừng; chuyển mục đích sử dụng đất, gia hạn sử dụng đất khi hết thời hạn sử dụng đất; trường hợp người sử dụng đất thuộc trường hợp giao đất không thu tiền sử dụng đất, nhưng phải nộp một khoản tiền để nhà nước bổ sung diện tích đất chuyên trồng lúa bị mất hoặc tăng hiệu quả sử dụng đất trồng lúa:\n+ Đối với các xã biên giới, hải đảo, vùng sâu, vùng xa, vùng có điều kiện kinh tế - xã hội khó khăn, vùng có điều kiện kinh tế - xã hội đặc biệt khó khăn: Không quá 17 ngày làm việc.\n+ Thời gian xác định nghĩa vụ tài chính của cơ quan thuế: Không quá 05 ngày làm việc (trừ trường hợp hồ sơ giao đất, chuyển mục đích sử dụng đất của tổ chức kinh tế, tổ chức có vốn đầu tư nước ngoài, người gốc Việt Nam định cư ở nước ngoài)",
             "days": 5
           },
           {
             "value": 22,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "ONLINE",
             "days": 22
           },
           {
             "value": 17,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "ONLINE",
+            "text": "- Đối với trường hợp giao đất, cho thuê đất, giao đất và giao rừng; cho thuê đất và cho thuê rừng; chuyển mục đích sử dụng đất, gia hạn sử dụng đất khi hết thời hạn sử dụng đất; trường hợp người sử dụng đất thuộc trường hợp giao đất không thu tiền sử dụng đất, nhưng phải nộp một khoản tiền để nhà nước bổ sung diện tích đất chuyên trồng lúa bị mất hoặc tăng hiệu quả sử dụng đất trồng lúa:\n+ Đối với các xã biên giới, hải đảo, vùng sâu, vùng xa, vùng có điều kiện kinh tế - xã hội khó khăn, vùng có điều kiện kinh tế - xã hội đặc biệt khó khăn: Không quá 17 ngày làm việc.\n+ Thời gian xác định nghĩa vụ tài chính của cơ quan thuế: Không quá 05 ngày làm việc (trừ trường hợp hồ sơ giao đất, chuyển mục đích sử dụng đất của tổ chức kinh tế, tổ chức có vốn đầu tư nước ngoài, người gốc Việt Nam định cư ở nước ngoài)",
             "days": 17
           },
           {
             "value": 5,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "ONLINE",
+            "text": "- Đối với trường hợp giao đất, cho thuê đất, giao đất và giao rừng; cho thuê đất và cho thuê rừng; chuyển mục đích sử dụng đất, gia hạn sử dụng đất khi hết thời hạn sử dụng đất; trường hợp người sử dụng đất thuộc trường hợp giao đất không thu tiền sử dụng đất, nhưng phải nộp một khoản tiền để nhà nước bổ sung diện tích đất chuyên trồng lúa bị mất hoặc tăng hiệu quả sử dụng đất trồng lúa:\n+ Đối với các xã biên giới, hải đảo, vùng sâu, vùng xa, vùng có điều kiện kinh tế - xã hội khó khăn, vùng có điều kiện kinh tế - xã hội đặc biệt khó khăn: Không quá 17 ngày làm việc.\n+ Thời gian xác định nghĩa vụ tài chính của cơ quan thuế: Không quá 05 ngày làm việc (trừ trường hợp hồ sơ giao đất, chuyển mục đích sử dụng đất của tổ chức kinh tế, tổ chức có vốn đầu tư nước ngoài, người gốc Việt Nam định cư ở nước ngoài)",
             "days": 5
           },
           {
             "value": 22,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "POSTAL",
             "days": 22
           },
           {
             "value": 17,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "POSTAL",
+            "text": "- Đối với trường hợp giao đất, cho thuê đất, giao đất và giao rừng; cho thuê đất và cho thuê rừng; chuyển mục đích sử dụng đất, gia hạn sử dụng đất khi hết thời hạn sử dụng đất; trường hợp người sử dụng đất thuộc trường hợp giao đất không thu tiền sử dụng đất, nhưng phải nộp một khoản tiền để nhà nước bổ sung diện tích đất chuyên trồng lúa bị mất hoặc tăng hiệu quả sử dụng đất trồng lúa:\n+ Đối với các xã biên giới, hải đảo, vùng sâu, vùng xa, vùng có điều kiện kinh tế - xã hội khó khăn, vùng có điều kiện kinh tế - xã hội đặc biệt khó khăn: Không quá 17 ngày làm việc.\n+ Thời gian xác định nghĩa vụ tài chính của cơ quan thuế: Không quá 05 ngày làm việc (trừ trường hợp hồ sơ giao đất, chuyển mục đích sử dụng đất của tổ chức kinh tế, tổ chức có vốn đầu tư nước ngoài, người gốc Việt Nam định cư ở nước ngoài)",
             "days": 17
           },
           {
             "value": 5,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "POSTAL",
+            "text": "- Đối với trường hợp giao đất, cho thuê đất, giao đất và giao rừng; cho thuê đất và cho thuê rừng; chuyển mục đích sử dụng đất, gia hạn sử dụng đất khi hết thời hạn sử dụng đất; trường hợp người sử dụng đất thuộc trường hợp giao đất không thu tiền sử dụng đất, nhưng phải nộp một khoản tiền để nhà nước bổ sung diện tích đất chuyên trồng lúa bị mất hoặc tăng hiệu quả sử dụng đất trồng lúa:\n+ Đối với các xã biên giới, hải đảo, vùng sâu, vùng xa, vùng có điều kiện kinh tế - xã hội khó khăn, vùng có điều kiện kinh tế - xã hội đặc biệt khó khăn: Không quá 17 ngày làm việc.\n+ Thời gian xác định nghĩa vụ tài chính của cơ quan thuế: Không quá 05 ngày làm việc (trừ trường hợp hồ sơ giao đất, chuyển mục đích sử dụng đất của tổ chức kinh tế, tổ chức có vốn đầu tư nước ngoài, người gốc Việt Nam định cư ở nước ngoài)",
             "days": 5
           },
           {
             "value": 24,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "DIRECT",
             "days": 24
           },
           {
             "value": 17,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "DIRECT",
+            "text": "- Đối với trường hợp giao đất, cho thuê đất, giao đất và giao rừng; cho thuê đất và cho thuê rừng; chuyển mục đích sử dụng đất, gia hạn sử dụng đất khi hết thời hạn sử dụng đất; trường hợp người sử dụng đất thuộc trường hợp giao đất không thu tiền sử dụng đất, nhưng phải nộp một khoản tiền để nhà nước bổ sung diện tích đất chuyên trồng lúa bị mất hoặc tăng hiệu quả sử dụng đất trồng lúa:\n+ Đối với các xã biên giới, hải đảo, vùng sâu, vùng xa, vùng có điều kiện kinh tế - xã hội khó khăn, vùng có điều kiện kinh tế - xã hội đặc biệt khó khăn: Không quá 17 ngày làm việc.\n+ Thời gian xác định nghĩa vụ tài chính của cơ quan thuế: Không quá 07 ngày làm việc (đối với trường hợp hồ sơ giao đất, chuyển mục đích sử dụng đất của tổ chức kinh tế, tổ chức có vốn đầu tư nước ngoài, người gốc Việt Nam định cư ở nước ngoài)",
             "days": 17
           },
           {
             "value": 7,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "DIRECT",
+            "text": "- Đối với trường hợp giao đất, cho thuê đất, giao đất và giao rừng; cho thuê đất và cho thuê rừng; chuyển mục đích sử dụng đất, gia hạn sử dụng đất khi hết thời hạn sử dụng đất; trường hợp người sử dụng đất thuộc trường hợp giao đất không thu tiền sử dụng đất, nhưng phải nộp một khoản tiền để nhà nước bổ sung diện tích đất chuyên trồng lúa bị mất hoặc tăng hiệu quả sử dụng đất trồng lúa:\n+ Đối với các xã biên giới, hải đảo, vùng sâu, vùng xa, vùng có điều kiện kinh tế - xã hội khó khăn, vùng có điều kiện kinh tế - xã hội đặc biệt khó khăn: Không quá 17 ngày làm việc.\n+ Thời gian xác định nghĩa vụ tài chính của cơ quan thuế: Không quá 07 ngày làm việc (đối với trường hợp hồ sơ giao đất, chuyển mục đích sử dụng đất của tổ chức kinh tế, tổ chức có vốn đầu tư nước ngoài, người gốc Việt Nam định cư ở nước ngoài)",
             "days": 7
           },
           {
             "value": 24,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "ONLINE",
             "days": 24
           },
           {
             "value": 17,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "ONLINE",
+            "text": "- Đối với trường hợp giao đất, cho thuê đất, giao đất và giao rừng; cho thuê đất và cho thuê rừng; chuyển mục đích sử dụng đất, gia hạn sử dụng đất khi hết thời hạn sử dụng đất; trường hợp người sử dụng đất thuộc trường hợp giao đất không thu tiền sử dụng đất, nhưng phải nộp một khoản tiền để nhà nước bổ sung diện tích đất chuyên trồng lúa bị mất hoặc tăng hiệu quả sử dụng đất trồng lúa:\n+ Đối với các xã biên giới, hải đảo, vùng sâu, vùng xa, vùng có điều kiện kinh tế - xã hội khó khăn, vùng có điều kiện kinh tế - xã hội đặc biệt khó khăn: Không quá 17 ngày làm việc.\n+ Thời gian xác định nghĩa vụ tài chính của cơ quan thuế: Không quá 07 ngày làm việc (đối với trường hợp hồ sơ giao đất, chuyển mục đích sử dụng đất của tổ chức kinh tế, tổ chức có vốn đầu tư nước ngoài, người gốc Việt Nam định cư ở nước ngoài)",
             "days": 17
           },
           {
             "value": 7,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "ONLINE",
+            "text": "- Đối với trường hợp giao đất, cho thuê đất, giao đất và giao rừng; cho thuê đất và cho thuê rừng; chuyển mục đích sử dụng đất, gia hạn sử dụng đất khi hết thời hạn sử dụng đất; trường hợp người sử dụng đất thuộc trường hợp giao đất không thu tiền sử dụng đất, nhưng phải nộp một khoản tiền để nhà nước bổ sung diện tích đất chuyên trồng lúa bị mất hoặc tăng hiệu quả sử dụng đất trồng lúa:\n+ Đối với các xã biên giới, hải đảo, vùng sâu, vùng xa, vùng có điều kiện kinh tế - xã hội khó khăn, vùng có điều kiện kinh tế - xã hội đặc biệt khó khăn: Không quá 17 ngày làm việc.\n+ Thời gian xác định nghĩa vụ tài chính của cơ quan thuế: Không quá 07 ngày làm việc (đối với trường hợp hồ sơ giao đất, chuyển mục đích sử dụng đất của tổ chức kinh tế, tổ chức có vốn đầu tư nước ngoài, người gốc Việt Nam định cư ở nước ngoài)",
             "days": 7
           },
           {
             "value": 24,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "POSTAL",
             "days": 24
           },
           {
             "value": 17,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "POSTAL",
+            "text": "- Đối với trường hợp giao đất, cho thuê đất, giao đất và giao rừng; cho thuê đất và cho thuê rừng; chuyển mục đích sử dụng đất, gia hạn sử dụng đất khi hết thời hạn sử dụng đất; trường hợp người sử dụng đất thuộc trường hợp giao đất không thu tiền sử dụng đất, nhưng phải nộp một khoản tiền để nhà nước bổ sung diện tích đất chuyên trồng lúa bị mất hoặc tăng hiệu quả sử dụng đất trồng lúa:\n+ Đối với các xã biên giới, hải đảo, vùng sâu, vùng xa, vùng có điều kiện kinh tế - xã hội khó khăn, vùng có điều kiện kinh tế - xã hội đặc biệt khó khăn: Không quá 17 ngày làm việc.\n+ Thời gian xác định nghĩa vụ tài chính của cơ quan thuế: Không quá 07 ngày làm việc (đối với trường hợp hồ sơ giao đất, chuyển mục đích sử dụng đất của tổ chức kinh tế, tổ chức có vốn đầu tư nước ngoài, người gốc Việt Nam định cư ở nước ngoài)",
             "days": 17
           },
           {
             "value": 7,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "POSTAL",
+            "text": "- Đối với trường hợp giao đất, cho thuê đất, giao đất và giao rừng; cho thuê đất và cho thuê rừng; chuyển mục đích sử dụng đất, gia hạn sử dụng đất khi hết thời hạn sử dụng đất; trường hợp người sử dụng đất thuộc trường hợp giao đất không thu tiền sử dụng đất, nhưng phải nộp một khoản tiền để nhà nước bổ sung diện tích đất chuyên trồng lúa bị mất hoặc tăng hiệu quả sử dụng đất trồng lúa:\n+ Đối với các xã biên giới, hải đảo, vùng sâu, vùng xa, vùng có điều kiện kinh tế - xã hội khó khăn, vùng có điều kiện kinh tế - xã hội đặc biệt khó khăn: Không quá 17 ngày làm việc.\n+ Thời gian xác định nghĩa vụ tài chính của cơ quan thuế: Không quá 07 ngày làm việc (đối với trường hợp hồ sơ giao đất, chuyển mục đích sử dụng đất của tổ chức kinh tế, tổ chức có vốn đầu tư nước ngoài, người gốc Việt Nam định cư ở nước ngoài)",
             "days": 7
           }
         ]
@@ -1121,29 +1284,39 @@
           "ONLINE",
           "POSTAL"
         ],
-        "conditionalRouteSignals": 54,
+        "standardOnly": true,
+        "specialSignals": {
+          "conditional": 54,
+          "original": 0,
+          "certification": 0,
+          "supplement": 12
+        },
+        "specialTotal": 66,
         "returnMethodCount": 2
       },
       "c6": {
-        "score": 2,
-        "state": "KNOWN_WITH_TEXT",
-        "roleCounts": {
-          "executing": 1,
-          "authority": 0,
-          "authorized": 0,
-          "coordinating": 0
-        },
-        "coordinationSignals": 19,
-        "actorMentions": 76,
-        "crossRole": false
+        "score": 5,
+        "state": "TEXT_BASED",
+        "activeActors": [
+          "Cơ quan chuyên môn",
+          "Lãnh đạo UBND",
+          "UBND cấp có thẩm quyền",
+          "Cơ quan chuyên biệt",
+          "Cơ quan/Hội đồng liên quan"
+        ],
+        "activeActorCount": 5,
+        "coordinationSignals": 5,
+        "handoffSignals": 43,
+        "approvalSignals": 27,
+        "metadataDepartments": 1
       },
-      "weightedScore": 4.4,
-      "score100": 88,
+      "weightedScore": 4.85,
+      "score100": 97,
+      "stars": 5,
       "warnings": [
         "STEP_TEXT_STRUCTURE_MISMATCH",
-        "PROCESSING_TIME_CONFLICT"
-      ],
-      "stars": 5
+        "PROCESSING_TIME_VARIANT"
+      ]
     },
     {
       "goldenNo": 8,
@@ -1187,8 +1360,8 @@
         "totalSignal": 0
       },
       "c4": {
-        "score": 5,
-        "state": "CONFLICT",
+        "score": 4,
+        "state": "TIME_VARIANT",
         "minDays": 30,
         "maxDays": 30,
         "distinctValues": [
@@ -1200,36 +1373,45 @@
             "value": 30,
             "unit": "DAY",
             "source": "executionMethods",
+            "method": "DIRECT",
             "days": 30
           },
           {
             "value": 30,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "DIRECT",
+            "text": "Không quá 30 ngày làm việc đối với trường hợp thửa đất gốc đã có Giấy chứng nhận, phần diện tích tăng thêm phần diện tích đất chưa được cấp Giấy chứng nhận.",
             "days": 30
           },
           {
             "value": 30,
             "unit": "DAY",
             "source": "executionMethods",
+            "method": "ONLINE",
             "days": 30
           },
           {
             "value": 30,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "ONLINE",
+            "text": "Không quá 30 ngày làm việc đối với trường hợp thửa đất gốc đã có Giấy chứng nhận, phần diện tích tăng thêm phần diện tích đất chưa được cấp Giấy chứng nhận.",
             "days": 30
           },
           {
             "value": 30,
             "unit": "DAY",
             "source": "executionMethods",
+            "method": "POSTAL",
             "days": 30
           },
           {
             "value": 30,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "POSTAL",
+            "text": "Không quá 30 ngày làm việc đối với trường hợp thửa đất gốc đã có Giấy chứng nhận, phần diện tích tăng thêm phần diện tích đất chưa được cấp Giấy chứng nhận.",
             "days": 30
           }
         ]
@@ -1242,30 +1424,39 @@
           "ONLINE",
           "POSTAL"
         ],
-        "conditionalRouteSignals": 3,
+        "standardOnly": true,
+        "specialSignals": {
+          "conditional": 3,
+          "original": 0,
+          "certification": 0,
+          "supplement": 0
+        },
+        "specialTotal": 3,
         "returnMethodCount": 2
       },
       "c6": {
-        "score": 2,
-        "state": "KNOWN_WITH_TEXT",
-        "roleCounts": {
-          "executing": 0,
-          "authority": 0,
-          "authorized": 0,
-          "coordinating": 0
-        },
-        "coordinationSignals": 14,
-        "actorMentions": 44,
-        "crossRole": false
+        "score": 5,
+        "state": "TEXT_BASED",
+        "activeActors": [
+          "Cơ quan chuyên môn",
+          "Cơ quan/Hội đồng liên quan",
+          "Cơ quan chuyên biệt",
+          "Lãnh đạo UBND"
+        ],
+        "activeActorCount": 4,
+        "coordinationSignals": 1,
+        "handoffSignals": 19,
+        "approvalSignals": 5,
+        "metadataDepartments": 0
       },
-      "weightedScore": 2.8999999999999995,
-      "score100": 58,
+      "weightedScore": 3.3499999999999996,
+      "score100": 67,
+      "stars": 4,
       "warnings": [
         "STEP_TEXT_STRUCTURE_MISMATCH",
         "PROFILE_TEXT_STRUCTURED_ZERO",
-        "PROCESSING_TIME_CONFLICT"
-      ],
-      "stars": 3
+        "PROCESSING_TIME_VARIANT"
+      ]
     },
     {
       "goldenNo": 9,
@@ -1334,50 +1525,59 @@
             "value": 7,
             "unit": "DAY",
             "source": "executionMethods",
+            "method": "DIRECT",
             "days": 7
           },
           {
             "value": 7,
             "unit": "DAY",
             "source": "executionMethods",
+            "method": "ONLINE",
             "days": 7
           },
           {
             "value": 7,
             "unit": "DAY",
             "source": "executionMethods",
+            "method": "POSTAL",
             "days": 7
           }
         ]
       },
       "c5": {
-        "score": 3,
+        "score": 2,
         "state": "KNOWN",
         "uniqueMethods": [
           "DIRECT",
           "ONLINE",
           "POSTAL"
         ],
-        "conditionalRouteSignals": 0,
+        "standardOnly": true,
+        "specialSignals": {
+          "conditional": 0,
+          "original": 0,
+          "certification": 0,
+          "supplement": 0
+        },
+        "specialTotal": 0,
         "returnMethodCount": 2
       },
       "c6": {
         "score": 2,
-        "state": "KNOWN_WITH_TEXT",
-        "roleCounts": {
-          "executing": 0,
-          "authority": 0,
-          "authorized": 0,
-          "coordinating": 0
-        },
-        "coordinationSignals": 5,
-        "actorMentions": 12,
-        "crossRole": false
+        "state": "TEXT_BASED",
+        "activeActors": [
+          "Cơ quan chuyên môn"
+        ],
+        "activeActorCount": 1,
+        "coordinationSignals": 2,
+        "handoffSignals": 10,
+        "approvalSignals": 1,
+        "metadataDepartments": 0
       },
-      "weightedScore": 2.6999999999999997,
-      "score100": 54,
-      "warnings": [],
-      "stars": 3
+      "weightedScore": 2.5999999999999996,
+      "score100": 52,
+      "stars": 3,
+      "warnings": []
     },
     {
       "goldenNo": 10,
@@ -1500,18 +1700,21 @@
             "value": 3,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "DIRECT",
             "days": 3
           },
           {
             "value": 3,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "POSTAL",
             "days": 3
           },
           {
             "value": 3,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "ONLINE",
             "days": 3
           }
         ]
@@ -1524,26 +1727,33 @@
           "POSTAL",
           "ONLINE"
         ],
-        "conditionalRouteSignals": 10,
+        "standardOnly": true,
+        "specialSignals": {
+          "conditional": 9,
+          "original": 0,
+          "certification": 0,
+          "supplement": 0
+        },
+        "specialTotal": 9,
         "returnMethodCount": 2
       },
       "c6": {
-        "score": 2,
-        "state": "KNOWN_WITH_TEXT",
-        "roleCounts": {
-          "executing": 1,
-          "authority": 0,
-          "authorized": 0,
-          "coordinating": 0
-        },
-        "coordinationSignals": 5,
-        "actorMentions": 37,
-        "crossRole": false
+        "score": 4,
+        "state": "TEXT_BASED",
+        "activeActors": [
+          "Cơ quan chuyên môn",
+          "Cơ quan chuyên biệt"
+        ],
+        "activeActorCount": 2,
+        "coordinationSignals": 1,
+        "handoffSignals": 7,
+        "approvalSignals": 4,
+        "metadataDepartments": 1
       },
-      "weightedScore": 3.55,
-      "score100": 71,
-      "warnings": [],
-      "stars": 4
+      "weightedScore": 3.95,
+      "score100": 79,
+      "stars": 4,
+      "warnings": []
     },
     {
       "goldenNo": 11,
@@ -1665,36 +1875,43 @@
         "rawValues": []
       },
       "c5": {
-        "score": 2,
+        "score": 1,
         "state": "KNOWN",
         "uniqueMethods": [
           "ONLINE",
           "POSTAL",
           "DIRECT"
         ],
-        "conditionalRouteSignals": 0,
+        "standardOnly": true,
+        "specialSignals": {
+          "conditional": 0,
+          "original": 0,
+          "certification": 0,
+          "supplement": 0
+        },
+        "specialTotal": 0,
         "returnMethodCount": 0
       },
       "c6": {
-        "score": 2,
-        "state": "KNOWN_WITH_TEXT",
-        "roleCounts": {
-          "executing": 1,
-          "authority": 0,
-          "authorized": 0,
-          "coordinating": 0
-        },
-        "coordinationSignals": 10,
-        "actorMentions": 17,
-        "crossRole": false
+        "score": 3,
+        "state": "TEXT_BASED",
+        "activeActors": [
+          "Cơ quan chuyên môn",
+          "Cơ quan/Hội đồng liên quan"
+        ],
+        "activeActorCount": 2,
+        "coordinationSignals": 9,
+        "handoffSignals": 2,
+        "approvalSignals": 1,
+        "metadataDepartments": 1
       },
-      "weightedScore": 2.3,
-      "score100": 46,
+      "weightedScore": 2.4,
+      "score100": 48,
+      "stars": 3,
       "warnings": [
         "STEP_TEXT_STRUCTURE_MISMATCH",
         "PROCESSING_TIME_UNKNOWN"
-      ],
-      "stars": 3
+      ]
     },
     {
       "goldenNo": 12,
@@ -1809,8 +2026,8 @@
         "totalSignal": 16
       },
       "c4": {
-        "score": 4,
-        "state": "CONFLICT",
+        "score": 3,
+        "state": "TIME_VARIANT",
         "minDays": 3,
         "maxDays": 10,
         "distinctValues": [
@@ -1822,36 +2039,42 @@
             "value": 10,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "ONLINE",
             "days": 10
           },
           {
             "value": 10,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "POSTAL",
             "days": 10
           },
           {
             "value": 10,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "DIRECT",
             "days": 10
           },
           {
             "value": 3,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "DIRECT",
             "days": 3
           },
           {
             "value": 3,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "ONLINE",
             "days": 3
           },
           {
             "value": 3,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "POSTAL",
             "days": 3
           }
         ]
@@ -1864,28 +2087,35 @@
           "POSTAL",
           "DIRECT"
         ],
-        "conditionalRouteSignals": 12,
+        "standardOnly": true,
+        "specialSignals": {
+          "conditional": 6,
+          "original": 0,
+          "certification": 0,
+          "supplement": 0
+        },
+        "specialTotal": 6,
         "returnMethodCount": 0
       },
       "c6": {
-        "score": 1,
-        "state": "KNOWN_WITH_TEXT",
-        "roleCounts": {
-          "executing": 0,
-          "authority": 0,
-          "authorized": 0,
-          "coordinating": 0
-        },
-        "coordinationSignals": 2,
-        "actorMentions": 3,
-        "crossRole": false
+        "score": 2,
+        "state": "TEXT_BASED",
+        "activeActors": [
+          "Cơ quan chuyên môn",
+          "Cơ quan/Hội đồng liên quan"
+        ],
+        "activeActorCount": 2,
+        "coordinationSignals": 0,
+        "handoffSignals": 1,
+        "approvalSignals": 0,
+        "metadataDepartments": 0
       },
-      "weightedScore": 3.2,
-      "score100": 64,
+      "weightedScore": 3.25,
+      "score100": 65,
+      "stars": 4,
       "warnings": [
-        "PROCESSING_TIME_CONFLICT"
-      ],
-      "stars": 4
+        "PROCESSING_TIME_VARIANT"
+      ]
     },
     {
       "goldenNo": 13,
@@ -1952,6 +2182,7 @@
             "value": 1,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "DIRECT",
             "days": 1
           }
         ]
@@ -1962,28 +2193,35 @@
         "uniqueMethods": [
           "DIRECT"
         ],
-        "conditionalRouteSignals": 0,
+        "standardOnly": true,
+        "specialSignals": {
+          "conditional": 0,
+          "original": 0,
+          "certification": 0,
+          "supplement": 0
+        },
+        "specialTotal": 0,
         "returnMethodCount": 0
       },
       "c6": {
-        "score": 3,
-        "state": "KNOWN_WITH_TEXT",
-        "roleCounts": {
-          "executing": 1,
-          "authority": 1,
-          "authorized": 0,
-          "coordinating": 0
-        },
+        "score": 2,
+        "state": "TEXT_BASED",
+        "activeActors": [
+          "Cơ quan chuyên biệt",
+          "Cơ quan chuyên môn"
+        ],
+        "activeActorCount": 2,
         "coordinationSignals": 1,
-        "actorMentions": 12,
-        "crossRole": true
+        "handoffSignals": 0,
+        "approvalSignals": 0,
+        "metadataDepartments": 1
       },
-      "weightedScore": 1.6000000000000003,
-      "score100": 32,
+      "weightedScore": 1.4000000000000004,
+      "score100": 28,
+      "stars": 2,
       "warnings": [
         "STEP_TEXT_STRUCTURE_MISMATCH"
-      ],
-      "stars": 2
+      ]
     },
     {
       "goldenNo": 14,
@@ -2045,8 +2283,8 @@
         "totalSignal": 4
       },
       "c4": {
-        "score": 3,
-        "state": "CONFLICT",
+        "score": 2,
+        "state": "TIME_VARIANT",
         "minDays": 1,
         "maxDays": 2,
         "distinctValues": [
@@ -2059,51 +2297,62 @@
             "value": 1,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "ONLINE",
             "days": 1
           },
           {
             "value": 2,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "ONLINE",
             "days": 2
           },
           {
             "value": 2,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "ONLINE",
+            "text": "\ttrường hợp phức tạp thì có thể kéo dài hơn nhưng không quá 02 ngày làm việc.",
             "days": 2
           }
         ]
       },
       "c5": {
-        "score": 1,
+        "score": 3,
         "state": "KNOWN",
         "uniqueMethods": [
           "ONLINE"
         ],
-        "conditionalRouteSignals": 2,
+        "standardOnly": true,
+        "specialSignals": {
+          "conditional": 2,
+          "original": 0,
+          "certification": 0,
+          "supplement": 0
+        },
+        "specialTotal": 2,
         "returnMethodCount": 0
       },
       "c6": {
         "score": 2,
-        "state": "KNOWN_WITH_TEXT",
-        "roleCounts": {
-          "executing": 1,
-          "authority": 1,
-          "authorized": 0,
-          "coordinating": 0
-        },
+        "state": "TEXT_BASED",
+        "activeActors": [
+          "Cơ quan chuyên biệt",
+          "Cơ quan chuyên môn"
+        ],
+        "activeActorCount": 2,
         "coordinationSignals": 0,
-        "actorMentions": 7,
-        "crossRole": true
+        "handoffSignals": 0,
+        "approvalSignals": 0,
+        "metadataDepartments": 1
       },
-      "weightedScore": 2.0500000000000003,
-      "score100": 41,
+      "weightedScore": 2.1,
+      "score100": 42,
+      "stars": 3,
       "warnings": [
         "STEP_TEXT_STRUCTURE_MISMATCH",
-        "PROCESSING_TIME_CONFLICT"
-      ],
-      "stars": 3
+        "PROCESSING_TIME_VARIANT"
+      ]
     },
     {
       "goldenNo": 15,
@@ -2210,52 +2459,61 @@
             "value": 420,
             "unit": "DAY",
             "source": "executionMethods",
+            "method": "DIRECT",
             "days": 420
           },
           {
             "value": 420,
             "unit": "DAY",
             "source": "executionMethods",
+            "method": "ONLINE",
             "days": 420
           },
           {
             "value": 420,
             "unit": "DAY",
             "source": "executionMethods",
+            "method": "POSTAL",
             "days": 420
           }
         ]
       },
       "c5": {
-        "score": 4,
+        "score": 5,
         "state": "KNOWN",
         "uniqueMethods": [
           "DIRECT",
           "ONLINE",
           "POSTAL"
         ],
-        "conditionalRouteSignals": 18,
+        "standardOnly": true,
+        "specialSignals": {
+          "conditional": 18,
+          "original": 0,
+          "certification": 0,
+          "supplement": 6
+        },
+        "specialTotal": 24,
         "returnMethodCount": 0
       },
       "c6": {
         "score": 3,
-        "state": "KNOWN_WITH_TEXT",
-        "roleCounts": {
-          "executing": 1,
-          "authority": 1,
-          "authorized": 0,
-          "coordinating": 0
-        },
-        "coordinationSignals": 46,
-        "actorMentions": 121,
-        "crossRole": true
+        "state": "TEXT_BASED",
+        "activeActors": [
+          "Cơ quan chuyên môn"
+        ],
+        "activeActorCount": 1,
+        "coordinationSignals": 42,
+        "handoffSignals": 15,
+        "approvalSignals": 18,
+        "metadataDepartments": 1
       },
-      "weightedScore": 3.8,
-      "score100": 76,
+      "weightedScore": 3.9,
+      "score100": 78,
+      "stars": 4,
       "warnings": [
         "STEP_TEXT_STRUCTURE_MISMATCH"
-      ],
-      "stars": 4
+      ]
     },
     {
       "goldenNo": 16,
@@ -2309,52 +2567,61 @@
             "value": 360,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "DIRECT",
             "days": 360
           },
           {
             "value": 360,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "ONLINE",
             "days": 360
           },
           {
             "value": 360,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "POSTAL",
             "days": 360
           }
         ]
       },
       "c5": {
-        "score": 2,
+        "score": 1,
         "state": "KNOWN",
         "uniqueMethods": [
           "DIRECT",
           "ONLINE",
           "POSTAL"
         ],
-        "conditionalRouteSignals": 0,
+        "standardOnly": true,
+        "specialSignals": {
+          "conditional": 0,
+          "original": 0,
+          "certification": 0,
+          "supplement": 0
+        },
+        "specialTotal": 0,
         "returnMethodCount": 0
       },
       "c6": {
         "score": 3,
-        "state": "KNOWN_WITH_TEXT",
-        "roleCounts": {
-          "executing": 1,
-          "authority": 1,
-          "authorized": 0,
-          "coordinating": 0
-        },
-        "coordinationSignals": 3,
-        "actorMentions": 55,
-        "crossRole": true
+        "state": "TEXT_BASED",
+        "activeActors": [
+          "Cơ quan chuyên môn"
+        ],
+        "activeActorCount": 1,
+        "coordinationSignals": 2,
+        "handoffSignals": 13,
+        "approvalSignals": 19,
+        "metadataDepartments": 1
       },
-      "weightedScore": 2.45,
-      "score100": 49,
+      "weightedScore": 2.3500000000000005,
+      "score100": 47,
+      "stars": 3,
       "warnings": [
         "STEP_TEXT_STRUCTURE_MISMATCH"
-      ],
-      "stars": 3
+      ]
     },
     {
       "goldenNo": 17,
@@ -2450,8 +2717,8 @@
         "totalSignal": 6
       },
       "c4": {
-        "score": 4,
-        "state": "CONFLICT",
+        "score": 3,
+        "state": "TIME_VARIANT",
         "minDays": 5,
         "maxDays": 15,
         "distinctValues": [
@@ -2464,89 +2731,111 @@
             "value": 5,
             "unit": "DAY",
             "source": "executionMethods",
+            "method": "ONLINE",
             "days": 5
           },
           {
             "value": 5,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "ONLINE",
+            "text": "không quá 05 ngày làm việc kể từ ngày nhận đủ hồ sơ. Đối với hồ sơ qua thẩm định chưa đủ điều kiện giải quyết, sau 15 ngày kể từ khi thông báo, nếu người đề nghị không hoàn thành việc hoàn thiện hồ sơ thì hồ sơ sẽ bị đóng trên Hệ thống thông tin giải quyết thủ tục hành chính",
             "days": 5
           },
           {
             "value": 15,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "ONLINE",
+            "text": "không quá 05 ngày làm việc kể từ ngày nhận đủ hồ sơ. Đối với hồ sơ qua thẩm định chưa đủ điều kiện giải quyết, sau 15 ngày kể từ khi thông báo, nếu người đề nghị không hoàn thành việc hoàn thiện hồ sơ thì hồ sơ sẽ bị đóng trên Hệ thống thông tin giải quyết thủ tục hành chính",
             "days": 15
           },
           {
             "value": 5,
             "unit": "DAY",
             "source": "executionMethods",
+            "method": "POSTAL",
             "days": 5
           },
           {
             "value": 5,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "POSTAL",
+            "text": "không quá 05 ngày làm việc kể từ ngày nhận đủ hồ sơ. Đối với hồ sơ qua thẩm định chưa đủ điều kiện giải quyết, sau 15 ngày kể từ khi thông báo, nếu người đề nghị không hoàn thành việc hoàn thiện hồ sơ thì hồ sơ sẽ bị đóng trên Hệ thống thông tin giải quyết thủ tục hành chính",
             "days": 5
           },
           {
             "value": 15,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "POSTAL",
+            "text": "không quá 05 ngày làm việc kể từ ngày nhận đủ hồ sơ. Đối với hồ sơ qua thẩm định chưa đủ điều kiện giải quyết, sau 15 ngày kể từ khi thông báo, nếu người đề nghị không hoàn thành việc hoàn thiện hồ sơ thì hồ sơ sẽ bị đóng trên Hệ thống thông tin giải quyết thủ tục hành chính",
             "days": 15
           },
           {
             "value": 5,
             "unit": "DAY",
             "source": "executionMethods",
+            "method": "DIRECT",
             "days": 5
           },
           {
             "value": 5,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "DIRECT",
+            "text": "không quá 05 ngày làm việc kể từ ngày nhận đủ hồ sơ. Đối với hồ sơ qua thẩm định chưa đủ điều kiện giải quyết, sau 15 ngày kể từ khi thông báo, nếu người đề nghị không hoàn thành việc hoàn thiện hồ sơ thì hồ sơ sẽ bị đóng trên Hệ thống thông tin giải quyết thủ tục hành chính",
             "days": 5
           },
           {
             "value": 15,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "DIRECT",
+            "text": "không quá 05 ngày làm việc kể từ ngày nhận đủ hồ sơ. Đối với hồ sơ qua thẩm định chưa đủ điều kiện giải quyết, sau 15 ngày kể từ khi thông báo, nếu người đề nghị không hoàn thành việc hoàn thiện hồ sơ thì hồ sơ sẽ bị đóng trên Hệ thống thông tin giải quyết thủ tục hành chính",
             "days": 15
           }
         ]
       },
       "c5": {
-        "score": 4,
+        "score": 5,
         "state": "KNOWN",
         "uniqueMethods": [
           "ONLINE",
           "POSTAL",
           "DIRECT"
         ],
-        "conditionalRouteSignals": 3,
+        "standardOnly": true,
+        "specialSignals": {
+          "conditional": 3,
+          "original": 0,
+          "certification": 0,
+          "supplement": 3
+        },
+        "specialTotal": 6,
         "returnMethodCount": 2
       },
       "c6": {
-        "score": 3,
-        "state": "KNOWN_WITH_TEXT",
-        "roleCounts": {
-          "executing": 1,
-          "authority": 1,
-          "authorized": 0,
-          "coordinating": 0
-        },
+        "score": 2,
+        "state": "TEXT_BASED",
+        "activeActors": [
+          "Cơ quan chuyên môn",
+          "Cơ quan chuyên biệt"
+        ],
+        "activeActorCount": 2,
         "coordinationSignals": 1,
-        "actorMentions": 23,
-        "crossRole": true
+        "handoffSignals": 1,
+        "approvalSignals": 1,
+        "metadataDepartments": 1
       },
-      "weightedScore": 3.1,
-      "score100": 62,
+      "weightedScore": 2.85,
+      "score100": 57,
+      "stars": 3,
       "warnings": [
         "STEP_TEXT_STRUCTURE_MISMATCH",
-        "PROCESSING_TIME_CONFLICT"
-      ],
-      "stars": 4
+        "PROCESSING_TIME_VARIANT"
+      ]
     },
     {
       "goldenNo": 18,
@@ -2619,8 +2908,8 @@
         "totalSignal": 12
       },
       "c4": {
-        "score": 5,
-        "state": "CONFLICT",
+        "score": 4,
+        "state": "TIME_VARIANT",
         "minDays": 21,
         "maxDays": 21,
         "distinctValues": [
@@ -2632,53 +2921,63 @@
             "value": 21,
             "unit": "DAY",
             "source": "executionMethods",
+            "method": "ONLINE",
             "days": 21
           },
           {
             "value": 21,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "POSTAL",
             "days": 21
           },
           {
             "value": 21,
             "unit": "DAY",
             "source": "executionMethods",
+            "method": "DIRECT",
             "days": 21
           }
         ]
       },
       "c5": {
-        "score": 3,
+        "score": 2,
         "state": "KNOWN",
         "uniqueMethods": [
           "ONLINE",
           "POSTAL",
           "DIRECT"
         ],
-        "conditionalRouteSignals": 0,
+        "standardOnly": true,
+        "specialSignals": {
+          "conditional": 0,
+          "original": 0,
+          "certification": 0,
+          "supplement": 0
+        },
+        "specialTotal": 0,
         "returnMethodCount": 2
       },
       "c6": {
-        "score": 3,
-        "state": "KNOWN_WITH_TEXT",
-        "roleCounts": {
-          "executing": 1,
-          "authority": 1,
-          "authorized": 0,
-          "coordinating": 0
-        },
+        "score": 2,
+        "state": "TEXT_BASED",
+        "activeActors": [
+          "Cơ quan chuyên môn",
+          "Cơ quan chuyên biệt"
+        ],
+        "activeActorCount": 2,
         "coordinationSignals": 0,
-        "actorMentions": 29,
-        "crossRole": true
+        "handoffSignals": 0,
+        "approvalSignals": 1,
+        "metadataDepartments": 1
       },
-      "weightedScore": 2.9,
-      "score100": 58,
+      "weightedScore": 2.45,
+      "score100": 49,
+      "stars": 3,
       "warnings": [
         "STEP_TEXT_STRUCTURE_MISMATCH",
-        "PROCESSING_TIME_CONFLICT"
-      ],
-      "stars": 3
+        "PROCESSING_TIME_VARIANT"
+      ]
     },
     {
       "goldenNo": 19,
@@ -2797,7 +3096,7 @@
       },
       "c4": {
         "score": 5,
-        "state": "CONFLICT",
+        "state": "TIME_VARIANT",
         "minDays": 15,
         "maxDays": 360,
         "distinctValues": [
@@ -2813,178 +3112,230 @@
             "value": 12,
             "unit": "MONTH",
             "source": "executionMethods",
+            "method": "DIRECT",
             "days": 360
           },
           {
             "value": 12,
             "unit": "THÁNG",
             "source": "methodDescription",
+            "method": "DIRECT",
+            "text": "- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc: không quá 12 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc áp dụng hình thức tham chiếu kết quả thẩm định: không quá 09 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc gia công, chuyển giao công nghệ trong trường hợp thuốc đặt gia công, thuốc trước chuyển giao công nghệ đã có giấy đăng ký lưu hành tại Việt Nam còn hiệu lực tại thời điểm nộp hồ sơ hoặc thuốc gia công có chuyển giao công nghệ sản xuất thuốc từ cơ sở đặt gia công thuốc cho cơ sở nhận gia công thuốc trong trường hợp thuốc đặt gia công đã có giấy đăng ký lưu hành tại Việt Nam còn hiệu lực tại thời điểm nộp hồ sơ: không quá 03 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc gia công, chuyển giao công nghệ trong trường hợp thuốc đặt gia công, thuốc trước chuyển giao công nghệ chưa có giấy đăng ký lưu hành tại Việt Nam hoặc giấy đăng ký lưu hành hết hiệu lực tại thời điểm nộp hồ sơ hoặc thuốc gia công có chuyển giao công nghệ sản xuất thuốc từ cơ sở đặt gia công thuốc cho cơ sở nhận gia công thuốc trong trường hợp thuốc đặt gia công chưa có giấy đăng ký lưu hành tại Việt Nam hoặc giấy đăng ký lưu hành hết hiệu lực tại thời điểm nộp hồ sơ: không quá 09 tháng. \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc mới có chỉ định sử dụng phòng, điều trị bệnh truyền nhiễm thuộc nhóm A đã công bố dịch theo quy định của pháp luật về phòng, chống bệnh truyền nhiễm: không quá 15 ngày; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc thuộc trường hợp ưu tiên về thủ tục hành chính quy định tại khoản 5 Điều 7 Luật Dược: không quá 06 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành nguyên liệu làm thuốc: không quá 06 tháng. \nĐối tượng thực hiện thủ tục hành chính Cơ sở đăng ký thuốc, nguyên liệu làm thuốc Cơ quan thực hiện thủ tục hành chính Cục Quản lý Dược – Bộ Y tế Kết quả thực hiện thủ tục hành chính - Giấy đăng ký lưu hành theo Mẫu 6A/TT ban hành kèm theo Thông tư số 12/2025/TT-BYT. \n- Văn bản thông báo cho cơ sở đăng ký thuốc theo kết luận của Hội đồng tư vấn cấp giấy đăng ký lưu hành thuốc, nguyên liệu làm thuốc đối với hồ sơ chưa đạt, không đạt.",
             "days": 360
           },
           {
             "value": 9,
             "unit": "THÁNG",
             "source": "methodDescription",
+            "method": "DIRECT",
+            "text": "- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc: không quá 12 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc áp dụng hình thức tham chiếu kết quả thẩm định: không quá 09 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc gia công, chuyển giao công nghệ trong trường hợp thuốc đặt gia công, thuốc trước chuyển giao công nghệ đã có giấy đăng ký lưu hành tại Việt Nam còn hiệu lực tại thời điểm nộp hồ sơ hoặc thuốc gia công có chuyển giao công nghệ sản xuất thuốc từ cơ sở đặt gia công thuốc cho cơ sở nhận gia công thuốc trong trường hợp thuốc đặt gia công đã có giấy đăng ký lưu hành tại Việt Nam còn hiệu lực tại thời điểm nộp hồ sơ: không quá 03 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc gia công, chuyển giao công nghệ trong trường hợp thuốc đặt gia công, thuốc trước chuyển giao công nghệ chưa có giấy đăng ký lưu hành tại Việt Nam hoặc giấy đăng ký lưu hành hết hiệu lực tại thời điểm nộp hồ sơ hoặc thuốc gia công có chuyển giao công nghệ sản xuất thuốc từ cơ sở đặt gia công thuốc cho cơ sở nhận gia công thuốc trong trường hợp thuốc đặt gia công chưa có giấy đăng ký lưu hành tại Việt Nam hoặc giấy đăng ký lưu hành hết hiệu lực tại thời điểm nộp hồ sơ: không quá 09 tháng. \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc mới có chỉ định sử dụng phòng, điều trị bệnh truyền nhiễm thuộc nhóm A đã công bố dịch theo quy định của pháp luật về phòng, chống bệnh truyền nhiễm: không quá 15 ngày; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc thuộc trường hợp ưu tiên về thủ tục hành chính quy định tại khoản 5 Điều 7 Luật Dược: không quá 06 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành nguyên liệu làm thuốc: không quá 06 tháng. \nĐối tượng thực hiện thủ tục hành chính Cơ sở đăng ký thuốc, nguyên liệu làm thuốc Cơ quan thực hiện thủ tục hành chính Cục Quản lý Dược – Bộ Y tế Kết quả thực hiện thủ tục hành chính - Giấy đăng ký lưu hành theo Mẫu 6A/TT ban hành kèm theo Thông tư số 12/2025/TT-BYT. \n- Văn bản thông báo cho cơ sở đăng ký thuốc theo kết luận của Hội đồng tư vấn cấp giấy đăng ký lưu hành thuốc, nguyên liệu làm thuốc đối với hồ sơ chưa đạt, không đạt.",
             "days": 270
           },
           {
             "value": 3,
             "unit": "THÁNG",
             "source": "methodDescription",
+            "method": "DIRECT",
+            "text": "- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc: không quá 12 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc áp dụng hình thức tham chiếu kết quả thẩm định: không quá 09 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc gia công, chuyển giao công nghệ trong trường hợp thuốc đặt gia công, thuốc trước chuyển giao công nghệ đã có giấy đăng ký lưu hành tại Việt Nam còn hiệu lực tại thời điểm nộp hồ sơ hoặc thuốc gia công có chuyển giao công nghệ sản xuất thuốc từ cơ sở đặt gia công thuốc cho cơ sở nhận gia công thuốc trong trường hợp thuốc đặt gia công đã có giấy đăng ký lưu hành tại Việt Nam còn hiệu lực tại thời điểm nộp hồ sơ: không quá 03 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc gia công, chuyển giao công nghệ trong trường hợp thuốc đặt gia công, thuốc trước chuyển giao công nghệ chưa có giấy đăng ký lưu hành tại Việt Nam hoặc giấy đăng ký lưu hành hết hiệu lực tại thời điểm nộp hồ sơ hoặc thuốc gia công có chuyển giao công nghệ sản xuất thuốc từ cơ sở đặt gia công thuốc cho cơ sở nhận gia công thuốc trong trường hợp thuốc đặt gia công chưa có giấy đăng ký lưu hành tại Việt Nam hoặc giấy đăng ký lưu hành hết hiệu lực tại thời điểm nộp hồ sơ: không quá 09 tháng. \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc mới có chỉ định sử dụng phòng, điều trị bệnh truyền nhiễm thuộc nhóm A đã công bố dịch theo quy định của pháp luật về phòng, chống bệnh truyền nhiễm: không quá 15 ngày; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc thuộc trường hợp ưu tiên về thủ tục hành chính quy định tại khoản 5 Điều 7 Luật Dược: không quá 06 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành nguyên liệu làm thuốc: không quá 06 tháng. \nĐối tượng thực hiện thủ tục hành chính Cơ sở đăng ký thuốc, nguyên liệu làm thuốc Cơ quan thực hiện thủ tục hành chính Cục Quản lý Dược – Bộ Y tế Kết quả thực hiện thủ tục hành chính - Giấy đăng ký lưu hành theo Mẫu 6A/TT ban hành kèm theo Thông tư số 12/2025/TT-BYT. \n- Văn bản thông báo cho cơ sở đăng ký thuốc theo kết luận của Hội đồng tư vấn cấp giấy đăng ký lưu hành thuốc, nguyên liệu làm thuốc đối với hồ sơ chưa đạt, không đạt.",
             "days": 90
           },
           {
             "value": 9,
             "unit": "THÁNG",
             "source": "methodDescription",
+            "method": "DIRECT",
+            "text": "- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc: không quá 12 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc áp dụng hình thức tham chiếu kết quả thẩm định: không quá 09 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc gia công, chuyển giao công nghệ trong trường hợp thuốc đặt gia công, thuốc trước chuyển giao công nghệ đã có giấy đăng ký lưu hành tại Việt Nam còn hiệu lực tại thời điểm nộp hồ sơ hoặc thuốc gia công có chuyển giao công nghệ sản xuất thuốc từ cơ sở đặt gia công thuốc cho cơ sở nhận gia công thuốc trong trường hợp thuốc đặt gia công đã có giấy đăng ký lưu hành tại Việt Nam còn hiệu lực tại thời điểm nộp hồ sơ: không quá 03 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc gia công, chuyển giao công nghệ trong trường hợp thuốc đặt gia công, thuốc trước chuyển giao công nghệ chưa có giấy đăng ký lưu hành tại Việt Nam hoặc giấy đăng ký lưu hành hết hiệu lực tại thời điểm nộp hồ sơ hoặc thuốc gia công có chuyển giao công nghệ sản xuất thuốc từ cơ sở đặt gia công thuốc cho cơ sở nhận gia công thuốc trong trường hợp thuốc đặt gia công chưa có giấy đăng ký lưu hành tại Việt Nam hoặc giấy đăng ký lưu hành hết hiệu lực tại thời điểm nộp hồ sơ: không quá 09 tháng. \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc mới có chỉ định sử dụng phòng, điều trị bệnh truyền nhiễm thuộc nhóm A đã công bố dịch theo quy định của pháp luật về phòng, chống bệnh truyền nhiễm: không quá 15 ngày; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc thuộc trường hợp ưu tiên về thủ tục hành chính quy định tại khoản 5 Điều 7 Luật Dược: không quá 06 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành nguyên liệu làm thuốc: không quá 06 tháng. \nĐối tượng thực hiện thủ tục hành chính Cơ sở đăng ký thuốc, nguyên liệu làm thuốc Cơ quan thực hiện thủ tục hành chính Cục Quản lý Dược – Bộ Y tế Kết quả thực hiện thủ tục hành chính - Giấy đăng ký lưu hành theo Mẫu 6A/TT ban hành kèm theo Thông tư số 12/2025/TT-BYT. \n- Văn bản thông báo cho cơ sở đăng ký thuốc theo kết luận của Hội đồng tư vấn cấp giấy đăng ký lưu hành thuốc, nguyên liệu làm thuốc đối với hồ sơ chưa đạt, không đạt.",
             "days": 270
           },
           {
             "value": 15,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "DIRECT",
+            "text": "- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc: không quá 12 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc áp dụng hình thức tham chiếu kết quả thẩm định: không quá 09 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc gia công, chuyển giao công nghệ trong trường hợp thuốc đặt gia công, thuốc trước chuyển giao công nghệ đã có giấy đăng ký lưu hành tại Việt Nam còn hiệu lực tại thời điểm nộp hồ sơ hoặc thuốc gia công có chuyển giao công nghệ sản xuất thuốc từ cơ sở đặt gia công thuốc cho cơ sở nhận gia công thuốc trong trường hợp thuốc đặt gia công đã có giấy đăng ký lưu hành tại Việt Nam còn hiệu lực tại thời điểm nộp hồ sơ: không quá 03 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc gia công, chuyển giao công nghệ trong trường hợp thuốc đặt gia công, thuốc trước chuyển giao công nghệ chưa có giấy đăng ký lưu hành tại Việt Nam hoặc giấy đăng ký lưu hành hết hiệu lực tại thời điểm nộp hồ sơ hoặc thuốc gia công có chuyển giao công nghệ sản xuất thuốc từ cơ sở đặt gia công thuốc cho cơ sở nhận gia công thuốc trong trường hợp thuốc đặt gia công chưa có giấy đăng ký lưu hành tại Việt Nam hoặc giấy đăng ký lưu hành hết hiệu lực tại thời điểm nộp hồ sơ: không quá 09 tháng. \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc mới có chỉ định sử dụng phòng, điều trị bệnh truyền nhiễm thuộc nhóm A đã công bố dịch theo quy định của pháp luật về phòng, chống bệnh truyền nhiễm: không quá 15 ngày; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc thuộc trường hợp ưu tiên về thủ tục hành chính quy định tại khoản 5 Điều 7 Luật Dược: không quá 06 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành nguyên liệu làm thuốc: không quá 06 tháng. \nĐối tượng thực hiện thủ tục hành chính Cơ sở đăng ký thuốc, nguyên liệu làm thuốc Cơ quan thực hiện thủ tục hành chính Cục Quản lý Dược – Bộ Y tế Kết quả thực hiện thủ tục hành chính - Giấy đăng ký lưu hành theo Mẫu 6A/TT ban hành kèm theo Thông tư số 12/2025/TT-BYT. \n- Văn bản thông báo cho cơ sở đăng ký thuốc theo kết luận của Hội đồng tư vấn cấp giấy đăng ký lưu hành thuốc, nguyên liệu làm thuốc đối với hồ sơ chưa đạt, không đạt.",
             "days": 15
           },
           {
             "value": 6,
             "unit": "THÁNG",
             "source": "methodDescription",
+            "method": "DIRECT",
+            "text": "- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc: không quá 12 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc áp dụng hình thức tham chiếu kết quả thẩm định: không quá 09 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc gia công, chuyển giao công nghệ trong trường hợp thuốc đặt gia công, thuốc trước chuyển giao công nghệ đã có giấy đăng ký lưu hành tại Việt Nam còn hiệu lực tại thời điểm nộp hồ sơ hoặc thuốc gia công có chuyển giao công nghệ sản xuất thuốc từ cơ sở đặt gia công thuốc cho cơ sở nhận gia công thuốc trong trường hợp thuốc đặt gia công đã có giấy đăng ký lưu hành tại Việt Nam còn hiệu lực tại thời điểm nộp hồ sơ: không quá 03 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc gia công, chuyển giao công nghệ trong trường hợp thuốc đặt gia công, thuốc trước chuyển giao công nghệ chưa có giấy đăng ký lưu hành tại Việt Nam hoặc giấy đăng ký lưu hành hết hiệu lực tại thời điểm nộp hồ sơ hoặc thuốc gia công có chuyển giao công nghệ sản xuất thuốc từ cơ sở đặt gia công thuốc cho cơ sở nhận gia công thuốc trong trường hợp thuốc đặt gia công chưa có giấy đăng ký lưu hành tại Việt Nam hoặc giấy đăng ký lưu hành hết hiệu lực tại thời điểm nộp hồ sơ: không quá 09 tháng. \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc mới có chỉ định sử dụng phòng, điều trị bệnh truyền nhiễm thuộc nhóm A đã công bố dịch theo quy định của pháp luật về phòng, chống bệnh truyền nhiễm: không quá 15 ngày; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc thuộc trường hợp ưu tiên về thủ tục hành chính quy định tại khoản 5 Điều 7 Luật Dược: không quá 06 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành nguyên liệu làm thuốc: không quá 06 tháng. \nĐối tượng thực hiện thủ tục hành chính Cơ sở đăng ký thuốc, nguyên liệu làm thuốc Cơ quan thực hiện thủ tục hành chính Cục Quản lý Dược – Bộ Y tế Kết quả thực hiện thủ tục hành chính - Giấy đăng ký lưu hành theo Mẫu 6A/TT ban hành kèm theo Thông tư số 12/2025/TT-BYT. \n- Văn bản thông báo cho cơ sở đăng ký thuốc theo kết luận của Hội đồng tư vấn cấp giấy đăng ký lưu hành thuốc, nguyên liệu làm thuốc đối với hồ sơ chưa đạt, không đạt.",
             "days": 180
           },
           {
             "value": 6,
             "unit": "THÁNG",
             "source": "methodDescription",
+            "method": "DIRECT",
+            "text": "- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc: không quá 12 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc áp dụng hình thức tham chiếu kết quả thẩm định: không quá 09 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc gia công, chuyển giao công nghệ trong trường hợp thuốc đặt gia công, thuốc trước chuyển giao công nghệ đã có giấy đăng ký lưu hành tại Việt Nam còn hiệu lực tại thời điểm nộp hồ sơ hoặc thuốc gia công có chuyển giao công nghệ sản xuất thuốc từ cơ sở đặt gia công thuốc cho cơ sở nhận gia công thuốc trong trường hợp thuốc đặt gia công đã có giấy đăng ký lưu hành tại Việt Nam còn hiệu lực tại thời điểm nộp hồ sơ: không quá 03 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc gia công, chuyển giao công nghệ trong trường hợp thuốc đặt gia công, thuốc trước chuyển giao công nghệ chưa có giấy đăng ký lưu hành tại Việt Nam hoặc giấy đăng ký lưu hành hết hiệu lực tại thời điểm nộp hồ sơ hoặc thuốc gia công có chuyển giao công nghệ sản xuất thuốc từ cơ sở đặt gia công thuốc cho cơ sở nhận gia công thuốc trong trường hợp thuốc đặt gia công chưa có giấy đăng ký lưu hành tại Việt Nam hoặc giấy đăng ký lưu hành hết hiệu lực tại thời điểm nộp hồ sơ: không quá 09 tháng. \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc mới có chỉ định sử dụng phòng, điều trị bệnh truyền nhiễm thuộc nhóm A đã công bố dịch theo quy định của pháp luật về phòng, chống bệnh truyền nhiễm: không quá 15 ngày; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc thuộc trường hợp ưu tiên về thủ tục hành chính quy định tại khoản 5 Điều 7 Luật Dược: không quá 06 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành nguyên liệu làm thuốc: không quá 06 tháng. \nĐối tượng thực hiện thủ tục hành chính Cơ sở đăng ký thuốc, nguyên liệu làm thuốc Cơ quan thực hiện thủ tục hành chính Cục Quản lý Dược – Bộ Y tế Kết quả thực hiện thủ tục hành chính - Giấy đăng ký lưu hành theo Mẫu 6A/TT ban hành kèm theo Thông tư số 12/2025/TT-BYT. \n- Văn bản thông báo cho cơ sở đăng ký thuốc theo kết luận của Hội đồng tư vấn cấp giấy đăng ký lưu hành thuốc, nguyên liệu làm thuốc đối với hồ sơ chưa đạt, không đạt.",
             "days": 180
           },
           {
             "value": 12,
             "unit": "MONTH",
             "source": "executionMethods",
+            "method": "ONLINE",
             "days": 360
           },
           {
             "value": 12,
             "unit": "THÁNG",
             "source": "methodDescription",
+            "method": "ONLINE",
+            "text": "- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc: không quá 12 tháng;\n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc áp dụng hình thức tham chiếu kết quả thẩm định: không quá 09 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc gia công, chuyển giao công nghệ trong trường hợp thuốc đặt gia công, thuốc trước chuyển giao công nghệ đã có giấy đăng ký lưu hành tại Việt Nam còn hiệu lực tại thời điểm nộp hồ sơ hoặc thuốc gia công có chuyển giao công nghệ sản xuất thuốc từ cơ sở đặt gia công thuốc cho cơ sở nhận gia công thuốc trong trường hợp thuốc đặt gia công đã có giấy đăng ký lưu hành tại Việt Nam còn hiệu lực tại thời điểm nộp hồ sơ: không quá 03 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc gia công, chuyển giao công nghệ trong trường hợp thuốc đặt gia công, thuốc trước chuyển giao công nghệ chưa có giấy đăng ký lưu hành tại Việt Nam hoặc giấy đăng ký lưu hành hết hiệu lực tại thời điểm nộp hồ sơ hoặc thuốc gia công có chuyển giao công nghệ sản xuất thuốc từ cơ sở đặt gia công thuốc cho cơ sở nhận gia công thuốc trong trường hợp thuốc đặt gia công chưa có giấy đăng ký lưu hành tại Việt Nam hoặc giấy đăng ký lưu hành hết hiệu lực tại thời điểm nộp hồ sơ: không quá 09 tháng. - Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc mới có chỉ định sử dụng phòng, điều trị bệnh truyền nhiễm thuộc nhóm A đã công bố dịch theo quy định của pháp luật về phòng, chống bệnh truyền nhiễm: không quá 15 ngày; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc thuộc trường hợp ưu tiên về thủ tục hành chính quy định tại khoản 5 Điều 7 Luật Dược: không quá 06 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành nguyên liệu làm thuốc: không quá 06 tháng. \nĐối tượng thực hiện thủ tục hành chính Cơ sở đăng ký thuốc, nguyên liệu làm thuốc Cơ quan thực hiện thủ tục hành chính Cục Quản lý Dược – Bộ Y tế Kết quả thực hiện thủ tục hành chính - Giấy đăng ký lưu hành theo Mẫu 6A/TT ban hành kèm theo Thông tư số 12/2025/TT-BYT. \n- Văn bản thông báo cho cơ sở đăng ký thuốc theo kết luận của Hội đồng tư vấn cấp giấy đăng ký lưu hành thuốc, nguyên liệu làm thuốc đối với hồ sơ chưa đạt, không đạt.",
             "days": 360
           },
           {
             "value": 9,
             "unit": "THÁNG",
             "source": "methodDescription",
+            "method": "ONLINE",
+            "text": "- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc: không quá 12 tháng;\n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc áp dụng hình thức tham chiếu kết quả thẩm định: không quá 09 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc gia công, chuyển giao công nghệ trong trường hợp thuốc đặt gia công, thuốc trước chuyển giao công nghệ đã có giấy đăng ký lưu hành tại Việt Nam còn hiệu lực tại thời điểm nộp hồ sơ hoặc thuốc gia công có chuyển giao công nghệ sản xuất thuốc từ cơ sở đặt gia công thuốc cho cơ sở nhận gia công thuốc trong trường hợp thuốc đặt gia công đã có giấy đăng ký lưu hành tại Việt Nam còn hiệu lực tại thời điểm nộp hồ sơ: không quá 03 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc gia công, chuyển giao công nghệ trong trường hợp thuốc đặt gia công, thuốc trước chuyển giao công nghệ chưa có giấy đăng ký lưu hành tại Việt Nam hoặc giấy đăng ký lưu hành hết hiệu lực tại thời điểm nộp hồ sơ hoặc thuốc gia công có chuyển giao công nghệ sản xuất thuốc từ cơ sở đặt gia công thuốc cho cơ sở nhận gia công thuốc trong trường hợp thuốc đặt gia công chưa có giấy đăng ký lưu hành tại Việt Nam hoặc giấy đăng ký lưu hành hết hiệu lực tại thời điểm nộp hồ sơ: không quá 09 tháng. - Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc mới có chỉ định sử dụng phòng, điều trị bệnh truyền nhiễm thuộc nhóm A đã công bố dịch theo quy định của pháp luật về phòng, chống bệnh truyền nhiễm: không quá 15 ngày; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc thuộc trường hợp ưu tiên về thủ tục hành chính quy định tại khoản 5 Điều 7 Luật Dược: không quá 06 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành nguyên liệu làm thuốc: không quá 06 tháng. \nĐối tượng thực hiện thủ tục hành chính Cơ sở đăng ký thuốc, nguyên liệu làm thuốc Cơ quan thực hiện thủ tục hành chính Cục Quản lý Dược – Bộ Y tế Kết quả thực hiện thủ tục hành chính - Giấy đăng ký lưu hành theo Mẫu 6A/TT ban hành kèm theo Thông tư số 12/2025/TT-BYT. \n- Văn bản thông báo cho cơ sở đăng ký thuốc theo kết luận của Hội đồng tư vấn cấp giấy đăng ký lưu hành thuốc, nguyên liệu làm thuốc đối với hồ sơ chưa đạt, không đạt.",
             "days": 270
           },
           {
             "value": 3,
             "unit": "THÁNG",
             "source": "methodDescription",
+            "method": "ONLINE",
+            "text": "- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc: không quá 12 tháng;\n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc áp dụng hình thức tham chiếu kết quả thẩm định: không quá 09 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc gia công, chuyển giao công nghệ trong trường hợp thuốc đặt gia công, thuốc trước chuyển giao công nghệ đã có giấy đăng ký lưu hành tại Việt Nam còn hiệu lực tại thời điểm nộp hồ sơ hoặc thuốc gia công có chuyển giao công nghệ sản xuất thuốc từ cơ sở đặt gia công thuốc cho cơ sở nhận gia công thuốc trong trường hợp thuốc đặt gia công đã có giấy đăng ký lưu hành tại Việt Nam còn hiệu lực tại thời điểm nộp hồ sơ: không quá 03 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc gia công, chuyển giao công nghệ trong trường hợp thuốc đặt gia công, thuốc trước chuyển giao công nghệ chưa có giấy đăng ký lưu hành tại Việt Nam hoặc giấy đăng ký lưu hành hết hiệu lực tại thời điểm nộp hồ sơ hoặc thuốc gia công có chuyển giao công nghệ sản xuất thuốc từ cơ sở đặt gia công thuốc cho cơ sở nhận gia công thuốc trong trường hợp thuốc đặt gia công chưa có giấy đăng ký lưu hành tại Việt Nam hoặc giấy đăng ký lưu hành hết hiệu lực tại thời điểm nộp hồ sơ: không quá 09 tháng. - Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc mới có chỉ định sử dụng phòng, điều trị bệnh truyền nhiễm thuộc nhóm A đã công bố dịch theo quy định của pháp luật về phòng, chống bệnh truyền nhiễm: không quá 15 ngày; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc thuộc trường hợp ưu tiên về thủ tục hành chính quy định tại khoản 5 Điều 7 Luật Dược: không quá 06 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành nguyên liệu làm thuốc: không quá 06 tháng. \nĐối tượng thực hiện thủ tục hành chính Cơ sở đăng ký thuốc, nguyên liệu làm thuốc Cơ quan thực hiện thủ tục hành chính Cục Quản lý Dược – Bộ Y tế Kết quả thực hiện thủ tục hành chính - Giấy đăng ký lưu hành theo Mẫu 6A/TT ban hành kèm theo Thông tư số 12/2025/TT-BYT. \n- Văn bản thông báo cho cơ sở đăng ký thuốc theo kết luận của Hội đồng tư vấn cấp giấy đăng ký lưu hành thuốc, nguyên liệu làm thuốc đối với hồ sơ chưa đạt, không đạt.",
             "days": 90
           },
           {
             "value": 9,
             "unit": "THÁNG",
             "source": "methodDescription",
+            "method": "ONLINE",
+            "text": "- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc: không quá 12 tháng;\n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc áp dụng hình thức tham chiếu kết quả thẩm định: không quá 09 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc gia công, chuyển giao công nghệ trong trường hợp thuốc đặt gia công, thuốc trước chuyển giao công nghệ đã có giấy đăng ký lưu hành tại Việt Nam còn hiệu lực tại thời điểm nộp hồ sơ hoặc thuốc gia công có chuyển giao công nghệ sản xuất thuốc từ cơ sở đặt gia công thuốc cho cơ sở nhận gia công thuốc trong trường hợp thuốc đặt gia công đã có giấy đăng ký lưu hành tại Việt Nam còn hiệu lực tại thời điểm nộp hồ sơ: không quá 03 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc gia công, chuyển giao công nghệ trong trường hợp thuốc đặt gia công, thuốc trước chuyển giao công nghệ chưa có giấy đăng ký lưu hành tại Việt Nam hoặc giấy đăng ký lưu hành hết hiệu lực tại thời điểm nộp hồ sơ hoặc thuốc gia công có chuyển giao công nghệ sản xuất thuốc từ cơ sở đặt gia công thuốc cho cơ sở nhận gia công thuốc trong trường hợp thuốc đặt gia công chưa có giấy đăng ký lưu hành tại Việt Nam hoặc giấy đăng ký lưu hành hết hiệu lực tại thời điểm nộp hồ sơ: không quá 09 tháng. - Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc mới có chỉ định sử dụng phòng, điều trị bệnh truyền nhiễm thuộc nhóm A đã công bố dịch theo quy định của pháp luật về phòng, chống bệnh truyền nhiễm: không quá 15 ngày; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc thuộc trường hợp ưu tiên về thủ tục hành chính quy định tại khoản 5 Điều 7 Luật Dược: không quá 06 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành nguyên liệu làm thuốc: không quá 06 tháng. \nĐối tượng thực hiện thủ tục hành chính Cơ sở đăng ký thuốc, nguyên liệu làm thuốc Cơ quan thực hiện thủ tục hành chính Cục Quản lý Dược – Bộ Y tế Kết quả thực hiện thủ tục hành chính - Giấy đăng ký lưu hành theo Mẫu 6A/TT ban hành kèm theo Thông tư số 12/2025/TT-BYT. \n- Văn bản thông báo cho cơ sở đăng ký thuốc theo kết luận của Hội đồng tư vấn cấp giấy đăng ký lưu hành thuốc, nguyên liệu làm thuốc đối với hồ sơ chưa đạt, không đạt.",
             "days": 270
           },
           {
             "value": 15,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "ONLINE",
+            "text": "- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc: không quá 12 tháng;\n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc áp dụng hình thức tham chiếu kết quả thẩm định: không quá 09 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc gia công, chuyển giao công nghệ trong trường hợp thuốc đặt gia công, thuốc trước chuyển giao công nghệ đã có giấy đăng ký lưu hành tại Việt Nam còn hiệu lực tại thời điểm nộp hồ sơ hoặc thuốc gia công có chuyển giao công nghệ sản xuất thuốc từ cơ sở đặt gia công thuốc cho cơ sở nhận gia công thuốc trong trường hợp thuốc đặt gia công đã có giấy đăng ký lưu hành tại Việt Nam còn hiệu lực tại thời điểm nộp hồ sơ: không quá 03 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc gia công, chuyển giao công nghệ trong trường hợp thuốc đặt gia công, thuốc trước chuyển giao công nghệ chưa có giấy đăng ký lưu hành tại Việt Nam hoặc giấy đăng ký lưu hành hết hiệu lực tại thời điểm nộp hồ sơ hoặc thuốc gia công có chuyển giao công nghệ sản xuất thuốc từ cơ sở đặt gia công thuốc cho cơ sở nhận gia công thuốc trong trường hợp thuốc đặt gia công chưa có giấy đăng ký lưu hành tại Việt Nam hoặc giấy đăng ký lưu hành hết hiệu lực tại thời điểm nộp hồ sơ: không quá 09 tháng. - Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc mới có chỉ định sử dụng phòng, điều trị bệnh truyền nhiễm thuộc nhóm A đã công bố dịch theo quy định của pháp luật về phòng, chống bệnh truyền nhiễm: không quá 15 ngày; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc thuộc trường hợp ưu tiên về thủ tục hành chính quy định tại khoản 5 Điều 7 Luật Dược: không quá 06 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành nguyên liệu làm thuốc: không quá 06 tháng. \nĐối tượng thực hiện thủ tục hành chính Cơ sở đăng ký thuốc, nguyên liệu làm thuốc Cơ quan thực hiện thủ tục hành chính Cục Quản lý Dược – Bộ Y tế Kết quả thực hiện thủ tục hành chính - Giấy đăng ký lưu hành theo Mẫu 6A/TT ban hành kèm theo Thông tư số 12/2025/TT-BYT. \n- Văn bản thông báo cho cơ sở đăng ký thuốc theo kết luận của Hội đồng tư vấn cấp giấy đăng ký lưu hành thuốc, nguyên liệu làm thuốc đối với hồ sơ chưa đạt, không đạt.",
             "days": 15
           },
           {
             "value": 6,
             "unit": "THÁNG",
             "source": "methodDescription",
+            "method": "ONLINE",
+            "text": "- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc: không quá 12 tháng;\n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc áp dụng hình thức tham chiếu kết quả thẩm định: không quá 09 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc gia công, chuyển giao công nghệ trong trường hợp thuốc đặt gia công, thuốc trước chuyển giao công nghệ đã có giấy đăng ký lưu hành tại Việt Nam còn hiệu lực tại thời điểm nộp hồ sơ hoặc thuốc gia công có chuyển giao công nghệ sản xuất thuốc từ cơ sở đặt gia công thuốc cho cơ sở nhận gia công thuốc trong trường hợp thuốc đặt gia công đã có giấy đăng ký lưu hành tại Việt Nam còn hiệu lực tại thời điểm nộp hồ sơ: không quá 03 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc gia công, chuyển giao công nghệ trong trường hợp thuốc đặt gia công, thuốc trước chuyển giao công nghệ chưa có giấy đăng ký lưu hành tại Việt Nam hoặc giấy đăng ký lưu hành hết hiệu lực tại thời điểm nộp hồ sơ hoặc thuốc gia công có chuyển giao công nghệ sản xuất thuốc từ cơ sở đặt gia công thuốc cho cơ sở nhận gia công thuốc trong trường hợp thuốc đặt gia công chưa có giấy đăng ký lưu hành tại Việt Nam hoặc giấy đăng ký lưu hành hết hiệu lực tại thời điểm nộp hồ sơ: không quá 09 tháng. - Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc mới có chỉ định sử dụng phòng, điều trị bệnh truyền nhiễm thuộc nhóm A đã công bố dịch theo quy định của pháp luật về phòng, chống bệnh truyền nhiễm: không quá 15 ngày; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc thuộc trường hợp ưu tiên về thủ tục hành chính quy định tại khoản 5 Điều 7 Luật Dược: không quá 06 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành nguyên liệu làm thuốc: không quá 06 tháng. \nĐối tượng thực hiện thủ tục hành chính Cơ sở đăng ký thuốc, nguyên liệu làm thuốc Cơ quan thực hiện thủ tục hành chính Cục Quản lý Dược – Bộ Y tế Kết quả thực hiện thủ tục hành chính - Giấy đăng ký lưu hành theo Mẫu 6A/TT ban hành kèm theo Thông tư số 12/2025/TT-BYT. \n- Văn bản thông báo cho cơ sở đăng ký thuốc theo kết luận của Hội đồng tư vấn cấp giấy đăng ký lưu hành thuốc, nguyên liệu làm thuốc đối với hồ sơ chưa đạt, không đạt.",
             "days": 180
           },
           {
             "value": 6,
             "unit": "THÁNG",
             "source": "methodDescription",
+            "method": "ONLINE",
+            "text": "- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc: không quá 12 tháng;\n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc áp dụng hình thức tham chiếu kết quả thẩm định: không quá 09 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc gia công, chuyển giao công nghệ trong trường hợp thuốc đặt gia công, thuốc trước chuyển giao công nghệ đã có giấy đăng ký lưu hành tại Việt Nam còn hiệu lực tại thời điểm nộp hồ sơ hoặc thuốc gia công có chuyển giao công nghệ sản xuất thuốc từ cơ sở đặt gia công thuốc cho cơ sở nhận gia công thuốc trong trường hợp thuốc đặt gia công đã có giấy đăng ký lưu hành tại Việt Nam còn hiệu lực tại thời điểm nộp hồ sơ: không quá 03 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc gia công, chuyển giao công nghệ trong trường hợp thuốc đặt gia công, thuốc trước chuyển giao công nghệ chưa có giấy đăng ký lưu hành tại Việt Nam hoặc giấy đăng ký lưu hành hết hiệu lực tại thời điểm nộp hồ sơ hoặc thuốc gia công có chuyển giao công nghệ sản xuất thuốc từ cơ sở đặt gia công thuốc cho cơ sở nhận gia công thuốc trong trường hợp thuốc đặt gia công chưa có giấy đăng ký lưu hành tại Việt Nam hoặc giấy đăng ký lưu hành hết hiệu lực tại thời điểm nộp hồ sơ: không quá 09 tháng. - Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc mới có chỉ định sử dụng phòng, điều trị bệnh truyền nhiễm thuộc nhóm A đã công bố dịch theo quy định của pháp luật về phòng, chống bệnh truyền nhiễm: không quá 15 ngày; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc thuộc trường hợp ưu tiên về thủ tục hành chính quy định tại khoản 5 Điều 7 Luật Dược: không quá 06 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành nguyên liệu làm thuốc: không quá 06 tháng. \nĐối tượng thực hiện thủ tục hành chính Cơ sở đăng ký thuốc, nguyên liệu làm thuốc Cơ quan thực hiện thủ tục hành chính Cục Quản lý Dược – Bộ Y tế Kết quả thực hiện thủ tục hành chính - Giấy đăng ký lưu hành theo Mẫu 6A/TT ban hành kèm theo Thông tư số 12/2025/TT-BYT. \n- Văn bản thông báo cho cơ sở đăng ký thuốc theo kết luận của Hội đồng tư vấn cấp giấy đăng ký lưu hành thuốc, nguyên liệu làm thuốc đối với hồ sơ chưa đạt, không đạt.",
             "days": 180
           },
           {
             "value": 12,
             "unit": "MONTH",
             "source": "executionMethods",
+            "method": "POSTAL",
             "days": 360
           },
           {
             "value": 12,
             "unit": "THÁNG",
             "source": "methodDescription",
+            "method": "POSTAL",
+            "text": "- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc: không quá 12 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc áp dụng hình thức tham chiếu kết quả thẩm định: không quá 09 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc gia công, chuyển giao công nghệ trong trường hợp thuốc đặt gia công, thuốc trước chuyển giao công nghệ đã có giấy đăng ký lưu hành tại Việt Nam còn hiệu lực tại thời điểm nộp hồ sơ hoặc thuốc gia công có chuyển giao công nghệ sản xuất thuốc từ cơ sở đặt gia công thuốc cho cơ sở nhận gia công thuốc trong trường hợp thuốc đặt gia công đã có giấy đăng ký lưu hành tại Việt Nam còn hiệu lực tại thời điểm nộp hồ sơ: không quá 03 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc gia công, chuyển giao công nghệ trong trường hợp thuốc đặt gia công, thuốc trước chuyển giao công nghệ chưa có giấy đăng ký lưu hành tại Việt Nam hoặc giấy đăng ký lưu hành hết hiệu lực tại thời điểm nộp hồ sơ hoặc thuốc gia công có chuyển giao công nghệ sản xuất thuốc từ cơ sở đặt gia công thuốc cho cơ sở nhận gia công thuốc trong trường hợp thuốc đặt gia công chưa có giấy đăng ký lưu hành tại Việt Nam hoặc giấy đăng ký lưu hành hết hiệu lực tại thời điểm nộp hồ sơ: không quá 09 tháng. \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc mới có chỉ định sử dụng phòng, điều trị bệnh truyền nhiễm thuộc nhóm A đã công bố dịch theo quy định của pháp luật về phòng, chống bệnh truyền nhiễm: không quá 15 ngày; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc thuộc trường hợp ưu tiên về thủ tục hành chính quy định tại khoản 5 Điều 7 Luật Dược: không quá 06 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành nguyên liệu làm thuốc: không quá 06 tháng. Đối tượng thực hiện thủ tục hành chính Cơ sở đăng ký thuốc, nguyên liệu làm thuốc Cơ quan thực hiện thủ tục hành chính Cục Quản lý Dược – Bộ Y tế Kết quả thực hiện thủ tục hành chính - Giấy đăng ký lưu hành theo Mẫu 6A/TT ban hành kèm theo Thông tư số 12/2025/TT-BYT. \n- Văn bản thông báo cho cơ sở đăng ký thuốc theo kết luận của Hội đồng tư vấn cấp giấy đăng ký lưu hành thuốc, nguyên liệu làm thuốc đối với hồ sơ chưa đạt, không đạt.",
             "days": 360
           },
           {
             "value": 9,
             "unit": "THÁNG",
             "source": "methodDescription",
+            "method": "POSTAL",
+            "text": "- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc: không quá 12 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc áp dụng hình thức tham chiếu kết quả thẩm định: không quá 09 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc gia công, chuyển giao công nghệ trong trường hợp thuốc đặt gia công, thuốc trước chuyển giao công nghệ đã có giấy đăng ký lưu hành tại Việt Nam còn hiệu lực tại thời điểm nộp hồ sơ hoặc thuốc gia công có chuyển giao công nghệ sản xuất thuốc từ cơ sở đặt gia công thuốc cho cơ sở nhận gia công thuốc trong trường hợp thuốc đặt gia công đã có giấy đăng ký lưu hành tại Việt Nam còn hiệu lực tại thời điểm nộp hồ sơ: không quá 03 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc gia công, chuyển giao công nghệ trong trường hợp thuốc đặt gia công, thuốc trước chuyển giao công nghệ chưa có giấy đăng ký lưu hành tại Việt Nam hoặc giấy đăng ký lưu hành hết hiệu lực tại thời điểm nộp hồ sơ hoặc thuốc gia công có chuyển giao công nghệ sản xuất thuốc từ cơ sở đặt gia công thuốc cho cơ sở nhận gia công thuốc trong trường hợp thuốc đặt gia công chưa có giấy đăng ký lưu hành tại Việt Nam hoặc giấy đăng ký lưu hành hết hiệu lực tại thời điểm nộp hồ sơ: không quá 09 tháng. \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc mới có chỉ định sử dụng phòng, điều trị bệnh truyền nhiễm thuộc nhóm A đã công bố dịch theo quy định của pháp luật về phòng, chống bệnh truyền nhiễm: không quá 15 ngày; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc thuộc trường hợp ưu tiên về thủ tục hành chính quy định tại khoản 5 Điều 7 Luật Dược: không quá 06 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành nguyên liệu làm thuốc: không quá 06 tháng. Đối tượng thực hiện thủ tục hành chính Cơ sở đăng ký thuốc, nguyên liệu làm thuốc Cơ quan thực hiện thủ tục hành chính Cục Quản lý Dược – Bộ Y tế Kết quả thực hiện thủ tục hành chính - Giấy đăng ký lưu hành theo Mẫu 6A/TT ban hành kèm theo Thông tư số 12/2025/TT-BYT. \n- Văn bản thông báo cho cơ sở đăng ký thuốc theo kết luận của Hội đồng tư vấn cấp giấy đăng ký lưu hành thuốc, nguyên liệu làm thuốc đối với hồ sơ chưa đạt, không đạt.",
             "days": 270
           },
           {
             "value": 3,
             "unit": "THÁNG",
             "source": "methodDescription",
+            "method": "POSTAL",
+            "text": "- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc: không quá 12 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc áp dụng hình thức tham chiếu kết quả thẩm định: không quá 09 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc gia công, chuyển giao công nghệ trong trường hợp thuốc đặt gia công, thuốc trước chuyển giao công nghệ đã có giấy đăng ký lưu hành tại Việt Nam còn hiệu lực tại thời điểm nộp hồ sơ hoặc thuốc gia công có chuyển giao công nghệ sản xuất thuốc từ cơ sở đặt gia công thuốc cho cơ sở nhận gia công thuốc trong trường hợp thuốc đặt gia công đã có giấy đăng ký lưu hành tại Việt Nam còn hiệu lực tại thời điểm nộp hồ sơ: không quá 03 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc gia công, chuyển giao công nghệ trong trường hợp thuốc đặt gia công, thuốc trước chuyển giao công nghệ chưa có giấy đăng ký lưu hành tại Việt Nam hoặc giấy đăng ký lưu hành hết hiệu lực tại thời điểm nộp hồ sơ hoặc thuốc gia công có chuyển giao công nghệ sản xuất thuốc từ cơ sở đặt gia công thuốc cho cơ sở nhận gia công thuốc trong trường hợp thuốc đặt gia công chưa có giấy đăng ký lưu hành tại Việt Nam hoặc giấy đăng ký lưu hành hết hiệu lực tại thời điểm nộp hồ sơ: không quá 09 tháng. \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc mới có chỉ định sử dụng phòng, điều trị bệnh truyền nhiễm thuộc nhóm A đã công bố dịch theo quy định của pháp luật về phòng, chống bệnh truyền nhiễm: không quá 15 ngày; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc thuộc trường hợp ưu tiên về thủ tục hành chính quy định tại khoản 5 Điều 7 Luật Dược: không quá 06 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành nguyên liệu làm thuốc: không quá 06 tháng. Đối tượng thực hiện thủ tục hành chính Cơ sở đăng ký thuốc, nguyên liệu làm thuốc Cơ quan thực hiện thủ tục hành chính Cục Quản lý Dược – Bộ Y tế Kết quả thực hiện thủ tục hành chính - Giấy đăng ký lưu hành theo Mẫu 6A/TT ban hành kèm theo Thông tư số 12/2025/TT-BYT. \n- Văn bản thông báo cho cơ sở đăng ký thuốc theo kết luận của Hội đồng tư vấn cấp giấy đăng ký lưu hành thuốc, nguyên liệu làm thuốc đối với hồ sơ chưa đạt, không đạt.",
             "days": 90
           },
           {
             "value": 9,
             "unit": "THÁNG",
             "source": "methodDescription",
+            "method": "POSTAL",
+            "text": "- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc: không quá 12 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc áp dụng hình thức tham chiếu kết quả thẩm định: không quá 09 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc gia công, chuyển giao công nghệ trong trường hợp thuốc đặt gia công, thuốc trước chuyển giao công nghệ đã có giấy đăng ký lưu hành tại Việt Nam còn hiệu lực tại thời điểm nộp hồ sơ hoặc thuốc gia công có chuyển giao công nghệ sản xuất thuốc từ cơ sở đặt gia công thuốc cho cơ sở nhận gia công thuốc trong trường hợp thuốc đặt gia công đã có giấy đăng ký lưu hành tại Việt Nam còn hiệu lực tại thời điểm nộp hồ sơ: không quá 03 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc gia công, chuyển giao công nghệ trong trường hợp thuốc đặt gia công, thuốc trước chuyển giao công nghệ chưa có giấy đăng ký lưu hành tại Việt Nam hoặc giấy đăng ký lưu hành hết hiệu lực tại thời điểm nộp hồ sơ hoặc thuốc gia công có chuyển giao công nghệ sản xuất thuốc từ cơ sở đặt gia công thuốc cho cơ sở nhận gia công thuốc trong trường hợp thuốc đặt gia công chưa có giấy đăng ký lưu hành tại Việt Nam hoặc giấy đăng ký lưu hành hết hiệu lực tại thời điểm nộp hồ sơ: không quá 09 tháng. \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc mới có chỉ định sử dụng phòng, điều trị bệnh truyền nhiễm thuộc nhóm A đã công bố dịch theo quy định của pháp luật về phòng, chống bệnh truyền nhiễm: không quá 15 ngày; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc thuộc trường hợp ưu tiên về thủ tục hành chính quy định tại khoản 5 Điều 7 Luật Dược: không quá 06 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành nguyên liệu làm thuốc: không quá 06 tháng. Đối tượng thực hiện thủ tục hành chính Cơ sở đăng ký thuốc, nguyên liệu làm thuốc Cơ quan thực hiện thủ tục hành chính Cục Quản lý Dược – Bộ Y tế Kết quả thực hiện thủ tục hành chính - Giấy đăng ký lưu hành theo Mẫu 6A/TT ban hành kèm theo Thông tư số 12/2025/TT-BYT. \n- Văn bản thông báo cho cơ sở đăng ký thuốc theo kết luận của Hội đồng tư vấn cấp giấy đăng ký lưu hành thuốc, nguyên liệu làm thuốc đối với hồ sơ chưa đạt, không đạt.",
             "days": 270
           },
           {
             "value": 15,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "POSTAL",
+            "text": "- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc: không quá 12 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc áp dụng hình thức tham chiếu kết quả thẩm định: không quá 09 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc gia công, chuyển giao công nghệ trong trường hợp thuốc đặt gia công, thuốc trước chuyển giao công nghệ đã có giấy đăng ký lưu hành tại Việt Nam còn hiệu lực tại thời điểm nộp hồ sơ hoặc thuốc gia công có chuyển giao công nghệ sản xuất thuốc từ cơ sở đặt gia công thuốc cho cơ sở nhận gia công thuốc trong trường hợp thuốc đặt gia công đã có giấy đăng ký lưu hành tại Việt Nam còn hiệu lực tại thời điểm nộp hồ sơ: không quá 03 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc gia công, chuyển giao công nghệ trong trường hợp thuốc đặt gia công, thuốc trước chuyển giao công nghệ chưa có giấy đăng ký lưu hành tại Việt Nam hoặc giấy đăng ký lưu hành hết hiệu lực tại thời điểm nộp hồ sơ hoặc thuốc gia công có chuyển giao công nghệ sản xuất thuốc từ cơ sở đặt gia công thuốc cho cơ sở nhận gia công thuốc trong trường hợp thuốc đặt gia công chưa có giấy đăng ký lưu hành tại Việt Nam hoặc giấy đăng ký lưu hành hết hiệu lực tại thời điểm nộp hồ sơ: không quá 09 tháng. \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc mới có chỉ định sử dụng phòng, điều trị bệnh truyền nhiễm thuộc nhóm A đã công bố dịch theo quy định của pháp luật về phòng, chống bệnh truyền nhiễm: không quá 15 ngày; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc thuộc trường hợp ưu tiên về thủ tục hành chính quy định tại khoản 5 Điều 7 Luật Dược: không quá 06 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành nguyên liệu làm thuốc: không quá 06 tháng. Đối tượng thực hiện thủ tục hành chính Cơ sở đăng ký thuốc, nguyên liệu làm thuốc Cơ quan thực hiện thủ tục hành chính Cục Quản lý Dược – Bộ Y tế Kết quả thực hiện thủ tục hành chính - Giấy đăng ký lưu hành theo Mẫu 6A/TT ban hành kèm theo Thông tư số 12/2025/TT-BYT. \n- Văn bản thông báo cho cơ sở đăng ký thuốc theo kết luận của Hội đồng tư vấn cấp giấy đăng ký lưu hành thuốc, nguyên liệu làm thuốc đối với hồ sơ chưa đạt, không đạt.",
             "days": 15
           },
           {
             "value": 6,
             "unit": "THÁNG",
             "source": "methodDescription",
+            "method": "POSTAL",
+            "text": "- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc: không quá 12 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc áp dụng hình thức tham chiếu kết quả thẩm định: không quá 09 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc gia công, chuyển giao công nghệ trong trường hợp thuốc đặt gia công, thuốc trước chuyển giao công nghệ đã có giấy đăng ký lưu hành tại Việt Nam còn hiệu lực tại thời điểm nộp hồ sơ hoặc thuốc gia công có chuyển giao công nghệ sản xuất thuốc từ cơ sở đặt gia công thuốc cho cơ sở nhận gia công thuốc trong trường hợp thuốc đặt gia công đã có giấy đăng ký lưu hành tại Việt Nam còn hiệu lực tại thời điểm nộp hồ sơ: không quá 03 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc gia công, chuyển giao công nghệ trong trường hợp thuốc đặt gia công, thuốc trước chuyển giao công nghệ chưa có giấy đăng ký lưu hành tại Việt Nam hoặc giấy đăng ký lưu hành hết hiệu lực tại thời điểm nộp hồ sơ hoặc thuốc gia công có chuyển giao công nghệ sản xuất thuốc từ cơ sở đặt gia công thuốc cho cơ sở nhận gia công thuốc trong trường hợp thuốc đặt gia công chưa có giấy đăng ký lưu hành tại Việt Nam hoặc giấy đăng ký lưu hành hết hiệu lực tại thời điểm nộp hồ sơ: không quá 09 tháng. \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc mới có chỉ định sử dụng phòng, điều trị bệnh truyền nhiễm thuộc nhóm A đã công bố dịch theo quy định của pháp luật về phòng, chống bệnh truyền nhiễm: không quá 15 ngày; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc thuộc trường hợp ưu tiên về thủ tục hành chính quy định tại khoản 5 Điều 7 Luật Dược: không quá 06 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành nguyên liệu làm thuốc: không quá 06 tháng. Đối tượng thực hiện thủ tục hành chính Cơ sở đăng ký thuốc, nguyên liệu làm thuốc Cơ quan thực hiện thủ tục hành chính Cục Quản lý Dược – Bộ Y tế Kết quả thực hiện thủ tục hành chính - Giấy đăng ký lưu hành theo Mẫu 6A/TT ban hành kèm theo Thông tư số 12/2025/TT-BYT. \n- Văn bản thông báo cho cơ sở đăng ký thuốc theo kết luận của Hội đồng tư vấn cấp giấy đăng ký lưu hành thuốc, nguyên liệu làm thuốc đối với hồ sơ chưa đạt, không đạt.",
             "days": 180
           },
           {
             "value": 6,
             "unit": "THÁNG",
             "source": "methodDescription",
+            "method": "POSTAL",
+            "text": "- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc: không quá 12 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc áp dụng hình thức tham chiếu kết quả thẩm định: không quá 09 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc gia công, chuyển giao công nghệ trong trường hợp thuốc đặt gia công, thuốc trước chuyển giao công nghệ đã có giấy đăng ký lưu hành tại Việt Nam còn hiệu lực tại thời điểm nộp hồ sơ hoặc thuốc gia công có chuyển giao công nghệ sản xuất thuốc từ cơ sở đặt gia công thuốc cho cơ sở nhận gia công thuốc trong trường hợp thuốc đặt gia công đã có giấy đăng ký lưu hành tại Việt Nam còn hiệu lực tại thời điểm nộp hồ sơ: không quá 03 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc gia công, chuyển giao công nghệ trong trường hợp thuốc đặt gia công, thuốc trước chuyển giao công nghệ chưa có giấy đăng ký lưu hành tại Việt Nam hoặc giấy đăng ký lưu hành hết hiệu lực tại thời điểm nộp hồ sơ hoặc thuốc gia công có chuyển giao công nghệ sản xuất thuốc từ cơ sở đặt gia công thuốc cho cơ sở nhận gia công thuốc trong trường hợp thuốc đặt gia công chưa có giấy đăng ký lưu hành tại Việt Nam hoặc giấy đăng ký lưu hành hết hiệu lực tại thời điểm nộp hồ sơ: không quá 09 tháng. \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc mới có chỉ định sử dụng phòng, điều trị bệnh truyền nhiễm thuộc nhóm A đã công bố dịch theo quy định của pháp luật về phòng, chống bệnh truyền nhiễm: không quá 15 ngày; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành thuốc thuộc trường hợp ưu tiên về thủ tục hành chính quy định tại khoản 5 Điều 7 Luật Dược: không quá 06 tháng; \n- Hồ sơ đề nghị cấp giấy đăng ký lưu hành nguyên liệu làm thuốc: không quá 06 tháng. Đối tượng thực hiện thủ tục hành chính Cơ sở đăng ký thuốc, nguyên liệu làm thuốc Cơ quan thực hiện thủ tục hành chính Cục Quản lý Dược – Bộ Y tế Kết quả thực hiện thủ tục hành chính - Giấy đăng ký lưu hành theo Mẫu 6A/TT ban hành kèm theo Thông tư số 12/2025/TT-BYT. \n- Văn bản thông báo cho cơ sở đăng ký thuốc theo kết luận của Hội đồng tư vấn cấp giấy đăng ký lưu hành thuốc, nguyên liệu làm thuốc đối với hồ sơ chưa đạt, không đạt.",
             "days": 180
           }
         ]
       },
       "c5": {
-        "score": 4,
+        "score": 5,
         "state": "KNOWN",
         "uniqueMethods": [
           "DIRECT",
           "ONLINE",
           "POSTAL"
         ],
-        "conditionalRouteSignals": 9,
+        "standardOnly": true,
+        "specialSignals": {
+          "conditional": 9,
+          "original": 0,
+          "certification": 0,
+          "supplement": 0
+        },
+        "specialTotal": 9,
         "returnMethodCount": 0
       },
       "c6": {
-        "score": 2,
-        "state": "KNOWN_WITH_TEXT",
-        "roleCounts": {
-          "executing": 1,
-          "authority": 0,
-          "authorized": 0,
-          "coordinating": 0
-        },
-        "coordinationSignals": 121,
-        "actorMentions": 272,
-        "crossRole": false
+        "score": 4,
+        "state": "TEXT_BASED",
+        "activeActors": [
+          "Cơ quan chuyên môn",
+          "Cơ quan/Hội đồng liên quan"
+        ],
+        "activeActorCount": 2,
+        "coordinationSignals": 76,
+        "handoffSignals": 83,
+        "approvalSignals": 8,
+        "metadataDepartments": 1
       },
-      "weightedScore": 4.3,
-      "score100": 86,
+      "weightedScore": 4.8,
+      "score100": 96,
+      "stars": 5,
       "warnings": [
-        "PROCESSING_TIME_CONFLICT"
-      ],
-      "stars": 5
+        "PROCESSING_TIME_VARIANT"
+      ]
     },
     {
       "goldenNo": 20,
@@ -3113,29 +3464,37 @@
           "DIRECT",
           "POSTAL"
         ],
-        "conditionalRouteSignals": 7,
+        "standardOnly": true,
+        "specialSignals": {
+          "conditional": 5,
+          "original": 0,
+          "certification": 1,
+          "supplement": 0
+        },
+        "specialTotal": 6,
         "returnMethodCount": 2
       },
       "c6": {
-        "score": 2,
-        "state": "KNOWN_WITH_TEXT",
-        "roleCounts": {
-          "executing": 1,
-          "authority": 0,
-          "authorized": 0,
-          "coordinating": 0
-        },
-        "coordinationSignals": 14,
-        "actorMentions": 58,
-        "crossRole": false
+        "score": 5,
+        "state": "TEXT_BASED",
+        "activeActors": [
+          "Cơ quan chuyên môn",
+          "Cơ quan/Hội đồng liên quan",
+          "Cơ quan chuyên biệt"
+        ],
+        "activeActorCount": 3,
+        "coordinationSignals": 5,
+        "handoffSignals": 24,
+        "approvalSignals": 7,
+        "metadataDepartments": 1
       },
-      "weightedScore": 3.4,
-      "score100": 68,
+      "weightedScore": 4,
+      "score100": 80,
+      "stars": 4,
       "warnings": [
         "STEP_TEXT_STRUCTURE_MISMATCH",
         "PROCESSING_TIME_UNKNOWN"
-      ],
-      "stars": 4
+      ]
     },
     {
       "goldenNo": 21,
@@ -3264,52 +3623,63 @@
             "value": 17,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "DIRECT",
             "days": 17
           },
           {
             "value": 17,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "ONLINE",
             "days": 17
           },
           {
             "value": 17,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "POSTAL",
             "days": 17
           }
         ]
       },
       "c5": {
-        "score": 4,
+        "score": 5,
         "state": "KNOWN",
         "uniqueMethods": [
           "DIRECT",
           "ONLINE",
           "POSTAL"
         ],
-        "conditionalRouteSignals": 9,
+        "standardOnly": true,
+        "specialSignals": {
+          "conditional": 9,
+          "original": 0,
+          "certification": 0,
+          "supplement": 0
+        },
+        "specialTotal": 9,
         "returnMethodCount": 0
       },
       "c6": {
-        "score": 4,
-        "state": "KNOWN_WITH_TEXT",
-        "roleCounts": {
-          "executing": 2,
-          "authority": 1,
-          "authorized": 0,
-          "coordinating": 0
-        },
-        "coordinationSignals": 12,
-        "actorMentions": 42,
-        "crossRole": true
+        "score": 5,
+        "state": "TEXT_BASED",
+        "activeActors": [
+          "Cơ quan chuyên môn",
+          "Cơ quan chuyên biệt",
+          "Lãnh đạo UBND"
+        ],
+        "activeActorCount": 3,
+        "coordinationSignals": 4,
+        "handoffSignals": 14,
+        "approvalSignals": 18,
+        "metadataDepartments": 2
       },
-      "weightedScore": 4.55,
-      "score100": 91,
+      "weightedScore": 4.85,
+      "score100": 97,
+      "stars": 5,
       "warnings": [
         "STEP_TEXT_STRUCTURE_MISMATCH"
-      ],
-      "stars": 5
+      ]
     },
     {
       "goldenNo": 22,
@@ -3376,8 +3746,8 @@
         "totalSignal": 4
       },
       "c4": {
-        "score": 5,
-        "state": "CONFLICT",
+        "score": 4,
+        "state": "TIME_VARIANT",
         "minDays": 9,
         "maxDays": 20,
         "distinctValues": [
@@ -3390,54 +3760,69 @@
             "value": 10,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "DIRECT",
             "days": 10
           },
           {
             "value": 9,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "DIRECT",
+            "text": "- Đối với trường hợp thửa đất đã hoàn thiện CSDL “đúng - đủ - sạch - sống” được đồng bộ kết nối với cơ sở dữ liệu Quốc gia trên VNLIS thì thời gian giải quyết hồ sơ không quá 09 ngày làm việc.\n- Đối với các xã miền núi, hải đảo, vùng sâu, vùng xa, vùng có điều kiện kinh tế - xã hội khó khăn, vùng có điều kiện kinh tế - xã hội đặc biệt khó khăn thì thời gian thực hiện không quá 20 ngày làm việc.",
             "days": 9
           },
           {
             "value": 20,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "DIRECT",
+            "text": "- Đối với trường hợp thửa đất đã hoàn thiện CSDL “đúng - đủ - sạch - sống” được đồng bộ kết nối với cơ sở dữ liệu Quốc gia trên VNLIS thì thời gian giải quyết hồ sơ không quá 09 ngày làm việc.\n- Đối với các xã miền núi, hải đảo, vùng sâu, vùng xa, vùng có điều kiện kinh tế - xã hội khó khăn, vùng có điều kiện kinh tế - xã hội đặc biệt khó khăn thì thời gian thực hiện không quá 20 ngày làm việc.",
             "days": 20
           },
           {
             "value": 10,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "ONLINE",
             "days": 10
           },
           {
             "value": 9,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "ONLINE",
+            "text": "- Đối với trường hợp thửa đất đã hoàn thiện CSDL “đúng - đủ - sạch - sống” được đồng bộ kết nối với cơ sở dữ liệu Quốc gia trên VNLIS thì thời gian giải quyết hồ sơ không quá 09 ngày làm việc.\n- Đối với các xã miền núi, hải đảo, vùng sâu, vùng xa, vùng có điều kiện kinh tế - xã hội khó khăn, vùng có điều kiện kinh tế - xã hội đặc biệt khó khăn thì thời gian thực hiện không quá 20 ngày làm việc.",
             "days": 9
           },
           {
             "value": 20,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "ONLINE",
+            "text": "- Đối với trường hợp thửa đất đã hoàn thiện CSDL “đúng - đủ - sạch - sống” được đồng bộ kết nối với cơ sở dữ liệu Quốc gia trên VNLIS thì thời gian giải quyết hồ sơ không quá 09 ngày làm việc.\n- Đối với các xã miền núi, hải đảo, vùng sâu, vùng xa, vùng có điều kiện kinh tế - xã hội khó khăn, vùng có điều kiện kinh tế - xã hội đặc biệt khó khăn thì thời gian thực hiện không quá 20 ngày làm việc.",
             "days": 20
           },
           {
             "value": 10,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "POSTAL",
             "days": 10
           },
           {
             "value": 9,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "POSTAL",
+            "text": "- Đối với trường hợp thửa đất đã hoàn thiện CSDL “đúng - đủ - sạch - sống” được đồng bộ kết nối với cơ sở dữ liệu Quốc gia trên VNLIS thì thời gian giải quyết hồ sơ không quá 09 ngày làm việc.\n- Đối với các xã miền núi, hải đảo, vùng sâu, vùng xa, vùng có điều kiện kinh tế - xã hội khó khăn, vùng có điều kiện kinh tế - xã hội đặc biệt khó khăn thì thời gian thực hiện không quá 20 ngày làm việc.",
             "days": 9
           },
           {
             "value": 20,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "POSTAL",
+            "text": "- Đối với trường hợp thửa đất đã hoàn thiện CSDL “đúng - đủ - sạch - sống” được đồng bộ kết nối với cơ sở dữ liệu Quốc gia trên VNLIS thì thời gian giải quyết hồ sơ không quá 09 ngày làm việc.\n- Đối với các xã miền núi, hải đảo, vùng sâu, vùng xa, vùng có điều kiện kinh tế - xã hội khó khăn, vùng có điều kiện kinh tế - xã hội đặc biệt khó khăn thì thời gian thực hiện không quá 20 ngày làm việc.",
             "days": 20
           }
         ]
@@ -3450,29 +3835,36 @@
           "ONLINE",
           "POSTAL"
         ],
-        "conditionalRouteSignals": 3,
+        "standardOnly": true,
+        "specialSignals": {
+          "conditional": 3,
+          "original": 0,
+          "certification": 0,
+          "supplement": 0
+        },
+        "specialTotal": 3,
         "returnMethodCount": 2
       },
       "c6": {
-        "score": 5,
-        "state": "KNOWN_WITH_TEXT",
-        "roleCounts": {
-          "executing": 29,
-          "authority": 0,
-          "authorized": 0,
-          "coordinating": 0
-        },
-        "coordinationSignals": 4,
-        "actorMentions": 81,
-        "crossRole": false
+        "score": 3,
+        "state": "TEXT_BASED",
+        "activeActors": [
+          "Cơ quan chuyên môn",
+          "Cơ quan chuyên biệt"
+        ],
+        "activeActorCount": 2,
+        "coordinationSignals": 2,
+        "handoffSignals": 11,
+        "approvalSignals": 1,
+        "metadataDepartments": 29
       },
-      "weightedScore": 3.65,
-      "score100": 73,
+      "weightedScore": 3.1,
+      "score100": 62,
+      "stars": 4,
       "warnings": [
         "STEP_TEXT_STRUCTURE_MISMATCH",
-        "PROCESSING_TIME_CONFLICT"
-      ],
-      "stars": 4
+        "PROCESSING_TIME_VARIANT"
+      ]
     },
     {
       "goldenNo": 23,
@@ -3545,8 +3937,8 @@
         "totalSignal": 2
       },
       "c4": {
-        "score": 5,
-        "state": "CONFLICT",
+        "score": 4,
+        "state": "TIME_VARIANT",
         "minDays": 11,
         "maxDays": 22,
         "distinctValues": [
@@ -3559,54 +3951,69 @@
             "value": 12,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "DIRECT",
             "days": 12
           },
           {
             "value": 11,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "DIRECT",
+            "text": "- Đối với trường hợp thửa đất đã hoàn thiện cơ sở dữ liệu (CSDL) “đúng - đủ - sạch - sống” được đồng bộ kết nối với cơ sở dữ liệu Quốc gia trên VNLIS thì thời gian giải quyết hồ sơ không quá 11 ngày làm việc.\n- Đối với các xã miền núi, hải đảo, vùng sâu, vùng xa, vùng có điều kiện kinh tế - xã hội khó khăn, vùng có điều kiện kinh tế - xã hội đặc biệt khó khăn thì thời gian thực hiện không quá 22 ngày làm việc.",
             "days": 11
           },
           {
             "value": 22,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "DIRECT",
+            "text": "- Đối với trường hợp thửa đất đã hoàn thiện cơ sở dữ liệu (CSDL) “đúng - đủ - sạch - sống” được đồng bộ kết nối với cơ sở dữ liệu Quốc gia trên VNLIS thì thời gian giải quyết hồ sơ không quá 11 ngày làm việc.\n- Đối với các xã miền núi, hải đảo, vùng sâu, vùng xa, vùng có điều kiện kinh tế - xã hội khó khăn, vùng có điều kiện kinh tế - xã hội đặc biệt khó khăn thì thời gian thực hiện không quá 22 ngày làm việc.",
             "days": 22
           },
           {
             "value": 12,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "ONLINE",
             "days": 12
           },
           {
             "value": 11,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "ONLINE",
+            "text": "- Đối với trường hợp thửa đất đã hoàn thiện cơ sở dữ liệu (CSDL) “đúng - đủ - sạch - sống” được đồng bộ kết nối với cơ sở dữ liệu Quốc gia trên VNLIS thì thời gian giải quyết hồ sơ không quá 11 ngày làm việc.\n- Đối với các xã miền núi, hải đảo, vùng sâu, vùng xa, vùng có điều kiện kinh tế - xã hội khó khăn, vùng có điều kiện kinh tế - xã hội đặc biệt khó khăn thì thời gian thực hiện không quá 22 ngày làm việc.",
             "days": 11
           },
           {
             "value": 22,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "ONLINE",
+            "text": "- Đối với trường hợp thửa đất đã hoàn thiện cơ sở dữ liệu (CSDL) “đúng - đủ - sạch - sống” được đồng bộ kết nối với cơ sở dữ liệu Quốc gia trên VNLIS thì thời gian giải quyết hồ sơ không quá 11 ngày làm việc.\n- Đối với các xã miền núi, hải đảo, vùng sâu, vùng xa, vùng có điều kiện kinh tế - xã hội khó khăn, vùng có điều kiện kinh tế - xã hội đặc biệt khó khăn thì thời gian thực hiện không quá 22 ngày làm việc.",
             "days": 22
           },
           {
             "value": 12,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "POSTAL",
             "days": 12
           },
           {
             "value": 11,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "POSTAL",
+            "text": "- Đối với trường hợp thửa đất đã hoàn thiện cơ sở dữ liệu (CSDL) “đúng - đủ - sạch - sống” được đồng bộ kết nối với cơ sở dữ liệu Quốc gia trên VNLIS thì thời gian giải quyết hồ sơ không quá 11 ngày làm việc.\n- Đối với các xã miền núi, hải đảo, vùng sâu, vùng xa, vùng có điều kiện kinh tế - xã hội khó khăn, vùng có điều kiện kinh tế - xã hội đặc biệt khó khăn thì thời gian thực hiện không quá 22 ngày làm việc.",
             "days": 11
           },
           {
             "value": 22,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "POSTAL",
+            "text": "- Đối với trường hợp thửa đất đã hoàn thiện cơ sở dữ liệu (CSDL) “đúng - đủ - sạch - sống” được đồng bộ kết nối với cơ sở dữ liệu Quốc gia trên VNLIS thì thời gian giải quyết hồ sơ không quá 11 ngày làm việc.\n- Đối với các xã miền núi, hải đảo, vùng sâu, vùng xa, vùng có điều kiện kinh tế - xã hội khó khăn, vùng có điều kiện kinh tế - xã hội đặc biệt khó khăn thì thời gian thực hiện không quá 22 ngày làm việc.",
             "days": 22
           }
         ]
@@ -3619,29 +4026,35 @@
           "ONLINE",
           "POSTAL"
         ],
-        "conditionalRouteSignals": 3,
+        "standardOnly": true,
+        "specialSignals": {
+          "conditional": 3,
+          "original": 0,
+          "certification": 0,
+          "supplement": 0
+        },
+        "specialTotal": 3,
         "returnMethodCount": 2
       },
       "c6": {
-        "score": 5,
-        "state": "KNOWN_WITH_TEXT",
-        "roleCounts": {
-          "executing": 29,
-          "authority": 0,
-          "authorized": 0,
-          "coordinating": 0
-        },
-        "coordinationSignals": 7,
-        "actorMentions": 82,
-        "crossRole": false
+        "score": 2,
+        "state": "TEXT_BASED",
+        "activeActors": [
+          "Cơ quan chuyên môn"
+        ],
+        "activeActorCount": 1,
+        "coordinationSignals": 2,
+        "handoffSignals": 3,
+        "approvalSignals": 7,
+        "metadataDepartments": 29
       },
-      "weightedScore": 3.5,
-      "score100": 70,
+      "weightedScore": 2.75,
+      "score100": 55,
+      "stars": 3,
       "warnings": [
         "STEP_TEXT_STRUCTURE_MISMATCH",
-        "PROCESSING_TIME_CONFLICT"
-      ],
-      "stars": 4
+        "PROCESSING_TIME_VARIANT"
+      ]
     },
     {
       "goldenNo": 24,
@@ -3756,8 +4169,8 @@
         "totalSignal": 0
       },
       "c4": {
-        "score": 4,
-        "state": "CONFLICT",
+        "score": 3,
+        "state": "TIME_VARIANT",
         "minDays": 3,
         "maxDays": 6,
         "distinctValues": [
@@ -3770,54 +4183,69 @@
             "value": 6,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "DIRECT",
             "days": 6
           },
           {
             "value": 6,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "DIRECT",
+            "text": "Nhận kết quả\nb1) Hồ sơ, giấy tờ liên quan: Theo hình thức đã đăng ký nhận hồ sơ (trực tiếp hoặc thông qua dịch vụ bưu chính công ích hoặc qua giao dịch điện tử);\nb2) Tiền trợ cấp\n- Đơn vị SDLĐ: Nhận tiền trợ cấp cơ quan BHXH chuyển qua tài khoản của đơn vị để chi trả cho NLĐ đăng ký nhận bằng tiền mặt tại đơn vị SDLĐ.\n- NLĐ, người tham gia BHXH tự nguyện nhận tiền trợ cấp bằng một trong các hình thức sau:\n+ Thông qua tài khoản cá nhân;\n+ Thông qua đơn vị SDLĐ (đối với NLĐ đang tham gia BHXH bắt buộc).\n+ Bằng tiền mặt tại cơ quan BHXH (kể cả đối với trường hợp đang tham gia BHXH bắt buộc đăng ký nhận thông qua đơn vị SDLĐ mà chưa nhận và đơn vị đã chuyển lại kinh phí cho cơ quan BHXH)\n- Nhận hồ sơ từ đơn vị SDLĐ: Tối đa 06 ngày làm việc kể từ ngày cơ quan BHXH nhận đủ hồ sơ theo quy định.\n- Nhận hồ sơ từ NLĐ, người tham gia BHXH tự nguyện: Tối đa 03 ngày làm việc kể từ ngày cơ quan BHXH nhận đủ hồ sơ theo quy định.",
             "days": 6
           },
           {
             "value": 3,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "DIRECT",
+            "text": "Nhận kết quả\nb1) Hồ sơ, giấy tờ liên quan: Theo hình thức đã đăng ký nhận hồ sơ (trực tiếp hoặc thông qua dịch vụ bưu chính công ích hoặc qua giao dịch điện tử);\nb2) Tiền trợ cấp\n- Đơn vị SDLĐ: Nhận tiền trợ cấp cơ quan BHXH chuyển qua tài khoản của đơn vị để chi trả cho NLĐ đăng ký nhận bằng tiền mặt tại đơn vị SDLĐ.\n- NLĐ, người tham gia BHXH tự nguyện nhận tiền trợ cấp bằng một trong các hình thức sau:\n+ Thông qua tài khoản cá nhân;\n+ Thông qua đơn vị SDLĐ (đối với NLĐ đang tham gia BHXH bắt buộc).\n+ Bằng tiền mặt tại cơ quan BHXH (kể cả đối với trường hợp đang tham gia BHXH bắt buộc đăng ký nhận thông qua đơn vị SDLĐ mà chưa nhận và đơn vị đã chuyển lại kinh phí cho cơ quan BHXH)\n- Nhận hồ sơ từ đơn vị SDLĐ: Tối đa 06 ngày làm việc kể từ ngày cơ quan BHXH nhận đủ hồ sơ theo quy định.\n- Nhận hồ sơ từ NLĐ, người tham gia BHXH tự nguyện: Tối đa 03 ngày làm việc kể từ ngày cơ quan BHXH nhận đủ hồ sơ theo quy định.",
             "days": 3
           },
           {
             "value": 6,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "ONLINE",
             "days": 6
           },
           {
             "value": 6,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "ONLINE",
+            "text": "Trực tuyến (trường hợp hồ sơ giấy không chuyển đổi được sang hồ sơ điện tử thì đơn vị gửi hồ sơ giấy về cơ quan BHXH)\nNhận kết quả\nb1) Hồ sơ, giấy tờ liên quan: Theo hình thức đã đăng ký nhận hồ sơ (trực tiếp hoặc thông qua dịch vụ bưu chính công ích hoặc qua giao dịch điện tử);\nb2) Tiền trợ cấp\n- Đơn vị SDLĐ: Nhận tiền trợ cấp cơ quan BHXH chuyển qua tài khoản của đơn vị để chi trả cho NLĐ đăng ký nhận bằng tiền mặt tại đơn vị SDLĐ.\n- NLĐ, người tham gia BHXH tự nguyện nhận tiền trợ cấp bằng một trong các hình thức sau:\n+ Thông qua tài khoản cá nhân;\n+ Thông qua đơn vị SDLĐ (đối với NLĐ đang tham gia BHXH bắt buộc).\n+ Bằng tiền mặt tại cơ quan BHXH (kể cả đối với trường hợp đang tham gia BHXH bắt buộc đăng ký nhận thông qua đơn vị SDLĐ mà chưa nhận và đơn vị đã chuyển lại kinh phí cho cơ quan BHXH)\n- Nhận hồ sơ từ đơn vị SDLĐ: Tối đa 06 ngày làm việc kể từ ngày cơ quan BHXH nhận đủ hồ sơ theo quy định.\n- Nhận hồ sơ từ NLĐ, người tham gia BHXH tự nguyện: Tối đa 03 ngày làm việc kể từ ngày cơ quan BHXH nhận đủ hồ sơ theo quy định.",
             "days": 6
           },
           {
             "value": 3,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "ONLINE",
+            "text": "Trực tuyến (trường hợp hồ sơ giấy không chuyển đổi được sang hồ sơ điện tử thì đơn vị gửi hồ sơ giấy về cơ quan BHXH)\nNhận kết quả\nb1) Hồ sơ, giấy tờ liên quan: Theo hình thức đã đăng ký nhận hồ sơ (trực tiếp hoặc thông qua dịch vụ bưu chính công ích hoặc qua giao dịch điện tử);\nb2) Tiền trợ cấp\n- Đơn vị SDLĐ: Nhận tiền trợ cấp cơ quan BHXH chuyển qua tài khoản của đơn vị để chi trả cho NLĐ đăng ký nhận bằng tiền mặt tại đơn vị SDLĐ.\n- NLĐ, người tham gia BHXH tự nguyện nhận tiền trợ cấp bằng một trong các hình thức sau:\n+ Thông qua tài khoản cá nhân;\n+ Thông qua đơn vị SDLĐ (đối với NLĐ đang tham gia BHXH bắt buộc).\n+ Bằng tiền mặt tại cơ quan BHXH (kể cả đối với trường hợp đang tham gia BHXH bắt buộc đăng ký nhận thông qua đơn vị SDLĐ mà chưa nhận và đơn vị đã chuyển lại kinh phí cho cơ quan BHXH)\n- Nhận hồ sơ từ đơn vị SDLĐ: Tối đa 06 ngày làm việc kể từ ngày cơ quan BHXH nhận đủ hồ sơ theo quy định.\n- Nhận hồ sơ từ NLĐ, người tham gia BHXH tự nguyện: Tối đa 03 ngày làm việc kể từ ngày cơ quan BHXH nhận đủ hồ sơ theo quy định.",
             "days": 3
           },
           {
             "value": 6,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "POSTAL",
             "days": 6
           },
           {
             "value": 6,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "POSTAL",
+            "text": "Nhận kết quả\nb1) Hồ sơ, giấy tờ liên quan: Theo hình thức đã đăng ký nhận hồ sơ (trực tiếp hoặc thông qua dịch vụ bưu chính công ích hoặc qua giao dịch điện tử);\nb2) Tiền trợ cấp\n- Đơn vị SDLĐ: Nhận tiền trợ cấp cơ quan BHXH chuyển qua tài khoản của đơn vị để chi trả cho NLĐ đăng ký nhận bằng tiền mặt tại đơn vị SDLĐ.\n- NLĐ, người tham gia BHXH tự nguyện nhận tiền trợ cấp bằng một trong các hình thức sau:\n+ Thông qua tài khoản cá nhân;\n+ Thông qua đơn vị SDLĐ (đối với NLĐ đang tham gia BHXH bắt buộc).\n+ Bằng tiền mặt tại cơ quan BHXH (kể cả đối với trường hợp đang tham gia BHXH bắt buộc đăng ký nhận thông qua đơn vị SDLĐ mà chưa nhận và đơn vị đã chuyển lại kinh phí cho cơ quan BHXH)\n- Nhận hồ sơ từ đơn vị SDLĐ: Tối đa 06 ngày làm việc kể từ ngày cơ quan BHXH nhận đủ hồ sơ theo quy định.\n- Nhận hồ sơ từ NLĐ, người tham gia BHXH tự nguyện: Tối đa 03 ngày làm việc kể từ ngày cơ quan BHXH nhận đủ hồ sơ theo quy định.",
             "days": 6
           },
           {
             "value": 3,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "POSTAL",
+            "text": "Nhận kết quả\nb1) Hồ sơ, giấy tờ liên quan: Theo hình thức đã đăng ký nhận hồ sơ (trực tiếp hoặc thông qua dịch vụ bưu chính công ích hoặc qua giao dịch điện tử);\nb2) Tiền trợ cấp\n- Đơn vị SDLĐ: Nhận tiền trợ cấp cơ quan BHXH chuyển qua tài khoản của đơn vị để chi trả cho NLĐ đăng ký nhận bằng tiền mặt tại đơn vị SDLĐ.\n- NLĐ, người tham gia BHXH tự nguyện nhận tiền trợ cấp bằng một trong các hình thức sau:\n+ Thông qua tài khoản cá nhân;\n+ Thông qua đơn vị SDLĐ (đối với NLĐ đang tham gia BHXH bắt buộc).\n+ Bằng tiền mặt tại cơ quan BHXH (kể cả đối với trường hợp đang tham gia BHXH bắt buộc đăng ký nhận thông qua đơn vị SDLĐ mà chưa nhận và đơn vị đã chuyển lại kinh phí cho cơ quan BHXH)\n- Nhận hồ sơ từ đơn vị SDLĐ: Tối đa 06 ngày làm việc kể từ ngày cơ quan BHXH nhận đủ hồ sơ theo quy định.\n- Nhận hồ sơ từ NLĐ, người tham gia BHXH tự nguyện: Tối đa 03 ngày làm việc kể từ ngày cơ quan BHXH nhận đủ hồ sơ theo quy định.",
             "days": 3
           }
         ]
@@ -3830,28 +4258,32 @@
           "ONLINE",
           "POSTAL"
         ],
-        "conditionalRouteSignals": 7,
+        "standardOnly": true,
+        "specialSignals": {
+          "conditional": 10,
+          "original": 0,
+          "certification": 0,
+          "supplement": 0
+        },
+        "specialTotal": 10,
         "returnMethodCount": 2
       },
       "c6": {
-        "score": 4,
-        "state": "KNOWN_WITH_TEXT",
-        "roleCounts": {
-          "executing": 2,
-          "authority": 2,
-          "authorized": 0,
-          "coordinating": 0
-        },
+        "score": 1,
+        "state": "TEXT_BASED",
+        "activeActors": [],
+        "activeActorCount": 0,
         "coordinationSignals": 0,
-        "actorMentions": 10,
-        "crossRole": true
+        "handoffSignals": 1,
+        "approvalSignals": 0,
+        "metadataDepartments": 2
       },
-      "weightedScore": 3.45,
-      "score100": 69,
+      "weightedScore": 2.7,
+      "score100": 54,
+      "stars": 3,
       "warnings": [
-        "PROCESSING_TIME_CONFLICT"
-      ],
-      "stars": 4
+        "PROCESSING_TIME_VARIANT"
+      ]
     },
     {
       "goldenNo": 25,
@@ -3970,35 +4402,43 @@
         "rawValues": []
       },
       "c5": {
-        "score": 3,
+        "score": 2,
         "state": "KNOWN",
         "uniqueMethods": [
           "DIRECT",
           "ONLINE",
           "POSTAL"
         ],
-        "conditionalRouteSignals": 1,
+        "standardOnly": true,
+        "specialSignals": {
+          "conditional": 0,
+          "original": 0,
+          "certification": 0,
+          "supplement": 0
+        },
+        "specialTotal": 0,
         "returnMethodCount": 2
       },
       "c6": {
-        "score": 2,
-        "state": "KNOWN_WITH_TEXT",
-        "roleCounts": {
-          "executing": 0,
-          "authority": 0,
-          "authorized": 0,
-          "coordinating": 0
-        },
-        "coordinationSignals": 11,
-        "actorMentions": 165,
-        "crossRole": false
+        "score": 5,
+        "state": "TEXT_BASED",
+        "activeActors": [
+          "Cơ quan chuyên môn",
+          "Cơ quan chuyên biệt",
+          "Cơ quan/Hội đồng liên quan"
+        ],
+        "activeActorCount": 3,
+        "coordinationSignals": 3,
+        "handoffSignals": 28,
+        "approvalSignals": 2,
+        "metadataDepartments": 0
       },
-      "weightedScore": 3.4,
-      "score100": 68,
+      "weightedScore": 3.9,
+      "score100": 78,
+      "stars": 4,
       "warnings": [
         "PROCESSING_TIME_UNKNOWN"
-      ],
-      "stars": 4
+      ]
     },
     {
       "goldenNo": 26,
@@ -4040,8 +4480,8 @@
         "totalSignal": 0
       },
       "c4": {
-        "score": 5,
-        "state": "CONFLICT",
+        "score": 4,
+        "state": "TIME_VARIANT",
         "minDays": 18,
         "maxDays": 30,
         "distinctValues": [
@@ -4055,108 +4495,133 @@
             "value": 30,
             "unit": "DAY",
             "source": "executionMethods",
+            "method": "DIRECT",
             "days": 30
           },
           {
             "value": 30,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "DIRECT",
+            "text": "Đối với trường hợp đất để thực hiện dự án chưa được cấp Giấy chứng nhận thì thời gian giải quyết không quá 30 ngày làm việc.",
             "days": 30
           },
           {
             "value": 30,
             "unit": "DAY",
             "source": "executionMethods",
+            "method": "ONLINE",
             "days": 30
           },
           {
             "value": 30,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "ONLINE",
+            "text": "Đối với trường hợp đất để thực hiện dự án chưa được cấp Giấy chứng nhận thì thời gian giải quyết không quá 30 ngày làm việc.",
             "days": 30
           },
           {
             "value": 30,
             "unit": "DAY",
             "source": "executionMethods",
+            "method": "POSTAL",
             "days": 30
           },
           {
             "value": 30,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "POSTAL",
+            "text": "Đối với trường hợp đất để thực hiện dự án chưa được cấp Giấy chứng nhận thì thời gian giải quyết không quá 30 ngày làm việc.",
             "days": 30
           },
           {
             "value": 18,
             "unit": "DAY",
             "source": "executionMethods",
+            "method": "DIRECT",
             "days": 18
           },
           {
             "value": 18,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "DIRECT",
+            "text": "Đối với trường hợp đất để thực hiện dự án đã được cấp Giấy chứng nhận thì thời gian giải quyết không quá 18 ngày làm việc.",
             "days": 18
           },
           {
             "value": 18,
             "unit": "DAY",
             "source": "executionMethods",
+            "method": "ONLINE",
             "days": 18
           },
           {
             "value": 18,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "ONLINE",
+            "text": "Đối với trường hợp đất để thực hiện dự án đã được cấp Giấy chứng nhận thì thời gian giải quyết không quá 18 ngày làm việc.",
             "days": 18
           },
           {
             "value": 18,
             "unit": "DAY",
             "source": "executionMethods",
+            "method": "POSTAL",
             "days": 18
           },
           {
             "value": 18,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "POSTAL",
+            "text": "Đối với trường hợp đất để thực hiện dự án đã được cấp Giấy chứng nhận thì thời gian giải quyết không quá 18 ngày làm việc.",
             "days": 18
           }
         ]
       },
       "c5": {
-        "score": 4,
+        "score": 5,
         "state": "KNOWN",
         "uniqueMethods": [
           "DIRECT",
           "ONLINE",
           "POSTAL"
         ],
-        "conditionalRouteSignals": 6,
+        "standardOnly": true,
+        "specialSignals": {
+          "conditional": 6,
+          "original": 0,
+          "certification": 0,
+          "supplement": 0
+        },
+        "specialTotal": 6,
         "returnMethodCount": 2
       },
       "c6": {
-        "score": 2,
-        "state": "KNOWN_WITH_TEXT",
-        "roleCounts": {
-          "executing": 0,
-          "authority": 0,
-          "authorized": 0,
-          "coordinating": 0
-        },
-        "coordinationSignals": 4,
-        "actorMentions": 26,
-        "crossRole": false
+        "score": 3,
+        "state": "TEXT_BASED",
+        "activeActors": [
+          "Cơ quan chuyên môn",
+          "Cơ quan chuyên biệt"
+        ],
+        "activeActorCount": 2,
+        "coordinationSignals": 1,
+        "handoffSignals": 18,
+        "approvalSignals": 1,
+        "metadataDepartments": 0
       },
-      "weightedScore": 2.6999999999999997,
-      "score100": 54,
+      "weightedScore": 2.85,
+      "score100": 57,
+      "stars": 3,
       "warnings": [
         "STEP_TEXT_STRUCTURE_MISMATCH",
         "PROFILE_TEXT_STRUCTURED_ZERO",
-        "PROCESSING_TIME_CONFLICT"
-      ],
-      "stars": 3
+        "PROCESSING_TIME_VARIANT"
+      ]
     },
     {
       "goldenNo": 27,
@@ -4198,8 +4663,8 @@
         "totalSignal": 0
       },
       "c4": {
-        "score": 5,
-        "state": "CONFLICT",
+        "score": 4,
+        "state": "TIME_VARIANT",
         "minDays": 18,
         "maxDays": 20,
         "distinctValues": [
@@ -4213,72 +4678,90 @@
             "value": 18,
             "unit": "DAY",
             "source": "executionMethods",
+            "method": "DIRECT",
             "days": 18
           },
           {
             "value": 18,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "DIRECT",
+            "text": "- Không quá 18 ngày làm việc đối với thủ tục đăng ký biến động đối với trường hợp thay đổi quyền sử dụng đất, quyền sở hữu tài sản gắn liền với đất do sự thỏa thuận của các thành viên hộ gia đình hoặc của vợ và chồng; thủ tục đăng ký biến động đối với trường hợp nhận quyền sử dụng đất, quyền sở hữu tài sản gắn liền với đất theo kết quả hòa giải thành về tranh chấp đất đai, khiếu nại, tố cáo về đất đai hoặc bản án, quyết định của Tòa án, quyết định thi hành án của cơ quan thi hành án đã được thi hành; quyết định hoặc phán quyết của Trọng tài thương mại Việt Nam về giải quyết tranh chấp giữa các bên phát sinh từ hoạt động thương mại liên quan đến đất đai; thủ tục đăng ký biến động đối với trường hợp nhận quyền sử dụng đất, quyền sở hữu tài sản gắn liền với đất do xử lý tài sản thế chấp.",
             "days": 18
           },
           {
             "value": 18,
             "unit": "DAY",
             "source": "executionMethods",
+            "method": "ONLINE",
             "days": 18
           },
           {
             "value": 18,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "ONLINE",
+            "text": "- Không quá 18 ngày làm việc đối với thủ tục đăng ký biến động đối với trường hợp thay đổi quyền sử dụng đất, quyền sở hữu tài sản gắn liền với đất do sự thỏa thuận của các thành viên hộ gia đình hoặc của vợ và chồng; thủ tục đăng ký biến động đối với trường hợp nhận quyền sử dụng đất, quyền sở hữu tài sản gắn liền với đất theo kết quả hòa giải thành về tranh chấp đất đai, khiếu nại, tố cáo về đất đai hoặc bản án, quyết định của Tòa án, quyết định thi hành án của cơ quan thi hành án đã được thi hành; quyết định hoặc phán quyết của Trọng tài thương mại Việt Nam về giải quyết tranh chấp giữa các bên phát sinh từ hoạt động thương mại liên quan đến đất đai; thủ tục đăng ký biến động đối với trường hợp nhận quyền sử dụng đất, quyền sở hữu tài sản gắn liền với đất do xử lý tài sản thế chấp.",
             "days": 18
           },
           {
             "value": 18,
             "unit": "DAY",
             "source": "executionMethods",
+            "method": "POSTAL",
             "days": 18
           },
           {
             "value": 18,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "POSTAL",
+            "text": "- Không quá 18 ngày làm việc đối với thủ tục đăng ký biến động đối với trường hợp thay đổi quyền sử dụng đất, quyền sở hữu tài sản gắn liền với đất do sự thỏa thuận của các thành viên hộ gia đình hoặc của vợ và chồng; thủ tục đăng ký biến động đối với trường hợp nhận quyền sử dụng đất, quyền sở hữu tài sản gắn liền với đất theo kết quả hòa giải thành về tranh chấp đất đai, khiếu nại, tố cáo về đất đai hoặc bản án, quyết định của Tòa án, quyết định thi hành án của cơ quan thi hành án đã được thi hành; quyết định hoặc phán quyết của Trọng tài thương mại Việt Nam về giải quyết tranh chấp giữa các bên phát sinh từ hoạt động thương mại liên quan đến đất đai; thủ tục đăng ký biến động đối với trường hợp nhận quyền sử dụng đất, quyền sở hữu tài sản gắn liền với đất do xử lý tài sản thế chấp.",
             "days": 18
           },
           {
             "value": 20,
             "unit": "DAY",
             "source": "executionMethods",
+            "method": "DIRECT",
             "days": 20
           },
           {
             "value": 20,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "DIRECT",
+            "text": "Không quá 20 ngày làm việc đối với trường hợp thay đổi về quyền sử dụng đất xây dựng công trình trên mặt đất phục vụ cho việc vận hành, khai thác sử dụng công trình ngầm, quyền sở hữu công trình ngầm; bán tài sản, điều chuyển, chuyển nhượng quyền sử dụng đất là tài sản công theo quy định của pháp luật về quản lý, sử dụng tài sản công.",
             "days": 20
           },
           {
             "value": 20,
             "unit": "DAY",
             "source": "executionMethods",
+            "method": "ONLINE",
             "days": 20
           },
           {
             "value": 20,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "ONLINE",
+            "text": "Không quá 20 ngày làm việc đối với trường hợp thay đổi về quyền sử dụng đất xây dựng công trình trên mặt đất phục vụ cho việc vận hành, khai thác sử dụng công trình ngầm, quyền sở hữu công trình ngầm; bán tài sản, điều chuyển, chuyển nhượng quyền sử dụng đất là tài sản công theo quy định của pháp luật về quản lý, sử dụng tài sản công.",
             "days": 20
           },
           {
             "value": 20,
             "unit": "DAY",
             "source": "executionMethods",
+            "method": "POSTAL",
             "days": 20
           },
           {
             "value": 20,
             "unit": "NGÀY",
             "source": "methodDescription",
+            "method": "POSTAL",
+            "text": "Không quá 20 ngày làm việc đối với trường hợp thay đổi về quyền sử dụng đất xây dựng công trình trên mặt đất phục vụ cho việc vận hành, khai thác sử dụng công trình ngầm, quyền sở hữu công trình ngầm; bán tài sản, điều chuyển, chuyển nhượng quyền sử dụng đất là tài sản công theo quy định của pháp luật về quản lý, sử dụng tài sản công.",
             "days": 20
           }
         ]
@@ -4291,30 +4774,37 @@
           "ONLINE",
           "POSTAL"
         ],
-        "conditionalRouteSignals": 12,
+        "standardOnly": true,
+        "specialSignals": {
+          "conditional": 12,
+          "original": 0,
+          "certification": 0,
+          "supplement": 0
+        },
+        "specialTotal": 12,
         "returnMethodCount": 2
       },
       "c6": {
-        "score": 2,
-        "state": "KNOWN_WITH_TEXT",
-        "roleCounts": {
-          "executing": 0,
-          "authority": 0,
-          "authorized": 0,
-          "coordinating": 0
-        },
-        "coordinationSignals": 2,
-        "actorMentions": 20,
-        "crossRole": false
+        "score": 3,
+        "state": "TEXT_BASED",
+        "activeActors": [
+          "Cơ quan chuyên môn",
+          "Cơ quan chuyên biệt"
+        ],
+        "activeActorCount": 2,
+        "coordinationSignals": 1,
+        "handoffSignals": 6,
+        "approvalSignals": 1,
+        "metadataDepartments": 0
       },
-      "weightedScore": 2.6,
-      "score100": 52,
+      "weightedScore": 2.65,
+      "score100": 53,
+      "stars": 3,
       "warnings": [
         "STEP_TEXT_STRUCTURE_MISMATCH",
         "PROFILE_TEXT_STRUCTURED_ZERO",
-        "PROCESSING_TIME_CONFLICT"
-      ],
-      "stars": 3
+        "PROCESSING_TIME_VARIANT"
+      ]
     },
     {
       "goldenNo": 28,
@@ -4443,52 +4933,61 @@
             "value": 25,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "DIRECT",
             "days": 25
           },
           {
             "value": 25,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "ONLINE",
             "days": 25
           },
           {
             "value": 25,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "POSTAL",
             "days": 25
           }
         ]
       },
       "c5": {
-        "score": 4,
+        "score": 5,
         "state": "KNOWN",
         "uniqueMethods": [
           "DIRECT",
           "ONLINE",
           "POSTAL"
         ],
-        "conditionalRouteSignals": 8,
+        "standardOnly": true,
+        "specialSignals": {
+          "conditional": 7,
+          "original": 0,
+          "certification": 0,
+          "supplement": 0
+        },
+        "specialTotal": 7,
         "returnMethodCount": 0
       },
       "c6": {
         "score": 3,
-        "state": "KNOWN_WITH_TEXT",
-        "roleCounts": {
-          "executing": 1,
-          "authority": 1,
-          "authorized": 0,
-          "coordinating": 0
-        },
-        "coordinationSignals": 12,
-        "actorMentions": 20,
-        "crossRole": true
+        "state": "TEXT_BASED",
+        "activeActors": [
+          "Cơ quan chuyên môn"
+        ],
+        "activeActorCount": 1,
+        "coordinationSignals": 4,
+        "handoffSignals": 11,
+        "approvalSignals": 17,
+        "metadataDepartments": 1
       },
-      "weightedScore": 4.35,
-      "score100": 87,
+      "weightedScore": 4.45,
+      "score100": 89,
+      "stars": 5,
       "warnings": [
         "STEP_TEXT_STRUCTURE_MISMATCH"
-      ],
-      "stars": 5
+      ]
     },
     {
       "goldenNo": 29,
@@ -4611,18 +5110,21 @@
             "value": 3,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "ONLINE",
             "days": 3
           },
           {
             "value": 3,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "POSTAL",
             "days": 3
           },
           {
             "value": 3,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "DIRECT",
             "days": 3
           }
         ]
@@ -4635,26 +5137,33 @@
           "POSTAL",
           "DIRECT"
         ],
-        "conditionalRouteSignals": 8,
+        "standardOnly": true,
+        "specialSignals": {
+          "conditional": 8,
+          "original": 3,
+          "certification": 0,
+          "supplement": 0
+        },
+        "specialTotal": 11,
         "returnMethodCount": 2
       },
       "c6": {
-        "score": 2,
-        "state": "KNOWN_WITH_TEXT",
-        "roleCounts": {
-          "executing": 0,
-          "authority": 0,
-          "authorized": 0,
-          "coordinating": 0
-        },
-        "coordinationSignals": 1,
-        "actorMentions": 27,
-        "crossRole": false
+        "score": 3,
+        "state": "TEXT_BASED",
+        "activeActors": [
+          "Cơ quan chuyên môn",
+          "Cơ quan chuyên biệt"
+        ],
+        "activeActorCount": 2,
+        "coordinationSignals": 0,
+        "handoffSignals": 5,
+        "approvalSignals": 0,
+        "metadataDepartments": 0
       },
-      "weightedScore": 3.05,
-      "score100": 61,
-      "warnings": [],
-      "stars": 4
+      "weightedScore": 3.25,
+      "score100": 65,
+      "stars": 4,
+      "warnings": []
     },
     {
       "goldenNo": 30,
@@ -4711,8 +5220,8 @@
         "totalSignal": 4
       },
       "c4": {
-        "score": 5,
-        "state": "CONFLICT",
+        "score": 4,
+        "state": "TIME_VARIANT",
         "minDays": 10,
         "maxDays": 30,
         "distinctValues": [
@@ -4726,106 +5235,124 @@
             "value": 10,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "DIRECT",
             "days": 10
           },
           {
             "value": 15,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "DIRECT",
             "days": 15
           },
           {
             "value": 20,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "DIRECT",
             "days": 20
           },
           {
             "value": 30,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "DIRECT",
             "days": 30
           },
           {
             "value": 10,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "ONLINE",
             "days": 10
           },
           {
             "value": 15,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "ONLINE",
             "days": 15
           },
           {
             "value": 20,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "ONLINE",
             "days": 20
           },
           {
             "value": 30,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "ONLINE",
             "days": 30
           },
           {
             "value": 10,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "POSTAL",
             "days": 10
           },
           {
             "value": 15,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "POSTAL",
             "days": 15
           },
           {
             "value": 20,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "POSTAL",
             "days": 20
           },
           {
             "value": 30,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "method": "POSTAL",
             "days": 30
           }
         ]
       },
       "c5": {
-        "score": 3,
+        "score": 2,
         "state": "KNOWN",
         "uniqueMethods": [
           "DIRECT",
           "ONLINE",
           "POSTAL"
         ],
-        "conditionalRouteSignals": 0,
+        "standardOnly": true,
+        "specialSignals": {
+          "conditional": 0,
+          "original": 0,
+          "certification": 0,
+          "supplement": 0
+        },
+        "specialTotal": 0,
         "returnMethodCount": 2
       },
       "c6": {
-        "score": 3,
-        "state": "KNOWN_WITH_TEXT",
-        "roleCounts": {
-          "executing": 1,
-          "authority": 1,
-          "authorized": 0,
-          "coordinating": 0
-        },
-        "coordinationSignals": 11,
-        "actorMentions": 27,
-        "crossRole": true
+        "score": 2,
+        "state": "TEXT_BASED",
+        "activeActors": [
+          "Cơ quan chuyên môn"
+        ],
+        "activeActorCount": 1,
+        "coordinationSignals": 2,
+        "handoffSignals": 11,
+        "approvalSignals": 0,
+        "metadataDepartments": 1
       },
-      "weightedScore": 3.35,
-      "score100": 67,
+      "weightedScore": 2.9,
+      "score100": 58,
+      "stars": 3,
       "warnings": [
-        "PROCESSING_TIME_CONFLICT"
-      ],
-      "stars": 4
+        "PROCESSING_TIME_VARIANT"
+      ]
     }
   ]
 }

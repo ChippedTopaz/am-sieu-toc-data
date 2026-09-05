@@ -1,55 +1,58 @@
-# TCI V1 – Golden Calibration Matrix 1.0
+# TCI V1 – Golden Calibration Matrix
 
-## Mục đích
+> Đây là ma trận tham chiếu dùng để hiệu chuẩn. Điểm reference là mức đánh giá nghiệp vụ dự kiến; điểm máy được đặt cạnh để tìm lệch, chưa coi reference là chân lý tuyệt đối cho mọi TTHC.
 
-Đây là ma trận tham chiếu cho 30 Golden Cases trước khi khóa công thức TCI V1 sản xuất. Điểm `Ref` là mức đánh giá nghiệp vụ dự kiến dùng để đối chiếu với điểm máy; không coi đây là chân lý tuyệt đối.
+| # | Mã | Ref C1 | M | Ref C2 | M | Ref C3 | M | Ref C4 | M | Ref C5 | M | Ref C6 | M | TCI máy | ΔTB |
+|---:|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| 1 | 1.014977 | 0 | 0 | 2 | 2 | 1 | 1 | 2 | 2 | 1 | 1 | 4 | 5 | 39 | 0.17 |
+| 2 | 1.014978 | 0 | 0 | 2 | 2 | 1 | 1 | 2 | 2 | 1 | 1 | 4 | 5 | 39 | 0.17 |
+| 3 | 1.000253 | 1 | 1 | 2 | 2 | 2 | 2 | 3 | 3 | 1 | 1 | 2 | 2 | 37 | 0 |
+| 4 | 1.000771 | 2 | 2 | 3 | 3 | 2 | 2 | 4 | 3 | 2 | 5 | 3 | 2 | 53 | 0.83 |
+| 5 | 1.001445 | 1 | 1 | 2 | 2 | 2 | 2 | 1 | 1 | 1 | 2 | 2 | 2 | 33 | 0.17 |
+| 6 | 1.010386 | 1 | 1 | 2 | 2 | 2 | 2 | 1 | 1 | 1 | 2 | 2 | 3 | 37 | 0.33 |
+| 7 | 1.115797 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 4 | 1 | 5 | 4 | 5 | 97 | 1 |
+| 8 | 3.000671 | 1 | 1 | 5 | 5 | 1 | 1 | 5 | 4 | 1 | 4 | 3 | 5 | 67 | 1 |
+| 9 | 3.000579 | 2 | 2 | 5 | 5 | 1 | 1 | 3 | 3 | 1 | 2 | 3 | 2 | 52 | 0.33 |
+| 10 | 2.002011 | 5 | 5 | 3 | 3 | 5 | 5 | 2 | 2 | 1 | 5 | 3 | 4 | 79 | 0.83 |
+| 11 | 1.004881 | 5 | 5 | 2 | 2 | 1 | 1 | 1 | 1 | 1 | 1 | 3 | 3 | 48 | 0 |
+| 12 | 1.014199 | 5 | 5 | 2 | 2 | 4 | 4 | 4 | 3 | 1 | 4 | 3 | 2 | 65 | 0.83 |
+| 13 | 1.001226 | 1 | 1 | 2 | 2 | 1 | 1 | 1 | 1 | 1 | 1 | 2 | 2 | 28 | 0 |
+| 14 | 1.003677 | 2 | 2 | 2 | 2 | 2 | 2 | 3 | 2 | 1 | 3 | 2 | 2 | 42 | 0.5 |
+| 15 | 1.014999 | 3 | 3 | 5 | 5 | 3 | 3 | 5 | 5 | 1 | 5 | 4 | 3 | 78 | 0.83 |
+| 16 | 1.015003 | 0 | 0 | 3 | 3 | 2 | 2 | 5 | 5 | 1 | 1 | 3 | 3 | 47 | 0 |
+| 17 | 1.000807 | 3 | 3 | 3 | 3 | 2 | 2 | 4 | 3 | 2 | 5 | 3 | 2 | 57 | 0.83 |
+| 18 | 1.000811 | 2 | 2 | 2 | 2 | 3 | 3 | 5 | 4 | 2 | 2 | 3 | 2 | 49 | 0.33 |
+| 19 | 1.013742 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 1 | 5 | 4 | 4 | 96 | 0.67 |
+| 20 | 1.007659 | 5 | 5 | 3 | 3 | 5 | 5 | 1 | 1 | 1 | 5 | 4 | 5 | 80 | 0.83 |
+| 21 | 1.009646 | 5 | 5 | 5 | 5 | 5 | 5 | 4 | 4 | 1 | 5 | 5 | 5 | 97 | 0.67 |
+| 22 | 1.116389 | 2 | 2 | 4 | 4 | 2 | 2 | 5 | 4 | 1 | 4 | 2 | 3 | 62 | 0.83 |
+| 23 | 1.116400 | 2 | 2 | 4 | 4 | 1 | 1 | 5 | 4 | 1 | 4 | 2 | 2 | 55 | 0.67 |
+| 24 | 1.001667 | 5 | 5 | 2 | 2 | 1 | 1 | 4 | 3 | 1 | 5 | 3 | 1 | 54 | 1.17 |
+| 25 | 1.116038 | 5 | 5 | 4 | 4 | 5 | 5 | 1 | 1 | 1 | 2 | 3 | 5 | 78 | 0.5 |
+| 26 | 3.000654 | 1 | 1 | 4 | 4 | 1 | 1 | 5 | 4 | 1 | 5 | 3 | 3 | 57 | 0.83 |
+| 27 | 3.000650 | 1 | 1 | 3 | 3 | 1 | 1 | 5 | 4 | 1 | 5 | 4 | 3 | 53 | 1 |
+| 28 | 1.009628 | 5 | 5 | 5 | 5 | 5 | 5 | 4 | 4 | 1 | 5 | 4 | 3 | 89 | 0.83 |
+| 29 | 2.000575 | 5 | 5 | 2 | 2 | 3 | 3 | 2 | 2 | 1 | 5 | 2 | 3 | 65 | 0.83 |
+| 30 | 1.013285 | 2 | 2 | 5 | 5 | 2 | 2 | 5 | 4 | 1 | 2 | 3 | 2 | 58 | 0.5 |
 
-### Nguyên tắc nền
+## Sai lệch trung bình tuyệt đối theo tiêu chí
 
-1. **C5 – Phương thức thực hiện:** Direct / Online / Postal là ba kênh mặc định và không tự làm tăng độ phức tạp. Chỉ tăng điểm khi phương thức tạo thêm điều kiện, bản gốc, đối chiếu, chứng thực/xác thực, bổ sung hoặc nhánh xử lý khác.
-2. **C6 – Phối hợp:** số cơ quan được trao quyền giải quyết không phải số tác nhân trong một luồng hồ sơ. Chỉ tính các tác nhân thực sự tham gia trong text của trình tự, cùng hoạt động phối hợp, chuyển giao, thẩm định, xác minh, xin ý kiến, trình và phê duyệt.
-3. **C4 – Thời gian:** các thời hạn khác nhau nhưng gắn với các trường hợp/nhánh hợp lệ là `TIME_VARIANT`, không phải `CONFLICT`.
-4. **C2 – Trình tự:** text của trình tự thực hiện là nguồn chính; cấu trúc JSON chỉ dùng để đối chiếu/audit.
+- C1: 0
+- C2: 0
+- C3: 0
+- C4: 0.43
+- C5: 2.3
+- C6: 0.77
 
-## Ma trận 30 Golden Cases
+## Các điểm cần rà lại
 
-| # | Mã TTHC | C1 | C2 | C3 | C4 | C5 | C6 | Ghi chú hiệu chuẩn |
-|---:|---|---:|---:|---:|---:|---:|---:|---|
-| 1 | 1.014977 | 0 | 2 | 1 | 2 | 1 | 4 | Nhiều hoạt động phối hợp thực tế trong text; 4 đơn vị metadata không phải 4 tuyến xử lý. |
-| 2 | 1.014978 | 0 | 2 | 1 | 2 | 1 | 4 | Có cơ quan chủ trì, Văn phòng UBND, lãnh đạo và cơ quan liên quan cùng tham gia. |
-| 3 | 1.000253 | 1 | 2 | 2 | 3 | 1 | 2 | Luồng tương đối đơn giản, ít tác nhân. |
-| 4 | 1.000771 | 2 | 3 | 2 | 4 | 2 | 3 | 3 kênh nộp không tự tăng C5; tăng nhẹ vì có yêu cầu đặc thù với hồ sơ trực tuyến. |
-| 5 | 1.001445 | 1 | 2 | 2 | 1 | 1 | 2 | 3 kênh nộp là mặc định. |
-| 6 | 1.010386 | 1 | 2 | 2 | 1 | 1 | 2 | Tương tự cấp tỉnh nhưng thực hiện ở cấp xã. |
-| 7 | 1.115797 | 5 | 5 | 5 | 5 | 1 | 4 | Rất phức tạp; C6 cao do phối hợp thực tế, không do tổng số cơ quan có thể giải quyết. |
-| 8 | 3.000671 | 1 | 5 | 1 | 5 | 1 | 3 | Nhiều bước; thiếu hồ sơ cấu trúc phải giữ cảnh báo thay vì suy diễn. |
-| 9 | 3.000579 | 2 | 5 | 1 | 3 | 1 | 3 | Quy trình nhiều bước, phối hợp mức trung bình. |
-| 10 | 2.002011 | 5 | 3 | 5 | 2 | 1 | 3 | Rất nhiều hồ sơ/trường hợp; không phạt C5 vì 3 kênh nộp. |
-| 11 | 1.004881 | 5 | 2 | 1 | 1 | 1 | 3 | Hồ sơ nhiều nhưng quy trình text không dài tương ứng; có phối hợp chuyên môn. |
-| 12 | 1.014199 | 5 | 2 | 4 | 4 | 1 | 3 | Điều kiện đáng kể; nhiều phương thức không đồng nghĩa C5 cao. |
-| 13 | 1.001226 | 1 | 2 | 1 | 1 | 1 | 2 | Quy trình ngắn, ít hồ sơ/tác nhân. |
-| 14 | 1.003677 | 2 | 2 | 2 | 3 | 1 | 2 | Có nhánh/điều kiện nhưng chưa có chuỗi phối hợp sâu. |
-| 15 | 1.014999 | 3 | 5 | 3 | 5 | 1 | 4 | Đăng ký sáng chế có quy trình và thời gian phức tạp. |
-| 16 | 1.015003 | 0 | 3 | 2 | 5 | 1 | 3 | Độ sâu nghiệp vụ đáng kể; C5 không tăng do kênh nộp mặc định. |
-| 17 | 1.000807 | 3 | 3 | 2 | 4 | 2 | 3 | Có điều kiện/bước xử lý đáng kể; C5 chỉ tăng do yêu cầu thực hiện đặc thù. |
-| 18 | 1.000811 | 2 | 2 | 3 | 5 | 2 | 3 | Thời gian dài nhưng ít bước; 3 kênh không phải độ phức tạp. |
-| 19 | 1.013742 | 5 | 5 | 5 | 5 | 1 | 4 | Rất nhiều hồ sơ/điều kiện, quy trình và thời gian dài. |
-| 20 | 1.007659 | 5 | 3 | 5 | 1 | 1 | 4 | Hồ sơ/điều kiện rất nhiều; C6 chỉ cao khi text cho thấy phối hợp thực tế. |
-| 21 | 1.009646 | 5 | 5 | 5 | 4 | 1 | 5 | Chuỗi phối hợp/thẩm định/trình phê duyệt là tín hiệu chính của C6. |
-| 22 | 1.116389 | 2 | 4 | 2 | 5 | 1 | 2 | Nhiều cơ quan được trao quyền không có nghĩa 29 tác nhân cùng xử lý một hồ sơ. |
-| 23 | 1.116400 | 2 | 4 | 1 | 5 | 1 | 2 | Tương tự #22; metadata không được biến thành điểm C6. |
-| 24 | 1.001667 | 5 | 2 | 1 | 4 | 1 | 3 | Nhiều hồ sơ/trường hợp nhưng luồng xử lý không tương ứng 5 điểm C2. |
-| 25 | 1.116038 | 5 | 4 | 5 | 1 | 1 | 3 | Nhiều hồ sơ/nhánh; thời gian cấu trúc thiếu nên C4 cần UNKNOWN/audit. |
-| 26 | 3.000654 | 1 | 4 | 1 | 5 | 1 | 3 | Nhiều bước; chênh thời gian cần audit, không do nhiều kênh nộp. |
-| 27 | 3.000650 | 1 | 3 | 1 | 5 | 1 | 4 | Nhiều trường hợp pháp lý; C6 chỉ tăng theo phối hợp thực tế. |
-| 28 | 1.009628 | 5 | 5 | 5 | 4 | 1 | 4 | 25 ngày và 12 ngày gắn với các nhánh khác nhau → `TIME_VARIANT`. |
-| 29 | 2.000575 | 5 | 2 | 3 | 2 | 1 | 2 | Hồ sơ nhiều nhưng quy trình tương đối ngắn. |
-| 30 | 1.013285 | 2 | 5 | 2 | 5 | 1 | 3 | 14 bước làm C2 cao; C6 chỉ trung bình nếu chưa có chuỗi nhiều tác nhân sâu. |
+- **#7 1.115797**: Δ = 0, 0, 0, -1, 4, 1; Rất nhiều bước, hồ sơ và nhánh; C6 cao do nhiều hoạt động phối hợp/thẩm định trong luồng, không vì số cơ quan metadata.
+- **#8 3.000671**: Δ = 0, 0, 0, -1, 3, 2; Quy trình text nhiều bước và có biến thể; hồ sơ cấu trúc thiếu nên C1 phải cảnh báo/không suy diễn.
+- **#24 1.001667**: Δ = 0, 0, 0, -1, 4, -2; Nhiều thành phần hồ sơ/trường hợp nhưng luồng xử lý không tương ứng với 5 điểm C2.
+- **#27 3.000650**: Δ = 0, 0, 0, -1, 4, -1; Nhiều trường hợp pháp lý nhưng C6 chỉ tăng theo phối hợp thể hiện trong text.
 
-## Cách sử dụng
+## Quy tắc đã khóa tạm thời trong draft
 
-Ma trận này phải được đặt cạnh `tci-golden-calibration.json` để xem chênh lệch từng C1–C6. Bất kỳ ca nào lệch từ **1 điểm trở lên ở nhiều tiêu chí**, hoặc lệch 1 điểm ở C6/C5 do nguyên nhân cấu trúc dữ liệu, phải được rà lại trước khi khóa công thức.
-
-## Không được khóa TCI V1 chỉ dựa trên 30 ca
-
-30 Golden Cases dùng để tìm anchor, phát hiện double-counting và hiệu chỉnh logic. Sau vòng này phải chạy thử trên toàn bộ 6.258 TTHC để kiểm tra phân bố điểm, cảnh báo dữ liệu, các cụm bất thường và các trường hợp cực trị trước khi đưa điểm TCI lên giao diện sản xuất.
+- C5: Direct/Online/Postal là kênh mặc định; không cộng điểm vì số lượng kênh.
+- C6: chỉ nhìn tác nhân thực sự tham gia trong text và các hành động phối hợp/chuyển giao/thẩm định/phê duyệt; không lấy số `departmentExecutingIds` làm điểm chính.
+- C4: nhiều thời hạn gắn với các trường hợp/nhánh hợp lệ được đánh dấu `TIME_VARIANT`; chỉ dữ liệu cùng phạm vi mà mâu thuẫn mới là `CONFLICT`.
