@@ -3,6 +3,10 @@ const path = require('path');
 
 const ROOT = path.join(process.cwd(), 'details');
 const OUT_DIR = path.join(process.cwd(), 'tci-results-v2');
+const MAPPING_PATHS = [
+  path.join(process.cwd(), 'tci', 'input', 'dvc-mapping.csv'),
+  path.join(process.cwd(), 'tci-results-v2', 'dvc-mapping.csv')
+];
 const TARGET = 50;
 
 const arr = v => Array.isArray(v) ? v : [];
@@ -38,15 +42,122 @@ function parseExplicitSteps(text) {
 
 function count(re, text) { return (txt(text).match(re) || []).length; }
 
-function normalizeImplementLevel(x) {
-  const raw = txt(x.implementLevel).toUpperCase();
-  if (raw === 'FULL' || raw === 'PARTIAL' || raw === 'NONE') return raw;
-  // V1 business rule: a missing implementLevel means the TTHC has no online public-service level.
-  if (!(Object.prototype.hasOwnProperty.call(x, 'implementLevel')) || x.implementLevel == null || raw === '') return 'NONE';
+function parseCsvLine(line) {
+  const out = [];
+  let cur = '';
+  let quoted = false;
+  for (let i = 0; i < line.length; i++) {
+    const c = line[i];
+    if (c === '"') {
+      if (quoted && line[i + 1] === '"') { cur += '"'; i++; }
+      else quoted = !quoted;
+    } else if (c === ',' && !quoted) {
+      out.push(cur); cur = '';
+    } else cur += c;
+  }
+  out.push(cur);
+  return out;
+}
+
+function parseCsv(text) {
+  const rows = [];
+  let row = [];
+  let field = '';
+  let quoted = false;
+  for (let i = 0; i < text.length; i++) {
+    const c = text[i];
+    if (c === '"') {
+      if (quoted && text[i + 1] === '"') { field += '"'; i++; }
+      else quoted = !quoted;
+    } else if (c === ',' && !quoted) {
+      row.push(field); field = '';
+    } else if ((c === '\n' || c === '\r') && !quoted) {
+      if (c === '\r' && text[i + 1] === '\n') i++;
+      row.push(field); field = '';
+      if (row.some(v => txt(v) !== '')) rows.push(row);
+      row = [];
+    } else field += c;
+  }
+  if (field !== '' || row.length) { row.push(field); if (row.some(v => txt(v) !== '')) rows.push(row); }
+  if (!rows.length) return [];
+  const headers = rows[0].map(h => txt(h).replace(/^\uFEFF/, ''));
+  return rows.slice(1).map(values => Object.fromEntries(headers.map((h, i) => [h, txt(values[i])])));
+}
+
+function normalizeMappingLevel(v) {
+  const s = low(v).replace(/\s+/g, ' ');
+  if (!s) return 'UNKNOWN';
+  if (s === 'toàn trình' || s.includes('dịch vụ công trực tuyến toàn trình')) return 'FULL';
+  if (s === 'một phần' || s.includes('dịch vụ công trực tuyến một phần')) return 'PARTIAL';
+  if (s === 'chưa cung cấp' || s.includes('chưa cung cấp dvc')) return 'NONE';
+  if (s === 'không cung cấp' || s.includes('không cung cấp dvc')) return 'NONE';
   return 'INVALID';
 }
 
-function extract(id, x) {
+function loadDvcMapping() {
+  const file = MAPPING_PATHS.find(p => fs.existsSync(p));
+  if (!file) return { available: false, path: null, byMatthc: new Map(), rowCount: 0 };
+  const rows = parseCsv(fs.readFileSync(file, 'utf8'));
+  const byMatthc = new Map();
+  for (const r of rows) {
+    const maTthc = txt(r.MaTTHC);
+    if (!maTthc) continue;
+    const entry = {
+      maDvc: txt(r.MaDVC),
+      tenDvc: txt(r.TenDVC),
+      mucDoRaw: txt(r.MucDo),
+      level: normalizeMappingLevel(r.MucDo),
+      maCqth: txt(r.MaCQTH),
+      tenCqth: txt(r.TenCQTH)
+    };
+    if (!byMatthc.has(maTthc)) byMatthc.set(maTthc, []);
+    byMatthc.get(maTthc).push(entry);
+  }
+  return { available: true, path: file, byMatthc, rowCount: rows.length };
+}
+
+function enrichDvc(maTthc, hasOnlineSubmission, mapping) {
+  if (!hasOnlineSubmission) {
+    return {
+      implementLevel: 'NONE', implementLevelSource: 'JSON_SUBMISSION_METHOD',
+      dvcMappingStatus: 'NOT_REQUIRED_NO_ONLINE', dvcCodes: [], dvcLevels: []
+    };
+  }
+  if (!mapping.available) {
+    return {
+      implementLevel: 'UNKNOWN', implementLevelSource: 'DVC_MAPPING_MISSING',
+      dvcMappingStatus: 'MAPPING_NOT_LOADED', dvcCodes: [], dvcLevels: []
+    };
+  }
+  const rows = mapping.byMatthc.get(maTthc) || [];
+  if (!rows.length) {
+    return {
+      implementLevel: 'UNKNOWN', implementLevelSource: 'DVC_MAPPING',
+      dvcMappingStatus: 'NOT_FOUND', dvcCodes: [], dvcLevels: []
+    };
+  }
+  const validLevels = uniq(rows.map(r => r.level).filter(v => v === 'FULL' || v === 'PARTIAL' || v === 'NONE'));
+  const invalidRows = rows.filter(r => r.level === 'INVALID').length;
+  const dvcCodes = uniq(rows.map(r => r.maDvc));
+  if (validLevels.length === 1 && invalidRows === 0) {
+    return {
+      implementLevel: validLevels[0], implementLevelSource: 'DVC_MAPPING',
+      dvcMappingStatus: 'MATCHED', dvcCodes, dvcLevels: validLevels
+    };
+  }
+  if (validLevels.length > 1) {
+    return {
+      implementLevel: 'UNKNOWN', implementLevelSource: 'DVC_MAPPING',
+      dvcMappingStatus: 'CONFLICT', dvcCodes, dvcLevels: validLevels
+    };
+  }
+  return {
+    implementLevel: 'UNKNOWN', implementLevelSource: 'DVC_MAPPING',
+    dvcMappingStatus: invalidRows ? 'INVALID_MUCDO' : 'UNKNOWN', dvcCodes, dvcLevels: validLevels
+  };
+}
+
+function extract(id, x, mapping) {
   const steps = arr(x.executionSteps);
   const methods = arr(x.executionMethods);
   const cases = arr(x.executionCases);
@@ -63,7 +174,6 @@ function extract(id, x) {
     ...arr(x.unitGroupsExecuting), ...arr(x.unitGroupsAuthority),
     ...arr(x.unitGroupsAuthorized), ...arr(x.unitGroupsCoordinating)
   ].filter(obj);
-
   const actorKeys = uniq([
     ...departments.map(a => txt(a.id) || `NAME:${low(a.name)}`),
     ...units.map(a => txt(a.id) || `NAME:${low(a.name)}`)
@@ -71,7 +181,7 @@ function extract(id, x) {
 
   const processExplicitSteps = steps.reduce((s, st) => s + parseExplicitSteps(obj(st) ? st.description : ''), 0);
   const effectiveStepCount = Math.max(steps.length, processExplicitSteps);
-  const methodsNames = uniq(methods.map(m => obj(m) ? txt(m.submissionMethod || m.type || m.method) : ''));
+  const methodsNames = uniq(methods.map(m => obj(m) ? txt(m.submissionMethod || m.type || m.method).toUpperCase() : ''));
   const returnMethods = uniq(methods.flatMap(m => obj(m) ? [m.returningMethod, m.returnMethod] : []).filter(Boolean));
 
   const processing = [];
@@ -80,7 +190,7 @@ function extract(id, x) {
     if (!obj(m)) continue;
     const q = num(m.processingTime);
     if (q !== null) {
-      processing.push({ value: q, unit: txt(m.processingTimeUnit) || 'UNKNOWN', source: 'executionMethods', condition: txt(m.description) });
+      processing.push({ value: q, unit: txt(m.processingTimeUnit) || 'UNKNOWN' });
       processingSources.push(`${q} ${txt(m.processingTimeUnit) || 'UNKNOWN'}`);
     }
   }
@@ -88,7 +198,7 @@ function extract(id, x) {
     if (!obj(c) || !obj(c.processingDay)) continue;
     const q = num(c.processingDay.qty);
     if (q !== null) {
-      processing.push({ value: q, unit: txt(c.processingDay.type) || 'UNKNOWN', source: 'executionCases', condition: txt(c.name) });
+      processing.push({ value: q, unit: txt(c.processingDay.type) || 'UNKNOWN' });
       processingSources.push(`${q} ${txt(c.processingDay.type) || 'UNKNOWN'}`);
     }
   }
@@ -110,22 +220,21 @@ function extract(id, x) {
   const actionCount = count(/\b(?:tiếp nhận|kiểm tra|thẩm định|xác minh|lập|gửi|chuyển|cấp|trả|thu|đối thoại)\b/gi, stepText);
   const handoffCount = count(/\b(?:chuyển(?: sang)?|gửi(?: cho)?|trình(?: lên)?|xin ý kiến|lấy ý kiến|phối hợp với)\b/gi, stepText);
 
+  const hasOnlineSubmission = methodsNames.includes('ONLINE');
+  const dvc = enrichDvc(txt(x.code) || txt(x.codeNotation) || id, hasOnlineSubmission, mapping);
   const authorization = extractAuthorization(conditionsText);
-  const implementLevel = normalizeImplementLevel(x);
   const isFullProcess = typeof x.isFullProcess === 'boolean' ? x.isFullProcess : (x.isFullProcess == null ? null : 'INVALID');
   const isNonTerritorial = typeof x.isNonTerritorial === 'boolean' ? x.isNonTerritorial : (x.isNonTerritorial == null ? null : 'INVALID');
   const isOfflineOnly = typeof x.isOfflineOnly === 'boolean' ? x.isOfflineOnly : (x.isOfflineOnly == null ? null : 'INVALID');
   const returningOnline = methods.some(m => obj(m) && /ONLINE/i.test(txt(m.returningMethod || m.returnMethod || '')));
 
   const warnings = [];
-  for (const f of ['executionSteps','executionMethods','executionCases','requirementsAndConditions','implementLevel','isFullProcess','isNonTerritorial']) {
+  for (const f of ['executionSteps','executionMethods','executionCases','requirementsAndConditions','isFullProcess','isNonTerritorial']) {
     if (!(f in x)) warnings.push(`MISSING_FIELD:${f}`);
     else if (x[f] === null) warnings.push(`NULL_FIELD:${f}`);
   }
-  if (implementLevel === 'NONE' && !(Object.prototype.hasOwnProperty.call(x, 'implementLevel')))
-    warnings.push('IMPLEMENT_LEVEL_MISSING_TREATED_AS_NONE');
-  if (implementLevel === 'INVALID') warnings.push('INVALID_IMPLEMENT_LEVEL');
-  if (!arr(x.executionCases).length) warnings.push('EMPTY_EXECUTION_CASES');
+  if (hasOnlineSubmission && dvc.dvcMappingStatus !== 'MATCHED') warnings.push(`C5_DVC_MAPPING:${dvc.dvcMappingStatus}`);
+  if (dvc.dvcMappingStatus === 'CONFLICT') warnings.push('C5_DVC_MULTIPLE_LEVELS_CONFLICT');
   if (!profiles.length) warnings.push('EMPTY_PROFILE_COMPONENTS');
   if (!steps.length) warnings.push('EMPTY_EXECUTION_STEPS');
   if (!methods.length) warnings.push('EMPTY_EXECUTION_METHODS');
@@ -144,41 +253,28 @@ function extract(id, x) {
       steps: effectiveStepCount,
       structuredStepCount: steps.length,
       explicitStepCount: processExplicitSteps,
-      actionCount,
-      decisionCount,
-      branchCount,
-      verificationCount,
-      consultationCount,
-      approvalCount,
-      dialogueCount,
+      actionCount, decisionCount, branchCount, verificationCount, consultationCount, approvalCount, dialogueCount,
       complexitySignal,
       profileComponents: profiles.filter(p => obj(p) && p.isProcessingResult !== true).length,
-      requiredProfiles,
-      conditionalProfiles,
-      processingResults,
-      originalQtyTotal: originals,
-      copyQtyTotal: copies,
-      electronicFormCount: electronicForms,
-      attachmentTemplateCount: attachmentTemplates,
-      methods: methodsNames.length,
-      methodNames: methodsNames,
-      returningMethods: returnMethods,
-      returningOnline,
+      requiredProfiles, conditionalProfiles, processingResults,
+      originalQtyTotal: originals, copyQtyTotal: copies,
+      electronicFormCount: electronicForms, attachmentTemplateCount: attachmentTemplates,
+      methods: methodsNames.length, methodNames: methodsNames,
+      returningMethods: returnMethods, returningOnline,
       executionCases: cases.length,
       processingMin: processing.length ? Math.min(...processing.map(p => p.value)) : null,
       processingMax: processing.length ? Math.max(...processing.map(p => p.value)) : null,
-      processingValues: processingSources,
-      timeVariant: uniq(processingSources).length > 1,
+      processingValues: processingSources, timeVariant: uniq(processingSources).length > 1,
       conditionSignal: conditionCountSignal,
-      actorCount: actorKeys.length,
-      departmentCount: departments.length,
-      unitGroupCount: units.length,
-      handoffCount,
+      actorCount: actorKeys.length, departmentCount: departments.length, unitGroupCount: units.length, handoffCount,
       authorization,
-      implementLevel,
-      isFullProcess,
-      isNonTerritorial,
-      isOfflineOnly,
+      hasOnlineSubmission,
+      implementLevel: dvc.implementLevel,
+      implementLevelSource: dvc.implementLevelSource,
+      dvcMappingStatus: dvc.dvcMappingStatus,
+      dvcCodes: dvc.dvcCodes,
+      dvcLevels: dvc.dvcLevels,
+      isFullProcess, isNonTerritorial, isOfflineOnly,
       hasReturnOnline: returningOnline,
       narrativeLength: narrative.length,
       dataWarnings: uniq(warnings)
@@ -193,18 +289,21 @@ function add(pool, rec, group, reason) {
   if (!p.groups.includes(group)) p.groups.push(group);
   if (reason && !p.reasons.includes(reason)) p.reasons.push(reason);
 }
-
 function asc(list, fn) { return [...list].sort((a,b) => (fn(a)??0)-(fn(b)??0)); }
 function desc(list, fn) { return [...list].sort((a,b) => (fn(b)??0)-(fn(a)??0)); }
 
 if (!fs.existsSync(ROOT)) throw new Error(`Không tìm thấy thư mục: ${ROOT}`);
+if (!fs.existsSync(OUT_DIR)) fs.mkdirSync(OUT_DIR, { recursive: true });
+const mapping = loadDvcMapping();
+console.log(mapping.available ? `DVC mapping loaded: ${mapping.path} (${mapping.rowCount} rows)` : 'DVC mapping chưa được nạp; C5 FULL/PARTIAL sẽ ở trạng thái UNKNOWN với TTHC có ONLINE.');
+
 const files = fs.readdirSync(ROOT).filter(f => f.toLowerCase().endsWith('.json')).sort();
 const records = [];
 for (const file of files) {
   try {
     const id = path.basename(file, '.json');
     const x = JSON.parse(fs.readFileSync(path.join(ROOT, file), 'utf8'));
-    if (obj(x)) records.push(extract(id, x));
+    if (obj(x)) records.push(extract(id, x, mapping));
   } catch (e) { console.warn(`Bỏ qua ${file}: ${e.message}`); }
 }
 console.log(`Phân tích ${records.length}/${files.length} JSON.`);
@@ -214,7 +313,7 @@ groups.G01_VERY_SIMPLE = asc(records, r => r.features.complexitySignal + r.featu
 groups.G02_MANY_STEPS = desc(records, r => r.features.steps).slice(0,15);
 groups.G03_FEW_PROFILES = asc(records, r => r.features.profileComponents).slice(0,15);
 groups.G04_MANY_PROFILES = desc(records, r => r.features.profileComponents + r.features.originalQtyTotal + r.features.copyQtyTotal).slice(0,15);
-groups.G05_SHORT_TIME = records.filter(r => r.features.processingMin !== null).sort((a,b) => a.features.processingMin-b.features.processingMin).slice(0,15);
+groups.G05_SHORT_TIME = asc(records.filter(r => r.features.processingMin !== null), r => r.features.processingMin).slice(0,15);
 groups.G06_LONG_TIME = desc(records.filter(r => r.features.processingMax !== null), r => r.features.processingMax).slice(0,15);
 groups.G07_TIME_VARIANT = records.filter(r => r.features.timeVariant).slice(0,15);
 groups.G08_COMPLEX_CONDITIONS = desc(records, r => r.features.conditionSignal).slice(0,15);
@@ -228,11 +327,8 @@ groups.G15_C5_NON_TERRITORIAL = records.filter(r => r.features.isNonTerritorial 
 groups.G16_AUTHORIZATION = records.filter(r => r.features.authorization !== 'UNKNOWN').slice(0,15);
 groups.G17_ANOMALIES = desc(records, r => r.features.dataWarnings.length).slice(0,20);
 groups.G18_VERY_COMPLEX = desc(records, r => r.features.complexitySignal + r.features.conditionSignal*2 + r.features.actorCount*2 + r.features.profileComponents + (r.features.processingMax || 0)/10).slice(0,15);
-groups.G19_CROSS_C5_GUARDS = records.filter(r =>
-  (r.features.implementLevel === 'FULL' && r.features.isFullProcess === false) ||
-  (r.features.implementLevel === 'PARTIAL' && r.features.isFullProcess === true) ||
-  (r.features.implementLevel === 'FULL' && r.features.returningMethods.length && !r.features.hasReturnOnline)
-).slice(0,20);
+groups.G19_C5_ONLINE_MAPPING_UNKNOWN = records.filter(r => r.features.hasOnlineSubmission && ['UNKNOWN','NOT_FOUND','MAPPING_NOT_LOADED','CONFLICT','INVALID_MUCDO'].includes(r.features.dvcMappingStatus)).slice(0,15);
+groups.G20_C5_ONLINE_MAPPED = records.filter(r => r.features.hasOnlineSubmission && r.features.dvcMappingStatus === 'MATCHED').slice(0,15);
 
 const pool = new Map();
 for (const [g,list] of Object.entries(groups)) for (const r of list) add(pool,r,g,`Chọn từ ${g}`);
@@ -247,76 +343,62 @@ const quotas = {
 
 function choose(r, reason) {
   if (!r || selected.has(r.id) || selected.size >= TARGET) return false;
-  const p = pool.get(r.id);
-  if (!p) return false;
+  const p = pool.get(r.id); if (!p) return false;
   selected.set(r.id, { record: r, groups: [...p.groups], reasons: [...p.reasons, reason] });
   return true;
 }
 
 for (const [g,q] of Object.entries(quotas)) {
-  const candidates = groups[g] || [];
-  let k = 0;
-  for (const r of candidates) {
-    if (k >= q || selected.size >= TARGET) break;
-    if (choose(r, `Quota ${g}`)) k++;
+  if (g === 'G11_C5_FULL' || g === 'G12_C5_PARTIAL') {
+    if (!groups[g].length) { console.warn(`SKIP ${g}: không có candidate từ dữ liệu hiện tại.`); continue; }
   }
-  console.log(`${g}: ${k}/${q}`);
+  let k = 0;
+  for (const r of groups[g]) { if (k >= q || selected.size >= TARGET) break; if (choose(r, `Golden anchor: ${g}`)) k++; }
   if (k < q) console.warn(`WARN ${g}: ${k}/${q}`);
 }
 
-const leftovers = records.filter(r => !selected.has(r.id));
-const selectedArr = () => [...selected.values()].map(x => x.record);
-function vector(s) {
-  const f = s.features || {};
-  return [Number(f.steps)||0,Number(f.profileComponents)||0,Number(f.methods)||0,Number(f.executionCases)||0,Number(f.conditionSignal)||0,Number(f.actorCount)||0,Number(f.handoffCount)||0,Number(f.narrativeLength)||0,Number(f.processingMax)||0,Number(f.processingMin)||0];
-}
-function dist(a,b){
-  const x=vector(a),y=vector(b),scales=[20,50,3,10,50,10,10,10000,100,100];
-  return x.reduce((sum,v,i)=>sum+Math.min(1,Math.abs(v-y[i])/(scales[i]||1)),0);
-}
-while (selected.size < TARGET && leftovers.length) {
-  const current = selectedArr();
-  let bestIndex = 0, bestScore = -Infinity;
-  leftovers.forEach((r,i) => {
-    const minDist = current.length ? Math.min(...current.map(s => dist(r,s))) : 1;
-    const unusual = ((r.features.dataWarnings||[]).length*2) + (r.features.timeVariant?2:0);
-    const c5Boost = ['FULL','PARTIAL','NONE'].includes(r.features.implementLevel) ? 1 : 0;
-    const score = minDist*10 + unusual + c5Boost;
-    if (score > bestScore) { bestScore = score; bestIndex = i; }
-  });
-  const [r] = leftovers.splice(bestIndex,1);
-  choose(r, 'Bổ sung diversity');
+while (selected.size < TARGET) {
+  const candidates = records.filter(r => !selected.has(r.id));
+  if (!candidates.length) break;
+  const best = candidates.sort((a,b) => {
+    const score = r => {
+      const f = r.features;
+      return (f.hasOnlineSubmission ? 4 : 0) + (f.dvcMappingStatus === 'MATCHED' ? 4 : 0) + (f.timeVariant ? 2 : 0) + (f.dataWarnings.length * 2)
+        + f.complexitySignal/20 + f.conditionSignal/20 + f.actorCount/5;
+    };
+    return score(b) - score(a);
+  })[0];
+  if (!best) break;
+  choose(best, 'DIVERSITY_FILL');
 }
 
-const samples = selectedArr().map((r,i) => {
-  const p = selected.get(r.id);
-  return {
-    sampleNo: i+1,
-    id: r.id,
-    code: r.code,
-    name: r.name,
-    category: r.category,
-    groups: p.groups,
-    reasons: uniq(p.reasons),
-    features: r.features
-  };
-});
+const samples = [...selected.values()].map((x,i) => ({
+  sampleNo: i+1, id: x.record.id, code: x.record.code, name: x.record.name, category: x.record.category,
+  groups: x.groups, reasons: uniq(x.reasons), features: x.record.features
+}));
 
 const coverage = {};
-for (const g of Object.keys(quotas)) coverage[g] = samples.filter(s => (s.groups||[]).includes(g)).length;
-const c5Counts = {
-  FULL: records.filter(r => r.features.implementLevel === 'FULL').length,
-  PARTIAL: records.filter(r => r.features.implementLevel === 'PARTIAL').length,
-  NONE: records.filter(r => r.features.implementLevel === 'NONE').length,
-  INVALID: records.filter(r => r.features.implementLevel === 'INVALID').length
-};
-console.log(`C5 implementLevel counts: FULL=${c5Counts.FULL}, PARTIAL=${c5Counts.PARTIAL}, NONE=${c5Counts.NONE}, INVALID=${c5Counts.INVALID}`);
-console.log(`ĐÃ CHỌN ${samples.length} SAMPLE V2.`);
+for (const [g,q] of Object.entries(quotas)) coverage[g] = { selected: samples.filter(x => x.groups.includes(g)).length, quota: q };
+const total = samples.length;
+if (total !== TARGET) throw new Error(`Sample count lỗi: ${total} !== ${TARGET}`);
 
-fs.mkdirSync(OUT_DIR,{recursive:true});
-fs.writeFileSync(path.join(OUT_DIR,'tci-calibration-selection-v2.json'), JSON.stringify({
-  metadata:{version:'TCI_V1_CALIBRATION_SELECTOR_V2_1.2',totalRecords:records.length,target:TARGET,random:false,implementLevelMissingRule:'MISSING_OR_NULL_OR_EMPTY => NONE'},
+const implementCounts = records.reduce((a,r) => { const k=r.features.implementLevel; a[k]=(a[k]||0)+1; return a; }, {});
+const mappingCounts = records.reduce((a,r) => { const k=r.features.dvcMappingStatus; a[k]=(a[k]||0)+1; return a; }, {});
+console.log(`C5 implementLevel: ${JSON.stringify(implementCounts)}`);
+console.log(`C5 mappingStatus: ${JSON.stringify(mappingCounts)}`);
+
+const output = {
+  metadata: {
+    version: 'TCI_V1_CALIBRATION_V2_2.0',
+    candidateCount: records.length,
+    sampleCount: samples.length,
+    random: false,
+    dvcMappingLoaded: mapping.available,
+    dvcMappingPath: mapping.path,
+    note: 'JSON xác định có/không ONLINE; bảng DVC mapping theo MaTTHC xác định FULL/PARTIAL khi có ONLINE.'
+  },
   coverage,
-  c5Counts,
   samples
-}, null, 2));
+};
+fs.writeFileSync(path.join(OUT_DIR, 'tci-calibration-selection-v2.json'), JSON.stringify(output, null, 2));
+console.log(`ĐÃ CHỌN ${samples.length} SAMPLE V2.`);
