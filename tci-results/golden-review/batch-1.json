@@ -5437,5 +5437,782 @@
       "isOfflineOnly": false,
       "isNonTerritorial": false
     }
+  },
+  {
+    "goldenNo": 1,
+    "id": "019d89ea-43a9-74a1-85f1-b83f1417f983",
+    "code": "1.014977",
+    "name": "Chủ tịch, Phó Chủ tịch UBND tỉnh tiếp khách nước ngoài",
+    "category": "Công tác Văn phòng",
+    "groups": [
+      "G12_VERY_SIMPLE"
+    ],
+    "selectorFeatures": {
+      "steps": 1,
+      "profileComponents": 0,
+      "profileComponentsRaw": 0,
+      "profileComponentSource": "none",
+      "profileComponentIds": [],
+      "profileComponentsByCase": [
+        0
+      ],
+      "methods": 1,
+      "methodNames": [
+        "ONLINE"
+      ],
+      "executionCases": 1,
+      "processingMin": 0,
+      "processingMax": 0,
+      "processingValues": [
+        "0 OTHER"
+      ],
+      "timeConflict": false,
+      "timeMultiSource": false,
+      "conditionSignal": 0,
+      "actorSignal": 4,
+      "unitGroups": 0,
+      "departments": 4,
+      "agencies": 0,
+      "narrativeLength": 1,
+      "hasExecutionCases": true,
+      "dataWarnings": [
+        "EMPTY_PROFILE_COMPONENTS"
+      ]
+    },
+    "description": "",
+    "requirementsAndConditions": "",
+    "executionSteps": [
+      {
+        "name": "",
+        "description": "Bước 1: Chủ tịch, Phó Chủ tịch UBND tỉnh tiếp khách nước ngoài,                            gồm các hình thức: tiếp xã giao, tiếp làm việc (chính thức hoặc không chính thức) theo giới thiệu của các cơ quan Trung ương, đề nghị của các cơ quan, tổ chức trong tỉnh và các đề nghị trực tiếp của khách đến thăm và làm việc tại tỉnh theo quy định.  \nBước 2: Các cơ quan, tổ chức trong tỉnh khi có nhu cầu đề nghị Chủ tịch, Phó Chủ tịch UBND tỉnh tiếp các đối tác nước ngoài của cơ quan, tổ chức mình, phải có văn bản đề nghị nêu rõ nội dung và hình thức cuộc tiếp, thành phần và tiểu sử tóm tắt thành viên trong đoàn, chương trình hoạt động của khách tại địa phương và các vấn đề liên quan khác. Các đề xuất và kiến nghị, gửi Chủ tịch hoặc Phó Chủ tịch UBND tỉnh ít nhất 05 ngày làm việc, trước ngày dự kiến tiếp.\nBước 3: Văn phòng UBND tỉnh thực hiện nhiệm vụ quy định tại khoản 3 Điều 36 Quy chế ban hành kèm theo Quyết định số 15/2025/QĐ-UBND, để Chủ tịch, Phó Chủ tịch UBND tỉnh thực hiện cuộc tiếp đạt kết quả, cụ thể:\n+ Báo cáo Chủ tịch, Phó Chủ tịch UBND tỉnh về đề nghị tiếp khách của các cơ quan, đơn vị; thông báo kịp thời ý kiến của Chủ tịch hoặc Phó Chủ tịch UBND tỉnh cho các cơ quan liên quan biết, đồng thời đưa vào chương trình công tác tuần của Chủ tịch, Phó Chủ tịch UBND tỉnh khi được Chủ tịch, Phó Chủ tịch UBND tỉnh đồng ý.\n+ Phối hợp với các cơ quan liên quan chuẩn bị nội dung cuộc tiếp.                    Trường hợp cần thiết, theo chỉ đạo của Chủ tịch, Phó Chủ tịch UBND tỉnh, đề nghị các cơ quan liên quan chuẩn bị một số nội dung cụ thể của cuộc tiếp.\n+ Mời các cơ quan báo chí, truyền thông dự để đưa tin về cuộc tiếp theo sự chỉ đạo của Chủ tịch, Phó Chủ tịch UBND tỉnh.\n+ Phối hợp với cơ quan liên quan tổ chức phục vụ và bảo đảm an toàn tuyệt đối cho cuộc tiếp; tổ chức triển khai thực hiện các công việc cần thiết sau cuộc tiếp.\n"
+      }
+    ],
+    "executionMethods": [
+      {
+        "submissionMethod": "ONLINE",
+        "processingTime": 0,
+        "processingTimeUnit": "OTHER",
+        "description": "Các đề xuất và kiến nghị, gửi Chủ tịch hoặc Phó Chủ tịch UBND tỉnh ít nhất 02 ngày làm việc, trước ngày dự kiến tiếp.",
+        "fees": []
+      }
+    ],
+    "executionCases": [
+      {
+        "index": 1,
+        "code": null,
+        "processingTime": null,
+        "processingDay": null,
+        "profileComponents": [],
+        "executionSteps": [],
+        "executingAgencies": [],
+        "departments": []
+      }
+    ],
+    "profileComponentsRoot": [],
+    "executingAgencies": [],
+    "unitGroupsExecuting": [],
+    "departments": [],
+    "returningMethods": [],
+    "fees": [],
+    "targetObjects": [],
+    "resultTypes": [],
+    "flags": {
+      "isSharedService": false,
+      "isFullProcess": false,
+      "isOfflineOnly": false,
+      "isNonTerritorial": false
+    }
+  },
+  {
+    "goldenNo": 2,
+    "id": "019d89ec-bf71-703a-933c-82cac6e37faf",
+    "code": "1.014978",
+    "name": "Chủ tịch, Phó Chủ tịch UBND tỉnh tiếp khách trong nước",
+    "category": "Công tác Văn phòng",
+    "groups": [
+      "G12_VERY_SIMPLE"
+    ],
+    "selectorFeatures": {
+      "steps": 1,
+      "profileComponents": 0,
+      "profileComponentsRaw": 0,
+      "profileComponentSource": "none",
+      "profileComponentIds": [],
+      "profileComponentsByCase": [
+        0
+      ],
+      "methods": 1,
+      "methodNames": [
+        "DIRECT"
+      ],
+      "executionCases": 1,
+      "processingMin": 0,
+      "processingMax": 0,
+      "processingValues": [
+        "0 OTHER"
+      ],
+      "timeConflict": false,
+      "timeMultiSource": false,
+      "conditionSignal": 0,
+      "actorSignal": 4,
+      "unitGroups": 0,
+      "departments": 4,
+      "agencies": 0,
+      "narrativeLength": 1,
+      "hasExecutionCases": true,
+      "dataWarnings": [
+        "EMPTY_PROFILE_COMPONENTS"
+      ]
+    },
+    "description": "",
+    "requirementsAndConditions": "",
+    "executionSteps": [
+      {
+        "name": "",
+        "description": "Bước 1: Chủ tịch, Phó Chủ tịch Ủy ban nhân dân tỉnh tiếp xã giao, gặp mặt các đoàn đại biểu, khách đến thăm, làm việc tại địa phương khi: \na) Chủ tịch, Phó Chủ tịch Ủy ban nhân dân tỉnh trực tiếp mời hoặc theo chương trình làm việc, công tác và chỉ đạo của cấp trên. \nb) Tiếp khách theo đề nghị của Thủ trưởng các cơ quan chuyên môn, tổ chức hành chính thuộc Ủy ban nhân dân tỉnh, đơn vị sự nghiệp công lập trực thuộc Ủy ban nhân dân tỉnh, Chủ tịch Hội đồng nhân dân, Chủ tịch Ủy ban nhân dân cấp xã, người đứng đầu các cơ quan, đoàn thể cấp tỉnh.\n c) Tiếp theo đề nghị của khách đến thăm, làm việc tại địa phương\nBước 2: Thủ trưởng các cơ quan chuyên môn, tổ chức hành chính thuộc Ủy ban nhân dân tỉnh, đơn vị sự nghiệp công lập trực thuộc Ủy ban nhân dân tỉnh; Chủ tịch Hội đồng nhân dân, Chủ tịch Ủy ban nhân dân cấp xã; người đứng đầu các cơ quan, đoàn thể tỉnh khi có nhu cầu đề nghị Chủ tịch, Phó Chủ tịch Ủy ban nhân dân tỉnh tiếp khách phải có công văn đề nghị gửi Chủ tịch, Phó Chủ tịch Ủy ban nhân dân tỉnh ít nhất 02 ngày làm việc trước ngày dự kiến tiếp; công văn nêu rõ nội dung, hình thức cuộc tiếp, số lượng khách, thời gian và địa điểm tiếp và kèm theo các thông tin cần thiết về: nội dung, thời gian, thành phần, hoạt động của khách tại địa bàn tỉnh và các đề xuất, kiến nghị. Cơ quan chủ trì mời phải phối hợp với Văn phòng Ủy ban nhân dân tỉnh chuẩn bị nội dung buổi tiếp và tổ chức buổi tiếp đạt kết quả tốt\nBước 3: Văn phòng Ủy ban nhân dân tỉnh có nhiệm vụ:\n a) Báo cáo Chủ tịch, Phó Chủ tịch Ủy ban nhân dân tỉnh về đề nghị tiếp khách của các cơ quan, đơn vị, địa phương; thông báo kịp thời ý kiến của Chủ tịch hoặc Phó Chủ tịch Ủy ban nhân dân tỉnh cho các cơ quan liên quan biết, đồng thời đưa vào chương trình công tác tuần của Chủ tịch, Phó Chủ tịch Ủy ban nhân dân tỉnh khi được Chủ tịch, Phó Chủ tịch Ủy ban nhân dân tỉnh đồng ý. \nb) Phối hợp với các cơ quan liên quan chuẩn bị nội dung cuộc tiếp. Trường hợp cần thiết, theo chỉ đạo của Chủ tịch, Phó Chủ tịch Ủy ban nhân dân tỉnh, đề nghị các cơ quan liên quan chuẩn bị một số nội dung cụ thể của cuộc tiếp. \nc) Mời các cơ quan báo chí, truyền thông dự để đưa tin về cuộc tiếp theo sự chỉ đạo của Chủ tịch, Phó Chủ tịch Ủy ban nhân dân tỉnh. d) Phối hợp với cơ quan liên quan tổ chức phục vụ và bảo đảm an toàn tuyệt đối cho cuộc tiếp; tổ chức triển khai thực hiện các công việc cần thiết sau cuộc tiếp. \n"
+      }
+    ],
+    "executionMethods": [
+      {
+        "submissionMethod": "DIRECT",
+        "processingTime": 0,
+        "processingTimeUnit": "OTHER",
+        "description": "Tiếp xã giao, gặp mặt các đoàn đại biểu, khách đến thăm, làm việc tại địa phương.\nCác đề xuất và kiến nghị, gửi Chủ tịch hoặc Phó Chủ tịch UBND tỉnh ít nhất 02 ngày làm việc, trước ngày dự kiến tiếp.",
+        "fees": []
+      }
+    ],
+    "executionCases": [
+      {
+        "index": 1,
+        "code": null,
+        "processingTime": null,
+        "processingDay": null,
+        "profileComponents": [],
+        "executionSteps": [],
+        "executingAgencies": [],
+        "departments": []
+      }
+    ],
+    "profileComponentsRoot": [],
+    "executingAgencies": [],
+    "unitGroupsExecuting": [],
+    "departments": [],
+    "returningMethods": [],
+    "fees": [],
+    "targetObjects": [],
+    "resultTypes": [],
+    "flags": {
+      "isSharedService": false,
+      "isFullProcess": false,
+      "isOfflineOnly": false,
+      "isNonTerritorial": false
+    }
+  },
+  {
+    "goldenNo": 3,
+    "id": "019d2bf7-4fc4-7716-bab8-167242b3fcda",
+    "code": "1.000253",
+    "name": "Khai báo tạm trú cho người nước ngoài tại Việt Nam bằng Phiếu khai báo tạm trú",
+    "category": "Quản lý xuất nhập cảnh",
+    "groups": [
+      "G01_SIMPLE_STEPS",
+      "G03_FEW_PROFILES"
+    ],
+    "selectorFeatures": {
+      "steps": 1,
+      "profileComponents": 1,
+      "profileComponentsRaw": 2,
+      "profileComponentSource": "executionCases",
+      "profileComponentIds": [
+        "000.00.00.g01-kq0427"
+      ],
+      "profileComponentsByCase": [
+        1,
+        1
+      ],
+      "methods": 1,
+      "methodNames": [
+        "DIRECT"
+      ],
+      "executionCases": 2,
+      "processingMin": 7,
+      "processingMax": 7,
+      "processingValues": [
+        "7 DAY"
+      ],
+      "timeConflict": false,
+      "timeMultiSource": false,
+      "conditionSignal": 1,
+      "actorSignal": 1,
+      "unitGroups": 0,
+      "departments": 1,
+      "agencies": 0,
+      "narrativeLength": 131,
+      "hasExecutionCases": true,
+      "dataWarnings": []
+    },
+    "description": "Thực hiện khai báo ngay khi người nước ngoài đến đăng ký tạm trú.",
+    "requirementsAndConditions": "Thực hiện khai báo ngay khi người nước ngoài đến đăng ký tạm trú.",
+    "executionSteps": [
+      {
+        "name": "",
+        "description": "Bước 1: Người khai báo tạm trú tiếp nhận thông tin tạm trú của người nước ngoài.\nBước 2: Khai, nộp Phiếu khai báo tạm trú cho trực ban Công an xã, phường, thị trấn hoặc đồn, trạm Công an (sau đây gọi chung là Công an cấp xã) nơi có cơ sở lưu trú (Phiếu khai báo tạm trú có thể gửi trước qua fax hoặc thông báo thông tin qua điện thoại đến Trực ban Công an cấp xã).\nCán bộ trực ban Công an cấp xã tiếp nhận hồ sơ kiểm tra tính pháp lý và nội dung hồ sơ:\nNếu nội dung Phiếu khai báo tạm trú cho người nước ngoài ghi đầy đủ thì tiếp nhận, thực hiện xác nhận theo quy định;\nNếu nội dung Phiếu khai báo tạm trú cho người nước ngoài chưa ghi đầy đủ thì yêu cầu người khai báo tạm trú sửa đổi, bổ sung.\nBước 3: Người khai báo tạm trú nhận lại Phiếu khai báo tạm trú đã có xác nhận của Công an cấp xã."
+      }
+    ],
+    "executionMethods": [
+      {
+        "submissionMethod": "DIRECT",
+        "processingTime": 7,
+        "processingTimeUnit": "DAY",
+        "description": "Nộp trực tiếp tại trụ sở Công an cấp xã",
+        "fees": []
+      }
+    ],
+    "executionCases": [
+      {
+        "index": 1,
+        "code": null,
+        "processingTime": null,
+        "processingDay": null,
+        "profileComponents": [
+          {
+            "profileComponentId": "019d2bb8-716a-743f-bd74-d7ff123f5342",
+            "originalQty": 1,
+            "copyQty": 0,
+            "required": false,
+            "hasElectronicForm": false,
+            "isProcessingResult": false,
+            "name": "Thông tin khai báo tạm trú bao gồm các thông tin sau đây của người nước ngoài: Họ tên, giới tính, ngày, tháng, năm sinh, quốc tịch, số hộ chiếu hoặc giấy tờ có giá trị đi lại quốc tế, thời hạn chứng nhận tạm trú hoặc gia hạn tạm trú hoặc thẻ tạm trú do cơ quan có thẩm quyền cấp và thời gian dự kiến tạm trú tại cơ sở lưu trú.",
+            "code": "000.00.00.G01-KQ0427",
+            "attachments": []
+          }
+        ],
+        "executionSteps": [],
+        "executingAgencies": [],
+        "departments": []
+      },
+      {
+        "index": 2,
+        "code": null,
+        "processingTime": null,
+        "processingDay": null,
+        "profileComponents": [
+          {
+            "profileComponentId": "019f8336-88e2-768c-95b6-3870429755d1",
+            "originalQty": 1,
+            "copyQty": 0,
+            "required": false,
+            "hasElectronicForm": true,
+            "isProcessingResult": false,
+            "name": "Phiếu khai báo tạm trú (mẫu NA17) ban hành kèm theo Thông tư số 04/2015/TT-BCA ngày 05/01/2015 của Bộ trưởng Bộ Công an quy định mẫu giấy tờ liên quan đến việc nhập cảnh, xuất cảnh, cư trú của người nước ngoài tại Việt Nam, được sửa đổi, bổ sung một số điều bởi Thông tư số 57/2020/TT-BCA ngày 10/6/2020, Thông tư số 22/2023/TT-BCA ngày 30/6/2023 và Thông tư số 70/2026/TT-BCA ngày 25/5/2026.",
+            "code": "000.00.00.G01-KQ0427.",
+            "attachments": []
+          }
+        ],
+        "executionSteps": [],
+        "executingAgencies": [],
+        "departments": []
+      }
+    ],
+    "profileComponentsRoot": [],
+    "executingAgencies": [],
+    "unitGroupsExecuting": [],
+    "departments": [],
+    "returningMethods": [
+      {
+        "type": "OFFLINE",
+        "value": [
+          "AT_SUBMISSION_PLACE",
+          "ONLINE"
+        ]
+      }
+    ],
+    "fees": [],
+    "targetObjects": [],
+    "resultTypes": [],
+    "flags": {
+      "isSharedService": false,
+      "isFullProcess": false,
+      "isOfflineOnly": false,
+      "isNonTerritorial": false
+    }
+  },
+  {
+    "goldenNo": 4,
+    "id": "019d2bf7-57ba-70d3-8771-4bbb754b4b31",
+    "code": "1.000771",
+    "name": "Gia hạn tạm trú cho người đã được cấp giấy miễn thị thực tại Cục Quản lý xuất nhập cảnh Bộ Công an",
+    "category": "Quản lý xuất nhập cảnh",
+    "groups": [
+      "G01_SIMPLE_STEPS",
+      "G07_MULTIPLE_METHODS"
+    ],
+    "selectorFeatures": {
+      "steps": 1,
+      "profileComponents": 4,
+      "profileComponentsRaw": 4,
+      "profileComponentSource": "executionCases",
+      "profileComponentIds": [
+        "000.00.00.g01-kq002259",
+        "000.00.00.g01-kq002263",
+        "000.00.00.g01-kq002617",
+        "000.00.00.g01-kq002262"
+      ],
+      "profileComponentsByCase": [
+        4
+      ],
+      "methods": 3,
+      "methodNames": [
+        "ONLINE",
+        "POSTAL",
+        "DIRECT"
+      ],
+      "executionCases": 1,
+      "processingMin": 5,
+      "processingMax": 5,
+      "processingValues": [
+        "5 WORKING_DAY"
+      ],
+      "timeConflict": false,
+      "timeMultiSource": false,
+      "conditionSignal": 6,
+      "actorSignal": 1,
+      "unitGroups": 0,
+      "departments": 1,
+      "agencies": 0,
+      "narrativeLength": 779,
+      "hasExecutionCases": true,
+      "dataWarnings": []
+    },
+    "description": "+ Có hộ chiếu hoặc giấy tờ có giá trị đi lại quốc tế còn giá trị ít nhất 01 năm.\n+ Người nhập cảnh bằng giấy miễn thị thực được cơ quan, tổ chức, cá nhân tại Việt Nam bảo lãnh và có lý do chính đáng.\n+ Không thuộc các trường hợp chưa cho nhập cảnh và tạm hoãn xuất cảnh theo quy định tại Điều 21 và Điều 28 của Luật Nhập cảnh, xuất cảnh, quá cảnh, cư trú của người nước ngoài tại Việt Nam.",
+    "requirementsAndConditions": "+ Có hộ chiếu hoặc giấy tờ có giá trị đi lại quốc tế còn giá trị ít nhất 01 năm.\n+ Người nhập cảnh bằng giấy miễn thị thực được cơ quan, tổ chức, cá nhân tại Việt Nam bảo lãnh và có lý do chính đáng.\n+ Không thuộc các trường hợp chưa cho nhập cảnh và tạm hoãn xuất cảnh theo quy định tại Điều 21 và Điều 28 của Luật Nhập cảnh, xuất cảnh, quá cảnh, cư trú của người nước ngoài tại Việt Nam.",
+    "executionSteps": [
+      {
+        "name": "",
+        "description": "Bước 1: Chuẩn bị hồ sơ theo quy định của pháp luật.\nBước 2: Nộp hồ sơ vào giờ hành chính các ngày làm việc trong tuần tại một trong hai trụ sở của Cục Quản lý xuất nhập cảnh - Bộ Công an:\n+ Số 44-46 đường Trần Phú, quận Ba Đình, thành phố Hà Nội.\n+ Số 333-335-337 đường Nguyễn Trãi, Quận 1, Thành phố Hồ Chí Minh.\nHoặc nộp hồ sơ trực tuyến qua Cổng dịch vụ công quốc gia hoặc Cổng dịch vụ công Bộ Công an và gửi bổ sung hồ sơ qua dịch vụ bưu chính công ích theo thông báo của Cục Quản lý xuất nhập cảnh trên Cổng dịch vụ công quốc gia hoặc Cổng dịch vụ công Bộ Công an (nếu có).\n* Cán bộ tiếp nhận hồ sơ kiểm tra tính pháp lý và nội dung hồ sơ: \n+ Nếu hồ sơ đầy đủ, hợp lệ thì tiếp nhận hồ sơ, in và cấp giấy hẹn trả kết quả cho người nộp hồ sơ; yêu cầu nộp phí cho cán bộ thu phí, cán bộ thu phí thu tiền, giao biên lai thu tiền cho người đề nghị gia hạn tạm trú hoặc thông báo trên Cổng dịch vụ công quốc gia hoặc Cổng dịch vụ công Bộ Công an để người đề nghị gia hạn tạm trú thanh toán trực tuyến và nhận biên lai điện tử.\n+ Nếu hồ sơ thiếu hoặc không hợp lệ thì cán bộ tiếp nhận hồ sơ hướng dẫn hoặc thông báo trên Cổng dịch vụ công quốc gia hoặc Cổng dịch vụ công Bộ Công an để người nộp hồ sơ hoàn chỉnh.\n + Trường hợp hồ sơ không đủ điều kiện thì không tiếp nhận hồ sơ, trả lời bằng văn bản hoặc thông báo trên Cổng dịch vụ công quốc gia hoặc Cổng dịch vụ công Bộ Công an và nêu rõ lý do.\n* Trường hợp nộp hồ sơ trực tuyến, người đề nghị gia hạn tạm trú có thể đề nghị nhận kết quả qua dịch vụ bưu chính và phải trả phí dịch vụ chuyển phát.\n* Thời gian tiếp nhận hồ sơ: Từ thứ 2 đến sáng thứ 7 hàng tuần (trừ ngày Tết, ngày lễ).\nBước 3: Trả kết quả:\n+ Người đến nhận kết quả trực tiếp nhận kết quả tại Cục Quản lý xuất nhập cảnh; khi đến nhận kết quả mang theo giấy hẹn trả kết quả, giấy tờ tùy thân để kiểm tra, đối chiếu. Trường hợp đề nghị nhận kết quả qua dịch vụ bưu chính thực hiện theo hướng dẫn của cơ quan cung cấp dịch vụ bưu chính.\n+ Trường hợp không đồng ý gia hạn tạm trú thì trả lời bằng văn bản hoặc thông báo trên Cổng dịch vụ công quốc gia hoặc Cổng dịch vụ công Bộ Công an và nêu rõ lý do.\n+ Thời gian trả kết quả: Từ thứ 2 đến thứ 6 hàng tuần (trừ ngày Tết, ngày lễ)."
+      }
+    ],
+    "executionMethods": [
+      {
+        "submissionMethod": "ONLINE",
+        "processingTime": 5,
+        "processingTimeUnit": "WORKING_DAY",
+        "description": "không quá 05 ngày làm việc kể từ ngày Cục Quản lý xuất nhập cảnh nhận đủ hồ sơ hợp lệ và phí đề nghị. Đối với hồ sơ qua thẩm định chưa đủ điều kiện giải quyết, sau 15 ngày kể từ khi thông báo, nếu người đề nghị không hoàn thành việc hoàn thiện hồ sơ thì hồ sơ sẽ bị đóng trên Hệ thống thông tin giải quyết thủ tục hành chính.",
+        "fees": [
+          {
+            "type": "SERVICE_FEE",
+            "value": 10,
+            "currencyId": "019b3fb2-dee2-76ab-aa53-22d4d903a2bb",
+            "attachment": null,
+            "description": "/lần",
+            "currencyName": "USD"
+          }
+        ]
+      },
+      {
+        "submissionMethod": "POSTAL",
+        "processingTime": 5,
+        "processingTimeUnit": "WORKING_DAY",
+        "description": "không quá 05 ngày làm việc kể từ ngày Cục Quản lý xuất nhập cảnh nhận đủ hồ sơ hợp lệ và phí đề nghị. Đối với hồ sơ qua thẩm định chưa đủ điều kiện giải quyết, sau 15 ngày kể từ khi thông báo, nếu người đề nghị không hoàn thành việc hoàn thiện hồ sơ thì hồ sơ sẽ bị đóng trên Hệ thống thông tin giải quyết thủ tục hành chính.",
+        "fees": [
+          {
+            "type": "SERVICE_FEE",
+            "value": 10,
+            "currencyId": "019b3fb2-dee2-76ab-aa53-22d4d903a2bb",
+            "attachment": null,
+            "description": "/lần",
+            "currencyName": "USD"
+          }
+        ]
+      },
+      {
+        "submissionMethod": "DIRECT",
+        "processingTime": 5,
+        "processingTimeUnit": "WORKING_DAY",
+        "description": "không quá 05 ngày làm việc kể từ ngày Cục Quản lý xuất nhập cảnh nhận đủ hồ sơ hợp lệ và phí đề nghị. Đối với hồ sơ qua thẩm định chưa đủ điều kiện giải quyết, sau 15 ngày kể từ khi thông báo, nếu người đề nghị không hoàn thành việc hoàn thiện hồ sơ thì hồ sơ sẽ bị đóng trên Hệ thống thông tin giải quyết thủ tục hành chính.",
+        "fees": [
+          {
+            "type": "SERVICE_FEE",
+            "value": 10,
+            "currencyId": "019b3fb2-dee2-76ab-aa53-22d4d903a2bb",
+            "attachment": null,
+            "description": "/lần",
+            "currencyName": "USD"
+          }
+        ]
+      }
+    ],
+    "executionCases": [
+      {
+        "index": 1,
+        "code": null,
+        "processingTime": null,
+        "processingDay": null,
+        "profileComponents": [
+          {
+            "profileComponentId": "019d2bb8-7167-703c-b036-49cd51109a04",
+            "originalQty": 1,
+            "copyQty": 0,
+            "required": false,
+            "hasElectronicForm": false,
+            "isProcessingResult": false,
+            "name": "Hộ chiếu hoặc giấy tờ có giá trị đi lại quốc tế hoặc giấy tờ cho phép thường trú do cơ quan có thẩm quyền của nước ngoài cấp cho người Việt Nam định cư ở nước ngoài.",
+            "code": "000.00.00.G01-KQ002259",
+            "attachments": []
+          },
+          {
+            "profileComponentId": "019d2bb8-7167-703c-b036-5be7ea2d992c",
+            "originalQty": 0,
+            "copyQty": 0,
+            "required": false,
+            "hasElectronicForm": false,
+            "isProcessingResult": false,
+            "name": "Trường hợp nộp hồ sơ trực tuyến thì hộ chiếu hoặc giấy tờ có giá trị đi lại quốc tế hoặc giấy tờ cho phép thường trú do cơ quan có thẩm quyền của nước ngoài cấp cho người Việt Nam định cư ở nước ngoài phải gửi qua dịch vụ bưu chính công ích về cơ quan tiếp nhận; thành phần hồ sơ khác phải được chứng thực điện tử theo quy định, trường hợp chưa được chứng thực điện tử thì gửi hồ sơ về cơ quan tiếp nhận thông qua dịch vụ bưu chính công ích.",
+            "code": "000.00.00.G01-KQ002263",
+            "attachments": []
+          },
+          {
+            "profileComponentId": "019d2bb8-7168-7766-84da-e6987ba3dc7e",
+            "originalQty": 1,
+            "copyQty": 0,
+            "required": false,
+            "hasElectronicForm": false,
+            "isProcessingResult": false,
+            "name": "Tờ khai đề nghị cấp thị thực, gia hạn tạm trú (mẫu NA5) ban hành kèm theo Thông tư số 22/2023/TT-BCA ngày 30/6/2023 của Bộ Công an.",
+            "code": "000.00.00.G01-KQ002617",
+            "attachments": [
+              {
+                "id": "019dce42-025a-703f-8536-7ec5ac3e2ecc",
+                "fileName": "NA5.doc",
+                "bucketName": "dvc",
+                "filePath": "configuring/019dce42-025a-703f-8536-7ec5ac3e2ecc/NA5.doc"
+              }
+            ]
+          },
+          {
+            "profileComponentId": "019d2bb8-7167-703c-b036-56c11755beed",
+            "originalQty": 1,
+            "copyQty": 0,
+            "required": false,
+            "hasElectronicForm": false,
+            "isProcessingResult": false,
+            "name": "Giấy miễn thị thực.",
+            "code": "000.00.00.G01-KQ002262",
+            "attachments": []
+          }
+        ],
+        "executionSteps": [],
+        "executingAgencies": [],
+        "departments": []
+      }
+    ],
+    "profileComponentsRoot": [],
+    "executingAgencies": [],
+    "unitGroupsExecuting": [],
+    "departments": [],
+    "returningMethods": [
+      {
+        "type": "ONLINE",
+        "value": [
+          "AT_HOME",
+          "AT_SUBMISSION_PLACE",
+          "ONLINE"
+        ]
+      },
+      {
+        "type": "OFFLINE",
+        "value": [
+          "AT_HOME",
+          "AT_SUBMISSION_PLACE",
+          "ONLINE"
+        ]
+      }
+    ],
+    "fees": [],
+    "targetObjects": [],
+    "resultTypes": [],
+    "flags": {
+      "isSharedService": false,
+      "isFullProcess": false,
+      "isOfflineOnly": false,
+      "isNonTerritorial": false
+    }
+  },
+  {
+    "goldenNo": 5,
+    "id": "019d2bf7-5fc6-72ba-a7f1-3506927a9517",
+    "code": "1.001445",
+    "name": "Trình báo mất hộ chiếu phổ thông (thực hiện tại cấp tỉnh)",
+    "category": "Quản lý xuất nhập cảnh",
+    "groups": [
+      "G03_FEW_PROFILES",
+      "G05_SHORT_TIME",
+      "G07_MULTIPLE_METHODS"
+    ],
+    "selectorFeatures": {
+      "steps": 1,
+      "profileComponents": 1,
+      "profileComponentsRaw": 1,
+      "profileComponentSource": "executionCases",
+      "profileComponentIds": [
+        "000.00.00.g01-kq002636"
+      ],
+      "profileComponentsByCase": [
+        1
+      ],
+      "methods": 3,
+      "methodNames": [
+        "ONLINE",
+        "POSTAL",
+        "DIRECT"
+      ],
+      "executionCases": 1,
+      "processingMin": 1,
+      "processingMax": 1,
+      "processingValues": [
+        "1 WORKING_DAY"
+      ],
+      "timeConflict": false,
+      "timeMultiSource": false,
+      "conditionSignal": 11,
+      "actorSignal": 1,
+      "unitGroups": 0,
+      "departments": 1,
+      "agencies": 0,
+      "narrativeLength": 793,
+      "hasExecutionCases": true,
+      "dataWarnings": []
+    },
+    "description": "Trong thời hạn 02 ngày làm việc kể từ ngày phát hiện hộ chiếu phổ thông bị mất, người bị mất hộ chiếu trực tiếp nộp hoặc gửi đơn báo mất cho Cơ quan Quản lý xuất nhập cảnh Công an cấp tỉnh hoặc trên môi trường điện tử tại Cổng dịch vụ công quốc gia. Trường hợp vì lý do bất khả kháng, thời hạn nộp hoặc gửi đơn báo mất có thể dài hơn nhưng trong đơn phải giải thích cụ thể về lý do bất khả kháng.",
+    "requirementsAndConditions": "Trong thời hạn 02 ngày làm việc kể từ ngày phát hiện hộ chiếu phổ thông bị mất, người bị mất hộ chiếu trực tiếp nộp hoặc gửi đơn báo mất cho Cơ quan Quản lý xuất nhập cảnh Công an cấp tỉnh hoặc trên môi trường điện tử tại Cổng dịch vụ công quốc gia. Trường hợp vì lý do bất khả kháng, thời hạn nộp hoặc gửi đơn báo mất có thể dài hơn nhưng trong đơn phải giải thích cụ thể về lý do bất khả kháng.",
+    "executionSteps": [
+      {
+        "name": "",
+        "description": "Bước 1: Chuẩn bị hồ sơ theo mẫu quy định.\nBước 2: Nộp hồ sơ\n* Công dân Việt Nam bị mất hộ chiếu phổ thông ở trong nước thực hiện việc trình báo mất hộ chiếu tại Cơ quan Quản lý xuất nhập cảnh Công an cấp tỉnh nơi thuận lợi, qua dịch vụ bưu chính công ích hoặc Cổng dịch vụ công trực tuyến.\nKhi đến nộp hồ sơ phải xuất trình giấy chứng minh nhân dân hoặc thẻ căn cước công dân còn giá trị sử dụng để kiểm tra, đối chiếu.\n* Thời gian tiếp nhận hồ sơ: Từ thứ 2 đến thứ 6 hàng tuần và sáng thứ 7 (đối với các đơn vị bố trí tiếp nhận hồ sơ vào sáng thứ 7); trừ ngày Tết, ngày lễ.\n* Cán bộ tiếp nhận hồ sơ kiểm tra tính pháp lý và nội dung hồ sơ:\n+ Nếu hồ sơ đầy đủ, hợp lệ thì tiếp nhận.\n+ Nếu hồ sơ chưa hợp lệ thì hướng dẫn người bị mất hộ chiếu hoàn chỉnh hồ sơ theo quy định.\nBước 3: Nhận kết quả"
+      }
+    ],
+    "executionMethods": [
+      {
+        "submissionMethod": "ONLINE",
+        "processingTime": 1,
+        "processingTimeUnit": "WORKING_DAY",
+        "description": "01 ngày làm việc kể từ ngày nhận được đơn báo mất hộ chiếu phổ thông, Cơ quan Quản lý xuất nhập cảnh Công an cấp tỉnh thông báo cho Cơ quan Quản lý xuất nhập cảnh, Bộ Công an và người gửi đơn.",
+        "fees": []
+      },
+      {
+        "submissionMethod": "POSTAL",
+        "processingTime": 1,
+        "processingTimeUnit": "WORKING_DAY",
+        "description": "01 ngày làm việc kể từ ngày nhận được đơn báo mất hộ chiếu phổ thông, Cơ quan Quản lý xuất nhập cảnh Công an cấp tỉnh thông báo cho Cơ quan Quản lý xuất nhập cảnh, Bộ Công an và người gửi đơn.",
+        "fees": []
+      },
+      {
+        "submissionMethod": "DIRECT",
+        "processingTime": 1,
+        "processingTimeUnit": "WORKING_DAY",
+        "description": "01 ngày làm việc kể từ ngày nhận được đơn báo mất hộ chiếu phổ thông, Cơ quan Quản lý xuất nhập cảnh Công an cấp tỉnh thông báo cho Cơ quan Quản lý xuất nhập cảnh, Bộ Công an và người gửi đơn.",
+        "fees": []
+      }
+    ],
+    "executionCases": [
+      {
+        "index": 1,
+        "code": null,
+        "processingTime": null,
+        "processingDay": null,
+        "profileComponents": [
+          {
+            "profileComponentId": "019d2bb8-7168-7766-84db-335a6c8d5da4",
+            "originalQty": 1,
+            "copyQty": 0,
+            "required": false,
+            "hasElectronicForm": false,
+            "isProcessingResult": false,
+            "name": "Đơn trình báo mất hộ chiếu phổ thông (mẫu TK05) ban hành kèm theo Thông tư số 69/2026/TT-BCA ngày 22/5/2026  của Bộ Công an. Đối với người mất năng lực hành vi dân sự, có khó khăn trong nhận thức và làm chủ hành vi, người chưa đủ 14 tuổi thì người đại diện hợp pháp khai và ký thay.",
+            "code": "000.00.00.G01-KQ002636",
+            "attachments": [
+              {
+                "id": "019f8cd8-7135-76ad-9280-abe4dfcfa58a",
+                "fileName": "Mẫu TK05 báo mất HC 05 7 TK05 MỚI.doc",
+                "bucketName": "dvc",
+                "filePath": "configuring/019f8cd8-7135-76ad-9280-abe4dfcfa58a/Mẫu TK05 báo mất HC 05 7 TK05 MỚI.doc"
+              }
+            ]
+          }
+        ],
+        "executionSteps": [],
+        "executingAgencies": [],
+        "departments": []
+      }
+    ],
+    "profileComponentsRoot": [],
+    "executingAgencies": [],
+    "unitGroupsExecuting": [],
+    "departments": [],
+    "returningMethods": [
+      {
+        "type": "ONLINE",
+        "value": [
+          "AT_HOME",
+          "AT_SUBMISSION_PLACE",
+          "ONLINE"
+        ]
+      },
+      {
+        "type": "OFFLINE",
+        "value": [
+          "AT_HOME",
+          "AT_SUBMISSION_PLACE",
+          "ONLINE"
+        ]
+      }
+    ],
+    "fees": [],
+    "targetObjects": [],
+    "resultTypes": [],
+    "flags": {
+      "isSharedService": false,
+      "isFullProcess": false,
+      "isOfflineOnly": false,
+      "isNonTerritorial": false
+    }
+  },
+  {
+    "goldenNo": 6,
+    "id": "019d2bf7-868d-73ed-93ce-00643818b2e7",
+    "code": "1.010386",
+    "name": "Trình báo mất hộ chiếu phổ thông (thực hiện tại cấp xã)",
+    "category": "Quản lý xuất nhập cảnh",
+    "groups": [
+      "G03_FEW_PROFILES",
+      "G05_SHORT_TIME"
+    ],
+    "selectorFeatures": {
+      "steps": 1,
+      "profileComponents": 1,
+      "profileComponentsRaw": 1,
+      "profileComponentSource": "executionCases",
+      "profileComponentIds": [
+        "000.00.00.g01-kq002601"
+      ],
+      "profileComponentsByCase": [
+        1
+      ],
+      "methods": 3,
+      "methodNames": [
+        "ONLINE",
+        "POSTAL",
+        "DIRECT"
+      ],
+      "executionCases": 1,
+      "processingMin": 1,
+      "processingMax": 1,
+      "processingValues": [
+        "1 WORKING_DAY"
+      ],
+      "timeConflict": false,
+      "timeMultiSource": false,
+      "conditionSignal": 11,
+      "actorSignal": 1,
+      "unitGroups": 0,
+      "departments": 1,
+      "agencies": 0,
+      "narrativeLength": 727,
+      "hasExecutionCases": true,
+      "dataWarnings": []
+    },
+    "description": "Trong thời hạn 02 ngày làm việc kể từ ngày phát hiện hộ chiếu phổ thông bị mất, người bị mất hộ chiếu trực tiếp nộp hoặc gửi đơn báo mất cho Công an cấp xã hoặc trên môi trường điện tử tại Cổng dịch vụ công quốc gia. Trường hợp vì lý do bất khả kháng, thời hạn nộp hoặc gửi đơn báo mất có thể dài hơn nhưng trong đơn phải giải thích cụ thể về lý do bất khả kháng.",
+    "requirementsAndConditions": "Trong thời hạn 02 ngày làm việc kể từ ngày phát hiện hộ chiếu phổ thông bị mất, người bị mất hộ chiếu trực tiếp nộp hoặc gửi đơn báo mất cho Công an cấp xã hoặc trên môi trường điện tử tại Cổng dịch vụ công quốc gia. Trường hợp vì lý do bất khả kháng, thời hạn nộp hoặc gửi đơn báo mất có thể dài hơn nhưng trong đơn phải giải thích cụ thể về lý do bất khả kháng.",
+    "executionSteps": [
+      {
+        "name": "",
+        "description": "Bước 1: Chuẩn bị hồ sơ theo quy định của pháp luật.\nBước 2: Nộp hồ sơ\n* Công dân Việt Nam bị mất hộ chiếu phổ thông ở trong nước thực hiện việc trình báo mất hộ chiếu phổ thông qua Cổng dịch vụ công quốc gia, Cổng dịch vụ công Bộ Công an, qua dịch vụ bưu chính công ích hoặc tại trụ sở Công an cấp xã nơi gần nhất.\nKhi đến nộp hồ sơ phải xuất trình Chứng minh nhân dân hoặc Thẻ căn cước công dân còn giá trị sử dụng để kiểm tra, đối chiếu.\n* Thời gian tiếp nhận hồ sơ: Từ thứ 2 đến thứ 6 hàng tuần và sáng thứ 7 (đối với các đơn vị bố trí tiếp nhận hồ sơ vào sáng thứ 7); trừ ngày Tết, ngày lễ.\n* Cán bộ tiếp nhận hồ sơ kiểm tra tính pháp lý và nội dung hồ sơ:\n+ Nếu hồ sơ đầy đủ, hợp lệ thì tiếp nhận.\n+ Nếu hồ sơ chưa đầy đủ, hợp lệ thì hướng dẫn người trình báo mất hộ chiếu hoàn chỉnh hồ sơ theo quy định.\nBước 3: Nhận kết quả\nCông an cấp xã gửi thông báo về việc đã tiếp nhận đơn trình báo mất hộ chiếu phổ thông cho người gửi đơn."
+      }
+    ],
+    "executionMethods": [
+      {
+        "submissionMethod": "ONLINE",
+        "processingTime": 1,
+        "processingTimeUnit": "WORKING_DAY",
+        "description": "01 ngày làm việc kể từ khi nhận đơn trình báo mất hộ chiếu phổ thông, Công an cấp xã thông báo bằng văn bản cho người gửi đơn và Cục Quản lý xuất nhập cảnh; trong thời hạn 01 ngày làm việc kể từ ngày nhận được thông báo của Công an cấp xã, Cục Quản lý xuất nhập cảnh thực hiện hủy giá trị sử dụng của hộ chiếu và thông báo về việc giải quyết đơn trình báo mất hộ chiếu cho người gửi đơn. Nộp hồ sơ trực tuyến qua Cổng Dịch vụ công quốc gia hoặc Cổng dịch vụ công Bộ Công an.",
+        "fees": []
+      },
+      {
+        "submissionMethod": "POSTAL",
+        "processingTime": 1,
+        "processingTimeUnit": "WORKING_DAY",
+        "description": "01 ngày làm việc kể từ khi nhận đơn trình báo mất hộ chiếu phổ thông, Công an cấp xã thông báo bằng văn bản cho người gửi đơn và Cục Quản lý xuất nhập cảnh; trong thời hạn 01 ngày làm việc kể từ ngày nhận được thông báo của Công an cấp xã, Cục Quản lý xuất nhập cảnh thực hiện hủy giá trị sử dụng của hộ chiếu và thông báo về việc giải quyết đơn trình báo mất hộ chiếu cho người gửi đơn. Nộp hồ sơ qua dịch vụ bưu chính.",
+        "fees": []
+      },
+      {
+        "submissionMethod": "DIRECT",
+        "processingTime": 1,
+        "processingTimeUnit": "WORKING_DAY",
+        "description": "01 ngày làm việc kể từ khi nhận đơn trình báo mất hộ chiếu phổ thông, Công an cấp xã thông báo bằng văn bản cho người gửi đơn và Cục Quản lý xuất nhập cảnh; trong thời hạn 01 ngày làm việc kể từ ngày nhận được thông báo của Công an cấp xã, Cục Quản lý xuất nhập cảnh thực hiện hủy giá trị sử dụng của hộ chiếu và thông báo về việc giải quyết đơn trình báo mất hộ chiếu cho người gửi đơn. Trực tiếp nộp hồ sơ tại trụ sở làm việc của Công an cấp xã.",
+        "fees": []
+      }
+    ],
+    "executionCases": [
+      {
+        "index": 1,
+        "code": null,
+        "processingTime": null,
+        "processingDay": null,
+        "profileComponents": [
+          {
+            "profileComponentId": "019d2bb8-7168-7766-84da-a5bf5389abce",
+            "originalQty": 1,
+            "copyQty": 0,
+            "required": false,
+            "hasElectronicForm": false,
+            "isProcessingResult": false,
+            "name": "Đơn trình báo mất hộ chiếu phổ thông (mẫu TK05) ban hành kèm theo Thông tư số 69/2026/TT-BCA ngày 22/5/2026  của Bộ Công an. Đối với người mất năng lực hành vi dân sự, có khó khăn trong nhận thức và làm chủ hành vi, người chưa đủ 14 tuổi thì người đại diện hợp pháp khai và ký thay.",
+            "code": "000.00.00.G01-KQ002601",
+            "attachments": [
+              {
+                "id": "019dd018-c88c-746b-af89-2ac2626f957c",
+                "fileName": "Mẫu TK05 báo mất HC 05 7 TK05 MỚI.doc",
+                "bucketName": "dvc",
+                "filePath": "configuring/019dd018-c88c-746b-af89-2ac2626f957c/Mẫu TK05 báo mất HC 05 7 TK05 MỚI.doc"
+              }
+            ]
+          }
+        ],
+        "executionSteps": [],
+        "executingAgencies": [],
+        "departments": []
+      }
+    ],
+    "profileComponentsRoot": [],
+    "executingAgencies": [],
+    "unitGroupsExecuting": [],
+    "departments": [],
+    "returningMethods": [
+      {
+        "type": "ONLINE",
+        "value": [
+          "AT_HOME",
+          "AT_SUBMISSION_PLACE",
+          "ONLINE"
+        ]
+      },
+      {
+        "type": "OFFLINE",
+        "value": [
+          "AT_HOME",
+          "AT_SUBMISSION_PLACE",
+          "ONLINE"
+        ]
+      }
+    ],
+    "fees": [],
+    "targetObjects": [],
+    "resultTypes": [],
+    "flags": {
+      "isSharedService": false,
+      "isFullProcess": true,
+      "isOfflineOnly": false,
+      "isNonTerritorial": false
+    }
   }
 ]
