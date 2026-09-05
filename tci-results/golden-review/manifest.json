@@ -1,0 +1,212 @@
+[
+  {
+    "batch": 1,
+    "goldenNo": 1,
+    "code": "1.014977",
+    "id": "019d89ea-43a9-74a1-85f1-b83f1417f983",
+    "file": "tci-results/golden-review/batch-1.json"
+  },
+  {
+    "batch": 1,
+    "goldenNo": 2,
+    "code": "1.014978",
+    "id": "019d89ec-bf71-703a-933c-82cac6e37faf",
+    "file": "tci-results/golden-review/batch-1.json"
+  },
+  {
+    "batch": 1,
+    "goldenNo": 3,
+    "code": "1.000253",
+    "id": "019d2bf7-4fc4-7716-bab8-167242b3fcda",
+    "file": "tci-results/golden-review/batch-1.json"
+  },
+  {
+    "batch": 1,
+    "goldenNo": 4,
+    "code": "1.000771",
+    "id": "019d2bf7-57ba-70d3-8771-4bbb754b4b31",
+    "file": "tci-results/golden-review/batch-1.json"
+  },
+  {
+    "batch": 1,
+    "goldenNo": 5,
+    "code": "1.001445",
+    "id": "019d2bf7-5fc6-72ba-a7f1-3506927a9517",
+    "file": "tci-results/golden-review/batch-1.json"
+  },
+  {
+    "batch": 1,
+    "goldenNo": 6,
+    "code": "1.010386",
+    "id": "019d2bf7-868d-73ed-93ce-00643818b2e7",
+    "file": "tci-results/golden-review/batch-1.json"
+  },
+  {
+    "batch": 2,
+    "goldenNo": 7,
+    "code": "1.115797",
+    "id": "019f5e3a-bfe2-702f-85b1-da41a26bb824",
+    "file": "tci-results/golden-review/batch-2.json"
+  },
+  {
+    "batch": 2,
+    "goldenNo": 8,
+    "code": "3.000671",
+    "id": "019fb923-aca1-7681-b21b-01b6f62e28ef",
+    "file": "tci-results/golden-review/batch-2.json"
+  },
+  {
+    "batch": 2,
+    "goldenNo": 9,
+    "code": "3.000579",
+    "id": "019e96c8-22fd-7617-9581-cf4e32745304",
+    "file": "tci-results/golden-review/batch-2.json"
+  },
+  {
+    "batch": 2,
+    "goldenNo": 10,
+    "code": "2.002011",
+    "id": "019d2bfc-da19-7628-836f-646ce74db96a",
+    "file": "tci-results/golden-review/batch-2.json"
+  },
+  {
+    "batch": 2,
+    "goldenNo": 11,
+    "code": "1.004881",
+    "id": "019d2bfa-401c-7185-871b-1e4375c166ac",
+    "file": "tci-results/golden-review/batch-2.json"
+  },
+  {
+    "batch": 2,
+    "goldenNo": 12,
+    "code": "1.014199",
+    "id": "019d2bfb-2af9-774b-995e-ea7085c65ef6",
+    "file": "tci-results/golden-review/batch-2.json"
+  },
+  {
+    "batch": 3,
+    "goldenNo": 13,
+    "code": "1.001226",
+    "id": "019d2bf7-5f64-749f-b550-79b243ce8fb3",
+    "file": "tci-results/golden-review/batch-3.json"
+  },
+  {
+    "batch": 3,
+    "goldenNo": 14,
+    "code": "1.003677",
+    "id": "019d2bf7-6f56-704f-95b8-8d949272c6ad",
+    "file": "tci-results/golden-review/batch-3.json"
+  },
+  {
+    "batch": 3,
+    "goldenNo": 15,
+    "code": "1.014999",
+    "id": "019dd34c-cf37-735a-b1d6-ab2d3951ea53",
+    "file": "tci-results/golden-review/batch-3.json"
+  },
+  {
+    "batch": 3,
+    "goldenNo": 16,
+    "code": "1.015003",
+    "id": "019dd459-97b2-743b-b7b3-5d386ddf10bb",
+    "file": "tci-results/golden-review/batch-3.json"
+  },
+  {
+    "batch": 3,
+    "goldenNo": 17,
+    "code": "1.000807",
+    "id": "019d2bf7-57cb-7599-a263-9b6b5f854f74",
+    "file": "tci-results/golden-review/batch-3.json"
+  },
+  {
+    "batch": 3,
+    "goldenNo": 18,
+    "code": "1.000811",
+    "id": "019d2bf7-57cf-774b-9de0-6289bec06f7f",
+    "file": "tci-results/golden-review/batch-3.json"
+  },
+  {
+    "batch": 4,
+    "goldenNo": 19,
+    "code": "1.013742",
+    "id": "019d86f7-6442-745b-bd78-704907bbfcb3",
+    "file": "tci-results/golden-review/batch-4.json"
+  },
+  {
+    "batch": 4,
+    "goldenNo": 20,
+    "code": "1.007659",
+    "id": "019d2bfc-2615-7489-ae4c-dc1cd8317dcb",
+    "file": "tci-results/golden-review/batch-4.json"
+  },
+  {
+    "batch": 4,
+    "goldenNo": 21,
+    "code": "1.009646",
+    "id": "019d2bfc-9380-700d-b295-7c6705fc9313",
+    "file": "tci-results/golden-review/batch-4.json"
+  },
+  {
+    "batch": 4,
+    "goldenNo": 22,
+    "code": "1.116389",
+    "id": "019ff8f6-f80d-72dd-a69d-b0f2468821d2",
+    "file": "tci-results/golden-review/batch-4.json"
+  },
+  {
+    "batch": 4,
+    "goldenNo": 23,
+    "code": "1.116400",
+    "id": "019ff5be-f90b-744a-bf31-aa9fec429c19",
+    "file": "tci-results/golden-review/batch-4.json"
+  },
+  {
+    "batch": 4,
+    "goldenNo": 24,
+    "code": "1.001667",
+    "id": "019d2bfb-d7a1-70cd-b177-166039682b48",
+    "file": "tci-results/golden-review/batch-4.json"
+  },
+  {
+    "batch": 5,
+    "goldenNo": 25,
+    "code": "1.116038",
+    "id": "019fa89c-2a0e-71cc-a46e-20a3f8ae8d9a",
+    "file": "tci-results/golden-review/batch-5.json"
+  },
+  {
+    "batch": 5,
+    "goldenNo": 26,
+    "code": "3.000654",
+    "id": "019fb7c8-f7c9-70bf-aa81-c64ee59ea09c",
+    "file": "tci-results/golden-review/batch-5.json"
+  },
+  {
+    "batch": 5,
+    "goldenNo": 27,
+    "code": "3.000650",
+    "id": "019fb7be-6c8b-7054-819d-5e470608e389",
+    "file": "tci-results/golden-review/batch-5.json"
+  },
+  {
+    "batch": 5,
+    "goldenNo": 28,
+    "code": "1.009628",
+    "id": "019d2bfc-93a3-764c-945d-714845436ee5",
+    "file": "tci-results/golden-review/batch-5.json"
+  },
+  {
+    "batch": 5,
+    "goldenNo": 29,
+    "code": "2.000575",
+    "id": "019d2bfc-d9d1-7475-8e58-1aa4479901eb",
+    "file": "tci-results/golden-review/batch-5.json"
+  },
+  {
+    "batch": 5,
+    "goldenNo": 30,
+    "code": "1.013285",
+    "id": "019d2bfb-98cb-728d-b499-207d165ed70e",
+    "file": "tci-results/golden-review/batch-5.json"
+  }
+]
