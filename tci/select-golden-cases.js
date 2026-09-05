@@ -18,13 +18,16 @@ const groups = [
   'G10_EXECUTION_CASES','G11_ANOMALIES','G13_VERY_COMPLEX'
 ];
 
+// Tổng quota = đúng 30. Mỗi nhóm đều có đại diện tối thiểu.
 const quota = new Map([
-  ['G12_VERY_SIMPLE',3], ['G01_SIMPLE_STEPS',2], ['G03_FEW_PROFILES',2],
-  ['G02_MANY_STEPS',4], ['G04_MANY_PROFILES',4], ['G05_SHORT_TIME',2],
+  ['G12_VERY_SIMPLE',2], ['G01_SIMPLE_STEPS',2], ['G03_FEW_PROFILES',2],
+  ['G02_MANY_STEPS',3], ['G04_MANY_PROFILES',3], ['G05_SHORT_TIME',2],
   ['G06_LONG_TIME',2], ['G07_MULTIPLE_METHODS',2], ['G08_COMPLEX_CONDITIONS',3],
-  ['G09_MANY_ACTORS',3], ['G10_EXECUTION_CASES',3], ['G11_ANOMALIES',3],
-  ['G13_VERY_COMPLEX',4]
+  ['G09_MANY_ACTORS',2], ['G10_EXECUTION_CASES',2], ['G11_ANOMALIES',2],
+  ['G13_VERY_COMPLEX',3]
 ]);
+const quotaTotal = [...quota.values()].reduce((a,b) => a+b, 0);
+if (quotaTotal !== TARGET) throw new Error(`Quota lỗi: ${quotaTotal} !== ${TARGET}`);
 
 function featureVector(s) {
   const f = s.features || {};
@@ -55,7 +58,7 @@ function scoreForGroup(s, g) {
   if (g === 'G08_COMPLEX_CONDITIONS') return f.condition*10 + f.narrative/1000;
   if (g === 'G09_MANY_ACTORS') return f.actors*10 + f.condition;
   if (g === 'G10_EXECUTION_CASES') return f.cases*10 + f.profiles;
-  if (g === 'G11_ANOMALIES') return f.anomaly*100 + (f.steps||0);
+  if (g === 'G11_ANOMALIES') return f.anomaly*100 + f.steps;
   if (g === 'G13_VERY_COMPLEX') return f.steps*5 + f.condition*2 + f.actors*2 + f.profiles*1.5 + f.cases*1.5 + f.narrative/1000;
   return 0;
 }
@@ -69,7 +72,8 @@ function addCandidate(s, reason) {
   return true;
 }
 
-// First pass: fill required group quotas, while avoiding repeated choice of near-identical records.
+// Pass 1: bảo đảm quota từng nhóm. Không bỏ ứng viên chỉ vì trùng signature;
+// diversity sẽ được xử lý ở pass 2 sau khi coverage bắt buộc đã đủ.
 for (const g of groups) {
   const need = quota.get(g) || 0;
   const candidates = samples
@@ -77,21 +81,19 @@ for (const g of groups) {
     .sort((a,b) => scoreForGroup(b,g) - scoreForGroup(a,g));
   let added = 0;
   for (const s of candidates) {
-    if (selected.size >= TARGET || added >= need) break;
+    if (added >= need || selected.size >= TARGET) break;
     if (selected.has(s.id)) continue;
-    // Prefer non-duplicate signatures when the strongest records are structurally identical.
-    const f = featureVector(s);
-    const signature = `${f.steps}|${f.profiles}|${f.methods}|${f.cases}|${f.condition}|${f.actors}|${f.anomaly}`;
-    const similar = [...selected.values()].some(x => {
-      const y = featureVector(x.sample);
-      return `${y.steps}|${y.profiles}|${y.methods}|${y.cases}|${y.condition}|${y.actors}|${y.anomaly}` === signature;
-    });
-    if (similar && candidates.length > need * 2) continue;
-    if (addCandidate(s, `Golden anchor: ${g}`)) { added++; chosenGroupCount.set(g, (chosenGroupCount.get(g)||0)+1); }
+    if (addCandidate(s, `Golden anchor: ${g}`)) {
+      added++;
+      chosenGroupCount.set(g, (chosenGroupCount.get(g)||0)+1);
+    }
+  }
+  if (added < need) {
+    console.warn(`WARN: ${g} chỉ đạt ${added}/${need} do thiếu ứng viên chưa được chọn.`);
   }
 }
 
-// Second pass: maximize feature diversity among remaining candidates.
+// Pass 2: nếu còn slot, ưu tiên nhóm còn thiếu quota rồi mới tối đa hóa đa dạng.
 function distance(a,b) {
   const x = featureVector(a), y = featureVector(b);
   const scale = (v, m) => Math.min(1, Math.abs(v)/(m||1));
@@ -104,18 +106,32 @@ function distance(a,b) {
     + scale(x.narrative-y.narrative,10000)
     + scale(x.anomaly-y.anomaly,3);
 }
+
 while (selected.size < TARGET) {
   const pool = samples.filter(s => !selected.has(s.id));
   if (!pool.length) break;
+
+  // Ưu tiên lấp nhóm đang thiếu quota.
+  const deficitGroups = groups.filter(g => (chosenGroupCount.get(g)||0) < (quota.get(g)||0));
   let best = null, bestScore = -Infinity;
+
   for (const s of pool) {
-    const minDist = selected.size ? Math.min(...[...selected.values()].map(x => distance(s,x.sample))) : 1;
-    const groupNovelty = groups.filter(g => (s.groups||[]).includes(g) && (chosenGroupCount.get(g)||0) === 0).length;
     const f = featureVector(s);
-    const score = minDist*10 + groupNovelty*4 + Math.min(f.condition,50)/50 + Math.min(f.steps,20)/20 + Math.min(f.profiles,50)/50 + f.anomaly*2;
+    const memberships = (s.groups || []);
+    const minDist = selected.size ? Math.min(...[...selected.values()].map(x => distance(s,x.sample))) : 1;
+    const deficitBoost = memberships.reduce((sum,g) => deficitGroups.includes(g) ? sum + 8 : sum, 0);
+    const novelty = groups.filter(g => memberships.includes(g) && (chosenGroupCount.get(g)||0) === 0).length;
+    const score = minDist*10 + deficitBoost + novelty*4
+      + Math.min(f.condition,50)/50 + Math.min(f.steps,20)/20
+      + Math.min(f.profiles,50)/50 + f.anomaly*2;
     if (score > bestScore) { bestScore = score; best = s; }
   }
-  addCandidate(best, 'Golden bổ sung để tăng độ đa dạng');
+
+  if (!best) break;
+  addCandidate(best, deficitGroups.length ? 'Golden bổ sung để lấp coverage' : 'Golden bổ sung để tăng độ đa dạng');
+  for (const g of (best.groups || [])) {
+    chosenGroupCount.set(g, (chosenGroupCount.get(g)||0)+1);
+  }
 }
 
 const golden = [...selected.values()].map((x,i) => ({
@@ -135,11 +151,13 @@ for (const g of groups) coverage[g] = golden.filter(x => (x.groups||[]).includes
 
 const output = {
   metadata: {
-    version: 'TCI_V1_GOLDEN_SELECTOR_1.0',
+    version: 'TCI_V1_GOLDEN_SELECTOR_1.1',
     source: 'tci-results/tci-calibration-selection.json',
     candidateCount: samples.length,
     goldenCount: golden.length,
     random: false,
+    quotaTotal: quotaTotal,
+    quota,
     note: 'Golden Cases ứng viên để hiệu chuẩn TCI; chưa tính điểm TCI.'
   },
   coverage,
@@ -148,11 +166,21 @@ const output = {
 
 fs.writeFileSync(OUT, JSON.stringify(output, null, 2));
 let md = '# TCI V1 – Golden Cases\n\n';
-md += `- Candidate: **${samples.length}**\n- Golden Cases: **${golden.length}**\n- Random: **Không**\n- Chưa tính điểm TCI.\n\n## Coverage\n\n`;
-for (const [g,c] of Object.entries(coverage)) md += `- ${c > 0 ? '✅' : '❌'} ${g}: ${c}\n`;
+md += `- Candidate: **${samples.length}**\n- Golden Cases: **${golden.length}**\n- Random: **Không**\n- Quota tổng: **${quotaTotal}**\n- Chưa tính điểm TCI.\n\n## Coverage\n\n`;
+for (const [g,c] of Object.entries(coverage)) {
+  const q = quota.get(g) || 0;
+  md += `- ${c >= q ? '✅' : '⚠️'} ${g}: ${c}/${q}\n`;
+}
 md += '\n## Golden Cases\n\n';
 for (const s of golden) {
   const f = s.features;
   md += `${s.goldenNo}. **${s.code} — ${s.name}**\n   - Bước: ${f.steps}; Hồ sơ: ${f.profileComponents}; Phương thức: ${f.methods}; Cases: ${f.executionCases}; Thời gian: ${f.processingMin ?? 'UNKNOWN'}${f.processingMax != null && f.processingMax !== f.processingMin ? `–${f.processingMax}` : ''}\n   - Điều kiện: ${f.conditionSignal}; Tác nhân: ${f.actorSignal}; Anomaly: ${(f.dataWarnings||[]).length}\n   - Nhóm: ${(s.groups||[]).join(', ')}\n   - Lý do: ${[...new Set(s.reasons)].join('; ')}\n\n`;
 }
+
+const missing = groups.filter(g => coverage[g] < (quota.get(g)||0));
+if (missing.length) throw new Error(`Golden coverage chưa đạt quota: ${missing.join(', ')}`);
+if (golden.length !== TARGET) throw new Error(`Golden count lỗi: ${golden.length} !== ${TARGET}`);
+
+fs.writeFileSync(MD, md);
 console.log(`ĐÃ CHỌN ${golden.length} GOLDEN CASES.`);
+console.log(`COVERAGE: ${groups.map(g => `${g}=${coverage[g]}/${quota.get(g)}`).join(' | ')}`);
