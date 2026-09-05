@@ -1,34 +1,34 @@
 {
   "metadata": {
-    "version": "TCI_V1_CALIBRATION_SELECTOR_GITHUB_1.3",
-    "generatedAt": "2026-09-05T03:13:38.072Z",
+    "version": "TCI_V1_CALIBRATION_SELECTOR_GITHUB_1.4",
+    "generatedAt": "2026-09-05T03:14:45.086Z",
     "source": "branch data / details/*.json",
     "totalJsonFiles": 6258,
     "totalParsed": 6258,
     "target": 50,
     "selected": 50,
     "random": false,
-    "note": "Chỉ chọn mẫu calibration, chưa tính TCI. Ưu tiên quota nhóm anomaly/actor/cases/extremes trước."
+    "note": "Chỉ chọn mẫu calibration, không tính TCI. Hồ sơ được khử trùng lặp theo mã/ID; thời gian khác nguồn được phân biệt với xung đột cùng phương thức."
   },
   "coverage": {
     "G01_SIMPLE_STEPS": {
-      "selected": 8,
+      "selected": 6,
       "covered": true
     },
     "G02_MANY_STEPS": {
-      "selected": 7,
-      "covered": true
-    },
-    "G03_FEW_PROFILES": {
       "selected": 4,
       "covered": true
     },
+    "G03_FEW_PROFILES": {
+      "selected": 3,
+      "covered": true
+    },
     "G04_MANY_PROFILES": {
-      "selected": 13,
+      "selected": 7,
       "covered": true
     },
     "G05_SHORT_TIME": {
-      "selected": 6,
+      "selected": 4,
       "covered": true
     },
     "G06_LONG_TIME": {
@@ -36,11 +36,11 @@
       "covered": true
     },
     "G07_MULTIPLE_METHODS": {
-      "selected": 4,
+      "selected": 5,
       "covered": true
     },
     "G08_COMPLEX_CONDITIONS": {
-      "selected": 7,
+      "selected": 4,
       "covered": true
     },
     "G09_MANY_ACTORS": {
@@ -48,72 +48,85 @@
       "covered": true
     },
     "G10_EXECUTION_CASES": {
-      "selected": 8,
-      "covered": true
-    },
-    "G11_ANOMALIES": {
       "selected": 6,
       "covered": true
     },
+    "G11_ANOMALIES": {
+      "selected": 15,
+      "covered": true
+    },
     "G12_VERY_SIMPLE": {
-      "selected": 5,
+      "selected": 4,
       "covered": true
     },
     "G13_VERY_COMPLEX": {
-      "selected": 11,
+      "selected": 6,
       "covered": true
     }
   },
   "samples": [
     {
       "sampleNo": 1,
-      "id": "019d2bf7-4fc1-768b-9ba3-94be4bca58ee",
-      "code": "1.000178",
-      "name": "Giải quyết khiếu nại về quyết định hành chính, hành vi hành chính của công dân đối với lực lượng Công an nhân dân (thực hiện tại cấp Trung ương)",
+      "id": "019d2bfb-cfb3-75d8-9160-fa2bd2ac950a",
+      "code": "1.000005",
+      "name": "Thủ tục hải quan đối với khí, nguyên liệu xuất khẩu, nhập khẩu bằng đường ống chuyên dụng",
       "category": "",
       "groups": [
-        "G01_SIMPLE_STEPS"
+        "G14_DETERMINISTIC_SPREAD"
       ],
       "reasons": [
-        "Chọn từ G01_SIMPLE_STEPS",
-        "Bắt buộc coverage ít bước"
+        "Bổ sung để đủ 50 và phân tán mẫu",
+        "Bổ sung deterministic spread"
       ],
       "features": {
         "steps": 1,
-        "profileComponents": 8,
-        "profileComponentsRaw": 8,
+        "profileComponents": 19,
+        "profileComponentsRaw": 19,
         "profileComponentSource": "executionCases",
         "profileComponentIds": [
-          "000.00.00.G01-KQ0310",
-          "000.00.00.G01-KQ0314",
-          "000.00.00.G01-KQ0313",
-          "000.00.00.G01-KQ0308",
-          "000.00.00.G01-KQ0315",
-          "000.00.00.G01-KQ0312",
-          "000.00.00.G01-KQ0311",
-          "000.00.00.G01-KQ0309"
+          "000.00.00.g12-kq0754",
+          "000.00.00.g12-kq0757",
+          "000.00.00.g12-kq0755",
+          "000.00.00.g12-kq0756",
+          "000.00.00.g12-kq0759",
+          "000.00.00.g12-kq0760",
+          "000.00.00.g12-kq0758",
+          "000.00.00.g12-kq0761",
+          "000.00.00.g12-kq0746",
+          "000.00.00.g12-kq0748",
+          "000.00.00.g12-kq0750",
+          "000.00.00.g12-kq0749",
+          "000.00.00.g12-kq0745",
+          "000.00.00.g12-kq0744",
+          "000.00.00.g12-kq0743",
+          "000.00.00.g12-kq0747",
+          "000.00.00.g12-kq0751",
+          "000.00.00.g12-kq0752",
+          "000.00.00.g12-kq0753"
         ],
         "profileComponentsByCase": [
-          8
+          8,
+          8,
+          3
         ],
-        "methods": 2,
+        "methods": 1,
         "methodNames": [
-          "POSTAL",
-          "DIRECT"
+          "ONLINE"
         ],
-        "executionCases": 1,
-        "processingMin": 60,
-        "processingMax": 60,
+        "executionCases": 3,
+        "processingMin": 1,
+        "processingMax": 1,
         "processingValues": [
-          "60 WORKING_DAY"
+          "1 OTHER"
         ],
         "timeConflict": false,
-        "conditionSignal": 6,
-        "actorSignal": 2,
+        "timeMultiSource": false,
+        "conditionSignal": 0,
+        "actorSignal": 1,
         "unitGroups": 0,
-        "departments": 2,
+        "departments": 1,
         "agencies": 0,
-        "narrativeLength": 1459,
+        "narrativeLength": 1,
         "hasExecutionCases": true,
         "dataWarnings": []
       }
@@ -125,20 +138,21 @@
       "name": "Khai báo tạm trú cho người nước ngoài tại Việt Nam bằng Phiếu khai báo tạm trú",
       "category": "Quản lý xuất nhập cảnh",
       "groups": [
-        "G01_SIMPLE_STEPS"
+        "G01_SIMPLE_STEPS",
+        "G03_FEW_PROFILES"
       ],
       "reasons": [
         "Chọn từ G01_SIMPLE_STEPS",
-        "Bắt buộc coverage ít bước"
+        "Chọn từ G03_FEW_PROFILES",
+        "Bắt buộc coverage ít hồ sơ"
       ],
       "features": {
         "steps": 1,
-        "profileComponents": 2,
+        "profileComponents": 1,
         "profileComponentsRaw": 2,
         "profileComponentSource": "executionCases",
         "profileComponentIds": [
-          "000.00.00.G01-KQ0427",
-          "000.00.00.G01-KQ0427."
+          "000.00.00.g01-kq0427"
         ],
         "profileComponentsByCase": [
           1,
@@ -155,6 +169,7 @@
           "7 DAY"
         ],
         "timeConflict": false,
+        "timeMultiSource": false,
         "conditionSignal": 1,
         "actorSignal": 1,
         "unitGroups": 0,
@@ -184,12 +199,12 @@
         "profileComponentsRaw": 6,
         "profileComponentSource": "executionCases",
         "profileComponentIds": [
-          "G16-KQ001798",
-          "G16-KQ001801",
-          "G16-KQ001797",
-          "G16-KQ001800",
-          "G16-KQ001799",
-          "G16-KQ001802"
+          "g16-kq001798",
+          "g16-kq001801",
+          "g16-kq001797",
+          "g16-kq001800",
+          "g16-kq001799",
+          "g16-kq001802"
         ],
         "profileComponentsByCase": [
           6
@@ -207,6 +222,7 @@
           "305 DAY"
         ],
         "timeConflict": false,
+        "timeMultiSource": false,
         "conditionSignal": 0,
         "actorSignal": 3,
         "unitGroups": 0,
@@ -238,10 +254,10 @@
         "profileComponentsRaw": 4,
         "profileComponentSource": "executionCases",
         "profileComponentIds": [
-          "000.00.00.G01-KQ002259",
-          "000.00.00.G01-KQ002263",
-          "000.00.00.G01-KQ002617",
-          "000.00.00.G01-KQ002262"
+          "000.00.00.g01-kq002259",
+          "000.00.00.g01-kq002263",
+          "000.00.00.g01-kq002617",
+          "000.00.00.g01-kq002262"
         ],
         "profileComponentsByCase": [
           4
@@ -259,6 +275,7 @@
           "5 WORKING_DAY"
         ],
         "timeConflict": false,
+        "timeMultiSource": false,
         "conditionSignal": 6,
         "actorSignal": 1,
         "unitGroups": 0,
@@ -290,15 +307,15 @@
         "profileComponentsRaw": 9,
         "profileComponentSource": "executionCases",
         "profileComponentIds": [
-          "000.00.00.G01-KQ1158",
-          "000.00.00.G01-KQ1159",
-          "000.00.00.G01-KQ002252",
-          "000.00.00.G01-KQ002255",
-          "000.00.00.G01-KQ002253",
-          "000.00.00.G01-KQ002256",
-          "000.00.00.G01-KQ002257",
-          "000.00.00.G01-KQ002258",
-          "000.00.00.G01-KQ002254"
+          "000.00.00.g01-kq1158",
+          "000.00.00.g01-kq1159",
+          "000.00.00.g01-kq002252",
+          "000.00.00.g01-kq002255",
+          "000.00.00.g01-kq002253",
+          "000.00.00.g01-kq002256",
+          "000.00.00.g01-kq002257",
+          "000.00.00.g01-kq002258",
+          "000.00.00.g01-kq002254"
         ],
         "profileComponentsByCase": [
           2,
@@ -317,6 +334,7 @@
           "5 DAY"
         ],
         "timeConflict": false,
+        "timeMultiSource": false,
         "conditionSignal": 8,
         "actorSignal": 1,
         "unitGroups": 0,
@@ -335,13 +353,11 @@
       "category": "Quản lý xuất nhập cảnh",
       "groups": [
         "G01_SIMPLE_STEPS",
-        "G07_MULTIPLE_METHODS",
-        "G11_ANOMALIES"
+        "G07_MULTIPLE_METHODS"
       ],
       "reasons": [
         "Chọn từ G01_SIMPLE_STEPS",
         "Chọn từ G07_MULTIPLE_METHODS",
-        "Chọn từ G11_ANOMALIES",
         "Bắt buộc coverage nhiều phương thức"
       ],
       "features": {
@@ -350,11 +366,11 @@
         "profileComponentsRaw": 5,
         "profileComponentSource": "executionCases",
         "profileComponentIds": [
-          "000.00.00.G01-KQ002460",
-          "000.00.00.G01-KQ002463",
-          "000.00.00.G01-KQ002461",
-          "000.00.00.G01-KQ002462",
-          "000.00.00.G01-KQ002464"
+          "000.00.00.g01-kq002460",
+          "000.00.00.g01-kq002463",
+          "000.00.00.g01-kq002461",
+          "000.00.00.g01-kq002462",
+          "000.00.00.g01-kq002464"
         ],
         "profileComponentsByCase": [
           5
@@ -372,7 +388,8 @@
           "21 DAY",
           "21 WORKING_DAY"
         ],
-        "timeConflict": true,
+        "timeConflict": false,
+        "timeMultiSource": true,
         "conditionSignal": 12,
         "actorSignal": 1,
         "unitGroups": 0,
@@ -381,22 +398,24 @@
         "narrativeLength": 2977,
         "hasExecutionCases": true,
         "dataWarnings": [
-          "PROCESSING_TIME_CONFLICT"
+          "PROCESSING_TIME_MULTI_SOURCE"
         ]
       }
     },
     {
       "sampleNo": 7,
-      "id": "019d2bf7-57bc-77d4-9b08-282dcd32ed61",
-      "code": "1.000931",
-      "name": "Cấp giấy phép vào khu vực cấm, khu vực biên giới cho người nước ngoài tại Công an cấp tỉnh",
+      "id": "019d2bf7-5f61-72e9-acd7-30da53e18cc9",
+      "code": "1.001146",
+      "name": "Gia hạn tạm trú cho người nước ngoài tại Việt Nam (thực hiện tại cấp tỉnh)",
       "category": "Quản lý xuất nhập cảnh",
       "groups": [
-        "G01_SIMPLE_STEPS"
+        "G01_SIMPLE_STEPS",
+        "G07_MULTIPLE_METHODS"
       ],
       "reasons": [
         "Chọn từ G01_SIMPLE_STEPS",
-        "Bắt buộc coverage ít bước"
+        "Chọn từ G07_MULTIPLE_METHODS",
+        "Bắt buộc coverage nhiều phương thức"
       ],
       "features": {
         "steps": 1,
@@ -404,15 +423,17 @@
         "profileComponentsRaw": 3,
         "profileComponentSource": "executionCases",
         "profileComponentIds": [
-          "000.00.00.G01-KQ002665",
-          "000.00.00.G01-KQ002664",
-          "000.00.00.G01-KQ003417"
+          "000.00.00.g01-kq002651",
+          "000.00.00.g01-kq002653",
+          "000.00.00.g01-kq002652"
         ],
         "profileComponentsByCase": [
           3
         ],
-        "methods": 1,
+        "methods": 3,
         "methodNames": [
+          "ONLINE",
+          "POSTAL",
           "DIRECT"
         ],
         "executionCases": 1,
@@ -422,66 +443,19 @@
           "5 WORKING_DAY"
         ],
         "timeConflict": false,
-        "conditionSignal": 0,
+        "timeMultiSource": false,
+        "conditionSignal": 8,
         "actorSignal": 1,
         "unitGroups": 0,
         "departments": 1,
         "agencies": 0,
-        "narrativeLength": 1,
+        "narrativeLength": 1925,
         "hasExecutionCases": true,
         "dataWarnings": []
       }
     },
     {
       "sampleNo": 8,
-      "id": "019d2bf9-e9f6-75df-b941-0b375e40850e",
-      "code": "1.001121",
-      "name": "Thủ tục đăng ký nhận cha, mẹ, con giữa các công dân Việt Nam tạm trú ở nước ngoài với nhau",
-      "category": "",
-      "groups": [
-        "G08_COMPLEX_CONDITIONS"
-      ],
-      "reasons": [
-        "Chọn từ G08_COMPLEX_CONDITIONS",
-        "Bắt buộc coverage điều kiện/nhánh phức tạp"
-      ],
-      "features": {
-        "steps": 1,
-        "profileComponents": 3,
-        "profileComponentsRaw": 3,
-        "profileComponentSource": "executionCases",
-        "profileComponentIds": [
-          "000.00.00.G08-KQ000671",
-          "000.00.00.G08-KQ000672",
-          "000.00.00.G08-KQ000670"
-        ],
-        "profileComponentsByCase": [
-          2,
-          1
-        ],
-        "methods": 1,
-        "methodNames": [
-          "DIRECT"
-        ],
-        "executionCases": 2,
-        "processingMin": 7,
-        "processingMax": 7,
-        "processingValues": [
-          "7 WORKING_DAY"
-        ],
-        "timeConflict": false,
-        "conditionSignal": 44,
-        "actorSignal": 1,
-        "unitGroups": 0,
-        "departments": 1,
-        "agencies": 0,
-        "narrativeLength": 8385,
-        "hasExecutionCases": true,
-        "dataWarnings": []
-      }
-    },
-    {
-      "sampleNo": 9,
       "id": "019d2bf7-5f64-749f-b550-79b243ce8fb3",
       "code": "1.001226",
       "name": "Cấp giấy phép đến các tỉnh, thành phố của Việt Nam cho công dân Lào nhập cảnh bằng Giấy thông hành biên giới tại Công an cấp tỉnh",
@@ -501,8 +475,8 @@
         "profileComponentsRaw": 2,
         "profileComponentSource": "executionCases",
         "profileComponentIds": [
-          "000.00.00.G01-KQ0664",
-          "000.00.00.G01-KQ0665"
+          "000.00.00.g01-kq0664",
+          "000.00.00.g01-kq0665"
         ],
         "profileComponentsByCase": [
           2
@@ -518,6 +492,7 @@
           "1 WORKING_DAY"
         ],
         "timeConflict": false,
+        "timeMultiSource": false,
         "conditionSignal": 3,
         "actorSignal": 2,
         "unitGroups": 0,
@@ -529,19 +504,17 @@
       }
     },
     {
-      "sampleNo": 10,
+      "sampleNo": 9,
       "id": "019d2bf7-5fc6-72ba-a7f1-3506927a9517",
       "code": "1.001445",
       "name": "Trình báo mất hộ chiếu phổ thông (thực hiện tại cấp tỉnh)",
       "category": "Quản lý xuất nhập cảnh",
       "groups": [
-        "G01_SIMPLE_STEPS",
         "G03_FEW_PROFILES",
         "G05_SHORT_TIME",
         "G07_MULTIPLE_METHODS"
       ],
       "reasons": [
-        "Chọn từ G01_SIMPLE_STEPS",
         "Chọn từ G03_FEW_PROFILES",
         "Chọn từ G05_SHORT_TIME",
         "Chọn từ G07_MULTIPLE_METHODS",
@@ -553,7 +526,7 @@
         "profileComponentsRaw": 1,
         "profileComponentSource": "executionCases",
         "profileComponentIds": [
-          "000.00.00.G01-KQ002636"
+          "000.00.00.g01-kq002636"
         ],
         "profileComponentsByCase": [
           1
@@ -571,6 +544,7 @@
           "1 WORKING_DAY"
         ],
         "timeConflict": false,
+        "timeMultiSource": false,
         "conditionSignal": 11,
         "actorSignal": 1,
         "unitGroups": 0,
@@ -582,7 +556,7 @@
       }
     },
     {
-      "sampleNo": 11,
+      "sampleNo": 10,
       "id": "019d2bfb-d7a1-70cd-b177-166039682b48",
       "code": "1.001667",
       "name": "Giải quyết hưởng chế độ ốm đau, thai sản, trợ cấp dưỡng sức phục hồi sức khỏe sau ốm đau, thai sản, TNLĐ, BNN",
@@ -594,7 +568,7 @@
       "reasons": [
         "Chọn từ G04_MANY_PROFILES",
         "Chọn từ G10_EXECUTION_CASES",
-        "Bắt buộc coverage nhiều executionCases"
+        "Bắt buộc coverage executionCases"
       ],
       "features": {
         "steps": 3,
@@ -602,54 +576,54 @@
         "profileComponentsRaw": 50,
         "profileComponentSource": "executionCases",
         "profileComponentIds": [
-          "TP.G12.000008",
-          "TP.G12.000009",
-          "TP.G12.000010",
-          "TP.G12.000011",
-          "TP.G12.000012",
-          "TP.G12.000013",
-          "TP.G12.000014",
-          "TP.G12.000015",
-          "TP.G12.000016",
-          "TP.G12.000017",
-          "TP.G12.000018",
-          "TP.G12.000019",
-          "TP.G12.000020",
-          "TP.G12.000021",
-          "TP.G12.000022",
-          "TP.G12.000023",
-          "TP.G12.000024",
-          "TP.G12.000025",
-          "TP.G12.000026",
-          "TP.G12.000027",
-          "TP.G12.000028",
-          "TP.G12.000029",
-          "TP.G12.000030",
-          "TP.G12.000031",
-          "TP.G12.000032",
-          "TP.G12.000033",
-          "TP.G12.000034",
-          "TP.G12.000035",
-          "TP.G12.000036",
-          "TP.G12.000037",
-          "TP.G12.000038",
-          "TP.G12.000039",
-          "TP.G12.000040",
-          "TP.G12.000041",
-          "TP.G12.000042",
-          "TP.G12.000043",
-          "TP.G12.000044",
-          "TP.G12.000055",
-          "TP.G12.000045",
-          "TP.G12.000046",
-          "TP.G12.000047",
-          "TP.G12.000048",
-          "TP.G12.000049",
-          "TP.G12.000050",
-          "TP.G12.000051",
-          "TP.G12.000052",
-          "TP.G12.000053",
-          "TP.G12.000054"
+          "tp.g12.000008",
+          "tp.g12.000009",
+          "tp.g12.000010",
+          "tp.g12.000011",
+          "tp.g12.000012",
+          "tp.g12.000013",
+          "tp.g12.000014",
+          "tp.g12.000015",
+          "tp.g12.000016",
+          "tp.g12.000017",
+          "tp.g12.000018",
+          "tp.g12.000019",
+          "tp.g12.000020",
+          "tp.g12.000021",
+          "tp.g12.000022",
+          "tp.g12.000023",
+          "tp.g12.000024",
+          "tp.g12.000025",
+          "tp.g12.000026",
+          "tp.g12.000027",
+          "tp.g12.000028",
+          "tp.g12.000029",
+          "tp.g12.000030",
+          "tp.g12.000031",
+          "tp.g12.000032",
+          "tp.g12.000033",
+          "tp.g12.000034",
+          "tp.g12.000035",
+          "tp.g12.000036",
+          "tp.g12.000037",
+          "tp.g12.000038",
+          "tp.g12.000039",
+          "tp.g12.000040",
+          "tp.g12.000041",
+          "tp.g12.000042",
+          "tp.g12.000043",
+          "tp.g12.000044",
+          "tp.g12.000055",
+          "tp.g12.000045",
+          "tp.g12.000046",
+          "tp.g12.000047",
+          "tp.g12.000048",
+          "tp.g12.000049",
+          "tp.g12.000050",
+          "tp.g12.000051",
+          "tp.g12.000052",
+          "tp.g12.000053",
+          "tp.g12.000054"
         ],
         "profileComponentsByCase": [
           0,
@@ -694,6 +668,7 @@
           "6 WORKING_DAY"
         ],
         "timeConflict": false,
+        "timeMultiSource": false,
         "conditionSignal": 0,
         "actorSignal": 2,
         "unitGroups": 0,
@@ -705,18 +680,16 @@
       }
     },
     {
-      "sampleNo": 12,
+      "sampleNo": 11,
       "id": "019d2bf7-6f56-704f-95b8-8d949272c6ad",
       "code": "1.003677",
       "name": "Khai báo tạm vắng",
       "category": "",
       "groups": [
-        "G05_SHORT_TIME",
-        "G11_ANOMALIES"
+        "G05_SHORT_TIME"
       ],
       "reasons": [
         "Chọn từ G05_SHORT_TIME",
-        "Chọn từ G11_ANOMALIES",
         "Bắt buộc coverage thời gian ngắn"
       ],
       "features": {
@@ -725,9 +698,9 @@
         "profileComponentsRaw": 3,
         "profileComponentSource": "executionCases",
         "profileComponentIds": [
-          "G01.000.000.000-KQ1891",
-          "G01.000.000.000-KQ1892",
-          "G01.000.000.000-KQ1893"
+          "g01.000.000.000-kq1891",
+          "g01.000.000.000-kq1892",
+          "g01.000.000.000-kq1893"
         ],
         "profileComponentsByCase": [
           2,
@@ -745,6 +718,7 @@
           "2 WORKING_DAY"
         ],
         "timeConflict": true,
+        "timeMultiSource": false,
         "conditionSignal": 8,
         "actorSignal": 1,
         "unitGroups": 0,
@@ -753,12 +727,12 @@
         "narrativeLength": 689,
         "hasExecutionCases": true,
         "dataWarnings": [
-          "PROCESSING_TIME_CONFLICT"
+          "PROCESSING_TIME_CONFLICT_SAME_METHOD"
         ]
       }
     },
     {
-      "sampleNo": 13,
+      "sampleNo": 12,
       "id": "019d2bfa-401c-7185-871b-1e4375c166ac",
       "code": "1.004881",
       "name": "Cấp Giấy chứng nhận lưu hành thuốc thú y; Cấp lại Giấy chứng nhận lưu hành thuốc thú y (trong trường hợp thay đổi thành phần, công thức, dạng bào chế, đường dùng, liều dùng, chỉ định điều trị của thuốc thú y; thay đổi phương pháp, quy trình sản xuất mà làm thay đổi chất lượng sản phẩm; đánh giá lại chất lượng, hiệu quả, độ an toàn của thuốc thú y theo quy định)",
@@ -768,7 +742,7 @@
       ],
       "reasons": [
         "Chọn từ G04_MANY_PROFILES",
-        "Bắt buộc coverage nhiều thành phần hồ sơ"
+        "Bắt buộc coverage nhiều hồ sơ"
       ],
       "features": {
         "steps": 1,
@@ -776,83 +750,83 @@
         "profileComponentsRaw": 77,
         "profileComponentSource": "executionCases",
         "profileComponentIds": [
-          "000.00.00.G10-KQ003538",
-          "000.00.00.G10-KQ003537",
-          "000.00.00.G10-KQ003535",
-          "000.00.00.G10-KQ003530",
-          "000.00.00.G10-KQ003532",
-          "000.00.00.G10-KQ003536",
-          "000.00.00.G10-KQ003529",
-          "000.00.00.G10-KQ003531",
-          "000.00.00.G10-KQ003539",
-          "000.00.00.G10-KQ003534",
-          "000.00.00.G10-KQ003526",
-          "000.00.00.G10-KQ003522",
-          "000.00.00.G10-KQ003528",
-          "000.00.00.G10-KQ003523",
-          "000.00.00.G10-KQ003514",
-          "000.00.00.G10-KQ003517",
-          "000.00.00.G10-KQ003527",
-          "000.00.00.G10-KQ003520",
-          "000.00.00.G10-KQ003525",
-          "000.00.00.G10-KQ003515",
-          "000.00.00.G10-KQ003521",
-          "000.00.00.G10-KQ003524",
-          "000.00.00.G10-KQ003519",
-          "000.00.00.G10-KQ003516",
-          "000.00.00.G10-KQ003550",
-          "000.00.00.G10-KQ003547",
-          "000.00.00.G10-KQ003545",
-          "000.00.00.G10-KQ003553",
-          "000.00.00.G10-KQ003552",
-          "000.00.00.G10-KQ003549",
-          "000.00.00.G10-KQ003548",
-          "000.00.00.G10-KQ003551",
-          "000.00.00.G10-KQ003540",
-          "000.00.00.G10-KQ003541",
-          "000.00.00.G10-KQ003546",
-          "000.00.00.G10-KQ003543",
-          "000.00.00.G10-KQ003542",
-          "000.00.00.G10-KQ003562",
-          "000.00.00.G10-KQ003558",
-          "000.00.00.G10-KQ003556",
-          "000.00.00.G10-KQ003566",
-          "000.00.00.G10-KQ003560",
-          "000.00.00.G10-KQ003564",
-          "000.00.00.G10-KQ003554",
-          "000.00.00.G10-KQ003565",
-          "000.00.00.G10-KQ003559",
-          "000.00.00.G10-KQ003555",
-          "000.00.00.G10-KQ003563",
-          "000.00.00.G10-KQ003557",
-          "000.00.00.G10-KQ003578",
-          "000.00.00.G10-KQ003572",
-          "000.00.00.G10-KQ003568",
-          "000.00.00.G10-KQ003574",
-          "000.00.00.G10-KQ003579",
-          "000.00.00.G10-KQ003570",
-          "000.00.00.G10-KQ003577",
-          "000.00.00.G10-KQ003569",
-          "000.00.00.G10-KQ003575",
-          "000.00.00.G10-KQ003567",
-          "000.00.00.G10-KQ003576",
-          "000.00.00.G10-KQ003573",
-          "000.00.00.G10-KQ003586",
-          "000.00.00.G10-KQ003585",
-          "000.00.00.G10-KQ003582",
-          "000.00.00.G10-KQ003581",
-          "000.00.00.G10-KQ003580",
-          "000.00.00.G10-KQ003583",
-          "000.00.00.G10-KQ003590",
-          "000.00.00.G10-KQ003595",
-          "000.00.00.G10-KQ003594",
-          "000.00.00.G10-KQ003588",
-          "000.00.00.G10-KQ003593",
-          "000.00.00.G10-KQ003589",
-          "000.00.00.G10-KQ003587",
-          "000.00.00.G10-KQ003592",
-          "000.00.00.G10-KQ003596",
-          "000.00.00.G10-KQ0494"
+          "000.00.00.g10-kq003538",
+          "000.00.00.g10-kq003537",
+          "000.00.00.g10-kq003535",
+          "000.00.00.g10-kq003530",
+          "000.00.00.g10-kq003532",
+          "000.00.00.g10-kq003536",
+          "000.00.00.g10-kq003529",
+          "000.00.00.g10-kq003531",
+          "000.00.00.g10-kq003539",
+          "000.00.00.g10-kq003534",
+          "000.00.00.g10-kq003526",
+          "000.00.00.g10-kq003522",
+          "000.00.00.g10-kq003528",
+          "000.00.00.g10-kq003523",
+          "000.00.00.g10-kq003514",
+          "000.00.00.g10-kq003517",
+          "000.00.00.g10-kq003527",
+          "000.00.00.g10-kq003520",
+          "000.00.00.g10-kq003525",
+          "000.00.00.g10-kq003515",
+          "000.00.00.g10-kq003521",
+          "000.00.00.g10-kq003524",
+          "000.00.00.g10-kq003519",
+          "000.00.00.g10-kq003516",
+          "000.00.00.g10-kq003550",
+          "000.00.00.g10-kq003547",
+          "000.00.00.g10-kq003545",
+          "000.00.00.g10-kq003553",
+          "000.00.00.g10-kq003552",
+          "000.00.00.g10-kq003549",
+          "000.00.00.g10-kq003548",
+          "000.00.00.g10-kq003551",
+          "000.00.00.g10-kq003540",
+          "000.00.00.g10-kq003541",
+          "000.00.00.g10-kq003546",
+          "000.00.00.g10-kq003543",
+          "000.00.00.g10-kq003542",
+          "000.00.00.g10-kq003562",
+          "000.00.00.g10-kq003558",
+          "000.00.00.g10-kq003556",
+          "000.00.00.g10-kq003566",
+          "000.00.00.g10-kq003560",
+          "000.00.00.g10-kq003564",
+          "000.00.00.g10-kq003554",
+          "000.00.00.g10-kq003565",
+          "000.00.00.g10-kq003559",
+          "000.00.00.g10-kq003555",
+          "000.00.00.g10-kq003563",
+          "000.00.00.g10-kq003557",
+          "000.00.00.g10-kq003578",
+          "000.00.00.g10-kq003572",
+          "000.00.00.g10-kq003568",
+          "000.00.00.g10-kq003574",
+          "000.00.00.g10-kq003579",
+          "000.00.00.g10-kq003570",
+          "000.00.00.g10-kq003577",
+          "000.00.00.g10-kq003569",
+          "000.00.00.g10-kq003575",
+          "000.00.00.g10-kq003567",
+          "000.00.00.g10-kq003576",
+          "000.00.00.g10-kq003573",
+          "000.00.00.g10-kq003586",
+          "000.00.00.g10-kq003585",
+          "000.00.00.g10-kq003582",
+          "000.00.00.g10-kq003581",
+          "000.00.00.g10-kq003580",
+          "000.00.00.g10-kq003583",
+          "000.00.00.g10-kq003590",
+          "000.00.00.g10-kq003595",
+          "000.00.00.g10-kq003594",
+          "000.00.00.g10-kq003588",
+          "000.00.00.g10-kq003593",
+          "000.00.00.g10-kq003589",
+          "000.00.00.g10-kq003587",
+          "000.00.00.g10-kq003592",
+          "000.00.00.g10-kq003596",
+          "000.00.00.g10-kq0494"
         ],
         "profileComponentsByCase": [
           10,
@@ -877,6 +851,7 @@
           "0 OTHER"
         ],
         "timeConflict": false,
+        "timeMultiSource": false,
         "conditionSignal": 0,
         "actorSignal": 1,
         "unitGroups": 0,
@@ -888,23 +863,21 @@
       }
     },
     {
-      "sampleNo": 14,
+      "sampleNo": 13,
       "id": "019d2bfc-2615-7489-ae4c-dc1cd8317dcb",
       "code": "1.007659",
       "name": "Thủ tục miễn thuế đối với hàng hóa xuất khẩu, nhập khẩu",
       "category": "Hải quan",
       "groups": [
-        "G04_MANY_PROFILES",
         "G08_COMPLEX_CONDITIONS",
         "G10_EXECUTION_CASES",
         "G13_VERY_COMPLEX"
       ],
       "reasons": [
-        "Chọn từ G04_MANY_PROFILES",
         "Chọn từ G08_COMPLEX_CONDITIONS",
         "Chọn từ G10_EXECUTION_CASES",
         "Chọn từ G13_VERY_COMPLEX",
-        "Bắt buộc coverage điều kiện/nhánh phức tạp"
+        "Bắt buộc coverage điều kiện/nhánh"
       ],
       "features": {
         "steps": 1,
@@ -912,49 +885,49 @@
         "profileComponentsRaw": 43,
         "profileComponentSource": "executionCases",
         "profileComponentIds": [
-          "000.00.00.G12- 0258",
-          "000.00.00.G12-0087",
-          "000.00.00.G12-05008",
-          "000.00.00.G12-100",
-          "000.00.00.G12-1800",
-          "000.00.00.G12-1058",
-          "000.00.00.G12-10309",
-          "000.00.00.G12-101",
-          "000.00.00.G12-103",
-          "000.00.00.G12-1021",
-          "000.00.00.G12-108",
-          "000.00.00.G12-106",
-          "000.00.00.G12-0102",
-          "000.00.00.G12-110",
-          "000.00.00.G12-015",
-          "000.00.00.G12-0065",
-          "000.00.00.G12-1254",
-          "000.00.00.G12-1210",
-          "000.00.00.G12-1120",
-          "000.00.00.G12-032",
-          "000.00.00.G12-0587",
-          "000.00.00.G12-1987",
-          "000.00.00.G12-0310",
-          "000.00.00.G12-10210",
-          "000.00.00.G12-035",
-          "000.00.00.G12-039",
-          "000.00.00.G12-0340",
-          "000.00.00.G12-043",
-          "000.00.00.G12-0230",
-          "000.00.00.G12-01250",
-          "000.00.00.G12-072",
-          "000.00.00.G12-0115",
-          "000.00.00.G12-0365",
-          "000.00.00.G12-0480",
-          "000.00.00.G12-0125",
-          "000.00.00.G12-1187",
-          "000.00.00.G12-1812",
-          "000.00.00.G12-1810",
-          "000.00.00.G12-1814",
-          "000.00.00.G12-1819",
-          "000.00.00.G12-1910",
-          "000.00.00.G12-230",
-          "000.00.00.G12-233"
+          "000.00.00.g12- 0258",
+          "000.00.00.g12-0087",
+          "000.00.00.g12-05008",
+          "000.00.00.g12-100",
+          "000.00.00.g12-1800",
+          "000.00.00.g12-1058",
+          "000.00.00.g12-10309",
+          "000.00.00.g12-101",
+          "000.00.00.g12-103",
+          "000.00.00.g12-1021",
+          "000.00.00.g12-108",
+          "000.00.00.g12-106",
+          "000.00.00.g12-0102",
+          "000.00.00.g12-110",
+          "000.00.00.g12-015",
+          "000.00.00.g12-0065",
+          "000.00.00.g12-1254",
+          "000.00.00.g12-1210",
+          "000.00.00.g12-1120",
+          "000.00.00.g12-032",
+          "000.00.00.g12-0587",
+          "000.00.00.g12-1987",
+          "000.00.00.g12-0310",
+          "000.00.00.g12-10210",
+          "000.00.00.g12-035",
+          "000.00.00.g12-039",
+          "000.00.00.g12-0340",
+          "000.00.00.g12-043",
+          "000.00.00.g12-0230",
+          "000.00.00.g12-01250",
+          "000.00.00.g12-072",
+          "000.00.00.g12-0115",
+          "000.00.00.g12-0365",
+          "000.00.00.g12-0480",
+          "000.00.00.g12-0125",
+          "000.00.00.g12-1187",
+          "000.00.00.g12-1812",
+          "000.00.00.g12-1810",
+          "000.00.00.g12-1814",
+          "000.00.00.g12-1819",
+          "000.00.00.g12-1910",
+          "000.00.00.g12-230",
+          "000.00.00.g12-233"
         ],
         "profileComponentsByCase": [
           9,
@@ -983,6 +956,7 @@
         "processingMax": null,
         "processingValues": [],
         "timeConflict": false,
+        "timeMultiSource": false,
         "conditionSignal": 46,
         "actorSignal": 1,
         "unitGroups": 0,
@@ -994,195 +968,7 @@
       }
     },
     {
-      "sampleNo": 15,
-      "id": "019d2bfc-7428-7107-b445-7089eeb05dec",
-      "code": "1.008759",
-      "name": "Đăng ký thuế trong trường hợp chia, tách, hợp nhất, sáp nhập tổ chức",
-      "category": "Thuế",
-      "groups": [
-        "G02_MANY_STEPS"
-      ],
-      "reasons": [
-        "Chọn từ G02_MANY_STEPS",
-        "Bắt buộc coverage nhiều bước"
-      ],
-      "features": {
-        "steps": 10,
-        "profileComponents": 18,
-        "profileComponentsRaw": 24,
-        "profileComponentSource": "executionCases",
-        "profileComponentIds": [
-          "G12.0001266",
-          "G12.0001269",
-          "G12.0001270",
-          "G12.0001271",
-          "G12.0001272",
-          "G12.0001273",
-          "G12.0001274",
-          "G12.0001275",
-          "G12.0003878",
-          "G12.00035787",
-          "G12.0003066",
-          "G12.0001298",
-          "G12.0003879",
-          "G12.0003748",
-          "G12.0003017",
-          "G12.0003874",
-          "G12.0003875",
-          "G12.0003876"
-        ],
-        "profileComponentsByCase": [
-          10,
-          8,
-          2,
-          3,
-          1
-        ],
-        "methods": 3,
-        "methodNames": [
-          "ONLINE",
-          "POSTAL",
-          "DIRECT"
-        ],
-        "executionCases": 5,
-        "processingMin": 3,
-        "processingMax": 3,
-        "processingValues": [
-          "3 WORKING_DAY"
-        ],
-        "timeConflict": false,
-        "conditionSignal": 5,
-        "actorSignal": 4,
-        "unitGroups": 0,
-        "departments": 4,
-        "agencies": 0,
-        "narrativeLength": 669,
-        "hasExecutionCases": true,
-        "dataWarnings": []
-      }
-    },
-    {
-      "sampleNo": 16,
-      "id": "019d2bfc-9362-765e-99ac-6133a1ddcad0",
-      "code": "1.009568",
-      "name": "Đăng ký chào bán chứng khoán ra công chúng của tổ chức tín dụng được kiểm soát đặt biệt",
-      "category": "Chứng khoán",
-      "groups": [
-        "G04_MANY_PROFILES"
-      ],
-      "reasons": [
-        "Chọn từ G04_MANY_PROFILES",
-        "Bắt buộc coverage nhiều thành phần hồ sơ"
-      ],
-      "features": {
-        "steps": 1,
-        "profileComponents": 66,
-        "profileComponentsRaw": 74,
-        "profileComponentSource": "executionCases",
-        "profileComponentIds": [
-          "000.00.00.G12-KQ014736",
-          "000.00.00.G12-KQ014920",
-          "000.00.00.G12-KQ014728",
-          "000.00.00.G12-KQ014918",
-          "000.00.00.G12-KQ014913",
-          "000.00.00.G12-KQ014854",
-          "000.00.00.G12-KQ014737",
-          "000.00.00.G12-KQ014649",
-          "000.00.00.G12-KQ014916",
-          "000.00.00.G12-KQ014911",
-          "000.00.00.G12-KQ014919",
-          "000.00.00.G12-KQ014917",
-          "000.00.00.G12-KQ014738",
-          "000.00.00.G12-KQ014922",
-          "000.00.00.G12-KQ010422",
-          "000.00.00.G12-235",
-          "000.00.00.G12-KQ014902",
-          "000.00.00.G12-KQ010428",
-          "000.00.00.G12-658",
-          "000.00.00.G12-897",
-          "000.00.00.G12-KQ014907",
-          "000.00.00.G12-1255",
-          "000.00.00.G12-325",
-          "000.00.00.G12-152",
-          "000.00.00.G12-159",
-          "000.00.00.G12-1856",
-          "000.00.00.G12-165",
-          "000.00.00.G12-147",
-          "000.00.00.G12-1589",
-          "000.00.00.G12-2580",
-          "000.00.00.G12-2589",
-          "000.00.00.G12-1355",
-          "000.00.00.G12-0387",
-          "000.00.00.G12-9744",
-          "000.00.00.G12-0987",
-          "000.00.00.G12-547",
-          "000.00.00.G12-139",
-          "000.00.00.G12-1452",
-          "000.00.00.G12-025",
-          "000.00.00.G12-589",
-          "000.00.00.G12-0786",
-          "000.00.00.G12-563",
-          "000.00.00.G12-1590",
-          "000.00.00.G12-756",
-          "000.00.00.G12-1470",
-          "000.00.00.G12-198",
-          "000.00.00.G12-1650",
-          "000.00.00.G12-3650",
-          "000.00.00.G12-KQ015092",
-          "000.00.00.G12-KQ015050",
-          "000.00.00.G12-KQ015051",
-          "000.00.00.G12-KQ015052",
-          "000.00.00.G12-1632",
-          "000.00.00.G12-KQ015074",
-          "000.00.00.G12-KQ015087",
-          "000.00.00.G12-KQ015088",
-          "000.00.00.G12-KQ015089",
-          "000.00.00.G12-KQ015090",
-          "000.00.00.G12-KQ015091",
-          "000.00.00.G12-KQ014915",
-          "000.00.00.G12-1654",
-          "000.00.00.G12-KQ015044",
-          "000.00.00.G12-KQ015094",
-          "000.00.00.G12-KQ015036",
-          "000.00.00.G12-KQ015142",
-          "000.00.00.G12-KQ015143"
-        ],
-        "profileComponentsByCase": [
-          13,
-          1,
-          14,
-          6,
-          4,
-          4,
-          2,
-          14,
-          16
-        ],
-        "methods": 3,
-        "methodNames": [
-          "ONLINE",
-          "DIRECT",
-          "POSTAL"
-        ],
-        "executionCases": 9,
-        "processingMin": 30,
-        "processingMax": 30,
-        "processingValues": [
-          "30 DAY"
-        ],
-        "timeConflict": false,
-        "conditionSignal": 10,
-        "actorSignal": 1,
-        "unitGroups": 0,
-        "departments": 1,
-        "agencies": 0,
-        "narrativeLength": 2991,
-        "hasExecutionCases": true,
-        "dataWarnings": []
-      }
-    },
-    {
-      "sampleNo": 17,
+      "sampleNo": 14,
       "id": "019d2bfc-93a3-764c-945d-714845436ee5",
       "code": "1.009628",
       "name": "Thủ tục điều chỉnh dự án đầu tư thuộc thẩm quyền chấp thuận chủ trương đầu tư của Thủ tướng Chính phủ",
@@ -1196,7 +982,7 @@
         "Chọn từ G04_MANY_PROFILES",
         "Chọn từ G08_COMPLEX_CONDITIONS",
         "Chọn từ G13_VERY_COMPLEX",
-        "Bắt buộc coverage nhiều thành phần hồ sơ"
+        "Bắt buộc coverage điều kiện/nhánh"
       ],
       "features": {
         "steps": 2,
@@ -1204,56 +990,56 @@
         "profileComponentsRaw": 52,
         "profileComponentSource": "executionCases",
         "profileComponentIds": [
-          "G05-KQ006740",
-          "G05-KQ006742",
-          "G05-KQ006739",
-          "G05-KQ006741",
-          "000.00.00.G05-KQ1182",
-          "TP-G12.0001322",
-          "TP-G12.0001319",
-          "000.00.00.G05-KQ2762",
-          "TP-G12.0001321",
-          "TP-G12.0001320",
-          "000.00.00.G05-KQ0484",
-          "TP-G12.0001326",
-          "TP-G12.0001314",
-          "000.00.00.G05-KQ1214",
-          "TP-G12.0001317",
-          "TP-G12.0001328",
-          "TP-G12.0001275",
-          "TP-G12.0001276",
-          "TP-G12.0001277",
-          "TP-G12.0001278",
-          "TP-G12.0001279",
-          "000.00.00.G05-KQ2771",
-          "TP-G12.0001368",
-          "TP-G12.0001335",
-          "TP-G12.0001336",
-          "TP-G12.0001337",
-          "TP-G12.0001367",
-          "000.00.00.G05-KQ1021",
-          "TP-G12.0001333",
-          "TP-G12.0001325",
-          "TP-G12.0001341",
-          "TP-G12.0001338",
-          "000.00.00.G05-KQ2862",
-          "TP-G12.0001280",
-          "TP-G12.0001344",
-          "TP-G12.0001348",
-          "TP-G12.0001313",
-          "TP-G12.0001345",
-          "TP-G12.0001347",
-          "TP-G12.0001346",
-          "TP-G12.0001353",
-          "TP-G12.0001352",
-          "000.00.00.G05-KQ2905",
-          "TP-G12.0001350",
-          "TP-G12.0001351",
-          "TP-G12.0001355",
-          "TP-G12.0001359",
-          "000.00.00.G05-KQ2032",
-          "TP-G12.0001357",
-          "TP-G12.0001358"
+          "g05-kq006740",
+          "g05-kq006742",
+          "g05-kq006739",
+          "g05-kq006741",
+          "000.00.00.g05-kq1182",
+          "tp-g12.0001322",
+          "tp-g12.0001319",
+          "000.00.00.g05-kq2762",
+          "tp-g12.0001321",
+          "tp-g12.0001320",
+          "000.00.00.g05-kq0484",
+          "tp-g12.0001326",
+          "tp-g12.0001314",
+          "000.00.00.g05-kq1214",
+          "tp-g12.0001317",
+          "tp-g12.0001328",
+          "tp-g12.0001275",
+          "tp-g12.0001276",
+          "tp-g12.0001277",
+          "tp-g12.0001278",
+          "tp-g12.0001279",
+          "000.00.00.g05-kq2771",
+          "tp-g12.0001368",
+          "tp-g12.0001335",
+          "tp-g12.0001336",
+          "tp-g12.0001337",
+          "tp-g12.0001367",
+          "000.00.00.g05-kq1021",
+          "tp-g12.0001333",
+          "tp-g12.0001325",
+          "tp-g12.0001341",
+          "tp-g12.0001338",
+          "000.00.00.g05-kq2862",
+          "tp-g12.0001280",
+          "tp-g12.0001344",
+          "tp-g12.0001348",
+          "tp-g12.0001313",
+          "tp-g12.0001345",
+          "tp-g12.0001347",
+          "tp-g12.0001346",
+          "tp-g12.0001353",
+          "tp-g12.0001352",
+          "000.00.00.g05-kq2905",
+          "tp-g12.0001350",
+          "tp-g12.0001351",
+          "tp-g12.0001355",
+          "tp-g12.0001359",
+          "000.00.00.g05-kq2032",
+          "tp-g12.0001357",
+          "tp-g12.0001358"
         ],
         "profileComponentsByCase": [
           4,
@@ -1279,6 +1065,7 @@
           "25 WORKING_DAY"
         ],
         "timeConflict": false,
+        "timeMultiSource": false,
         "conditionSignal": 45,
         "actorSignal": 2,
         "unitGroups": 0,
@@ -1290,7 +1077,7 @@
       }
     },
     {
-      "sampleNo": 18,
+      "sampleNo": 15,
       "id": "019d2bfc-9380-700d-b295-7c6705fc9313",
       "code": "1.009646",
       "name": "Thủ tục chấp thuận điều chỉnh chủ trương đầu tư thuộc thẩm quyền của Chủ tịch Uỷ ban nhân dân cấp tỉnh",
@@ -1298,15 +1085,13 @@
       "groups": [
         "G04_MANY_PROFILES",
         "G08_COMPLEX_CONDITIONS",
-        "G10_EXECUTION_CASES",
         "G13_VERY_COMPLEX"
       ],
       "reasons": [
         "Chọn từ G04_MANY_PROFILES",
         "Chọn từ G08_COMPLEX_CONDITIONS",
-        "Chọn từ G10_EXECUTION_CASES",
         "Chọn từ G13_VERY_COMPLEX",
-        "Bắt buộc coverage điều kiện/nhánh phức tạp"
+        "Bắt buộc coverage điều kiện/nhánh"
       ],
       "features": {
         "steps": 3,
@@ -1314,52 +1099,52 @@
         "profileComponentsRaw": 46,
         "profileComponentSource": "executionCases",
         "profileComponentIds": [
-          "TP-G12.0001364",
-          "TP-G12.0001365",
-          "TP-G12.0001318",
-          "TP-G12.0001323",
-          "TP-G12.0001324",
-          "TP-G12.0001320",
-          "TP-G12.0001322",
-          "TP-G12.0001321",
-          "TP-G12.0001366",
-          "TP-G12.0001326",
-          "TP-G12.0001317",
-          "TP-G12.0001328",
-          "TP-G12.0001314",
-          "TP-G12.0001302",
-          "TP-G12.0001303",
-          "TP-G12.0001304",
-          "TP-G12.0001305",
-          "TP-G12.0001336",
-          "TP-G12.0001367",
-          "TP-G12.0001333",
-          "TP-G12.0001368",
-          "TP-G12.0001335",
-          "TP-G12.0001341",
-          "TP-G12.0001338",
-          "TP-G12.0001306",
-          "TP-G12.0001369",
-          "TP-G12.0001370",
-          "TP-G12.0001344",
-          "TP-G12.0001347",
-          "TP-G12.0001345",
-          "TP-G12.0001348",
-          "TP-G12.0001346",
-          "000.00.00.G05-KQ1214",
-          "TP-G12.0001355",
-          "TP-G12.0001353",
-          "TP-G12.0001354",
-          "TP-G12.0001350",
-          "TP-G12.0001352",
-          "TP-G12.0001351",
-          "TP-G12.0001358",
-          "TP-G12.0001357",
-          "TP-G12.0001349",
-          "TP-G12.0001359",
-          "TP-G12.0001307",
-          "TP-G12.0001308",
-          "TP-G12.0001309"
+          "tp-g12.0001364",
+          "tp-g12.0001365",
+          "tp-g12.0001318",
+          "tp-g12.0001323",
+          "tp-g12.0001324",
+          "tp-g12.0001320",
+          "tp-g12.0001322",
+          "tp-g12.0001321",
+          "tp-g12.0001366",
+          "tp-g12.0001326",
+          "tp-g12.0001317",
+          "tp-g12.0001328",
+          "tp-g12.0001314",
+          "tp-g12.0001302",
+          "tp-g12.0001303",
+          "tp-g12.0001304",
+          "tp-g12.0001305",
+          "tp-g12.0001336",
+          "tp-g12.0001367",
+          "tp-g12.0001333",
+          "tp-g12.0001368",
+          "tp-g12.0001335",
+          "tp-g12.0001341",
+          "tp-g12.0001338",
+          "tp-g12.0001306",
+          "tp-g12.0001369",
+          "tp-g12.0001370",
+          "tp-g12.0001344",
+          "tp-g12.0001347",
+          "tp-g12.0001345",
+          "tp-g12.0001348",
+          "tp-g12.0001346",
+          "000.00.00.g05-kq1214",
+          "tp-g12.0001355",
+          "tp-g12.0001353",
+          "tp-g12.0001354",
+          "tp-g12.0001350",
+          "tp-g12.0001352",
+          "tp-g12.0001351",
+          "tp-g12.0001358",
+          "tp-g12.0001357",
+          "tp-g12.0001349",
+          "tp-g12.0001359",
+          "tp-g12.0001307",
+          "tp-g12.0001308",
+          "tp-g12.0001309"
         ],
         "profileComponentsByCase": [
           3,
@@ -1387,6 +1172,7 @@
           "17 WORKING_DAY"
         ],
         "timeConflict": false,
+        "timeMultiSource": false,
         "conditionSignal": 45,
         "actorSignal": 2,
         "unitGroups": 0,
@@ -1398,161 +1184,7 @@
       }
     },
     {
-      "sampleNo": 19,
-      "id": "019d2bfc-9b56-7242-84c0-ad39936561d8",
-      "code": "1.009759",
-      "name": "Thủ tục chấp thuận điều chỉnh chủ trương đầu tư thuộc thẩm quyền của Ban quản lý khu công nghiệp, khu chế xuất, khu công nghệ cao, khu kinh tế",
-      "category": "Đầu tư tại Việt nam",
-      "groups": [
-        "G04_MANY_PROFILES",
-        "G08_COMPLEX_CONDITIONS",
-        "G13_VERY_COMPLEX"
-      ],
-      "reasons": [
-        "Chọn từ G04_MANY_PROFILES",
-        "Chọn từ G08_COMPLEX_CONDITIONS",
-        "Chọn từ G13_VERY_COMPLEX",
-        "Bắt buộc coverage nhiều thành phần hồ sơ"
-      ],
-      "features": {
-        "steps": 3,
-        "profileComponents": 48,
-        "profileComponentsRaw": 52,
-        "profileComponentSource": "executionCases",
-        "profileComponentIds": [
-          "TP-G12.0001313",
-          "TP-G12.0001314",
-          "TP-G12.0001317",
-          "TP-G12.0001318",
-          "TP-G12.0001319",
-          "TP-G12.0001320",
-          "TP-G12.0001321",
-          "TP-G12.0001322",
-          "TP-G12.0001323",
-          "TP-G12.0001324",
-          "TP-G12.0001325",
-          "TP-G12.0001326",
-          "TP-G12.0001327",
-          "TP-G12.0001328",
-          "TP-G12.0001329",
-          "TP-G12.0001330",
-          "TP-G12.0001331",
-          "TP-G12.0001332",
-          "TP-G12.0001333",
-          "TP-G12.0001334",
-          "TP-G12.0001335",
-          "TP-G12.0001336",
-          "TP-G12.0001337",
-          "TP-G12.0001338",
-          "TP-G12.0001339",
-          "TP-G12.0001340",
-          "TP-G12.0001341",
-          "TP-G12.0001343",
-          "TP-G12.0001344",
-          "TP-G12.0001345",
-          "TP-G12.0001346",
-          "TP-G12.0001347",
-          "TP-G12.0001348",
-          "TP-G12.0001349",
-          "TP-G12.0001350",
-          "TP-G12.0001351",
-          "TP-G12.0001352",
-          "TP-G12.0001353",
-          "TP-G12.0001354",
-          "TP-G12.0001355",
-          "TP-G12.0001356",
-          "TP-G12.0001357",
-          "TP-G12.0001358",
-          "TP-G12.0001359",
-          "TP-G12.0001360",
-          "TP-G12.0001361",
-          "TP-G12.0001362",
-          "TP-G12.0001363"
-        ],
-        "profileComponentsByCase": [
-          4,
-          7,
-          9,
-          6,
-          5,
-          6,
-          7,
-          5,
-          3,
-          0
-        ],
-        "methods": 3,
-        "methodNames": [
-          "DIRECT",
-          "ONLINE",
-          "POSTAL"
-        ],
-        "executionCases": 10,
-        "processingMin": 17,
-        "processingMax": 17,
-        "processingValues": [
-          "17 WORKING_DAY"
-        ],
-        "timeConflict": false,
-        "conditionSignal": 45,
-        "actorSignal": 1,
-        "unitGroups": 0,
-        "departments": 1,
-        "agencies": 0,
-        "narrativeLength": 21035,
-        "hasExecutionCases": true,
-        "dataWarnings": []
-      }
-    },
-    {
-      "sampleNo": 20,
-      "id": "019d2bfc-ab02-72f7-8377-62acdf116a4c",
-      "code": "1.010337",
-      "name": "Đăng ký sử dụng hoá đơn điện tử/Thay đổi nội dung đăng ký sử dụng hoá đơn điện tử/Ủy nhiệm lập hóa đơn điện tử/Chuyển đổi áp dụng hóa đơn điện tử có mã của cơ quan thuế/Khai thác dữ liệu của chi nhánh, đơn vị phụ thuộc/Thông báo tạm ngừng sử dụng hóa đơn điện tử/Tích hợp hóa đơn điện tử với biên lai thu thuế, phí, lệ phí",
-      "category": "Thuế",
-      "groups": [
-        "G02_MANY_STEPS"
-      ],
-      "reasons": [
-        "Chọn từ G02_MANY_STEPS",
-        "Bắt buộc coverage nhiều bước"
-      ],
-      "features": {
-        "steps": 10,
-        "profileComponents": 1,
-        "profileComponentsRaw": 1,
-        "profileComponentSource": "executionCases",
-        "profileComponentIds": [
-          "G12.0001211"
-        ],
-        "profileComponentsByCase": [
-          1
-        ],
-        "methods": 3,
-        "methodNames": [
-          "ONLINE",
-          "DIRECT",
-          "POSTAL"
-        ],
-        "executionCases": 1,
-        "processingMin": 1,
-        "processingMax": 1,
-        "processingValues": [
-          "1 DAY"
-        ],
-        "timeConflict": false,
-        "conditionSignal": 1,
-        "actorSignal": 4,
-        "unitGroups": 0,
-        "departments": 4,
-        "agencies": 0,
-        "narrativeLength": 301,
-        "hasExecutionCases": true,
-        "dataWarnings": []
-      }
-    },
-    {
-      "sampleNo": 21,
+      "sampleNo": 16,
       "id": "019d2bf7-868d-73ed-93ce-00643818b2e7",
       "code": "1.010386",
       "name": "Trình báo mất hộ chiếu phổ thông (thực hiện tại cấp xã)",
@@ -1564,7 +1196,7 @@
       "reasons": [
         "Chọn từ G03_FEW_PROFILES",
         "Chọn từ G05_SHORT_TIME",
-        "Bắt buộc coverage ít thành phần hồ sơ"
+        "Bắt buộc coverage ít hồ sơ"
       ],
       "features": {
         "steps": 1,
@@ -1572,7 +1204,7 @@
         "profileComponentsRaw": 1,
         "profileComponentSource": "executionCases",
         "profileComponentIds": [
-          "000.00.00.G01-KQ002601"
+          "000.00.00.g01-kq002601"
         ],
         "profileComponentsByCase": [
           1
@@ -1590,6 +1222,7 @@
           "1 WORKING_DAY"
         ],
         "timeConflict": false,
+        "timeMultiSource": false,
         "conditionSignal": 11,
         "actorSignal": 1,
         "unitGroups": 0,
@@ -1601,205 +1234,7 @@
       }
     },
     {
-      "sampleNo": 22,
-      "id": "019d2bf7-86d7-7661-825b-ac185d610609",
-      "code": "1.011410",
-      "name": "Cấp tài khoản định danh điện tử mức độ 01 cho công dân Việt Nam",
-      "category": "Định danh và xác thực điện tử",
-      "groups": [
-        "G03_FEW_PROFILES",
-        "G05_SHORT_TIME",
-        "G12_VERY_SIMPLE"
-      ],
-      "reasons": [
-        "Chọn từ G03_FEW_PROFILES",
-        "Chọn từ G05_SHORT_TIME",
-        "Chọn từ G12_VERY_SIMPLE",
-        "Bắt buộc coverage ít thành phần hồ sơ"
-      ],
-      "features": {
-        "steps": 1,
-        "profileComponents": 1,
-        "profileComponentsRaw": 1,
-        "profileComponentSource": "executionCases",
-        "profileComponentIds": [
-          "000.00.00.G01-KQ002958"
-        ],
-        "profileComponentsByCase": [
-          1
-        ],
-        "methods": 1,
-        "methodNames": [
-          "ONLINE"
-        ],
-        "executionCases": 1,
-        "processingMin": 1,
-        "processingMax": 1,
-        "processingValues": [
-          "1 WORKING_DAY"
-        ],
-        "timeConflict": false,
-        "conditionSignal": 0,
-        "actorSignal": 1,
-        "unitGroups": 0,
-        "departments": 1,
-        "agencies": 0,
-        "narrativeLength": 587,
-        "hasExecutionCases": true,
-        "dataWarnings": []
-      }
-    },
-    {
-      "sampleNo": 23,
-      "id": "019d2bf7-86ec-7620-8d51-74d2a2e6dd33",
-      "code": "1.011726",
-      "name": "Trình báo mất thẻ ABTC (thực hiện tại cấp tỉnh)",
-      "category": "Quản lý xuất nhập cảnh",
-      "groups": [
-        "G03_FEW_PROFILES",
-        "G05_SHORT_TIME"
-      ],
-      "reasons": [
-        "Chọn từ G03_FEW_PROFILES",
-        "Chọn từ G05_SHORT_TIME",
-        "Bắt buộc coverage ít thành phần hồ sơ"
-      ],
-      "features": {
-        "steps": 1,
-        "profileComponents": 1,
-        "profileComponentsRaw": 1,
-        "profileComponentSource": "executionCases",
-        "profileComponentIds": [
-          "000.00.00.G01-KQ002477"
-        ],
-        "profileComponentsByCase": [
-          1
-        ],
-        "methods": 3,
-        "methodNames": [
-          "ONLINE",
-          "POSTAL",
-          "DIRECT"
-        ],
-        "executionCases": 1,
-        "processingMin": 1,
-        "processingMax": 1,
-        "processingValues": [
-          "1 WORKING_DAY"
-        ],
-        "timeConflict": false,
-        "conditionSignal": 5,
-        "actorSignal": 2,
-        "unitGroups": 0,
-        "departments": 2,
-        "agencies": 0,
-        "narrativeLength": 619,
-        "hasExecutionCases": true,
-        "dataWarnings": []
-      }
-    },
-    {
-      "sampleNo": 24,
-      "id": "019d2bfc-c287-73da-a2fc-4854894ad8e9",
-      "code": "1.012344",
-      "name": "Cấp giấy phép thành lập và hoạt động doanh nghiệp bảo hiểm, doanh nghiệp tái bảo hiểm, chi nhánh nước ngoài tại Việt Nam, doanh nghiệp môi giới bảo hiểm",
-      "category": "Bảo hiểm",
-      "groups": [
-        "G04_MANY_PROFILES",
-        "G13_VERY_COMPLEX"
-      ],
-      "reasons": [
-        "Chọn từ G04_MANY_PROFILES",
-        "Chọn từ G13_VERY_COMPLEX",
-        "Bắt buộc có mẫu rất phức tạp"
-      ],
-      "features": {
-        "steps": 1,
-        "profileComponents": 48,
-        "profileComponentsRaw": 54,
-        "profileComponentSource": "executionCases",
-        "profileComponentIds": [
-          "000.00.00.G12-KQ015210",
-          "000.00.00.G12-KQ015261",
-          "000.00.00.G12-32165458",
-          "000.00.00.G12-89745632",
-          "000.00.00.G12-00033",
-          "000.00.00.G12-KQ015237",
-          "000.00.00.G12-0036",
-          "000.00.00.G12-00889",
-          "000.00.00.G12-KQ015228",
-          "000.00.00.G12-KQ015229",
-          "000.00.00.G12-0089",
-          "000.00.00.G12-123321",
-          "000.00.00.G12-3321",
-          "000.00.00.G12-0325",
-          "000.00.00.G12-0555",
-          "000.00.00.G12-55446",
-          "000.00.00.G12-45611",
-          "000.00.00.G12-8995",
-          "000.00.00.G12-998866",
-          "000.00.00.G12-KQ015214",
-          "000.00.00.G12-KQ010201",
-          "000.00.00.G12-KQ015240",
-          "000.00.00.G12-KQ015243",
-          "000.00.00.G12-028632",
-          "000.00.00.G12-KQ015252",
-          "000.00.00.G12-KQ015253",
-          "000.00.00.G12-21365",
-          "000.00.00.G12-KQ015255",
-          "000.00.00.G12-KQ015249",
-          "000.00.00.G12-KQ015250",
-          "000.00.00.G12-005566",
-          "000.00.00.G12-00223355",
-          "000.00.00.G12-KQ015212",
-          "000.00.00.G12-00225566",
-          "000.00.00.G12-004466",
-          "000.00.00.G12-00668899",
-          "000.00.00.G12-00335588",
-          "000.00.00.G12-68972",
-          "000.00.00.G12-32566",
-          "000.00.00.G12-22333",
-          "000.00.00.G12-KQ015266",
-          "000.00.00.G12-32100",
-          "000.00.00.G12-50223",
-          "000.00.00.G12-0233",
-          "000.00.00.G12-KQ015269",
-          "000.00.00.G12-021",
-          "000.00.00.G12-910",
-          "000.00.00.G12-33366"
-        ],
-        "profileComponentsByCase": [
-          13,
-          15,
-          9,
-          16,
-          1
-        ],
-        "methods": 3,
-        "methodNames": [
-          "POSTAL",
-          "DIRECT",
-          "ONLINE"
-        ],
-        "executionCases": 5,
-        "processingMin": 60,
-        "processingMax": 60,
-        "processingValues": [
-          "60 DAY"
-        ],
-        "timeConflict": false,
-        "conditionSignal": 35,
-        "actorSignal": 1,
-        "unitGroups": 0,
-        "departments": 1,
-        "agencies": 0,
-        "narrativeLength": 38509,
-        "hasExecutionCases": true,
-        "dataWarnings": []
-      }
-    },
-    {
-      "sampleNo": 25,
+      "sampleNo": 17,
       "id": "019d2bfb-98cb-728d-b499-207d165ed70e",
       "code": "1.013285",
       "name": "Thủ tục chấp thuận độ cao công trình",
@@ -1817,9 +1252,9 @@
         "profileComponentsRaw": 3,
         "profileComponentSource": "executionCases",
         "profileComponentIds": [
-          "000.00.00.G11-KQ003838",
-          "000.00.00.G11-KQ1063",
-          "000.00.00.H12-KQ0064"
+          "000.00.00.g11-kq003838",
+          "000.00.00.g11-kq1063",
+          "000.00.00.h12-kq0064"
         ],
         "profileComponentsByCase": [
           3
@@ -1840,6 +1275,7 @@
           "30 WORKING_DAY"
         ],
         "timeConflict": true,
+        "timeMultiSource": false,
         "conditionSignal": 5,
         "actorSignal": 1,
         "unitGroups": 0,
@@ -1848,12 +1284,12 @@
         "narrativeLength": 2153,
         "hasExecutionCases": true,
         "dataWarnings": [
-          "PROCESSING_TIME_CONFLICT"
+          "PROCESSING_TIME_CONFLICT_SAME_METHOD"
         ]
       }
     },
     {
-      "sampleNo": 26,
+      "sampleNo": 18,
       "id": "019d86f7-6442-745b-bd78-704907bbfcb3",
       "code": "1.013742",
       "name": "Cấp giấy đăng ký lưu hành thuốc, nguyên liệu làm thuốc",
@@ -1867,7 +1303,7 @@
         "Chọn từ G04_MANY_PROFILES",
         "Chọn từ G08_COMPLEX_CONDITIONS",
         "Chọn từ G13_VERY_COMPLEX",
-        "Bắt buộc coverage điều kiện/nhánh phức tạp"
+        "Bắt buộc coverage điều kiện/nhánh"
       ],
       "features": {
         "steps": 6,
@@ -1875,54 +1311,54 @@
         "profileComponentsRaw": 48,
         "profileComponentSource": "executionCases",
         "profileComponentIds": [
-          "000.00.00.G18-KQ005885",
-          "000.00.00.G18-KQ005886",
-          "000.00.00.G18-KQ005887",
-          "000.00.00.G18-KQ005888",
-          "000.00.00.G18-KQ005889",
-          "000.00.00.G18-KQ005890",
-          "000.00.00.G18-KQ005891",
-          "000.00.00.G18-KQ005892",
-          "000.00.00.G18-KQ005893",
-          "000.00.00.G18-KQ005894",
-          "000.00.00.G18-KQ005895",
-          "000.00.00.G18-KQ005896",
-          "000.00.00.G18-KQ005897",
-          "000.00.00.G18-KQ005898",
-          "000.00.00.G18-KQ005899",
-          "000.00.00.G18-KQ005900",
-          "000.00.00.G18-KQ005901",
-          "000.00.00.G18-KQ005902",
-          "000.00.00.G18-KQ005903",
-          "000.00.00.G18-KQ005904",
-          "000.00.00.G18-KQ005905",
-          "000.00.00.G18-KQ005906",
-          "000.00.00.G18-KQ005907",
-          "000.00.00.G18-KQ005908",
-          "000.00.00.G18-KQ005909",
-          "000.00.00.G18-KQ005910",
-          "000.00.00.G18-KQ005911",
-          "000.00.00.G18-KQ005912",
-          "000.00.00.G18-KQ005913",
-          "000.00.00.G18-KQ005914",
-          "000.00.00.G18-KQ005915",
-          "000.00.00.G18-KQ005916",
-          "000.00.00.G18-KQ005917",
-          "000.00.00.G18-KQ005918",
-          "000.00.00.G18-KQ005919",
-          "000.00.00.G18-KQ005920",
-          "000.00.00.G18-KQ005031",
-          "000.00.00.G18-KQ005032",
-          "000.00.00.G18-KQ005033",
-          "000.00.00.G18-KQ005034",
-          "000.00.00.G18-KQ005035",
-          "000.00.00.G18-KQ005036",
-          "000.00.00.G18-KQ005037",
-          "000.00.00.G18-KQ005038",
-          "000.00.00.G18-KQ005039",
-          "000.00.00.G18-KQ005040",
-          "000.00.00.G18-KQ005041",
-          "000.00.00.G18-KQ005042"
+          "000.00.00.g18-kq005885",
+          "000.00.00.g18-kq005886",
+          "000.00.00.g18-kq005887",
+          "000.00.00.g18-kq005888",
+          "000.00.00.g18-kq005889",
+          "000.00.00.g18-kq005890",
+          "000.00.00.g18-kq005891",
+          "000.00.00.g18-kq005892",
+          "000.00.00.g18-kq005893",
+          "000.00.00.g18-kq005894",
+          "000.00.00.g18-kq005895",
+          "000.00.00.g18-kq005896",
+          "000.00.00.g18-kq005897",
+          "000.00.00.g18-kq005898",
+          "000.00.00.g18-kq005899",
+          "000.00.00.g18-kq005900",
+          "000.00.00.g18-kq005901",
+          "000.00.00.g18-kq005902",
+          "000.00.00.g18-kq005903",
+          "000.00.00.g18-kq005904",
+          "000.00.00.g18-kq005905",
+          "000.00.00.g18-kq005906",
+          "000.00.00.g18-kq005907",
+          "000.00.00.g18-kq005908",
+          "000.00.00.g18-kq005909",
+          "000.00.00.g18-kq005910",
+          "000.00.00.g18-kq005911",
+          "000.00.00.g18-kq005912",
+          "000.00.00.g18-kq005913",
+          "000.00.00.g18-kq005914",
+          "000.00.00.g18-kq005915",
+          "000.00.00.g18-kq005916",
+          "000.00.00.g18-kq005917",
+          "000.00.00.g18-kq005918",
+          "000.00.00.g18-kq005919",
+          "000.00.00.g18-kq005920",
+          "000.00.00.g18-kq005031",
+          "000.00.00.g18-kq005032",
+          "000.00.00.g18-kq005033",
+          "000.00.00.g18-kq005034",
+          "000.00.00.g18-kq005035",
+          "000.00.00.g18-kq005036",
+          "000.00.00.g18-kq005037",
+          "000.00.00.g18-kq005038",
+          "000.00.00.g18-kq005039",
+          "000.00.00.g18-kq005040",
+          "000.00.00.g18-kq005041",
+          "000.00.00.g18-kq005042"
         ],
         "profileComponentsByCase": [
           36,
@@ -1941,6 +1377,7 @@
           "12 MONTH"
         ],
         "timeConflict": false,
+        "timeMultiSource": false,
         "conditionSignal": 47,
         "actorSignal": 1,
         "unitGroups": 0,
@@ -1952,7 +1389,7 @@
       }
     },
     {
-      "sampleNo": 27,
+      "sampleNo": 19,
       "id": "019d2bfb-2af9-774b-995e-ea7085c65ef6",
       "code": "1.014199",
       "name": "Cấp giấy phép lao động đối với người lao động nước ngoài làm việc tại Việt Nam",
@@ -1964,7 +1401,7 @@
       "reasons": [
         "Chọn từ G04_MANY_PROFILES",
         "Chọn từ G10_EXECUTION_CASES",
-        "Bắt buộc coverage nhiều thành phần hồ sơ"
+        "Bắt buộc coverage nhiều hồ sơ"
       ],
       "features": {
         "steps": 3,
@@ -1972,72 +1409,72 @@
         "profileComponentsRaw": 224,
         "profileComponentSource": "executionCases",
         "profileComponentIds": [
-          "G09-KQ003524",
-          "G09-KQ003054",
-          "G09-KQ003520",
-          "G09-KQ003754",
-          "G09-KQ003729",
-          "G09-KQ003730",
-          "G09-KQ003522",
-          "G09-KQ003619",
-          "G09-KQ003841",
-          "G09-KQ003842",
-          "G09-KQ003589",
-          "G09-KQ003763",
-          "G09-KQ003764",
-          "G09-KQ003765",
-          "G09-KQ003766",
-          "G09-KQ003769",
-          "G09-KQ003767",
-          "G09-KQ003848",
-          "G09-KQ003847",
-          "G09-KQ003843",
-          "G09-KQ003830",
-          "G09-KQ003835",
-          "G09-KQ003831",
-          "G09-KQ003832",
-          "G09-KQ003833",
-          "G09-KQ003834",
-          "G09-KQ003836",
-          "G09-KQ003837",
-          "G09-KQ003606",
-          "G09-KQ003625",
-          "G09-KQ003609",
-          "G09-KQ003610",
-          "G09-KQ003611",
-          "G09-KQ003612",
-          "G09-KQ003613",
-          "G09-KQ003629",
-          "G09-KQ003630",
-          "G09-KQ003631",
-          "G09-KQ003734",
-          "G09-KQ003607",
-          "G09-KQ003535",
-          "G09-KQ003858",
-          "G09-KQ003859",
-          "G09-KQ003860",
-          "G09-KQ003861",
-          "G09-KQ003862",
-          "G09-KQ003863",
-          "G09-KQ003850",
-          "G09-KQ003092",
-          "G09-KQ003090",
-          "G09-KQ003999",
-          "G09-KQ003865",
-          "G09-KQ003866",
-          "G09-KQ003867",
-          "G09-KQ003849",
-          "G09-KQ003868",
-          "G09-KQ003055",
-          "G09-KQ003780",
-          "G09-KQ003870",
-          "G09-KQ003871",
-          "G09-KQ003872",
-          "G09-KQ003873",
-          "G09-KQ003874",
-          "G09-KQ003875",
-          "G09-KQ003876",
-          "G09-KQ003614"
+          "g09-kq003524",
+          "g09-kq003054",
+          "g09-kq003520",
+          "g09-kq003754",
+          "g09-kq003729",
+          "g09-kq003730",
+          "g09-kq003522",
+          "g09-kq003619",
+          "g09-kq003841",
+          "g09-kq003842",
+          "g09-kq003589",
+          "g09-kq003763",
+          "g09-kq003764",
+          "g09-kq003765",
+          "g09-kq003766",
+          "g09-kq003769",
+          "g09-kq003767",
+          "g09-kq003848",
+          "g09-kq003847",
+          "g09-kq003843",
+          "g09-kq003830",
+          "g09-kq003835",
+          "g09-kq003831",
+          "g09-kq003832",
+          "g09-kq003833",
+          "g09-kq003834",
+          "g09-kq003836",
+          "g09-kq003837",
+          "g09-kq003606",
+          "g09-kq003625",
+          "g09-kq003609",
+          "g09-kq003610",
+          "g09-kq003611",
+          "g09-kq003612",
+          "g09-kq003613",
+          "g09-kq003629",
+          "g09-kq003630",
+          "g09-kq003631",
+          "g09-kq003734",
+          "g09-kq003607",
+          "g09-kq003535",
+          "g09-kq003858",
+          "g09-kq003859",
+          "g09-kq003860",
+          "g09-kq003861",
+          "g09-kq003862",
+          "g09-kq003863",
+          "g09-kq003850",
+          "g09-kq003092",
+          "g09-kq003090",
+          "g09-kq003999",
+          "g09-kq003865",
+          "g09-kq003866",
+          "g09-kq003867",
+          "g09-kq003849",
+          "g09-kq003868",
+          "g09-kq003055",
+          "g09-kq003780",
+          "g09-kq003870",
+          "g09-kq003871",
+          "g09-kq003872",
+          "g09-kq003873",
+          "g09-kq003874",
+          "g09-kq003875",
+          "g09-kq003876",
+          "g09-kq003614"
         ],
         "profileComponentsByCase": [
           18,
@@ -2069,6 +1506,7 @@
           "3 WORKING_DAY"
         ],
         "timeConflict": true,
+        "timeMultiSource": false,
         "conditionSignal": 19,
         "actorSignal": 2,
         "unitGroups": 2,
@@ -2077,12 +1515,12 @@
         "narrativeLength": 1293,
         "hasExecutionCases": true,
         "dataWarnings": [
-          "PROCESSING_TIME_CONFLICT"
+          "PROCESSING_TIME_CONFLICT_SAME_METHOD"
         ]
       }
     },
     {
-      "sampleNo": 28,
+      "sampleNo": 20,
       "id": "019d89ea-43a9-74a1-85f1-b83f1417f983",
       "code": "1.014977",
       "name": "Chủ tịch, Phó Chủ tịch UBND tỉnh tiếp khách nước ngoài",
@@ -2114,6 +1552,7 @@
           "0 OTHER"
         ],
         "timeConflict": false,
+        "timeMultiSource": false,
         "conditionSignal": 0,
         "actorSignal": 4,
         "unitGroups": 0,
@@ -2127,7 +1566,7 @@
       }
     },
     {
-      "sampleNo": 29,
+      "sampleNo": 21,
       "id": "019d89ec-bf71-703a-933c-82cac6e37faf",
       "code": "1.014978",
       "name": "Chủ tịch, Phó Chủ tịch UBND tỉnh tiếp khách trong nước",
@@ -2159,6 +1598,7 @@
           "0 OTHER"
         ],
         "timeConflict": false,
+        "timeMultiSource": false,
         "conditionSignal": 0,
         "actorSignal": 4,
         "unitGroups": 0,
@@ -2172,7 +1612,7 @@
       }
     },
     {
-      "sampleNo": 30,
+      "sampleNo": 22,
       "id": "019dd34c-cf37-735a-b1d6-ab2d3951ea53",
       "code": "1.014999",
       "name": "Thủ tục đăng ký sáng chế",
@@ -2190,14 +1630,14 @@
         "profileComponentsRaw": 8,
         "profileComponentSource": "executionCases",
         "profileComponentIds": [
-          "TP-G06.19-00001",
-          "TP-G06.19-00002",
-          "TP-G06.19-00003",
-          "TP-G06.19-00004",
-          "TP-G06.19-00065",
-          "TP-G06.19-00067",
-          "TP-G06.19-00032",
-          "TP-G06.19-00068"
+          "tp-g06.19-00001",
+          "tp-g06.19-00002",
+          "tp-g06.19-00003",
+          "tp-g06.19-00004",
+          "tp-g06.19-00065",
+          "tp-g06.19-00067",
+          "tp-g06.19-00032",
+          "tp-g06.19-00068"
         ],
         "profileComponentsByCase": [
           8,
@@ -2216,6 +1656,7 @@
           "420 DAY"
         ],
         "timeConflict": false,
+        "timeMultiSource": false,
         "conditionSignal": 18,
         "actorSignal": 2,
         "unitGroups": 0,
@@ -2227,7 +1668,7 @@
       }
     },
     {
-      "sampleNo": 31,
+      "sampleNo": 23,
       "id": "019dd459-97b2-743b-b7b3-5d386ddf10bb",
       "code": "1.015003",
       "name": "Thủ tục xử lý đơn Madrid có chỉ định Việt Nam",
@@ -2261,6 +1702,7 @@
           "360 WORKING_DAY"
         ],
         "timeConflict": false,
+        "timeMultiSource": false,
         "conditionSignal": 19,
         "actorSignal": 2,
         "unitGroups": 0,
@@ -2274,7 +1716,7 @@
       }
     },
     {
-      "sampleNo": 32,
+      "sampleNo": 24,
       "id": "019f12f5-a063-7299-a9dd-aac324d978a3",
       "code": "1.115353",
       "name": "Thu hồi Giấy chứng nhận đã cấp không đúng quy định của pháp luật đất đai do người sử dụng đất, chủ sở hữu tài sản gắn liền với đất phát hiện và cấp lại Giấy chứng nhận sau khi thu hồi",
@@ -2292,8 +1734,8 @@
         "profileComponentsRaw": 2,
         "profileComponentSource": "executionCases",
         "profileComponentIds": [
-          "TPHS.68",
-          "TPHS.15"
+          "tphs.68",
+          "tphs.15"
         ],
         "profileComponentsByCase": [
           2
@@ -2312,6 +1754,7 @@
           "30 WORKING_DAY"
         ],
         "timeConflict": true,
+        "timeMultiSource": false,
         "conditionSignal": 0,
         "actorSignal": 29,
         "unitGroups": 2,
@@ -2320,12 +1763,12 @@
         "narrativeLength": 1,
         "hasExecutionCases": true,
         "dataWarnings": [
-          "PROCESSING_TIME_CONFLICT"
+          "PROCESSING_TIME_CONFLICT_SAME_METHOD"
         ]
       }
     },
     {
-      "sampleNo": 33,
+      "sampleNo": 25,
       "id": "019f5e3a-bfe2-702f-85b1-da41a26bb824",
       "code": "1.115797",
       "name": "Giao đất, cho thuê đất, chuyển mục đích sử dụng đất đối với trường hợp giao đất, cho thuê đất không đấu giá quyền sử dụng đất, không đấu thầu lựa chọn nhà đầu tư thực hiện dự án có sử dụng đất; trường hợp giao đất, cho thuê đất thông qua đấu thầu lựa chọn nhà đầu tư thực hiện dự án có sử dụng đất; giao đất và giao rừng; cho thuê đất và cho thuê rừng; gia hạn sử dụng đất khi hết thời hạn sử dụng đất; trường hợp giao đất, cho thuê đất thông qua hình thức đấu giá quyền sử dụng đất (cấp tỉnh)",
@@ -2345,21 +1788,21 @@
         "profileComponentsRaw": 25,
         "profileComponentSource": "executionCases",
         "profileComponentIds": [
-          "Mẫu số 01_73/2026/QĐ-UBND",
-          "Thanhphanhso_1.2_TT08_73",
-          "Thanhphanhso_1.3_TT08_73",
-          "TPHS_TT4_1.4_73_DD",
-          "Thanhphanhso_1.3_73_DD",
-          "TPHS_TT04_4.2_73_DD",
-          "TPHS_4.3_TT04_73DD",
-          "Thanhphanhso_1.6_TT08_73_DD",
-          "TPHS_TT04_6.3_73DD",
-          "Bansao_8_TT08_73_DD",
-          "TPHS_TT04_7.3_73DD",
-          "Mẫu số 04_73/2026/QĐ-UBND",
-          "TPHS_TT04_8.2_73DD",
-          "TPHS_TT04_9.1_73DD",
-          "TPHS_TT04_9.2_73DD"
+          "mẫu số 01_73/2026/qđ-ubnd",
+          "thanhphanhso_1.2_tt08_73",
+          "thanhphanhso_1.3_tt08_73",
+          "tphs_tt4_1.4_73_dd",
+          "thanhphanhso_1.3_73_dd",
+          "tphs_tt04_4.2_73_dd",
+          "tphs_4.3_tt04_73dd",
+          "thanhphanhso_1.6_tt08_73_dd",
+          "tphs_tt04_6.3_73dd",
+          "bansao_8_tt08_73_dd",
+          "tphs_tt04_7.3_73dd",
+          "mẫu số 04_73/2026/qđ-ubnd",
+          "tphs_tt04_8.2_73dd",
+          "tphs_tt04_9.1_73dd",
+          "tphs_tt04_9.2_73dd"
         ],
         "profileComponentsByCase": [
           4,
@@ -2388,6 +1831,7 @@
           "24 WORKING_DAY"
         ],
         "timeConflict": true,
+        "timeMultiSource": false,
         "conditionSignal": 33,
         "actorSignal": 1,
         "unitGroups": 0,
@@ -2396,12 +1840,12 @@
         "narrativeLength": 7129,
         "hasExecutionCases": true,
         "dataWarnings": [
-          "PROCESSING_TIME_CONFLICT"
+          "PROCESSING_TIME_CONFLICT_SAME_METHOD"
         ]
       }
     },
     {
-      "sampleNo": 34,
+      "sampleNo": 26,
       "id": "019f5f79-bcde-706a-9355-3f93bfe9ed9e",
       "code": "1.115994",
       "name": "Thủ tục giao đất, cho thuê đất, chuyển mục đích sử dụng đất đối với trường hợp giao đất, cho thuê đất không đấu giá quyền sử dụng đất, không đấu thầu lựa chọn nhà đầu tư thực hiện dự án có sử dụng đất và trường hợp giao đất, cho thuê đất thông qua đấu thầu lựa chọn nhà đầu tư thực hiện dự án có sử dụng đất; giao đất và giao rừng; cho thuê đất và cho thuê rừng; gia hạn sử dụng đất khi hết thời hạn sử dụng đất (cấp xã - tỉnh Phú Thọ)",
@@ -2411,7 +1855,7 @@
       ],
       "reasons": [
         "Chọn từ G11_ANOMALIES",
-        "Bắt buộc coverage bất thường dữ liệu"
+        "Bắt buộc coverage anomaly dữ liệu"
       ],
       "features": {
         "steps": 2,
@@ -2436,6 +1880,7 @@
           "25 WORKING_DAY"
         ],
         "timeConflict": true,
+        "timeMultiSource": false,
         "conditionSignal": 0,
         "actorSignal": 4,
         "unitGroups": 2,
@@ -2445,12 +1890,12 @@
         "hasExecutionCases": true,
         "dataWarnings": [
           "EMPTY_PROFILE_COMPONENTS",
-          "PROCESSING_TIME_CONFLICT"
+          "PROCESSING_TIME_CONFLICT_SAME_METHOD"
         ]
       }
     },
     {
-      "sampleNo": 35,
+      "sampleNo": 27,
       "id": "019f8d0a-d16f-76fd-9c37-d5fbeacea9a9",
       "code": "1.116012",
       "name": "Thu hồi Giấy chứng nhận đã cấp không đúng quy định của pháp luật đất đai do người sử dụng đất, chủ sở hữu tài sản gắn liền với đất phát hiện (VPĐK đất đai - tỉnh Phú Thọ)",
@@ -2460,7 +1905,7 @@
       ],
       "reasons": [
         "Chọn từ G11_ANOMALIES",
-        "Bắt buộc coverage bất thường dữ liệu"
+        "Bắt buộc coverage anomaly dữ liệu"
       ],
       "features": {
         "steps": 1,
@@ -2485,6 +1930,7 @@
           "35 WORKING_DAY"
         ],
         "timeConflict": true,
+        "timeMultiSource": false,
         "conditionSignal": 0,
         "actorSignal": 3,
         "unitGroups": 2,
@@ -2494,24 +1940,22 @@
         "hasExecutionCases": true,
         "dataWarnings": [
           "EMPTY_PROFILE_COMPONENTS",
-          "PROCESSING_TIME_CONFLICT"
+          "PROCESSING_TIME_CONFLICT_SAME_METHOD"
         ]
       }
     },
     {
-      "sampleNo": 36,
+      "sampleNo": 28,
       "id": "019f9ca1-d165-7289-8275-736d1e98bdd6",
       "code": "1.116017",
       "name": "tính, tính lại tiền sử dụng đất đối với hộ gia đình, cá nhân theo quy định tại các điểm a, b, c và d khoản 2 Điều 12 Nghị định số 50/2026/NĐ-CP (Tình Phú Thọ)",
       "category": "",
       "groups": [
-        "G11_ANOMALIES",
-        "G12_VERY_SIMPLE"
+        "G11_ANOMALIES"
       ],
       "reasons": [
         "Chọn từ G11_ANOMALIES",
-        "Chọn từ G12_VERY_SIMPLE",
-        "Bắt buộc coverage bất thường dữ liệu"
+        "Bắt buộc coverage anomaly dữ liệu"
       ],
       "features": {
         "steps": 1,
@@ -2534,6 +1978,7 @@
           "9.5 WORKING_DAY"
         ],
         "timeConflict": true,
+        "timeMultiSource": false,
         "conditionSignal": 0,
         "actorSignal": 2,
         "unitGroups": 2,
@@ -2543,12 +1988,12 @@
         "hasExecutionCases": false,
         "dataWarnings": [
           "EMPTY_PROFILE_COMPONENTS",
-          "PROCESSING_TIME_CONFLICT"
+          "PROCESSING_TIME_CONFLICT_SAME_METHOD"
         ]
       }
     },
     {
-      "sampleNo": 37,
+      "sampleNo": 29,
       "id": "019fa89c-2a0e-71cc-a46e-20a3f8ae8d9a",
       "code": "1.116038",
       "name": "Đăng ký thay đổi nội dung, cập nhật, bổ sung thông tin, cấp lại giấy chứng nhận, hiệu đính thông tin đăng ký hoạt động của Ngân hàng Chính sách xã hội, chi nhánh, phòng giao dịch Ngân hàng Chính sách xã hội. Đăng ký hoạt động lần đầu của chi nhánh, phòng giao dịch Ngân hàng Chính sách xã hội",
@@ -2558,7 +2003,7 @@
       ],
       "reasons": [
         "Chọn từ G10_EXECUTION_CASES",
-        "Bắt buộc coverage nhiều executionCases"
+        "Bắt buộc coverage executionCases"
       ],
       "features": {
         "steps": 3,
@@ -2566,39 +2011,39 @@
         "profileComponentsRaw": 33,
         "profileComponentSource": "executionCases",
         "profileComponentIds": [
-          "TP-G12.0002045",
-          "TP-G12.0002046",
-          "TP-G12.0002047",
-          "TP-G12.0002048",
-          "000.00.00.G12-458900",
-          "000.00.00.G12-180468",
-          "000.00.00.G12-1804320",
-          "000.00.00.G12-567213",
-          "000.00.00.G12-567214",
-          "000.00.00.G12-567215",
-          "000.00.00.G12-5672150",
-          "000.00.00.G12-567234",
-          "000.00.00.G12-467123",
-          "000.00.00.G12-234123",
-          "000.00.00.G12-2341230",
-          "000.00.00.G12-231456",
-          "000.00.00.G12-6544123",
-          "000.00.00.G12-6544124",
-          "000.00.00.G12-6544125",
-          "000.00.00.G12-6544127",
-          "000.00.00.G12-65441270",
-          "000.00.00.G12-6544324",
-          "000.00.00.G12-6544345",
-          "000.00.00.G12-65442314",
-          "000.00.00.G12-65444321",
-          "000.00.00.G12-6789456",
-          "000.00.00.G12-6544321",
-          "000.00.00.G12-65442134",
-          "000.00.00.G12-145671",
-          "000.00.00.G12-6789654",
-          "000.00.00.G12-654434500",
-          "000.00.00.G12-6789324",
-          "000.00.00.G12-6544432"
+          "tp-g12.0002045",
+          "tp-g12.0002046",
+          "tp-g12.0002047",
+          "tp-g12.0002048",
+          "000.00.00.g12-458900",
+          "000.00.00.g12-180468",
+          "000.00.00.g12-1804320",
+          "000.00.00.g12-567213",
+          "000.00.00.g12-567214",
+          "000.00.00.g12-567215",
+          "000.00.00.g12-5672150",
+          "000.00.00.g12-567234",
+          "000.00.00.g12-467123",
+          "000.00.00.g12-234123",
+          "000.00.00.g12-2341230",
+          "000.00.00.g12-231456",
+          "000.00.00.g12-6544123",
+          "000.00.00.g12-6544124",
+          "000.00.00.g12-6544125",
+          "000.00.00.g12-6544127",
+          "000.00.00.g12-65441270",
+          "000.00.00.g12-6544324",
+          "000.00.00.g12-6544345",
+          "000.00.00.g12-65442314",
+          "000.00.00.g12-65444321",
+          "000.00.00.g12-6789456",
+          "000.00.00.g12-6544321",
+          "000.00.00.g12-65442134",
+          "000.00.00.g12-145671",
+          "000.00.00.g12-6789654",
+          "000.00.00.g12-654434500",
+          "000.00.00.g12-6789324",
+          "000.00.00.g12-6544432"
         ],
         "profileComponentsByCase": [
           2,
@@ -2635,6 +2080,7 @@
         "processingMax": null,
         "processingValues": [],
         "timeConflict": false,
+        "timeMultiSource": false,
         "conditionSignal": 27,
         "actorSignal": 1,
         "unitGroups": 1,
@@ -2646,7 +2092,7 @@
       }
     },
     {
-      "sampleNo": 38,
+      "sampleNo": 30,
       "id": "019ff905-be6f-73bd-a4a6-5a765bd8afd0",
       "code": "1.116388",
       "name": "Xác nhận tiếp tục sử dụng đất nông nghiệp",
@@ -2664,8 +2110,8 @@
         "profileComponentsRaw": 2,
         "profileComponentSource": "executionCases",
         "profileComponentIds": [
-          "TP-H36.000118",
-          "TP-H36.000090"
+          "tp-h36.000118",
+          "tp-h36.000090"
         ],
         "profileComponentsByCase": [
           2
@@ -2683,6 +2129,7 @@
           "7 WORKING_DAY"
         ],
         "timeConflict": false,
+        "timeMultiSource": false,
         "conditionSignal": 0,
         "actorSignal": 29,
         "unitGroups": 0,
@@ -2694,7 +2141,7 @@
       }
     },
     {
-      "sampleNo": 39,
+      "sampleNo": 31,
       "id": "019ff8f6-f80d-72dd-a69d-b0f2468821d2",
       "code": "1.116389",
       "name": "Đăng ký, cấp Giấy chứng nhận đối với thửa đất có diện tích tăng thêm do thay đổi ranh giới so với Giấy chứng nhận đã cấp (đối với trường hợp quy định tại điểm a khoản 2 Điều 24 Nghị định số 101/2024/NĐ-CP).",
@@ -2712,10 +2159,10 @@
         "profileComponentsRaw": 4,
         "profileComponentSource": "executionCases",
         "profileComponentIds": [
-          "TP-H36.000058",
-          "TP-H36.000090",
-          "TP-H36.000119",
-          "TP-H36.000048"
+          "tp-h36.000058",
+          "tp-h36.000090",
+          "tp-h36.000119",
+          "tp-h36.000048"
         ],
         "profileComponentsByCase": [
           4
@@ -2733,6 +2180,7 @@
           "10 WORKING_DAY"
         ],
         "timeConflict": false,
+        "timeMultiSource": false,
         "conditionSignal": 4,
         "actorSignal": 29,
         "unitGroups": 0,
@@ -2744,7 +2192,7 @@
       }
     },
     {
-      "sampleNo": 40,
+      "sampleNo": 32,
       "id": "019ff5be-f90b-744a-bf31-aa9fec429c19",
       "code": "1.116400",
       "name": "Tách thửa đất, hợp thửa đất",
@@ -2762,11 +2210,11 @@
         "profileComponentsRaw": 5,
         "profileComponentSource": "executionCases",
         "profileComponentIds": [
-          "TP-H36.000070",
-          "TP-H36.000071",
-          "TP-H36.000059",
-          "TP-H36.000072",
-          "TP-H36.000048"
+          "tp-h36.000070",
+          "tp-h36.000071",
+          "tp-h36.000059",
+          "tp-h36.000072",
+          "tp-h36.000048"
         ],
         "profileComponentsByCase": [
           5
@@ -2784,6 +2232,7 @@
           "12 WORKING_DAY"
         ],
         "timeConflict": false,
+        "timeMultiSource": false,
         "conditionSignal": 2,
         "actorSignal": 29,
         "unitGroups": 0,
@@ -2795,19 +2244,17 @@
       }
     },
     {
-      "sampleNo": 41,
+      "sampleNo": 33,
       "id": "019d2bfc-d9d1-7475-8e58-1aa4479901eb",
       "code": "2.000575",
       "name": "Cấp lại Giấy chứng nhận đăng ký hộ kinh doanh, Cấp đổi sang Giấy chứng nhận đăng ký hộ kinh doanh",
       "category": "Thành lập và hoạt động doanh nghiệp (hộ kinh doanh)",
       "groups": [
-        "G04_MANY_PROFILES",
         "G10_EXECUTION_CASES"
       ],
       "reasons": [
-        "Chọn từ G04_MANY_PROFILES",
         "Chọn từ G10_EXECUTION_CASES",
-        "Bắt buộc coverage nhiều executionCases"
+        "Bắt buộc coverage executionCases"
       ],
       "features": {
         "steps": 2,
@@ -2815,44 +2262,44 @@
         "profileComponentsRaw": 38,
         "profileComponentSource": "executionCases",
         "profileComponentIds": [
-          "TP-G12.000927",
-          "000.00.00.G12-123145",
-          "000.00.00.G12-1000123",
-          "000.00.00.G12-100124",
-          "000.00.00.G12-90125",
-          "000.00.00.G12-230123",
-          "000.00.00.G12-134100",
-          "000.00.00.G12-154678",
-          "000.00.00.G12-100234",
-          "000.00.00.G12-100235",
-          "000.00.00.G12-100456",
-          "000.00.00.G12-100256",
-          "000.00.00.G12-199123",
-          "000.00.00.G12-199124",
-          "000.00.00.G12-1001240",
-          "000.00.00.G12-1660123",
-          "000.00.00.G12-123122",
-          "000.00.00.G12-111234",
-          "000.00.00.G12-1821230",
-          "000.00.00.G12-1112340",
-          "000.00.00.G12-1001234",
-          "000.00.00.G12-100345",
-          "000.00.00.G12-145123",
-          "000.00.00.G12-1002350",
-          "000.00.00.G12-121245",
-          "000.00.00.G12-10034500",
-          "000.00.00.G12-1003455",
-          "000.00.00.G12-411234",
-          "000.00.00.G12-10023400",
-          "000.00.00.G12-1003450",
-          "000.00.00.G12-144123",
-          "000.00.00.G12-166123",
-          "000.00.00.G12-222123",
-          "000.00.00.G12-222124",
-          "000.00.00.G12-122124",
-          "000.00.00.G12-222145",
-          "000.00.00.G12-1222134",
-          "000.00.00.G12-1222145"
+          "tp-g12.000927",
+          "000.00.00.g12-123145",
+          "000.00.00.g12-1000123",
+          "000.00.00.g12-100124",
+          "000.00.00.g12-90125",
+          "000.00.00.g12-230123",
+          "000.00.00.g12-134100",
+          "000.00.00.g12-154678",
+          "000.00.00.g12-100234",
+          "000.00.00.g12-100235",
+          "000.00.00.g12-100456",
+          "000.00.00.g12-100256",
+          "000.00.00.g12-199123",
+          "000.00.00.g12-199124",
+          "000.00.00.g12-1001240",
+          "000.00.00.g12-1660123",
+          "000.00.00.g12-123122",
+          "000.00.00.g12-111234",
+          "000.00.00.g12-1821230",
+          "000.00.00.g12-1112340",
+          "000.00.00.g12-1001234",
+          "000.00.00.g12-100345",
+          "000.00.00.g12-145123",
+          "000.00.00.g12-1002350",
+          "000.00.00.g12-121245",
+          "000.00.00.g12-10034500",
+          "000.00.00.g12-1003455",
+          "000.00.00.g12-411234",
+          "000.00.00.g12-10023400",
+          "000.00.00.g12-1003450",
+          "000.00.00.g12-144123",
+          "000.00.00.g12-166123",
+          "000.00.00.g12-222123",
+          "000.00.00.g12-222124",
+          "000.00.00.g12-122124",
+          "000.00.00.g12-222145",
+          "000.00.00.g12-1222134",
+          "000.00.00.g12-1222145"
         ],
         "profileComponentsByCase": [
           1,
@@ -2887,6 +2334,7 @@
           "3 WORKING_DAY"
         ],
         "timeConflict": false,
+        "timeMultiSource": false,
         "conditionSignal": 11,
         "actorSignal": 1,
         "unitGroups": 1,
@@ -2898,113 +2346,7 @@
       }
     },
     {
-      "sampleNo": 42,
-      "id": "019d2bf9-f1db-774c-a3cd-d9d3c6beecc1",
-      "code": "2.000689",
-      "name": "Thủ tục cấp Giấy xác nhận tình trạng hôn nhân cho công dân Việt Nam trong thời gian cư trú ở nước ngoài",
-      "category": "",
-      "groups": [
-        "G08_COMPLEX_CONDITIONS"
-      ],
-      "reasons": [
-        "Chọn từ G08_COMPLEX_CONDITIONS",
-        "Bắt buộc coverage điều kiện/nhánh phức tạp"
-      ],
-      "features": {
-        "steps": 1,
-        "profileComponents": 3,
-        "profileComponentsRaw": 3,
-        "profileComponentSource": "executionCases",
-        "profileComponentIds": [
-          "000.00.00.G08-KQ000662",
-          "000.00.00.G08-KQ000660",
-          "000.00.00.G08-KQ000661"
-        ],
-        "profileComponentsByCase": [
-          3
-        ],
-        "methods": 1,
-        "methodNames": [
-          "DIRECT"
-        ],
-        "executionCases": 1,
-        "processingMin": 3,
-        "processingMax": 3,
-        "processingValues": [
-          "3 WORKING_DAY"
-        ],
-        "timeConflict": false,
-        "conditionSignal": 44,
-        "actorSignal": 1,
-        "unitGroups": 1,
-        "departments": 0,
-        "agencies": 0,
-        "narrativeLength": 6845,
-        "hasExecutionCases": true,
-        "dataWarnings": []
-      }
-    },
-    {
-      "sampleNo": 43,
-      "id": "019d2bff-d1c6-7532-a88a-2138ebfa7d7e",
-      "code": "2.001538",
-      "name": "Thủ tục đề nghị danh hiệu thi đua, hình thức khen thưởng thuộc phạm vi chức năng quản lý của NHNN",
-      "category": "",
-      "groups": [
-        "G02_MANY_STEPS",
-        "G13_VERY_COMPLEX"
-      ],
-      "reasons": [
-        "Chọn từ G02_MANY_STEPS",
-        "Chọn từ G13_VERY_COMPLEX",
-        "Bắt buộc có mẫu rất phức tạp"
-      ],
-      "features": {
-        "steps": 8,
-        "profileComponents": 11,
-        "profileComponentsRaw": 11,
-        "profileComponentSource": "executionCases",
-        "profileComponentIds": [
-          "G19-KQ0060104",
-          "G19-KQ0060105",
-          "G19-KQ0060106",
-          "G19-KQ0060107",
-          "G19-KQ0060108",
-          "G19-KQ0060109",
-          "G19-KQ0060110",
-          "G19-KQ0060111",
-          "G19-KQ0060112",
-          "G19-KQ0060113",
-          "G19-KQ0060114"
-        ],
-        "profileComponentsByCase": [
-          11
-        ],
-        "methods": 3,
-        "methodNames": [
-          "ONLINE",
-          "POSTAL",
-          "DIRECT"
-        ],
-        "executionCases": 1,
-        "processingMin": 1,
-        "processingMax": 1,
-        "processingValues": [
-          "1 OTHER"
-        ],
-        "timeConflict": false,
-        "conditionSignal": 36,
-        "actorSignal": 2,
-        "unitGroups": 0,
-        "departments": 2,
-        "agencies": 0,
-        "narrativeLength": 89181,
-        "hasExecutionCases": true,
-        "dataWarnings": []
-      }
-    },
-    {
-      "sampleNo": 44,
+      "sampleNo": 34,
       "id": "019d2bfc-da19-7628-836f-646ce74db96a",
       "code": "2.002011",
       "name": "Đăng ký thay đổi: thành viên hợp danh; thành viên công ty trách nhiệm hữu hạn hai thành viên trở lên; người đại diện theo pháp luật của công ty trách nhiệm hữu hạn, công ty cổ phần; chủ sở hữu công ty trách nhiệm hữu hạn một thành viên; chủ doanh nghiệp tư nhân trong trường hợp bán, tặng cho doanh nghiệp, chủ doanh nghiệp chết",
@@ -3018,7 +2360,7 @@
         "Chọn từ G04_MANY_PROFILES",
         "Chọn từ G10_EXECUTION_CASES",
         "Chọn từ G13_VERY_COMPLEX",
-        "Bắt buộc coverage nhiều executionCases"
+        "Bắt buộc coverage executionCases"
       ],
       "features": {
         "steps": 3,
@@ -3026,106 +2368,106 @@
         "profileComponentsRaw": 115,
         "profileComponentSource": "executionCases",
         "profileComponentIds": [
-          "000.00.00.G12-823",
-          "000.00.00.G12-636",
-          "000.00.00.G12-927",
-          "000.00.00.G12-928",
-          "000.00.00.G12-930",
-          "000.00.00.G12-932",
-          "000.00.00.G12-933",
-          "000.00.00.G12-438",
-          "000.00.00.G12-439",
-          "000.00.00.G12-440",
-          "000.00.00.G12-441",
-          "000.00.00.G12-541",
-          "000.00.00.G12-542",
-          "000.00.00.G12-544",
-          "000.00.00.G12-545",
-          "000.00.00.G12-356",
-          "000.00.00.G12-467",
-          "000.00.00.G12-4678",
-          "000.00.00.G12-6456",
-          "000.00.00.G12-6457",
-          "000.00.00.G12-6458",
-          "000.00.00.G12-64578",
-          "000.00.00.G12-654300",
-          "000.00.00.G12-0246",
-          "000.00.00.G12-0636",
-          "000.00.00.G12-00636",
-          "000.00.00.G12-10080",
-          "000.00.00.G12-63006",
-          "000.00.00.G12-006360",
-          "000.00.00.G12-68936",
-          "000.00.00.G12-00180",
-          "000.00.00.G12-60036",
-          "000.00.00.G12-61136",
-          "000.00.00.G12-66636",
-          "000.00.00.G12-63644",
-          "000.00.00.G12-666360",
-          "000.00.00.G12-4567",
-          "000.00.00.G12-03456",
-          "000.00.00.G12-009636",
-          "000.00.00.G12-8345",
-          "000.00.00.G12-636890",
-          "000.00.00.G12-10039",
-          "000.00.00.G12-63886",
-          "000.00.00.G12-18067",
-          "000.00.00.G12-18055",
-          "000.00.00.G12-12280",
-          "000.00.00.G12-63446",
-          "000.00.00.G12-18440",
-          "000.00.00.G12-63666",
-          "000.00.00.G12-18770",
-          "000.00.00.G12-063666",
-          "000.00.00.G12-18230",
-          "000.00.00.G12-18560",
-          "000.00.00.G12-15680",
-          "000.00.00.G12-68636",
-          "000.00.00.G12-55636",
-          "000.00.00.G12-066636",
-          "000.00.00.G12-00139",
-          "000.00.00.G12-18550",
-          "000.00.00.G12-13779",
-          "000.00.00.G12-185500",
-          "000.00.00.G12-14480",
-          "000.00.00.G12-64436",
-          "000.00.00.G12-62236",
-          "000.00.00.G12-63336",
-          "000.00.00.G12-11180",
-          "000.00.00.G12-633360",
-          "000.00.00.G12-63116",
-          "000.00.00.G12-636660",
-          "000.00.00.G12-6211",
-          "000.00.00.G12-13229",
-          "000.00.00.G12-111800",
-          "000.00.00.G12-11636",
-          "000.00.00.G12-642236",
-          "000.00.00.G12-6223633",
-          "000.00.00.G12-1180",
-          "000.00.00.G12-061136",
-          "000.00.00.G12-63611",
-          "000.00.00.G12-61236",
-          "000.00.00.G12-18011",
-          "000.00.00.G12-2311",
-          "000.00.00.G12-2312",
-          "000.00.00.G12-2313",
-          "000.00.00.G12-6231",
-          "000.00.00.G12-215224",
-          "000.00.00.G12-0061136",
-          "000.00.00.G12-78960",
-          "000.00.00.G12-005680",
-          "000.00.00.G12-001390",
-          "000.00.00.G12-630336",
-          "000.00.00.G12-8630",
-          "000.00.00.G12-6154",
-          "000.00.00.G12-63216",
-          "000.00.00.G12-3210",
-          "000.00.00.G12-122800",
-          "000.00.00.G12-389",
-          "000.00.00.G12-390",
-          "000.00.00.G12-8965",
-          "000.00.00.G12-1324",
-          "000.00.00.G12-235600"
+          "000.00.00.g12-823",
+          "000.00.00.g12-636",
+          "000.00.00.g12-927",
+          "000.00.00.g12-928",
+          "000.00.00.g12-930",
+          "000.00.00.g12-932",
+          "000.00.00.g12-933",
+          "000.00.00.g12-438",
+          "000.00.00.g12-439",
+          "000.00.00.g12-440",
+          "000.00.00.g12-441",
+          "000.00.00.g12-541",
+          "000.00.00.g12-542",
+          "000.00.00.g12-544",
+          "000.00.00.g12-545",
+          "000.00.00.g12-356",
+          "000.00.00.g12-467",
+          "000.00.00.g12-4678",
+          "000.00.00.g12-6456",
+          "000.00.00.g12-6457",
+          "000.00.00.g12-6458",
+          "000.00.00.g12-64578",
+          "000.00.00.g12-654300",
+          "000.00.00.g12-0246",
+          "000.00.00.g12-0636",
+          "000.00.00.g12-00636",
+          "000.00.00.g12-10080",
+          "000.00.00.g12-63006",
+          "000.00.00.g12-006360",
+          "000.00.00.g12-68936",
+          "000.00.00.g12-00180",
+          "000.00.00.g12-60036",
+          "000.00.00.g12-61136",
+          "000.00.00.g12-66636",
+          "000.00.00.g12-63644",
+          "000.00.00.g12-666360",
+          "000.00.00.g12-4567",
+          "000.00.00.g12-03456",
+          "000.00.00.g12-009636",
+          "000.00.00.g12-8345",
+          "000.00.00.g12-636890",
+          "000.00.00.g12-10039",
+          "000.00.00.g12-63886",
+          "000.00.00.g12-18067",
+          "000.00.00.g12-18055",
+          "000.00.00.g12-12280",
+          "000.00.00.g12-63446",
+          "000.00.00.g12-18440",
+          "000.00.00.g12-63666",
+          "000.00.00.g12-18770",
+          "000.00.00.g12-063666",
+          "000.00.00.g12-18230",
+          "000.00.00.g12-18560",
+          "000.00.00.g12-15680",
+          "000.00.00.g12-68636",
+          "000.00.00.g12-55636",
+          "000.00.00.g12-066636",
+          "000.00.00.g12-00139",
+          "000.00.00.g12-18550",
+          "000.00.00.g12-13779",
+          "000.00.00.g12-185500",
+          "000.00.00.g12-14480",
+          "000.00.00.g12-64436",
+          "000.00.00.g12-62236",
+          "000.00.00.g12-63336",
+          "000.00.00.g12-11180",
+          "000.00.00.g12-633360",
+          "000.00.00.g12-63116",
+          "000.00.00.g12-636660",
+          "000.00.00.g12-6211",
+          "000.00.00.g12-13229",
+          "000.00.00.g12-111800",
+          "000.00.00.g12-11636",
+          "000.00.00.g12-642236",
+          "000.00.00.g12-6223633",
+          "000.00.00.g12-1180",
+          "000.00.00.g12-061136",
+          "000.00.00.g12-63611",
+          "000.00.00.g12-61236",
+          "000.00.00.g12-18011",
+          "000.00.00.g12-2311",
+          "000.00.00.g12-2312",
+          "000.00.00.g12-2313",
+          "000.00.00.g12-6231",
+          "000.00.00.g12-215224",
+          "000.00.00.g12-0061136",
+          "000.00.00.g12-78960",
+          "000.00.00.g12-005680",
+          "000.00.00.g12-001390",
+          "000.00.00.g12-630336",
+          "000.00.00.g12-8630",
+          "000.00.00.g12-6154",
+          "000.00.00.g12-63216",
+          "000.00.00.g12-3210",
+          "000.00.00.g12-122800",
+          "000.00.00.g12-389",
+          "000.00.00.g12-390",
+          "000.00.00.g12-8965",
+          "000.00.00.g12-1324",
+          "000.00.00.g12-235600"
         ],
         "profileComponentsByCase": [
           2,
@@ -3168,6 +2510,7 @@
           "3 WORKING_DAY"
         ],
         "timeConflict": false,
+        "timeMultiSource": false,
         "conditionSignal": 38,
         "actorSignal": 1,
         "unitGroups": 0,
@@ -3179,210 +2522,7 @@
       }
     },
     {
-      "sampleNo": 45,
-      "id": "019d2bfc-e1ad-7738-b54b-480769d9d182",
-      "code": "2.002034",
-      "name": "Chuyển đổi công ty trách nhiệm hữu hạn thành công ty cổ phần và ngược lại",
-      "category": "Thành lập và hoạt động của doanh nghiệp",
-      "groups": [
-        "G10_EXECUTION_CASES",
-        "G13_VERY_COMPLEX"
-      ],
-      "reasons": [
-        "Chọn từ G10_EXECUTION_CASES",
-        "Chọn từ G13_VERY_COMPLEX",
-        "Bắt buộc có mẫu rất phức tạp"
-      ],
-      "features": {
-        "steps": 3,
-        "profileComponents": 35,
-        "profileComponentsRaw": 35,
-        "profileComponentSource": "executionCases",
-        "profileComponentIds": [
-          "000.00.00.G12-2987",
-          "000.00.00.G12-2988",
-          "000.00.00.G12-2989",
-          "000.00.00.G12-2990",
-          "000.00.00.G12-12432",
-          "000.00.00.G12-12349",
-          "000.00.00.G12-3299",
-          "000.00.00.G12-12300",
-          "000.00.00.G12-3301",
-          "000.00.00.G12-39302",
-          "000.00.00.G12-39303",
-          "000.00.00.G12-39304",
-          "000.00.00.G12-39305",
-          "000.00.00.G12-39306",
-          "000.00.00.G12-393060",
-          "000.00.00.G12-12401",
-          "000.00.00.G12-39402",
-          "000.00.00.G12-39403",
-          "000.00.00.G12-398403",
-          "000.00.00.G12-398404",
-          "000.00.00.G12-398405",
-          "000.00.00.G12-39406",
-          "000.00.00.G12-39501",
-          "000.00.00.G12-398502",
-          "000.00.00.G12-39505",
-          "000.00.00.G12-398506",
-          "000.00.00.G12-3987507",
-          "000.00.00.G12-39601",
-          "000.00.00.G12-393602",
-          "000.00.00.G12-393604",
-          "000.00.00.G12-393701",
-          "000.00.00.G12-398702",
-          "000.00.00.G12-398801",
-          "000.00.00.G12-398802",
-          "000.00.00.G12-39803"
-        ],
-        "profileComponentsByCase": [
-          4,
-          1,
-          4,
-          2,
-          4,
-          2,
-          4,
-          2,
-          4,
-          2,
-          1,
-          2,
-          1,
-          2
-        ],
-        "methods": 3,
-        "methodNames": [
-          "ONLINE",
-          "DIRECT",
-          "POSTAL"
-        ],
-        "executionCases": 14,
-        "processingMin": 3,
-        "processingMax": 3,
-        "processingValues": [
-          "3 WORKING_DAY"
-        ],
-        "timeConflict": false,
-        "conditionSignal": 43,
-        "actorSignal": 1,
-        "unitGroups": 0,
-        "departments": 1,
-        "agencies": 0,
-        "narrativeLength": 13891,
-        "hasExecutionCases": true,
-        "dataWarnings": []
-      }
-    },
-    {
-      "sampleNo": 46,
-      "id": "019d2bfc-e1ed-756f-8034-c4c1d90a14dd",
-      "code": "2.002060",
-      "name": "Đăng ký thay đổi nội dung đăng ký doanh nghiệp đối với công ty nhận sáp nhập (đối với công ty trách nhiệm hữu hạn, công ty cổ phần và công ty hợp danh)",
-      "category": "Thành lập và hoạt động của doanh nghiệp",
-      "groups": [
-        "G04_MANY_PROFILES",
-        "G13_VERY_COMPLEX"
-      ],
-      "reasons": [
-        "Chọn từ G04_MANY_PROFILES",
-        "Chọn từ G13_VERY_COMPLEX",
-        "Bắt buộc coverage nhiều thành phần hồ sơ"
-      ],
-      "features": {
-        "steps": 3,
-        "profileComponents": 50,
-        "profileComponentsRaw": 50,
-        "profileComponentSource": "executionCases",
-        "profileComponentIds": [
-          "000.00.00.G12-39345",
-          "000.00.00.G12-12367",
-          "000.00.00.G12-398744",
-          "000.00.00.G12-3987222",
-          "000.00.00.G12-3987334",
-          "000.00.00.G12-179000",
-          "000.00.00.G12-3156700",
-          "000.00.00.G12-398722",
-          "000.00.00.G12-39222",
-          "000.00.00.G12-3222",
-          "000.00.00.G12-123400",
-          "000.00.00.G12-1299",
-          "000.00.00.G12-398733",
-          "000.00.00.G12-17900",
-          "000.00.00.G12-34566",
-          "000.00.00.G12-34577",
-          "000.00.00.G12-39223",
-          "000.00.00.G12-33987",
-          "000.00.00.G12-179033",
-          "000.00.00.G12-3987440",
-          "000.00.00.G12-3987331",
-          "000.00.00.G12-39872200",
-          "000.00.00.G12-3111",
-          "000.00.00.G12-139872200",
-          "000.00.00.G12-23120",
-          "000.00.00.G12-23111",
-          "000.00.00.G12-23112",
-          "000.00.00.G12-3987332",
-          "000.00.00.G12-398766",
-          "000.00.00.G12-179022",
-          "000.00.00.G12-179012",
-          "000.00.00.G12-3987221",
-          "000.00.00.G12-179034",
-          "000.00.00.G12-3578",
-          "000.00.00.G12-179021",
-          "000.00.00.G12-1790123",
-          "000.00.00.G12-39875",
-          "000.00.00.G12-398700",
-          "000.00.00.G12-315672",
-          "000.00.00.G12-398721",
-          "000.00.00.G12-179032",
-          "000.00.00.G12-3987210",
-          "000.00.00.G12-3987214",
-          "000.00.00.G12-398709",
-          "000.00.00.G12-13987",
-          "000.00.00.G12-1790220",
-          "000.00.00.G12-122790",
-          "000.00.00.G12-3987123",
-          "000.00.00.G12-3987213",
-          "000.00.00.G12-1790320"
-        ],
-        "profileComponentsByCase": [
-          5,
-          8,
-          7,
-          9,
-          7,
-          8,
-          1,
-          2,
-          1,
-          2
-        ],
-        "methods": 3,
-        "methodNames": [
-          "DIRECT",
-          "ONLINE",
-          "POSTAL"
-        ],
-        "executionCases": 10,
-        "processingMin": 3,
-        "processingMax": 3,
-        "processingValues": [
-          "3 WORKING_DAY"
-        ],
-        "timeConflict": false,
-        "conditionSignal": 43,
-        "actorSignal": 1,
-        "unitGroups": 0,
-        "departments": 1,
-        "agencies": 0,
-        "narrativeLength": 13889,
-        "hasExecutionCases": true,
-        "dataWarnings": []
-      }
-    },
-    {
-      "sampleNo": 47,
+      "sampleNo": 35,
       "id": "019e96c8-22fd-7617-9581-cf4e32745304",
       "code": "3.000579",
       "name": "Giải quyết trợ cấp hằng tháng đối với thanh niên xung phong đã hoàn thành nhiệm vụ trong kháng chiến trở về địa phương (khoản01 Điều 09 Nghị Quyếtsố 182/2025/NQHĐND)",
@@ -3400,9 +2540,9 @@
         "profileComponentsRaw": 3,
         "profileComponentSource": "executionCases",
         "profileComponentIds": [
-          "000.00.00.H27-KQ0701",
-          "000.00.00.H27-KQ0702",
-          "000.00.00.H27-KQ002089"
+          "000.00.00.h27-kq0701",
+          "000.00.00.h27-kq0702",
+          "000.00.00.h27-kq002089"
         ],
         "profileComponentsByCase": [
           3
@@ -3420,6 +2560,7 @@
           "7 DAY"
         ],
         "timeConflict": false,
+        "timeMultiSource": false,
         "conditionSignal": 7,
         "actorSignal": 2,
         "unitGroups": 2,
@@ -3431,7 +2572,558 @@
       }
     },
     {
-      "sampleNo": 48,
+      "sampleNo": 36,
+      "id": "019fb798-1216-73cc-92bf-8a62feca0c6d",
+      "code": "3.000640",
+      "name": "Cấp đổi Giấy chứng nhận quyền sử dụng đất, quyền sở hữu tài sản gắn liền với đất",
+      "category": "Đất đai",
+      "groups": [
+        "G11_ANOMALIES"
+      ],
+      "reasons": [
+        "Chọn từ G11_ANOMALIES",
+        "Bổ sung anomaly để audit"
+      ],
+      "features": {
+        "steps": 3,
+        "profileComponents": 0,
+        "profileComponentsRaw": 0,
+        "profileComponentSource": "none",
+        "profileComponentIds": [],
+        "profileComponentsByCase": [
+          0
+        ],
+        "methods": 3,
+        "methodNames": [
+          "DIRECT",
+          "ONLINE",
+          "POSTAL"
+        ],
+        "executionCases": 1,
+        "processingMin": 15,
+        "processingMax": 20,
+        "processingValues": [
+          "15 DAY",
+          "20 DAY"
+        ],
+        "timeConflict": true,
+        "timeMultiSource": false,
+        "conditionSignal": 0,
+        "actorSignal": 1,
+        "unitGroups": 1,
+        "departments": 0,
+        "agencies": 0,
+        "narrativeLength": 1,
+        "hasExecutionCases": true,
+        "dataWarnings": [
+          "EMPTY_PROFILE_COMPONENTS",
+          "PROCESSING_TIME_CONFLICT_SAME_METHOD"
+        ]
+      }
+    },
+    {
+      "sampleNo": 37,
+      "id": "019fb7a9-3c24-736a-93ec-3cdb92acf7f4",
+      "code": "3.000644",
+      "name": "Thu hồi Giấy chứng nhận đã cấp không đúng quy định của pháp luật đất đai do người sử dụng đất, chủ sở hữu tài sản gắn liền với đất phát hiện và cấp lại Giấy chứng nhận sau khi thu hồi.",
+      "category": "Đất đai",
+      "groups": [
+        "G11_ANOMALIES"
+      ],
+      "reasons": [
+        "Chọn từ G11_ANOMALIES",
+        "Bổ sung anomaly để audit"
+      ],
+      "features": {
+        "steps": 4,
+        "profileComponents": 0,
+        "profileComponentsRaw": 0,
+        "profileComponentSource": "none",
+        "profileComponentIds": [],
+        "profileComponentsByCase": [
+          0
+        ],
+        "methods": 3,
+        "methodNames": [
+          "DIRECT",
+          "ONLINE",
+          "POSTAL"
+        ],
+        "executionCases": 1,
+        "processingMin": 30,
+        "processingMax": 35,
+        "processingValues": [
+          "35 DAY",
+          "30 DAY"
+        ],
+        "timeConflict": true,
+        "timeMultiSource": false,
+        "conditionSignal": 0,
+        "actorSignal": 1,
+        "unitGroups": 1,
+        "departments": 0,
+        "agencies": 0,
+        "narrativeLength": 1,
+        "hasExecutionCases": true,
+        "dataWarnings": [
+          "EMPTY_PROFILE_COMPONENTS",
+          "PROCESSING_TIME_CONFLICT_SAME_METHOD"
+        ]
+      }
+    },
+    {
+      "sampleNo": 38,
+      "id": "019fb7b2-97b1-709d-8e77-f2a45d63ac30",
+      "code": "3.000647",
+      "name": "Đăng ký biến động quyền sử dụng đất, quyền sở hữu tài sản gắn liền với đất trong các trường hợp chuyển đổi quyền sử dụng đất nông nghiệp mà không theo phương án dồn điền, đổi thửa; chuyển nhượng, thừa kế, tặng cho quyền sử dụng đất, quyền sở hữu tài sản gắn liền với đất, góp vốn bằng quyền sử dụng đất, quyền sở hữu tài sản gắn liền với đất; cho thuê, cho thuê lại quyền sử dụng đất trong dự án xây dựng kinh doanh kết cấu hạ tầng; bán hoặc tặng cho hoặc để thừa kế hoặc góp vốn bằng tài sản gắn liền với đất thuê của Nhà nước theo hình thức thuê đất trả tiền hàng năm",
+      "category": "Đất đai",
+      "groups": [
+        "G11_ANOMALIES"
+      ],
+      "reasons": [
+        "Chọn từ G11_ANOMALIES",
+        "Bổ sung anomaly để audit"
+      ],
+      "features": {
+        "steps": 3,
+        "profileComponents": 0,
+        "profileComponentsRaw": 0,
+        "profileComponentSource": "none",
+        "profileComponentIds": [],
+        "profileComponentsByCase": [
+          0
+        ],
+        "methods": 3,
+        "methodNames": [
+          "DIRECT",
+          "ONLINE",
+          "POSTAL"
+        ],
+        "executionCases": 1,
+        "processingMin": 14,
+        "processingMax": 18,
+        "processingValues": [
+          "18 DAY",
+          "14 DAY"
+        ],
+        "timeConflict": true,
+        "timeMultiSource": false,
+        "conditionSignal": 0,
+        "actorSignal": 1,
+        "unitGroups": 1,
+        "departments": 0,
+        "agencies": 0,
+        "narrativeLength": 1,
+        "hasExecutionCases": true,
+        "dataWarnings": [
+          "EMPTY_PROFILE_COMPONENTS",
+          "PROCESSING_TIME_CONFLICT_SAME_METHOD"
+        ]
+      }
+    },
+    {
+      "sampleNo": 39,
+      "id": "019fb7b5-97b3-72be-b5e1-9c52c6f0f102",
+      "code": "3.000648",
+      "name": "Đăng ký biến động đối với trường hợp đổi tên hoặc thay đổi thông tin về người sử dụng đất, chủ sở hữu tài sản gắn liền với đất hoặc thay đổi số hiệu hoặc địa chỉ của thửa đất; thay đổi hạn chế quyền sử dụng đất, quyền sở hữu tài sản gắn liền với đất hoặc có thay đổi quyền đối với thửa đất liền kề; giảm diện tích thửa đất do sạt lở tự nhiên",
+      "category": "Đất đai",
+      "groups": [
+        "G11_ANOMALIES"
+      ],
+      "reasons": [
+        "Chọn từ G11_ANOMALIES",
+        "Bổ sung anomaly để audit"
+      ],
+      "features": {
+        "steps": 3,
+        "profileComponents": 0,
+        "profileComponentsRaw": 0,
+        "profileComponentSource": "none",
+        "profileComponentIds": [],
+        "profileComponentsByCase": [
+          0
+        ],
+        "methods": 3,
+        "methodNames": [
+          "DIRECT",
+          "ONLINE",
+          "POSTAL"
+        ],
+        "executionCases": 1,
+        "processingMin": 14,
+        "processingMax": 20,
+        "processingValues": [
+          "14 DAY",
+          "15 DAY",
+          "20 DAY"
+        ],
+        "timeConflict": true,
+        "timeMultiSource": false,
+        "conditionSignal": 0,
+        "actorSignal": 1,
+        "unitGroups": 1,
+        "departments": 0,
+        "agencies": 0,
+        "narrativeLength": 1,
+        "hasExecutionCases": true,
+        "dataWarnings": [
+          "EMPTY_PROFILE_COMPONENTS",
+          "PROCESSING_TIME_CONFLICT_SAME_METHOD"
+        ]
+      }
+    },
+    {
+      "sampleNo": 40,
+      "id": "019fb7b8-4f98-74c9-a346-6da2a3cd184c",
+      "code": "3.000649",
+      "name": "Đăng ký biến động thay đổi quyền sử dụng đất, quyền sở hữu tài sản gắn liền với đất do chia, tách, hợp nhất, sáp nhập tổ chức hoặc chuyển đổi mô hình tổ chức, chuyển đổi loại hình doanh nghiệp theo quy định của pháp luật về doanh nghiệp; điều chỉnh quy hoạch xây dựng chi tiết; cấp Giấy chứng nhận cho từng thửa đất theo quy hoạch xây dựng chi tiết cho chủ đầu tư dự án có nhu cầu",
+      "category": "Đất đai",
+      "groups": [
+        "G11_ANOMALIES"
+      ],
+      "reasons": [
+        "Chọn từ G11_ANOMALIES",
+        "Bổ sung anomaly để audit"
+      ],
+      "features": {
+        "steps": 3,
+        "profileComponents": 0,
+        "profileComponentsRaw": 0,
+        "profileComponentSource": "none",
+        "profileComponentIds": [],
+        "profileComponentsByCase": [
+          0
+        ],
+        "methods": 3,
+        "methodNames": [
+          "DIRECT",
+          "ONLINE",
+          "POSTAL"
+        ],
+        "executionCases": 1,
+        "processingMin": 15,
+        "processingMax": 18,
+        "processingValues": [
+          "18 DAY",
+          "15 DAY"
+        ],
+        "timeConflict": true,
+        "timeMultiSource": false,
+        "conditionSignal": 0,
+        "actorSignal": 1,
+        "unitGroups": 1,
+        "departments": 0,
+        "agencies": 0,
+        "narrativeLength": 1,
+        "hasExecutionCases": true,
+        "dataWarnings": [
+          "EMPTY_PROFILE_COMPONENTS",
+          "PROCESSING_TIME_CONFLICT_SAME_METHOD"
+        ]
+      }
+    },
+    {
+      "sampleNo": 41,
+      "id": "019fb7be-6c8b-7054-819d-5e470608e389",
+      "code": "3.000650",
+      "name": "Đăng ký biến động đối với trường hợp thay đổi quyền sử dụng đất, quyền sở hữu tài sản gắn liền với đất theo thỏa thuận của các thành viên hộ gia đình hoặc của vợ và chồng; quyền sử dụng đất xây dựng công trình trên mặt đất phục vụ cho việc vận hành, khai thác sử dụng công trình ngầm, quyền sở hữu công trình ngầm; bán tài sản, điều chuyển, chuyển nhượng quyền sử dụng đất là tài sản công theo quy định của pháp luật về quản lý, sử dụng tài sản công; nhận quyền sử dụng đất, quyền sở hữu tài sản gắn liền với đất theo kết quả giải quyết tranh chấp, khiếu nại, tố cáo về đất đai hoặc bản án, quyết định của Tòa án, quyết định thi hành án của cơ quan thi hành án đã được thi hành; quyết định hoặc phán quyết của Trọng tài thương mại Việt Nam về giải quyết tranh chấp giữa các bên phát sinh từ hoạt động thương mại liên quan đến đất đai; nhận quyền sử dụng đất, quyền sở hữu tài sản gắn liền với đất do xử lý tài sản thế chấp là quyền sử dụng đất, tài sản gắn liền với đất đã được đăng ký, bao gồm cả xử lý khoản nợ có nguồn gốc từ khoản nợ xấu của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài",
+      "category": "Đất đai",
+      "groups": [
+        "G11_ANOMALIES"
+      ],
+      "reasons": [
+        "Chọn từ G11_ANOMALIES",
+        "Bổ sung anomaly để audit"
+      ],
+      "features": {
+        "steps": 5,
+        "profileComponents": 0,
+        "profileComponentsRaw": 0,
+        "profileComponentSource": "none",
+        "profileComponentIds": [],
+        "profileComponentsByCase": [
+          0
+        ],
+        "methods": 3,
+        "methodNames": [
+          "DIRECT",
+          "ONLINE",
+          "POSTAL"
+        ],
+        "executionCases": 1,
+        "processingMin": 18,
+        "processingMax": 20,
+        "processingValues": [
+          "18 DAY",
+          "20 DAY"
+        ],
+        "timeConflict": true,
+        "timeMultiSource": false,
+        "conditionSignal": 0,
+        "actorSignal": 1,
+        "unitGroups": 1,
+        "departments": 0,
+        "agencies": 0,
+        "narrativeLength": 1,
+        "hasExecutionCases": true,
+        "dataWarnings": [
+          "EMPTY_PROFILE_COMPONENTS",
+          "PROCESSING_TIME_CONFLICT_SAME_METHOD"
+        ]
+      }
+    },
+    {
+      "sampleNo": 42,
+      "id": "019fb7c8-f7c9-70bf-aa81-c64ee59ea09c",
+      "code": "3.000654",
+      "name": "Đăng ký, cấp Giấy chứng nhận đối với trường hợp chuyển nhượng dự án đầu tư có sử dụng đất",
+      "category": "Đất đai",
+      "groups": [
+        "G11_ANOMALIES"
+      ],
+      "reasons": [
+        "Chọn từ G11_ANOMALIES",
+        "Bổ sung anomaly để audit"
+      ],
+      "features": {
+        "steps": 6,
+        "profileComponents": 0,
+        "profileComponentsRaw": 0,
+        "profileComponentSource": "none",
+        "profileComponentIds": [],
+        "profileComponentsByCase": [
+          0
+        ],
+        "methods": 3,
+        "methodNames": [
+          "DIRECT",
+          "ONLINE",
+          "POSTAL"
+        ],
+        "executionCases": 1,
+        "processingMin": 18,
+        "processingMax": 30,
+        "processingValues": [
+          "30 DAY",
+          "18 DAY"
+        ],
+        "timeConflict": true,
+        "timeMultiSource": false,
+        "conditionSignal": 0,
+        "actorSignal": 1,
+        "unitGroups": 1,
+        "departments": 0,
+        "agencies": 0,
+        "narrativeLength": 1,
+        "hasExecutionCases": true,
+        "dataWarnings": [
+          "EMPTY_PROFILE_COMPONENTS",
+          "PROCESSING_TIME_CONFLICT_SAME_METHOD"
+        ]
+      }
+    },
+    {
+      "sampleNo": 43,
+      "id": "019fb7cb-ac82-7469-8d3e-2a4020b6712b",
+      "code": "3.000655",
+      "name": "Đăng ký tài sản gắn liền với thửa đất đã được cấp Giấy chứng nhận hoặc đăng ký thay đổi về tài sản gắn liền với đất so với nội dung đã đăng ký, gia hạn thời hạn sở hữu nhà ở của tổ chức nước ngoài, cá nhân nước ngoài theo quy định của pháp luật về nhà ở nội dung đã đăng ký",
+      "category": "Đất đai",
+      "groups": [
+        "G11_ANOMALIES"
+      ],
+      "reasons": [
+        "Chọn từ G11_ANOMALIES",
+        "Bổ sung anomaly để audit"
+      ],
+      "features": {
+        "steps": 5,
+        "profileComponents": 0,
+        "profileComponentsRaw": 0,
+        "profileComponentSource": "none",
+        "profileComponentIds": [],
+        "profileComponentsByCase": [
+          0
+        ],
+        "methods": 3,
+        "methodNames": [
+          "DIRECT",
+          "ONLINE",
+          "POSTAL"
+        ],
+        "executionCases": 1,
+        "processingMin": 15,
+        "processingMax": 18,
+        "processingValues": [
+          "18 DAY",
+          "15 DAY"
+        ],
+        "timeConflict": true,
+        "timeMultiSource": false,
+        "conditionSignal": 0,
+        "actorSignal": 1,
+        "unitGroups": 1,
+        "departments": 0,
+        "agencies": 0,
+        "narrativeLength": 1,
+        "hasExecutionCases": true,
+        "dataWarnings": [
+          "EMPTY_PROFILE_COMPONENTS",
+          "PROCESSING_TIME_CONFLICT_SAME_METHOD"
+        ]
+      }
+    },
+    {
+      "sampleNo": 44,
+      "id": "019fb7d0-d759-7349-9429-62bfe53c95e0",
+      "code": "3.000657",
+      "name": "Đăng ký đất đai, tài sản gắn liền với đất, cấp Giấy chứng nhận quyền sử dụng đất, quyền sở hữu tài sản gắn liền với đất lần đầu đối với tổ chức đang sử dụng đất",
+      "category": "Đất đai",
+      "groups": [
+        "G11_ANOMALIES"
+      ],
+      "reasons": [
+        "Chọn từ G11_ANOMALIES",
+        "Bổ sung anomaly để audit"
+      ],
+      "features": {
+        "steps": 3,
+        "profileComponents": 0,
+        "profileComponentsRaw": 0,
+        "profileComponentSource": "none",
+        "profileComponentIds": [],
+        "profileComponentsByCase": [
+          0
+        ],
+        "methods": 3,
+        "methodNames": [
+          "DIRECT",
+          "ONLINE",
+          "POSTAL"
+        ],
+        "executionCases": 1,
+        "processingMin": 27,
+        "processingMax": 30,
+        "processingValues": [
+          "27 DAY",
+          "30 DAY"
+        ],
+        "timeConflict": true,
+        "timeMultiSource": false,
+        "conditionSignal": 0,
+        "actorSignal": 1,
+        "unitGroups": 1,
+        "departments": 0,
+        "agencies": 0,
+        "narrativeLength": 1,
+        "hasExecutionCases": true,
+        "dataWarnings": [
+          "EMPTY_PROFILE_COMPONENTS",
+          "PROCESSING_TIME_CONFLICT_SAME_METHOD"
+        ]
+      }
+    },
+    {
+      "sampleNo": 45,
+      "id": "019fb915-6c63-7359-bec8-3ec9919f6a5e",
+      "code": "3.000668",
+      "name": "Đăng ký đất đai, tài sản gắn liền với đất, cấp Giấy chứng nhận quyền sử dụng đất, quyền sở hữu tài sản gắn liền với đất lần đầu đối với tổ chức đang sử dụng đất",
+      "category": "Đất đai",
+      "groups": [
+        "G11_ANOMALIES"
+      ],
+      "reasons": [
+        "Chọn từ G11_ANOMALIES",
+        "Bổ sung anomaly để audit"
+      ],
+      "features": {
+        "steps": 3,
+        "profileComponents": 0,
+        "profileComponentsRaw": 0,
+        "profileComponentSource": "none",
+        "profileComponentIds": [],
+        "profileComponentsByCase": [
+          0
+        ],
+        "methods": 3,
+        "methodNames": [
+          "DIRECT",
+          "ONLINE",
+          "POSTAL"
+        ],
+        "executionCases": 1,
+        "processingMin": 27,
+        "processingMax": 30,
+        "processingValues": [
+          "27 DAY",
+          "30 DAY"
+        ],
+        "timeConflict": true,
+        "timeMultiSource": false,
+        "conditionSignal": 0,
+        "actorSignal": 1,
+        "unitGroups": 1,
+        "departments": 0,
+        "agencies": 0,
+        "narrativeLength": 1,
+        "hasExecutionCases": true,
+        "dataWarnings": [
+          "EMPTY_PROFILE_COMPONENTS",
+          "PROCESSING_TIME_CONFLICT_SAME_METHOD"
+        ]
+      }
+    },
+    {
+      "sampleNo": 46,
+      "id": "019fb91a-fd7e-754d-813b-23658d094d3e",
+      "code": "3.000669",
+      "name": "Đăng ký đất đai, tài sản gắn liền với đất, cấp Giấy chứng nhận quyền sử dụng đất, quyền sở hữu tài sản gắn liền với đất lần đầu đối với hộ gia đình, cá nhân, cộng đồng dân cư, người gốc Việt Nam định cư ở nước ngoài",
+      "category": "Đất đai",
+      "groups": [
+        "G11_ANOMALIES"
+      ],
+      "reasons": [
+        "Chọn từ G11_ANOMALIES",
+        "Bổ sung anomaly để audit"
+      ],
+      "features": {
+        "steps": 5,
+        "profileComponents": 0,
+        "profileComponentsRaw": 0,
+        "profileComponentSource": "none",
+        "profileComponentIds": [],
+        "profileComponentsByCase": [
+          0
+        ],
+        "methods": 3,
+        "methodNames": [
+          "DIRECT",
+          "ONLINE",
+          "POSTAL"
+        ],
+        "executionCases": 1,
+        "processingMin": 27,
+        "processingMax": 30,
+        "processingValues": [
+          "27 DAY",
+          "30 DAY"
+        ],
+        "timeConflict": true,
+        "timeMultiSource": false,
+        "conditionSignal": 0,
+        "actorSignal": 1,
+        "unitGroups": 1,
+        "departments": 0,
+        "agencies": 0,
+        "narrativeLength": 1,
+        "hasExecutionCases": true,
+        "dataWarnings": [
+          "EMPTY_PROFILE_COMPONENTS",
+          "PROCESSING_TIME_CONFLICT_SAME_METHOD"
+        ]
+      }
+    },
+    {
+      "sampleNo": 47,
       "id": "019fb923-aca1-7681-b21b-01b6f62e28ef",
       "code": "3.000671",
       "name": "Đăng ký, cấp Giấy chứng nhận đối với thửa đất có diện tích tăng thêm do thay đổi ranh giới so với Giấy chứng nhận đã cấp (quy định tại điểm b và điểm c khoản 2 Điều 24 Nghị định số 101/2024/NĐ-CP và khoản 4 Điều 24 Nghị định số 101/2024/NĐ-CP)",
@@ -3465,6 +3157,7 @@
           "30 DAY"
         ],
         "timeConflict": false,
+        "timeMultiSource": false,
         "conditionSignal": 0,
         "actorSignal": 1,
         "unitGroups": 1,
@@ -3478,7 +3171,7 @@
       }
     },
     {
-      "sampleNo": 49,
+      "sampleNo": 48,
       "id": "019dff4d-380e-7353-97ab-e9ae270d616f",
       "code": "5.003809",
       "name": "Thẩm định nhiệm vụ quy hoạch, quy hoạch đô thị và nông thôn thuộc thẩm quyền phê duyệt của Thủ tướng Chính phủ hoặc thẩm định các nhiệm vụ quy hoạch, quy hoạch đô thị và nông thôn theo phân công của Thủ tướng Chính phủ",
@@ -3488,7 +3181,7 @@
       ],
       "reasons": [
         "Chọn từ G11_ANOMALIES",
-        "Bắt buộc coverage bất thường dữ liệu"
+        "Bắt buộc coverage anomaly dữ liệu"
       ],
       "features": {
         "steps": 4,
@@ -3513,6 +3206,7 @@
           "20 WORKING_DAY"
         ],
         "timeConflict": true,
+        "timeMultiSource": false,
         "conditionSignal": 0,
         "actorSignal": 2,
         "unitGroups": 0,
@@ -3522,7 +3216,54 @@
         "hasExecutionCases": true,
         "dataWarnings": [
           "EMPTY_PROFILE_COMPONENTS",
-          "PROCESSING_TIME_CONFLICT"
+          "PROCESSING_TIME_CONFLICT_SAME_METHOD"
+        ]
+      }
+    },
+    {
+      "sampleNo": 49,
+      "id": "019d9487-9846-727b-a885-d81991aa0c82",
+      "code": "6.006577",
+      "name": "Thẩm định đề án phân loại đô thị loại I, II, III và loại IV\nThẩm định đề án phân loại đô thị loại I, II, III và loại IV",
+      "category": "",
+      "groups": [
+        "G12_VERY_SIMPLE"
+      ],
+      "reasons": [
+        "Chọn từ G12_VERY_SIMPLE",
+        "Bắt buộc có mẫu rất đơn giản"
+      ],
+      "features": {
+        "steps": 1,
+        "profileComponents": 0,
+        "profileComponentsRaw": 0,
+        "profileComponentSource": "none",
+        "profileComponentIds": [],
+        "profileComponentsByCase": [
+          0,
+          0
+        ],
+        "methods": 1,
+        "methodNames": [
+          "POSTAL"
+        ],
+        "executionCases": 2,
+        "processingMin": 15,
+        "processingMax": 15,
+        "processingValues": [
+          "15 DAY"
+        ],
+        "timeConflict": false,
+        "timeMultiSource": false,
+        "conditionSignal": 0,
+        "actorSignal": 3,
+        "unitGroups": 1,
+        "departments": 2,
+        "agencies": 0,
+        "narrativeLength": 1,
+        "hasExecutionCases": true,
+        "dataWarnings": [
+          "EMPTY_PROFILE_COMPONENTS"
         ]
       }
     },
@@ -3559,6 +3300,7 @@
           "30 DAY"
         ],
         "timeConflict": false,
+        "timeMultiSource": false,
         "conditionSignal": 0,
         "actorSignal": 3,
         "unitGroups": 1,

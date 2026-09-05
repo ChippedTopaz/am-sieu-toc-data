@@ -1,10 +1,10 @@
 [
   {
     "sampleNo": 1,
-    "id": "019d2bf7-4fc1-768b-9ba3-94be4bca58ee",
-    "file": "details/019d2bf7-4fc1-768b-9ba3-94be4bca58ee.json",
-    "code": "1.000178",
-    "name": "Giải quyết khiếu nại về quyết định hành chính, hành vi hành chính của công dân đối với lực lượng Công an nhân dân (thực hiện tại cấp Trung ương)"
+    "id": "019d2bfb-cfb3-75d8-9160-fa2bd2ac950a",
+    "file": "details/019d2bfb-cfb3-75d8-9160-fa2bd2ac950a.json",
+    "code": "1.000005",
+    "name": "Thủ tục hải quan đối với khí, nguyên liệu xuất khẩu, nhập khẩu bằng đường ống chuyên dụng"
   },
   {
     "sampleNo": 2,
@@ -43,304 +43,304 @@
   },
   {
     "sampleNo": 7,
-    "id": "019d2bf7-57bc-77d4-9b08-282dcd32ed61",
-    "file": "details/019d2bf7-57bc-77d4-9b08-282dcd32ed61.json",
-    "code": "1.000931",
-    "name": "Cấp giấy phép vào khu vực cấm, khu vực biên giới cho người nước ngoài tại Công an cấp tỉnh"
+    "id": "019d2bf7-5f61-72e9-acd7-30da53e18cc9",
+    "file": "details/019d2bf7-5f61-72e9-acd7-30da53e18cc9.json",
+    "code": "1.001146",
+    "name": "Gia hạn tạm trú cho người nước ngoài tại Việt Nam (thực hiện tại cấp tỉnh)"
   },
   {
     "sampleNo": 8,
-    "id": "019d2bf9-e9f6-75df-b941-0b375e40850e",
-    "file": "details/019d2bf9-e9f6-75df-b941-0b375e40850e.json",
-    "code": "1.001121",
-    "name": "Thủ tục đăng ký nhận cha, mẹ, con giữa các công dân Việt Nam tạm trú ở nước ngoài với nhau"
-  },
-  {
-    "sampleNo": 9,
     "id": "019d2bf7-5f64-749f-b550-79b243ce8fb3",
     "file": "details/019d2bf7-5f64-749f-b550-79b243ce8fb3.json",
     "code": "1.001226",
     "name": "Cấp giấy phép đến các tỉnh, thành phố của Việt Nam cho công dân Lào nhập cảnh bằng Giấy thông hành biên giới tại Công an cấp tỉnh"
   },
   {
-    "sampleNo": 10,
+    "sampleNo": 9,
     "id": "019d2bf7-5fc6-72ba-a7f1-3506927a9517",
     "file": "details/019d2bf7-5fc6-72ba-a7f1-3506927a9517.json",
     "code": "1.001445",
     "name": "Trình báo mất hộ chiếu phổ thông (thực hiện tại cấp tỉnh)"
   },
   {
-    "sampleNo": 11,
+    "sampleNo": 10,
     "id": "019d2bfb-d7a1-70cd-b177-166039682b48",
     "file": "details/019d2bfb-d7a1-70cd-b177-166039682b48.json",
     "code": "1.001667",
     "name": "Giải quyết hưởng chế độ ốm đau, thai sản, trợ cấp dưỡng sức phục hồi sức khỏe sau ốm đau, thai sản, TNLĐ, BNN"
   },
   {
-    "sampleNo": 12,
+    "sampleNo": 11,
     "id": "019d2bf7-6f56-704f-95b8-8d949272c6ad",
     "file": "details/019d2bf7-6f56-704f-95b8-8d949272c6ad.json",
     "code": "1.003677",
     "name": "Khai báo tạm vắng"
   },
   {
-    "sampleNo": 13,
+    "sampleNo": 12,
     "id": "019d2bfa-401c-7185-871b-1e4375c166ac",
     "file": "details/019d2bfa-401c-7185-871b-1e4375c166ac.json",
     "code": "1.004881",
     "name": "Cấp Giấy chứng nhận lưu hành thuốc thú y; Cấp lại Giấy chứng nhận lưu hành thuốc thú y (trong trường hợp thay đổi thành phần, công thức, dạng bào chế, đường dùng, liều dùng, chỉ định điều trị của thuốc thú y; thay đổi phương pháp, quy trình sản xuất mà làm thay đổi chất lượng sản phẩm; đánh giá lại chất lượng, hiệu quả, độ an toàn của thuốc thú y theo quy định)"
   },
   {
-    "sampleNo": 14,
+    "sampleNo": 13,
     "id": "019d2bfc-2615-7489-ae4c-dc1cd8317dcb",
     "file": "details/019d2bfc-2615-7489-ae4c-dc1cd8317dcb.json",
     "code": "1.007659",
     "name": "Thủ tục miễn thuế đối với hàng hóa xuất khẩu, nhập khẩu"
   },
   {
-    "sampleNo": 15,
-    "id": "019d2bfc-7428-7107-b445-7089eeb05dec",
-    "file": "details/019d2bfc-7428-7107-b445-7089eeb05dec.json",
-    "code": "1.008759",
-    "name": "Đăng ký thuế trong trường hợp chia, tách, hợp nhất, sáp nhập tổ chức"
-  },
-  {
-    "sampleNo": 16,
-    "id": "019d2bfc-9362-765e-99ac-6133a1ddcad0",
-    "file": "details/019d2bfc-9362-765e-99ac-6133a1ddcad0.json",
-    "code": "1.009568",
-    "name": "Đăng ký chào bán chứng khoán ra công chúng của tổ chức tín dụng được kiểm soát đặt biệt"
-  },
-  {
-    "sampleNo": 17,
+    "sampleNo": 14,
     "id": "019d2bfc-93a3-764c-945d-714845436ee5",
     "file": "details/019d2bfc-93a3-764c-945d-714845436ee5.json",
     "code": "1.009628",
     "name": "Thủ tục điều chỉnh dự án đầu tư thuộc thẩm quyền chấp thuận chủ trương đầu tư của Thủ tướng Chính phủ"
   },
   {
-    "sampleNo": 18,
+    "sampleNo": 15,
     "id": "019d2bfc-9380-700d-b295-7c6705fc9313",
     "file": "details/019d2bfc-9380-700d-b295-7c6705fc9313.json",
     "code": "1.009646",
     "name": "Thủ tục chấp thuận điều chỉnh chủ trương đầu tư thuộc thẩm quyền của Chủ tịch Uỷ ban nhân dân cấp tỉnh"
   },
   {
-    "sampleNo": 19,
-    "id": "019d2bfc-9b56-7242-84c0-ad39936561d8",
-    "file": "details/019d2bfc-9b56-7242-84c0-ad39936561d8.json",
-    "code": "1.009759",
-    "name": "Thủ tục chấp thuận điều chỉnh chủ trương đầu tư thuộc thẩm quyền của Ban quản lý khu công nghiệp, khu chế xuất, khu công nghệ cao, khu kinh tế"
-  },
-  {
-    "sampleNo": 20,
-    "id": "019d2bfc-ab02-72f7-8377-62acdf116a4c",
-    "file": "details/019d2bfc-ab02-72f7-8377-62acdf116a4c.json",
-    "code": "1.010337",
-    "name": "Đăng ký sử dụng hoá đơn điện tử/Thay đổi nội dung đăng ký sử dụng hoá đơn điện tử/Ủy nhiệm lập hóa đơn điện tử/Chuyển đổi áp dụng hóa đơn điện tử có mã của cơ quan thuế/Khai thác dữ liệu của chi nhánh, đơn vị phụ thuộc/Thông báo tạm ngừng sử dụng hóa đơn điện tử/Tích hợp hóa đơn điện tử với biên lai thu thuế, phí, lệ phí"
-  },
-  {
-    "sampleNo": 21,
+    "sampleNo": 16,
     "id": "019d2bf7-868d-73ed-93ce-00643818b2e7",
     "file": "details/019d2bf7-868d-73ed-93ce-00643818b2e7.json",
     "code": "1.010386",
     "name": "Trình báo mất hộ chiếu phổ thông (thực hiện tại cấp xã)"
   },
   {
-    "sampleNo": 22,
-    "id": "019d2bf7-86d7-7661-825b-ac185d610609",
-    "file": "details/019d2bf7-86d7-7661-825b-ac185d610609.json",
-    "code": "1.011410",
-    "name": "Cấp tài khoản định danh điện tử mức độ 01 cho công dân Việt Nam"
-  },
-  {
-    "sampleNo": 23,
-    "id": "019d2bf7-86ec-7620-8d51-74d2a2e6dd33",
-    "file": "details/019d2bf7-86ec-7620-8d51-74d2a2e6dd33.json",
-    "code": "1.011726",
-    "name": "Trình báo mất thẻ ABTC (thực hiện tại cấp tỉnh)"
-  },
-  {
-    "sampleNo": 24,
-    "id": "019d2bfc-c287-73da-a2fc-4854894ad8e9",
-    "file": "details/019d2bfc-c287-73da-a2fc-4854894ad8e9.json",
-    "code": "1.012344",
-    "name": "Cấp giấy phép thành lập và hoạt động doanh nghiệp bảo hiểm, doanh nghiệp tái bảo hiểm, chi nhánh nước ngoài tại Việt Nam, doanh nghiệp môi giới bảo hiểm"
-  },
-  {
-    "sampleNo": 25,
+    "sampleNo": 17,
     "id": "019d2bfb-98cb-728d-b499-207d165ed70e",
     "file": "details/019d2bfb-98cb-728d-b499-207d165ed70e.json",
     "code": "1.013285",
     "name": "Thủ tục chấp thuận độ cao công trình"
   },
   {
-    "sampleNo": 26,
+    "sampleNo": 18,
     "id": "019d86f7-6442-745b-bd78-704907bbfcb3",
     "file": "details/019d86f7-6442-745b-bd78-704907bbfcb3.json",
     "code": "1.013742",
     "name": "Cấp giấy đăng ký lưu hành thuốc, nguyên liệu làm thuốc"
   },
   {
-    "sampleNo": 27,
+    "sampleNo": 19,
     "id": "019d2bfb-2af9-774b-995e-ea7085c65ef6",
     "file": "details/019d2bfb-2af9-774b-995e-ea7085c65ef6.json",
     "code": "1.014199",
     "name": "Cấp giấy phép lao động đối với người lao động nước ngoài làm việc tại Việt Nam"
   },
   {
-    "sampleNo": 28,
+    "sampleNo": 20,
     "id": "019d89ea-43a9-74a1-85f1-b83f1417f983",
     "file": "details/019d89ea-43a9-74a1-85f1-b83f1417f983.json",
     "code": "1.014977",
     "name": "Chủ tịch, Phó Chủ tịch UBND tỉnh tiếp khách nước ngoài"
   },
   {
-    "sampleNo": 29,
+    "sampleNo": 21,
     "id": "019d89ec-bf71-703a-933c-82cac6e37faf",
     "file": "details/019d89ec-bf71-703a-933c-82cac6e37faf.json",
     "code": "1.014978",
     "name": "Chủ tịch, Phó Chủ tịch UBND tỉnh tiếp khách trong nước"
   },
   {
-    "sampleNo": 30,
+    "sampleNo": 22,
     "id": "019dd34c-cf37-735a-b1d6-ab2d3951ea53",
     "file": "details/019dd34c-cf37-735a-b1d6-ab2d3951ea53.json",
     "code": "1.014999",
     "name": "Thủ tục đăng ký sáng chế"
   },
   {
-    "sampleNo": 31,
+    "sampleNo": 23,
     "id": "019dd459-97b2-743b-b7b3-5d386ddf10bb",
     "file": "details/019dd459-97b2-743b-b7b3-5d386ddf10bb.json",
     "code": "1.015003",
     "name": "Thủ tục xử lý đơn Madrid có chỉ định Việt Nam"
   },
   {
-    "sampleNo": 32,
+    "sampleNo": 24,
     "id": "019f12f5-a063-7299-a9dd-aac324d978a3",
     "file": "details/019f12f5-a063-7299-a9dd-aac324d978a3.json",
     "code": "1.115353",
     "name": "Thu hồi Giấy chứng nhận đã cấp không đúng quy định của pháp luật đất đai do người sử dụng đất, chủ sở hữu tài sản gắn liền với đất phát hiện và cấp lại Giấy chứng nhận sau khi thu hồi"
   },
   {
-    "sampleNo": 33,
+    "sampleNo": 25,
     "id": "019f5e3a-bfe2-702f-85b1-da41a26bb824",
     "file": "details/019f5e3a-bfe2-702f-85b1-da41a26bb824.json",
     "code": "1.115797",
     "name": "Giao đất, cho thuê đất, chuyển mục đích sử dụng đất đối với trường hợp giao đất, cho thuê đất không đấu giá quyền sử dụng đất, không đấu thầu lựa chọn nhà đầu tư thực hiện dự án có sử dụng đất; trường hợp giao đất, cho thuê đất thông qua đấu thầu lựa chọn nhà đầu tư thực hiện dự án có sử dụng đất; giao đất và giao rừng; cho thuê đất và cho thuê rừng; gia hạn sử dụng đất khi hết thời hạn sử dụng đất; trường hợp giao đất, cho thuê đất thông qua hình thức đấu giá quyền sử dụng đất (cấp tỉnh)"
   },
   {
-    "sampleNo": 34,
+    "sampleNo": 26,
     "id": "019f5f79-bcde-706a-9355-3f93bfe9ed9e",
     "file": "details/019f5f79-bcde-706a-9355-3f93bfe9ed9e.json",
     "code": "1.115994",
     "name": "Thủ tục giao đất, cho thuê đất, chuyển mục đích sử dụng đất đối với trường hợp giao đất, cho thuê đất không đấu giá quyền sử dụng đất, không đấu thầu lựa chọn nhà đầu tư thực hiện dự án có sử dụng đất và trường hợp giao đất, cho thuê đất thông qua đấu thầu lựa chọn nhà đầu tư thực hiện dự án có sử dụng đất; giao đất và giao rừng; cho thuê đất và cho thuê rừng; gia hạn sử dụng đất khi hết thời hạn sử dụng đất (cấp xã - tỉnh Phú Thọ)"
   },
   {
-    "sampleNo": 35,
+    "sampleNo": 27,
     "id": "019f8d0a-d16f-76fd-9c37-d5fbeacea9a9",
     "file": "details/019f8d0a-d16f-76fd-9c37-d5fbeacea9a9.json",
     "code": "1.116012",
     "name": "Thu hồi Giấy chứng nhận đã cấp không đúng quy định của pháp luật đất đai do người sử dụng đất, chủ sở hữu tài sản gắn liền với đất phát hiện (VPĐK đất đai - tỉnh Phú Thọ)"
   },
   {
-    "sampleNo": 36,
+    "sampleNo": 28,
     "id": "019f9ca1-d165-7289-8275-736d1e98bdd6",
     "file": "details/019f9ca1-d165-7289-8275-736d1e98bdd6.json",
     "code": "1.116017",
     "name": "tính, tính lại tiền sử dụng đất đối với hộ gia đình, cá nhân theo quy định tại các điểm a, b, c và d khoản 2 Điều 12 Nghị định số 50/2026/NĐ-CP (Tình Phú Thọ)"
   },
   {
-    "sampleNo": 37,
+    "sampleNo": 29,
     "id": "019fa89c-2a0e-71cc-a46e-20a3f8ae8d9a",
     "file": "details/019fa89c-2a0e-71cc-a46e-20a3f8ae8d9a.json",
     "code": "1.116038",
     "name": "Đăng ký thay đổi nội dung, cập nhật, bổ sung thông tin, cấp lại giấy chứng nhận, hiệu đính thông tin đăng ký hoạt động của Ngân hàng Chính sách xã hội, chi nhánh, phòng giao dịch Ngân hàng Chính sách xã hội. Đăng ký hoạt động lần đầu của chi nhánh, phòng giao dịch Ngân hàng Chính sách xã hội"
   },
   {
-    "sampleNo": 38,
+    "sampleNo": 30,
     "id": "019ff905-be6f-73bd-a4a6-5a765bd8afd0",
     "file": "details/019ff905-be6f-73bd-a4a6-5a765bd8afd0.json",
     "code": "1.116388",
     "name": "Xác nhận tiếp tục sử dụng đất nông nghiệp"
   },
   {
-    "sampleNo": 39,
+    "sampleNo": 31,
     "id": "019ff8f6-f80d-72dd-a69d-b0f2468821d2",
     "file": "details/019ff8f6-f80d-72dd-a69d-b0f2468821d2.json",
     "code": "1.116389",
     "name": "Đăng ký, cấp Giấy chứng nhận đối với thửa đất có diện tích tăng thêm do thay đổi ranh giới so với Giấy chứng nhận đã cấp (đối với trường hợp quy định tại điểm a khoản 2 Điều 24 Nghị định số 101/2024/NĐ-CP)."
   },
   {
-    "sampleNo": 40,
+    "sampleNo": 32,
     "id": "019ff5be-f90b-744a-bf31-aa9fec429c19",
     "file": "details/019ff5be-f90b-744a-bf31-aa9fec429c19.json",
     "code": "1.116400",
     "name": "Tách thửa đất, hợp thửa đất"
   },
   {
-    "sampleNo": 41,
+    "sampleNo": 33,
     "id": "019d2bfc-d9d1-7475-8e58-1aa4479901eb",
     "file": "details/019d2bfc-d9d1-7475-8e58-1aa4479901eb.json",
     "code": "2.000575",
     "name": "Cấp lại Giấy chứng nhận đăng ký hộ kinh doanh, Cấp đổi sang Giấy chứng nhận đăng ký hộ kinh doanh"
   },
   {
-    "sampleNo": 42,
-    "id": "019d2bf9-f1db-774c-a3cd-d9d3c6beecc1",
-    "file": "details/019d2bf9-f1db-774c-a3cd-d9d3c6beecc1.json",
-    "code": "2.000689",
-    "name": "Thủ tục cấp Giấy xác nhận tình trạng hôn nhân cho công dân Việt Nam trong thời gian cư trú ở nước ngoài"
-  },
-  {
-    "sampleNo": 43,
-    "id": "019d2bff-d1c6-7532-a88a-2138ebfa7d7e",
-    "file": "details/019d2bff-d1c6-7532-a88a-2138ebfa7d7e.json",
-    "code": "2.001538",
-    "name": "Thủ tục đề nghị danh hiệu thi đua, hình thức khen thưởng thuộc phạm vi chức năng quản lý của NHNN"
-  },
-  {
-    "sampleNo": 44,
+    "sampleNo": 34,
     "id": "019d2bfc-da19-7628-836f-646ce74db96a",
     "file": "details/019d2bfc-da19-7628-836f-646ce74db96a.json",
     "code": "2.002011",
     "name": "Đăng ký thay đổi: thành viên hợp danh; thành viên công ty trách nhiệm hữu hạn hai thành viên trở lên; người đại diện theo pháp luật của công ty trách nhiệm hữu hạn, công ty cổ phần; chủ sở hữu công ty trách nhiệm hữu hạn một thành viên; chủ doanh nghiệp tư nhân trong trường hợp bán, tặng cho doanh nghiệp, chủ doanh nghiệp chết"
   },
   {
-    "sampleNo": 45,
-    "id": "019d2bfc-e1ad-7738-b54b-480769d9d182",
-    "file": "details/019d2bfc-e1ad-7738-b54b-480769d9d182.json",
-    "code": "2.002034",
-    "name": "Chuyển đổi công ty trách nhiệm hữu hạn thành công ty cổ phần và ngược lại"
-  },
-  {
-    "sampleNo": 46,
-    "id": "019d2bfc-e1ed-756f-8034-c4c1d90a14dd",
-    "file": "details/019d2bfc-e1ed-756f-8034-c4c1d90a14dd.json",
-    "code": "2.002060",
-    "name": "Đăng ký thay đổi nội dung đăng ký doanh nghiệp đối với công ty nhận sáp nhập (đối với công ty trách nhiệm hữu hạn, công ty cổ phần và công ty hợp danh)"
-  },
-  {
-    "sampleNo": 47,
+    "sampleNo": 35,
     "id": "019e96c8-22fd-7617-9581-cf4e32745304",
     "file": "details/019e96c8-22fd-7617-9581-cf4e32745304.json",
     "code": "3.000579",
     "name": "Giải quyết trợ cấp hằng tháng đối với thanh niên xung phong đã hoàn thành nhiệm vụ trong kháng chiến trở về địa phương (khoản01 Điều 09 Nghị Quyếtsố 182/2025/NQHĐND)"
   },
   {
-    "sampleNo": 48,
+    "sampleNo": 36,
+    "id": "019fb798-1216-73cc-92bf-8a62feca0c6d",
+    "file": "details/019fb798-1216-73cc-92bf-8a62feca0c6d.json",
+    "code": "3.000640",
+    "name": "Cấp đổi Giấy chứng nhận quyền sử dụng đất, quyền sở hữu tài sản gắn liền với đất"
+  },
+  {
+    "sampleNo": 37,
+    "id": "019fb7a9-3c24-736a-93ec-3cdb92acf7f4",
+    "file": "details/019fb7a9-3c24-736a-93ec-3cdb92acf7f4.json",
+    "code": "3.000644",
+    "name": "Thu hồi Giấy chứng nhận đã cấp không đúng quy định của pháp luật đất đai do người sử dụng đất, chủ sở hữu tài sản gắn liền với đất phát hiện và cấp lại Giấy chứng nhận sau khi thu hồi."
+  },
+  {
+    "sampleNo": 38,
+    "id": "019fb7b2-97b1-709d-8e77-f2a45d63ac30",
+    "file": "details/019fb7b2-97b1-709d-8e77-f2a45d63ac30.json",
+    "code": "3.000647",
+    "name": "Đăng ký biến động quyền sử dụng đất, quyền sở hữu tài sản gắn liền với đất trong các trường hợp chuyển đổi quyền sử dụng đất nông nghiệp mà không theo phương án dồn điền, đổi thửa; chuyển nhượng, thừa kế, tặng cho quyền sử dụng đất, quyền sở hữu tài sản gắn liền với đất, góp vốn bằng quyền sử dụng đất, quyền sở hữu tài sản gắn liền với đất; cho thuê, cho thuê lại quyền sử dụng đất trong dự án xây dựng kinh doanh kết cấu hạ tầng; bán hoặc tặng cho hoặc để thừa kế hoặc góp vốn bằng tài sản gắn liền với đất thuê của Nhà nước theo hình thức thuê đất trả tiền hàng năm"
+  },
+  {
+    "sampleNo": 39,
+    "id": "019fb7b5-97b3-72be-b5e1-9c52c6f0f102",
+    "file": "details/019fb7b5-97b3-72be-b5e1-9c52c6f0f102.json",
+    "code": "3.000648",
+    "name": "Đăng ký biến động đối với trường hợp đổi tên hoặc thay đổi thông tin về người sử dụng đất, chủ sở hữu tài sản gắn liền với đất hoặc thay đổi số hiệu hoặc địa chỉ của thửa đất; thay đổi hạn chế quyền sử dụng đất, quyền sở hữu tài sản gắn liền với đất hoặc có thay đổi quyền đối với thửa đất liền kề; giảm diện tích thửa đất do sạt lở tự nhiên"
+  },
+  {
+    "sampleNo": 40,
+    "id": "019fb7b8-4f98-74c9-a346-6da2a3cd184c",
+    "file": "details/019fb7b8-4f98-74c9-a346-6da2a3cd184c.json",
+    "code": "3.000649",
+    "name": "Đăng ký biến động thay đổi quyền sử dụng đất, quyền sở hữu tài sản gắn liền với đất do chia, tách, hợp nhất, sáp nhập tổ chức hoặc chuyển đổi mô hình tổ chức, chuyển đổi loại hình doanh nghiệp theo quy định của pháp luật về doanh nghiệp; điều chỉnh quy hoạch xây dựng chi tiết; cấp Giấy chứng nhận cho từng thửa đất theo quy hoạch xây dựng chi tiết cho chủ đầu tư dự án có nhu cầu"
+  },
+  {
+    "sampleNo": 41,
+    "id": "019fb7be-6c8b-7054-819d-5e470608e389",
+    "file": "details/019fb7be-6c8b-7054-819d-5e470608e389.json",
+    "code": "3.000650",
+    "name": "Đăng ký biến động đối với trường hợp thay đổi quyền sử dụng đất, quyền sở hữu tài sản gắn liền với đất theo thỏa thuận của các thành viên hộ gia đình hoặc của vợ và chồng; quyền sử dụng đất xây dựng công trình trên mặt đất phục vụ cho việc vận hành, khai thác sử dụng công trình ngầm, quyền sở hữu công trình ngầm; bán tài sản, điều chuyển, chuyển nhượng quyền sử dụng đất là tài sản công theo quy định của pháp luật về quản lý, sử dụng tài sản công; nhận quyền sử dụng đất, quyền sở hữu tài sản gắn liền với đất theo kết quả giải quyết tranh chấp, khiếu nại, tố cáo về đất đai hoặc bản án, quyết định của Tòa án, quyết định thi hành án của cơ quan thi hành án đã được thi hành; quyết định hoặc phán quyết của Trọng tài thương mại Việt Nam về giải quyết tranh chấp giữa các bên phát sinh từ hoạt động thương mại liên quan đến đất đai; nhận quyền sử dụng đất, quyền sở hữu tài sản gắn liền với đất do xử lý tài sản thế chấp là quyền sử dụng đất, tài sản gắn liền với đất đã được đăng ký, bao gồm cả xử lý khoản nợ có nguồn gốc từ khoản nợ xấu của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài"
+  },
+  {
+    "sampleNo": 42,
+    "id": "019fb7c8-f7c9-70bf-aa81-c64ee59ea09c",
+    "file": "details/019fb7c8-f7c9-70bf-aa81-c64ee59ea09c.json",
+    "code": "3.000654",
+    "name": "Đăng ký, cấp Giấy chứng nhận đối với trường hợp chuyển nhượng dự án đầu tư có sử dụng đất"
+  },
+  {
+    "sampleNo": 43,
+    "id": "019fb7cb-ac82-7469-8d3e-2a4020b6712b",
+    "file": "details/019fb7cb-ac82-7469-8d3e-2a4020b6712b.json",
+    "code": "3.000655",
+    "name": "Đăng ký tài sản gắn liền với thửa đất đã được cấp Giấy chứng nhận hoặc đăng ký thay đổi về tài sản gắn liền với đất so với nội dung đã đăng ký, gia hạn thời hạn sở hữu nhà ở của tổ chức nước ngoài, cá nhân nước ngoài theo quy định của pháp luật về nhà ở nội dung đã đăng ký"
+  },
+  {
+    "sampleNo": 44,
+    "id": "019fb7d0-d759-7349-9429-62bfe53c95e0",
+    "file": "details/019fb7d0-d759-7349-9429-62bfe53c95e0.json",
+    "code": "3.000657",
+    "name": "Đăng ký đất đai, tài sản gắn liền với đất, cấp Giấy chứng nhận quyền sử dụng đất, quyền sở hữu tài sản gắn liền với đất lần đầu đối với tổ chức đang sử dụng đất"
+  },
+  {
+    "sampleNo": 45,
+    "id": "019fb915-6c63-7359-bec8-3ec9919f6a5e",
+    "file": "details/019fb915-6c63-7359-bec8-3ec9919f6a5e.json",
+    "code": "3.000668",
+    "name": "Đăng ký đất đai, tài sản gắn liền với đất, cấp Giấy chứng nhận quyền sử dụng đất, quyền sở hữu tài sản gắn liền với đất lần đầu đối với tổ chức đang sử dụng đất"
+  },
+  {
+    "sampleNo": 46,
+    "id": "019fb91a-fd7e-754d-813b-23658d094d3e",
+    "file": "details/019fb91a-fd7e-754d-813b-23658d094d3e.json",
+    "code": "3.000669",
+    "name": "Đăng ký đất đai, tài sản gắn liền với đất, cấp Giấy chứng nhận quyền sử dụng đất, quyền sở hữu tài sản gắn liền với đất lần đầu đối với hộ gia đình, cá nhân, cộng đồng dân cư, người gốc Việt Nam định cư ở nước ngoài"
+  },
+  {
+    "sampleNo": 47,
     "id": "019fb923-aca1-7681-b21b-01b6f62e28ef",
     "file": "details/019fb923-aca1-7681-b21b-01b6f62e28ef.json",
     "code": "3.000671",
     "name": "Đăng ký, cấp Giấy chứng nhận đối với thửa đất có diện tích tăng thêm do thay đổi ranh giới so với Giấy chứng nhận đã cấp (quy định tại điểm b và điểm c khoản 2 Điều 24 Nghị định số 101/2024/NĐ-CP và khoản 4 Điều 24 Nghị định số 101/2024/NĐ-CP)"
   },
   {
-    "sampleNo": 49,
+    "sampleNo": 48,
     "id": "019dff4d-380e-7353-97ab-e9ae270d616f",
     "file": "details/019dff4d-380e-7353-97ab-e9ae270d616f.json",
     "code": "5.003809",
     "name": "Thẩm định nhiệm vụ quy hoạch, quy hoạch đô thị và nông thôn thuộc thẩm quyền phê duyệt của Thủ tướng Chính phủ hoặc thẩm định các nhiệm vụ quy hoạch, quy hoạch đô thị và nông thôn theo phân công của Thủ tướng Chính phủ"
+  },
+  {
+    "sampleNo": 49,
+    "id": "019d9487-9846-727b-a885-d81991aa0c82",
+    "file": "details/019d9487-9846-727b-a885-d81991aa0c82.json",
+    "code": "6.006577",
+    "name": "Thẩm định đề án phân loại đô thị loại I, II, III và loại IV\nThẩm định đề án phân loại đô thị loại I, II, III và loại IV"
   },
   {
     "sampleNo": 50,
