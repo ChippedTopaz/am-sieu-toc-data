@@ -1,8 +1,8 @@
 {
   "metadata": {
-    "version": "TCI_V1_GOLDEN_CALIBRATION_DRAFT_1.0",
+    "version": "TCI_V1_GOLDEN_CALIBRATION_DRAFT_1.1",
     "goldenCount": 30,
-    "note": "Điểm nháp để hiệu chuẩn; chưa khóa công thức triển khai sản xuất. Phân tích ưu tiên text, dùng cấu trúc để đối chiếu và audit."
+    "note": "Điểm nháp để hiệu chuẩn; text của trình tự thực hiện là nguồn chính cho C2/C6. Cấu trúc JSON dùng để đối chiếu và audit; chưa khóa công thức sản xuất."
   },
   "weights": {
     "C1": 0.2,
@@ -28,13 +28,19 @@
         "evidence": []
       },
       "c2": {
-        "score": 1,
-        "state": "KNOWN",
+        "score": 2,
+        "state": "TEXT_OVERRIDES_STRUCTURE",
         "structuredStepCount": 1,
-        "textStepCount": 0,
-        "effectiveSteps": 1,
+        "textStepCount": 3,
+        "stepNumbers": [
+          1,
+          2,
+          3
+        ],
+        "effectiveSteps": 3,
         "branchSignals": 3,
-        "coordinationSignals": 4
+        "coordinationSignals": 4,
+        "evidenceTextLength": 1856
       },
       "c3": {
         "score": 1,
@@ -47,12 +53,21 @@
         "totalSignal": 0
       },
       "c4": {
-        "score": 1,
-        "state": "UNKNOWN",
-        "minDays": null,
-        "maxDays": null,
-        "distinctValues": [],
-        "rawValues": []
+        "score": 2,
+        "state": "KNOWN",
+        "minDays": 2,
+        "maxDays": 2,
+        "distinctValues": [
+          "2 NGÀY"
+        ],
+        "rawValues": [
+          {
+            "value": 2,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 2
+          }
+        ]
       },
       "c5": {
         "score": 1,
@@ -76,9 +91,11 @@
         "actorMentions": 31,
         "crossRole": false
       },
-      "weightedScore": 1.4,
-      "score100": 28,
-      "warnings": [],
+      "weightedScore": 1.75,
+      "score100": 35,
+      "warnings": [
+        "STEP_TEXT_STRUCTURE_MISMATCH"
+      ],
       "stars": 2
     },
     {
@@ -96,13 +113,19 @@
         "evidence": []
       },
       "c2": {
-        "score": 1,
-        "state": "KNOWN",
+        "score": 2,
+        "state": "TEXT_OVERRIDES_STRUCTURE",
         "structuredStepCount": 1,
-        "textStepCount": 0,
-        "effectiveSteps": 1,
+        "textStepCount": 3,
+        "stepNumbers": [
+          1,
+          2,
+          3
+        ],
+        "effectiveSteps": 3,
         "branchSignals": 4,
-        "coordinationSignals": 7
+        "coordinationSignals": 7,
+        "evidenceTextLength": 2386
       },
       "c3": {
         "score": 1,
@@ -115,12 +138,21 @@
         "totalSignal": 0
       },
       "c4": {
-        "score": 1,
-        "state": "UNKNOWN",
-        "minDays": null,
-        "maxDays": null,
-        "distinctValues": [],
-        "rawValues": []
+        "score": 2,
+        "state": "KNOWN",
+        "minDays": 2,
+        "maxDays": 2,
+        "distinctValues": [
+          "2 NGÀY"
+        ],
+        "rawValues": [
+          {
+            "value": 2,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 2
+          }
+        ]
       },
       "c5": {
         "score": 1,
@@ -144,9 +176,11 @@
         "actorMentions": 41,
         "crossRole": false
       },
-      "weightedScore": 1.4,
-      "score100": 28,
-      "warnings": [],
+      "weightedScore": 1.75,
+      "score100": 35,
+      "warnings": [
+        "STEP_TEXT_STRUCTURE_MISMATCH"
+      ],
       "stars": 2
     },
     {
@@ -177,13 +211,19 @@
         ]
       },
       "c2": {
-        "score": 1,
-        "state": "KNOWN",
+        "score": 2,
+        "state": "TEXT_OVERRIDES_STRUCTURE",
         "structuredStepCount": 1,
-        "textStepCount": 0,
-        "effectiveSteps": 1,
-        "branchSignals": 4,
-        "coordinationSignals": 0
+        "textStepCount": 3,
+        "stepNumbers": [
+          1,
+          2,
+          3
+        ],
+        "effectiveSteps": 3,
+        "branchSignals": 3,
+        "coordinationSignals": 0,
+        "evidenceTextLength": 870
       },
       "c3": {
         "score": 2,
@@ -234,10 +274,12 @@
         "actorMentions": 12,
         "crossRole": true
       },
-      "weightedScore": 1.85,
-      "score100": 37,
-      "warnings": [],
-      "stars": 2
+      "weightedScore": 2.0500000000000003,
+      "score100": 41,
+      "warnings": [
+        "STEP_TEXT_STRUCTURE_MISMATCH"
+      ],
+      "stars": 3
     },
     {
       "goldenNo": 4,
@@ -250,7 +292,7 @@
         "count": 4,
         "requiredCount": 0,
         "conditionalCount": 1,
-        "dossierSignals": 2,
+        "dossierSignals": 16,
         "evidence": [
           {
             "name": "Hộ chiếu hoặc giấy tờ có giá trị đi lại quốc tế hoặc giấy tờ cho phép thường trú do cơ quan có thẩm quyền của nước ngoài cấp cho người Việt Nam định cư ở nước ngoài.",
@@ -279,13 +321,19 @@
         ]
       },
       "c2": {
-        "score": 2,
-        "state": "KNOWN",
+        "score": 3,
+        "state": "TEXT_OVERRIDES_STRUCTURE",
         "structuredStepCount": 1,
-        "textStepCount": 0,
-        "effectiveSteps": 1,
-        "branchSignals": 10,
-        "coordinationSignals": 2
+        "textStepCount": 3,
+        "stepNumbers": [
+          1,
+          2,
+          3
+        ],
+        "effectiveSteps": 3,
+        "branchSignals": 9,
+        "coordinationSignals": 2,
+        "evidenceTextLength": 2624
       },
       "c3": {
         "score": 2,
@@ -298,12 +346,14 @@
         "totalSignal": 6
       },
       "c4": {
-        "score": 2,
-        "state": "KNOWN",
+        "score": 4,
+        "state": "CONFLICT",
         "minDays": 5,
-        "maxDays": 5,
+        "maxDays": 15,
         "distinctValues": [
-          "5 WORKING_DAY"
+          "5 WORKING_DAY",
+          "5 NGÀY",
+          "15 NGÀY"
         ],
         "rawValues": [
           {
@@ -314,15 +364,51 @@
           },
           {
             "value": 5,
-            "unit": "WORKING_DAY",
-            "source": "executionMethods",
+            "unit": "NGÀY",
+            "source": "methodDescription",
             "days": 5
+          },
+          {
+            "value": 15,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 15
           },
           {
             "value": 5,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
             "days": 5
+          },
+          {
+            "value": 5,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 5
+          },
+          {
+            "value": 15,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 15
+          },
+          {
+            "value": 5,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 5
+          },
+          {
+            "value": 5,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 5
+          },
+          {
+            "value": 15,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 15
           }
         ]
       },
@@ -347,12 +433,15 @@
           "coordinating": 0
         },
         "coordinationSignals": 1,
-        "actorMentions": 27,
+        "actorMentions": 28,
         "crossRole": true
       },
-      "weightedScore": 2.4000000000000004,
-      "score100": 48,
-      "warnings": [],
+      "weightedScore": 2.9,
+      "score100": 58,
+      "warnings": [
+        "STEP_TEXT_STRUCTURE_MISMATCH",
+        "PROCESSING_TIME_CONFLICT"
+      ],
       "stars": 3
     },
     {
@@ -366,7 +455,7 @@
         "count": 1,
         "requiredCount": 0,
         "conditionalCount": 1,
-        "dossierSignals": 0,
+        "dossierSignals": 10,
         "evidence": [
           {
             "name": "Đơn trình báo mất hộ chiếu phổ thông (mẫu TK05) ban hành kèm theo Thông tư số 69/2026/TT-BCA ngày 22/5/2026  của Bộ Công an. Đối với người mất năng lực hành vi dân sự, có khó khăn trong nhận thức và làm chủ hành vi, người chưa đủ 14 tuổi thì người đại diện hợp pháp khai và ký thay.",
@@ -377,13 +466,19 @@
         ]
       },
       "c2": {
-        "score": 1,
-        "state": "KNOWN",
+        "score": 2,
+        "state": "TEXT_OVERRIDES_STRUCTURE",
         "structuredStepCount": 1,
-        "textStepCount": 0,
-        "effectiveSteps": 1,
-        "branchSignals": 5,
-        "coordinationSignals": 4
+        "textStepCount": 3,
+        "stepNumbers": [
+          1,
+          2,
+          3
+        ],
+        "effectiveSteps": 3,
+        "branchSignals": 4,
+        "coordinationSignals": 4,
+        "evidenceTextLength": 1201
       },
       "c3": {
         "score": 2,
@@ -445,12 +540,14 @@
           "coordinating": 0
         },
         "coordinationSignals": 3,
-        "actorMentions": 7,
+        "actorMentions": 9,
         "crossRole": true
       },
-      "weightedScore": 1.5499999999999998,
-      "score100": 31,
-      "warnings": [],
+      "weightedScore": 1.75,
+      "score100": 35,
+      "warnings": [
+        "STEP_TEXT_STRUCTURE_MISMATCH"
+      ],
       "stars": 2
     },
     {
@@ -464,7 +561,7 @@
         "count": 1,
         "requiredCount": 0,
         "conditionalCount": 1,
-        "dossierSignals": 0,
+        "dossierSignals": 10,
         "evidence": [
           {
             "name": "Đơn trình báo mất hộ chiếu phổ thông (mẫu TK05) ban hành kèm theo Thông tư số 69/2026/TT-BCA ngày 22/5/2026  của Bộ Công an. Đối với người mất năng lực hành vi dân sự, có khó khăn trong nhận thức và làm chủ hành vi, người chưa đủ 14 tuổi thì người đại diện hợp pháp khai và ký thay.",
@@ -475,13 +572,19 @@
         ]
       },
       "c2": {
-        "score": 1,
-        "state": "KNOWN",
+        "score": 2,
+        "state": "TEXT_OVERRIDES_STRUCTURE",
         "structuredStepCount": 1,
-        "textStepCount": 0,
-        "effectiveSteps": 1,
-        "branchSignals": 5,
-        "coordinationSignals": 7
+        "textStepCount": 3,
+        "stepNumbers": [
+          1,
+          2,
+          3
+        ],
+        "effectiveSteps": 3,
+        "branchSignals": 4,
+        "coordinationSignals": 7,
+        "evidenceTextLength": 1301
       },
       "c3": {
         "score": 2,
@@ -543,12 +646,14 @@
           "coordinating": 0
         },
         "coordinationSignals": 5,
-        "actorMentions": 10,
+        "actorMentions": 11,
         "crossRole": true
       },
-      "weightedScore": 1.75,
-      "score100": 35,
-      "warnings": [],
+      "weightedScore": 1.9500000000000002,
+      "score100": 39,
+      "warnings": [
+        "STEP_TEXT_STRUCTURE_MISMATCH"
+      ],
       "stars": 2
     },
     {
@@ -562,7 +667,7 @@
         "count": 15,
         "requiredCount": 0,
         "conditionalCount": 10,
-        "dossierSignals": 2,
+        "dossierSignals": 46,
         "evidence": [
           {
             "name": "Đơn đề nghị giao đất/thuê đất/chuyển mục đích sử dụng đất/giao đất và giao rừng/cho thuê đất và cho thuê rừng",
@@ -640,12 +745,21 @@
       },
       "c2": {
         "score": 5,
-        "state": "KNOWN",
+        "state": "TEXT_OVERRIDES_STRUCTURE",
         "structuredStepCount": 16,
-        "textStepCount": 0,
-        "effectiveSteps": 16,
-        "branchSignals": 67,
-        "coordinationSignals": 25
+        "textStepCount": 6,
+        "stepNumbers": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "effectiveSteps": 6,
+        "branchSignals": 56,
+        "coordinationSignals": 22,
+        "evidenceTextLength": 14513
       },
       "c3": {
         "score": 5,
@@ -660,12 +774,16 @@
       "c4": {
         "score": 5,
         "state": "CONFLICT",
-        "minDays": 15,
+        "minDays": 5,
         "maxDays": 24,
         "distinctValues": [
           "15 WORKING_DAY",
+          "10 NGÀY",
+          "5 NGÀY",
           "22 WORKING_DAY",
+          "17 NGÀY",
           "17 WORKING_DAY",
+          "7 NGÀY",
           "24 WORKING_DAY"
         ],
         "rawValues": [
@@ -676,16 +794,52 @@
             "days": 15
           },
           {
-            "value": 15,
-            "unit": "WORKING_DAY",
-            "source": "executionMethods",
-            "days": 15
+            "value": 10,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 10
+          },
+          {
+            "value": 5,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 5
           },
           {
             "value": 15,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
             "days": 15
+          },
+          {
+            "value": 10,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 10
+          },
+          {
+            "value": 5,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 5
+          },
+          {
+            "value": 15,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 15
+          },
+          {
+            "value": 10,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 10
+          },
+          {
+            "value": 5,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 5
           },
           {
             "value": 22,
@@ -694,10 +848,16 @@
             "days": 22
           },
           {
-            "value": 22,
-            "unit": "WORKING_DAY",
-            "source": "executionMethods",
-            "days": 22
+            "value": 17,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 17
+          },
+          {
+            "value": 5,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 5
           },
           {
             "value": 22,
@@ -706,10 +866,34 @@
             "days": 22
           },
           {
-            "value": 15,
+            "value": 17,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 17
+          },
+          {
+            "value": 5,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 5
+          },
+          {
+            "value": 22,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
-            "days": 15
+            "days": 22
+          },
+          {
+            "value": 17,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 17
+          },
+          {
+            "value": 5,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 5
           },
           {
             "value": 15,
@@ -718,10 +902,52 @@
             "days": 15
           },
           {
+            "value": 10,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 10
+          },
+          {
+            "value": 5,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 5
+          },
+          {
             "value": 15,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
             "days": 15
+          },
+          {
+            "value": 10,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 10
+          },
+          {
+            "value": 5,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 5
+          },
+          {
+            "value": 15,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 15
+          },
+          {
+            "value": 10,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 10
+          },
+          {
+            "value": 5,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 5
           },
           {
             "value": 17,
@@ -730,10 +956,16 @@
             "days": 17
           },
           {
-            "value": 17,
-            "unit": "WORKING_DAY",
-            "source": "executionMethods",
-            "days": 17
+            "value": 10,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 10
+          },
+          {
+            "value": 7,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 7
           },
           {
             "value": 17,
@@ -742,10 +974,34 @@
             "days": 17
           },
           {
-            "value": 22,
+            "value": 10,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 10
+          },
+          {
+            "value": 7,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 7
+          },
+          {
+            "value": 17,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
-            "days": 22
+            "days": 17
+          },
+          {
+            "value": 10,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 10
+          },
+          {
+            "value": 7,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 7
           },
           {
             "value": 22,
@@ -754,16 +1010,52 @@
             "days": 22
           },
           {
+            "value": 17,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 17
+          },
+          {
+            "value": 5,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 5
+          },
+          {
             "value": 22,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
             "days": 22
           },
           {
-            "value": 24,
+            "value": 17,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 17
+          },
+          {
+            "value": 5,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 5
+          },
+          {
+            "value": 22,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
-            "days": 24
+            "days": 22
+          },
+          {
+            "value": 17,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 17
+          },
+          {
+            "value": 5,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 5
           },
           {
             "value": 24,
@@ -772,10 +1064,52 @@
             "days": 24
           },
           {
+            "value": 17,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 17
+          },
+          {
+            "value": 7,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 7
+          },
+          {
             "value": 24,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
             "days": 24
+          },
+          {
+            "value": 17,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 17
+          },
+          {
+            "value": 7,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 7
+          },
+          {
+            "value": 24,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 24
+          },
+          {
+            "value": 17,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 17
+          },
+          {
+            "value": 7,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 7
           }
         ]
       },
@@ -799,13 +1133,14 @@
           "authorized": 0,
           "coordinating": 0
         },
-        "coordinationSignals": 14,
-        "actorMentions": 66,
+        "coordinationSignals": 19,
+        "actorMentions": 76,
         "crossRole": false
       },
       "weightedScore": 4.4,
       "score100": 88,
       "warnings": [
+        "STEP_TEXT_STRUCTURE_MISMATCH",
         "PROCESSING_TIME_CONFLICT"
       ],
       "stars": 5
@@ -816,22 +1151,30 @@
       "name": "Đăng ký, cấp Giấy chứng nhận đối với thửa đất có diện tích tăng thêm do thay đổi ranh giới so với Giấy chứng nhận đã cấp (quy định tại điểm b và điểm c khoản 2 Điều 24 Nghị định số 101/2024/NĐ-CP và khoản 4 Điều 24 Nghị định số 101/2024/NĐ-CP)",
       "category": "Đất đai",
       "c1": {
-        "score": 0,
-        "state": "KNOWN",
+        "score": 1,
+        "state": "UNKNOWN_STRUCTURED_ZERO",
         "count": 0,
         "requiredCount": 0,
         "conditionalCount": 0,
-        "dossierSignals": 0,
+        "dossierSignals": 52,
         "evidence": []
       },
       "c2": {
         "score": 5,
-        "state": "KNOWN",
+        "state": "TEXT_OVERRIDES_STRUCTURE",
         "structuredStepCount": 19,
-        "textStepCount": 0,
-        "effectiveSteps": 19,
+        "textStepCount": 5,
+        "stepNumbers": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "effectiveSteps": 5,
         "branchSignals": 29,
-        "coordinationSignals": 17
+        "coordinationSignals": 17,
+        "evidenceTextLength": 10406
       },
       "c3": {
         "score": 1,
@@ -844,12 +1187,13 @@
         "totalSignal": 0
       },
       "c4": {
-        "score": 4,
-        "state": "KNOWN",
+        "score": 5,
+        "state": "CONFLICT",
         "minDays": 30,
         "maxDays": 30,
         "distinctValues": [
-          "30 DAY"
+          "30 DAY",
+          "30 NGÀY"
         ],
         "rawValues": [
           {
@@ -860,14 +1204,32 @@
           },
           {
             "value": 30,
-            "unit": "DAY",
-            "source": "executionMethods",
+            "unit": "NGÀY",
+            "source": "methodDescription",
             "days": 30
           },
           {
             "value": 30,
             "unit": "DAY",
             "source": "executionMethods",
+            "days": 30
+          },
+          {
+            "value": 30,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 30
+          },
+          {
+            "value": 30,
+            "unit": "DAY",
+            "source": "executionMethods",
+            "days": 30
+          },
+          {
+            "value": 30,
+            "unit": "NGÀY",
+            "source": "methodDescription",
             "days": 30
           }
         ]
@@ -896,9 +1258,13 @@
         "actorMentions": 44,
         "crossRole": false
       },
-      "weightedScore": 2.55,
-      "score100": 51,
-      "warnings": [],
+      "weightedScore": 2.8999999999999995,
+      "score100": 58,
+      "warnings": [
+        "STEP_TEXT_STRUCTURE_MISMATCH",
+        "PROFILE_TEXT_STRUCTURED_ZERO",
+        "PROCESSING_TIME_CONFLICT"
+      ],
       "stars": 3
     },
     {
@@ -912,7 +1278,7 @@
         "count": 3,
         "requiredCount": 0,
         "conditionalCount": 2,
-        "dossierSignals": 0,
+        "dossierSignals": 25,
         "evidence": [
           {
             "name": "Bản khai cá nhân đề nghị hưởng chế độ trợ cấp hàng tháng đối với thanh niên xung phong, theo mẫu BM.NCC.20.01 Hoặc Bản khai cá nhân đề nghị hưởng chế độ trợ cấp một lần đối với thanh niên xung phong đã từ trần, theo mẫu BM.NCC.20.02 Hoặc Bản khai cá nhân đề nghị hưởng chế độ trợ cấp một lần đối với thanh niên xung phong, theo mẫu BM.NCC.20.03",
@@ -939,9 +1305,11 @@
         "state": "KNOWN",
         "structuredStepCount": 14,
         "textStepCount": 0,
+        "stepNumbers": [],
         "effectiveSteps": 14,
         "branchSignals": 10,
-        "coordinationSignals": 7
+        "coordinationSignals": 7,
+        "evidenceTextLength": 2570
       },
       "c3": {
         "score": 1,
@@ -1022,7 +1390,7 @@
         "count": 115,
         "requiredCount": 0,
         "conditionalCount": 43,
-        "dossierSignals": 36,
+        "dossierSignals": 98,
         "evidence": [
           {
             "name": "(i) Giấy đề nghị đăng ký thay đổi nội dung đăng ký doanh nghiệp theo Mẫu số 12 Phụ lục kèm theo Thông tư số 121/2026/TT-BTC;",
@@ -1099,13 +1467,15 @@
         ]
       },
       "c2": {
-        "score": 4,
+        "score": 3,
         "state": "KNOWN",
         "structuredStepCount": 3,
         "textStepCount": 0,
+        "stepNumbers": [],
         "effectiveSteps": 3,
-        "branchSignals": 61,
-        "coordinationSignals": 9
+        "branchSignals": 40,
+        "coordinationSignals": 5,
+        "evidenceTextLength": 11704
       },
       "c3": {
         "score": 5,
@@ -1166,12 +1536,12 @@
           "authorized": 0,
           "coordinating": 0
         },
-        "coordinationSignals": 1,
-        "actorMentions": 12,
+        "coordinationSignals": 5,
+        "actorMentions": 37,
         "crossRole": false
       },
-      "weightedScore": 3.7499999999999996,
-      "score100": 75,
+      "weightedScore": 3.55,
+      "score100": 71,
       "warnings": [],
       "stars": 4
     },
@@ -1186,7 +1556,7 @@
         "count": 77,
         "requiredCount": 0,
         "conditionalCount": 15,
-        "dossierSignals": 0,
+        "dossierSignals": 24,
         "evidence": [
           {
             "name": "Những thông tin về thuốc gốc, thuốc Generic (tên sản phẩm, tên nhà sản xuất, công thức, dạng bào chế, công dụng, chỉ định điều trị, chống chỉ định, liều lượng sử dụng, thời gian ngừng sử dụng thuốc, những lưu ý đối với động vật được chỉ định, với người sử dụng và các đặc tính kỹ thuật khác của sản phẩm)",
@@ -1264,12 +1634,17 @@
       },
       "c2": {
         "score": 2,
-        "state": "KNOWN",
+        "state": "TEXT_OVERRIDES_STRUCTURE",
         "structuredStepCount": 1,
-        "textStepCount": 0,
-        "effectiveSteps": 1,
+        "textStepCount": 2,
+        "stepNumbers": [
+          1,
+          2
+        ],
+        "effectiveSteps": 2,
         "branchSignals": 5,
-        "coordinationSignals": 12
+        "coordinationSignals": 12,
+        "evidenceTextLength": 2944
       },
       "c3": {
         "score": 1,
@@ -1315,7 +1690,10 @@
       },
       "weightedScore": 2.3,
       "score100": 46,
-      "warnings": [],
+      "warnings": [
+        "STEP_TEXT_STRUCTURE_MISMATCH",
+        "PROCESSING_TIME_UNKNOWN"
+      ],
       "stars": 3
     },
     {
@@ -1329,7 +1707,7 @@
         "count": 66,
         "requiredCount": 0,
         "conditionalCount": 40,
-        "dossierSignals": 10,
+        "dossierSignals": 19,
         "evidence": [
           {
             "name": "(1) Văn bản của người sử dụng lao động báo cáo giải trình nhu cầu sử dụng lao động nước ngoài và đề nghị cấp giấy phép lao động theo Mẫu số 03 Phụ lục ban hành kèm theo Nghị định số 219/2025/NĐ-CP, .",
@@ -1406,13 +1784,19 @@
         ]
       },
       "c2": {
-        "score": 3,
+        "score": 2,
         "state": "KNOWN",
         "structuredStepCount": 3,
-        "textStepCount": 0,
+        "textStepCount": 3,
+        "stepNumbers": [
+          1,
+          2,
+          3
+        ],
         "effectiveSteps": 3,
-        "branchSignals": 9,
-        "coordinationSignals": 0
+        "branchSignals": 5,
+        "coordinationSignals": 0,
+        "evidenceTextLength": 1982
       },
       "c3": {
         "score": 4,
@@ -1496,8 +1880,8 @@
         "actorMentions": 3,
         "crossRole": false
       },
-      "weightedScore": 3.4000000000000004,
-      "score100": 68,
+      "weightedScore": 3.2,
+      "score100": 64,
       "warnings": [
         "PROCESSING_TIME_CONFLICT"
       ],
@@ -1514,7 +1898,7 @@
         "count": 2,
         "requiredCount": 0,
         "conditionalCount": 0,
-        "dossierSignals": 0,
+        "dossierSignals": 5,
         "evidence": [
           {
             "name": "Tờ khai đề nghị cấp giấy phép đến các tỉnh, thành phố của Việt Nam (mẫu N24 ban hành kèm theo Thông tư số 41/2011/TT-BCA, ngày 29/06/2011 của Bộ Công an)",
@@ -1531,13 +1915,19 @@
         ]
       },
       "c2": {
-        "score": 1,
-        "state": "KNOWN",
+        "score": 2,
+        "state": "TEXT_OVERRIDES_STRUCTURE",
         "structuredStepCount": 1,
-        "textStepCount": 0,
-        "effectiveSteps": 1,
+        "textStepCount": 3,
+        "stepNumbers": [
+          1,
+          2,
+          3
+        ],
+        "effectiveSteps": 3,
         "branchSignals": 3,
-        "coordinationSignals": 1
+        "coordinationSignals": 1,
+        "evidenceTextLength": 1408
       },
       "c3": {
         "score": 1,
@@ -1585,12 +1975,14 @@
           "coordinating": 0
         },
         "coordinationSignals": 1,
-        "actorMentions": 11,
+        "actorMentions": 12,
         "crossRole": true
       },
-      "weightedScore": 1.4000000000000001,
-      "score100": 28,
-      "warnings": [],
+      "weightedScore": 1.6000000000000003,
+      "score100": 32,
+      "warnings": [
+        "STEP_TEXT_STRUCTURE_MISMATCH"
+      ],
       "stars": 2
     },
     {
@@ -1604,7 +1996,7 @@
         "count": 3,
         "requiredCount": 0,
         "conditionalCount": 0,
-        "dossierSignals": 0,
+        "dossierSignals": 10,
         "evidence": [
           {
             "name": "+ Đề nghị khai báo tạm vắng;",
@@ -1628,12 +2020,19 @@
       },
       "c2": {
         "score": 2,
-        "state": "KNOWN",
+        "state": "TEXT_OVERRIDES_STRUCTURE",
         "structuredStepCount": 1,
-        "textStepCount": 0,
-        "effectiveSteps": 1,
-        "branchSignals": 6,
-        "coordinationSignals": 1
+        "textStepCount": 4,
+        "stepNumbers": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "effectiveSteps": 4,
+        "branchSignals": 5,
+        "coordinationSignals": 1,
+        "evidenceTextLength": 1113
       },
       "c3": {
         "score": 2,
@@ -1652,7 +2051,8 @@
         "maxDays": 2,
         "distinctValues": [
           "1 WORKING_DAY",
-          "2 WORKING_DAY"
+          "2 WORKING_DAY",
+          "2 NGÀY"
         ],
         "rawValues": [
           {
@@ -1665,6 +2065,12 @@
             "value": 2,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
+            "days": 2
+          },
+          {
+            "value": 2,
+            "unit": "NGÀY",
+            "source": "methodDescription",
             "days": 2
           }
         ]
@@ -1694,6 +2100,7 @@
       "weightedScore": 2.0500000000000003,
       "score100": 41,
       "warnings": [
+        "STEP_TEXT_STRUCTURE_MISMATCH",
         "PROCESSING_TIME_CONFLICT"
       ],
       "stars": 3
@@ -1709,7 +2116,7 @@
         "count": 8,
         "requiredCount": 0,
         "conditionalCount": 6,
-        "dossierSignals": 0,
+        "dossierSignals": 4,
         "evidence": [
           {
             "name": "Tờ khai đăng ký sáng chế",
@@ -1762,13 +2169,23 @@
         ]
       },
       "c2": {
-        "score": 3,
-        "state": "KNOWN",
+        "score": 5,
+        "state": "TEXT_OVERRIDES_STRUCTURE",
         "structuredStepCount": 1,
-        "textStepCount": 0,
-        "effectiveSteps": 1,
-        "branchSignals": 44,
-        "coordinationSignals": 50
+        "textStepCount": 7,
+        "stepNumbers": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "effectiveSteps": 7,
+        "branchSignals": 43,
+        "coordinationSignals": 48,
+        "evidenceTextLength": 19078
       },
       "c3": {
         "score": 3,
@@ -1829,13 +2246,15 @@
           "authorized": 0,
           "coordinating": 0
         },
-        "coordinationSignals": 44,
-        "actorMentions": 118,
+        "coordinationSignals": 46,
+        "actorMentions": 121,
         "crossRole": true
       },
-      "weightedScore": 3.4000000000000004,
-      "score100": 68,
-      "warnings": [],
+      "weightedScore": 3.8,
+      "score100": 76,
+      "warnings": [
+        "STEP_TEXT_STRUCTURE_MISMATCH"
+      ],
       "stars": 4
     },
     {
@@ -1853,13 +2272,19 @@
         "evidence": []
       },
       "c2": {
-        "score": 2,
-        "state": "KNOWN",
+        "score": 3,
+        "state": "TEXT_OVERRIDES_STRUCTURE",
         "structuredStepCount": 1,
-        "textStepCount": 0,
-        "effectiveSteps": 1,
-        "branchSignals": 10,
-        "coordinationSignals": 4
+        "textStepCount": 3,
+        "stepNumbers": [
+          1,
+          2,
+          3
+        ],
+        "effectiveSteps": 3,
+        "branchSignals": 9,
+        "coordinationSignals": 3,
+        "evidenceTextLength": 7255
       },
       "c3": {
         "score": 2,
@@ -1920,13 +2345,15 @@
           "authorized": 0,
           "coordinating": 0
         },
-        "coordinationSignals": 2,
-        "actorMentions": 53,
+        "coordinationSignals": 3,
+        "actorMentions": 55,
         "crossRole": true
       },
-      "weightedScore": 2.25,
-      "score100": 45,
-      "warnings": [],
+      "weightedScore": 2.45,
+      "score100": 49,
+      "warnings": [
+        "STEP_TEXT_STRUCTURE_MISMATCH"
+      ],
       "stars": 3
     },
     {
@@ -1940,7 +2367,7 @@
         "count": 9,
         "requiredCount": 0,
         "conditionalCount": 2,
-        "dossierSignals": 4,
+        "dossierSignals": 17,
         "evidence": [
           {
             "name": "Người Việt Nam định cư ở nước ngoài nộp bản sao được chứng thực từ bản chính hoặc kèm theo bản chính để đối chiếu một trong các giấy tờ sau: Giấy khai sinh, quyết định cho thôi quốc tịch Việt Nam hoặc giấy xác nhận mất quốc tịch Việt Nam, giấy tờ khác có ghi quốc tịch Việt Nam hoặc có giá trị chứng minh có quốc tịch Việt Nam trước đây của người đó;",
@@ -1999,13 +2426,18 @@
         ]
       },
       "c2": {
-        "score": 2,
-        "state": "KNOWN",
+        "score": 3,
+        "state": "TEXT_OVERRIDES_STRUCTURE",
         "structuredStepCount": 1,
-        "textStepCount": 0,
-        "effectiveSteps": 1,
-        "branchSignals": 8,
-        "coordinationSignals": 2
+        "textStepCount": 3,
+        "stepNumbers": [
+          2,
+          3
+        ],
+        "effectiveSteps": 3,
+        "branchSignals": 7,
+        "coordinationSignals": 2,
+        "evidenceTextLength": 2504
       },
       "c3": {
         "score": 2,
@@ -2018,12 +2450,14 @@
         "totalSignal": 6
       },
       "c4": {
-        "score": 2,
-        "state": "KNOWN",
+        "score": 4,
+        "state": "CONFLICT",
         "minDays": 5,
-        "maxDays": 5,
+        "maxDays": 15,
         "distinctValues": [
-          "5 DAY"
+          "5 DAY",
+          "5 NGÀY",
+          "15 NGÀY"
         ],
         "rawValues": [
           {
@@ -2034,15 +2468,51 @@
           },
           {
             "value": 5,
-            "unit": "DAY",
-            "source": "executionMethods",
+            "unit": "NGÀY",
+            "source": "methodDescription",
             "days": 5
+          },
+          {
+            "value": 15,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 15
           },
           {
             "value": 5,
             "unit": "DAY",
             "source": "executionMethods",
             "days": 5
+          },
+          {
+            "value": 5,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 5
+          },
+          {
+            "value": 15,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 15
+          },
+          {
+            "value": 5,
+            "unit": "DAY",
+            "source": "executionMethods",
+            "days": 5
+          },
+          {
+            "value": 5,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 5
+          },
+          {
+            "value": 15,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 15
           }
         ]
       },
@@ -2070,10 +2540,13 @@
         "actorMentions": 23,
         "crossRole": true
       },
-      "weightedScore": 2.6,
-      "score100": 52,
-      "warnings": [],
-      "stars": 3
+      "weightedScore": 3.1,
+      "score100": 62,
+      "warnings": [
+        "STEP_TEXT_STRUCTURE_MISMATCH",
+        "PROCESSING_TIME_CONFLICT"
+      ],
+      "stars": 4
     },
     {
       "goldenNo": 18,
@@ -2086,7 +2559,7 @@
         "count": 5,
         "requiredCount": 0,
         "conditionalCount": 0,
-        "dossierSignals": 0,
+        "dossierSignals": 9,
         "evidence": [
           {
             "name": "Tờ khai đề nghị cấp thẻ ABTC theo mẫu AP05 (có đóng dấu giáp lai ảnh và xác nhận của lãnh đạo cơ quan tổ chức cán bộ của các ngành kinh tế, cơ quan quản lý nhà nước chuyên ngành về hoạt động của các doanh nghiệp hoặc lãnh đạo cơ quan, tổ chức hoặc người đại diện theo pháp luật của doanh nghiệp hoặc người được người đại diện theo pháp luật của doanh nghiệp ủy quyền xác nhận lời khai trên là đúng)",
@@ -2122,12 +2595,18 @@
       },
       "c2": {
         "score": 2,
-        "state": "KNOWN",
+        "state": "TEXT_OVERRIDES_STRUCTURE",
         "structuredStepCount": 1,
-        "textStepCount": 0,
-        "effectiveSteps": 1,
-        "branchSignals": 7,
-        "coordinationSignals": 2
+        "textStepCount": 3,
+        "stepNumbers": [
+          1,
+          2,
+          3
+        ],
+        "effectiveSteps": 3,
+        "branchSignals": 5,
+        "coordinationSignals": 1,
+        "evidenceTextLength": 3762
       },
       "c3": {
         "score": 3,
@@ -2190,12 +2669,13 @@
           "coordinating": 0
         },
         "coordinationSignals": 0,
-        "actorMentions": 24,
+        "actorMentions": 29,
         "crossRole": true
       },
       "weightedScore": 2.9,
       "score100": 58,
       "warnings": [
+        "STEP_TEXT_STRUCTURE_MISMATCH",
         "PROCESSING_TIME_CONFLICT"
       ],
       "stars": 3
@@ -2211,7 +2691,7 @@
         "count": 48,
         "requiredCount": 0,
         "conditionalCount": 31,
-        "dossierSignals": 192,
+        "dossierSignals": 452,
         "evidence": [
           {
             "name": "I. Hồ sơ hành chính:",
@@ -2291,10 +2771,19 @@
         "score": 5,
         "state": "KNOWN",
         "structuredStepCount": 6,
-        "textStepCount": 0,
+        "textStepCount": 6,
+        "stepNumbers": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
         "effectiveSteps": 6,
-        "branchSignals": 189,
-        "coordinationSignals": 195
+        "branchSignals": 104,
+        "coordinationSignals": 117,
+        "evidenceTextLength": 54452
       },
       "c3": {
         "score": 5,
@@ -2308,11 +2797,16 @@
       },
       "c4": {
         "score": 5,
-        "state": "KNOWN",
-        "minDays": 360,
+        "state": "CONFLICT",
+        "minDays": 15,
         "maxDays": 360,
         "distinctValues": [
-          "12 MONTH"
+          "12 MONTH",
+          "12 THÁNG",
+          "9 THÁNG",
+          "3 THÁNG",
+          "15 NGÀY",
+          "6 THÁNG"
         ],
         "rawValues": [
           {
@@ -2323,15 +2817,141 @@
           },
           {
             "value": 12,
-            "unit": "MONTH",
-            "source": "executionMethods",
+            "unit": "THÁNG",
+            "source": "methodDescription",
             "days": 360
+          },
+          {
+            "value": 9,
+            "unit": "THÁNG",
+            "source": "methodDescription",
+            "days": 270
+          },
+          {
+            "value": 3,
+            "unit": "THÁNG",
+            "source": "methodDescription",
+            "days": 90
+          },
+          {
+            "value": 9,
+            "unit": "THÁNG",
+            "source": "methodDescription",
+            "days": 270
+          },
+          {
+            "value": 15,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 15
+          },
+          {
+            "value": 6,
+            "unit": "THÁNG",
+            "source": "methodDescription",
+            "days": 180
+          },
+          {
+            "value": 6,
+            "unit": "THÁNG",
+            "source": "methodDescription",
+            "days": 180
           },
           {
             "value": 12,
             "unit": "MONTH",
             "source": "executionMethods",
             "days": 360
+          },
+          {
+            "value": 12,
+            "unit": "THÁNG",
+            "source": "methodDescription",
+            "days": 360
+          },
+          {
+            "value": 9,
+            "unit": "THÁNG",
+            "source": "methodDescription",
+            "days": 270
+          },
+          {
+            "value": 3,
+            "unit": "THÁNG",
+            "source": "methodDescription",
+            "days": 90
+          },
+          {
+            "value": 9,
+            "unit": "THÁNG",
+            "source": "methodDescription",
+            "days": 270
+          },
+          {
+            "value": 15,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 15
+          },
+          {
+            "value": 6,
+            "unit": "THÁNG",
+            "source": "methodDescription",
+            "days": 180
+          },
+          {
+            "value": 6,
+            "unit": "THÁNG",
+            "source": "methodDescription",
+            "days": 180
+          },
+          {
+            "value": 12,
+            "unit": "MONTH",
+            "source": "executionMethods",
+            "days": 360
+          },
+          {
+            "value": 12,
+            "unit": "THÁNG",
+            "source": "methodDescription",
+            "days": 360
+          },
+          {
+            "value": 9,
+            "unit": "THÁNG",
+            "source": "methodDescription",
+            "days": 270
+          },
+          {
+            "value": 3,
+            "unit": "THÁNG",
+            "source": "methodDescription",
+            "days": 90
+          },
+          {
+            "value": 9,
+            "unit": "THÁNG",
+            "source": "methodDescription",
+            "days": 270
+          },
+          {
+            "value": 15,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 15
+          },
+          {
+            "value": 6,
+            "unit": "THÁNG",
+            "source": "methodDescription",
+            "days": 180
+          },
+          {
+            "value": 6,
+            "unit": "THÁNG",
+            "source": "methodDescription",
+            "days": 180
           }
         ]
       },
@@ -2355,13 +2975,15 @@
           "authorized": 0,
           "coordinating": 0
         },
-        "coordinationSignals": 32,
-        "actorMentions": 59,
+        "coordinationSignals": 121,
+        "actorMentions": 272,
         "crossRole": false
       },
       "weightedScore": 4.3,
       "score100": 86,
-      "warnings": [],
+      "warnings": [
+        "PROCESSING_TIME_CONFLICT"
+      ],
       "stars": 5
     },
     {
@@ -2375,7 +2997,7 @@
         "count": 43,
         "requiredCount": 0,
         "conditionalCount": 34,
-        "dossierSignals": 12,
+        "dossierSignals": 26,
         "evidence": [
           {
             "name": "- Hồ sơ miễn thuế là hồ sơ hải quan theo quy định tại Luật số 54/2015/QH13 và các văn bản hướng dẫn thi hành.",
@@ -2453,12 +3075,17 @@
       },
       "c2": {
         "score": 3,
-        "state": "KNOWN",
+        "state": "TEXT_OVERRIDES_STRUCTURE",
         "structuredStepCount": 1,
-        "textStepCount": 0,
-        "effectiveSteps": 1,
-        "branchSignals": 76,
-        "coordinationSignals": 19
+        "textStepCount": 2,
+        "stepNumbers": [
+          1,
+          2
+        ],
+        "effectiveSteps": 2,
+        "branchSignals": 44,
+        "coordinationSignals": 13,
+        "evidenceTextLength": 27510
       },
       "c3": {
         "score": 5,
@@ -2498,13 +3125,16 @@
           "authorized": 0,
           "coordinating": 0
         },
-        "coordinationSignals": 7,
-        "actorMentions": 11,
+        "coordinationSignals": 14,
+        "actorMentions": 58,
         "crossRole": false
       },
       "weightedScore": 3.4,
       "score100": 68,
-      "warnings": [],
+      "warnings": [
+        "STEP_TEXT_STRUCTURE_MISMATCH",
+        "PROCESSING_TIME_UNKNOWN"
+      ],
       "stars": 4
     },
     {
@@ -2518,7 +3148,7 @@
         "count": 46,
         "requiredCount": 0,
         "conditionalCount": 15,
-        "dossierSignals": 0,
+        "dossierSignals": 13,
         "evidence": [
           {
             "name": "Văn bản đề nghị điều chỉnh dự án đầu tư;",
@@ -2595,13 +3225,21 @@
         ]
       },
       "c2": {
-        "score": 4,
-        "state": "KNOWN",
+        "score": 5,
+        "state": "TEXT_OVERRIDES_STRUCTURE",
         "structuredStepCount": 3,
-        "textStepCount": 0,
-        "effectiveSteps": 3,
-        "branchSignals": 113,
-        "coordinationSignals": 16
+        "textStepCount": 5,
+        "stepNumbers": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "effectiveSteps": 5,
+        "branchSignals": 67,
+        "coordinationSignals": 10,
+        "evidenceTextLength": 12772
       },
       "c3": {
         "score": 5,
@@ -2662,13 +3300,15 @@
           "authorized": 0,
           "coordinating": 0
         },
-        "coordinationSignals": 4,
-        "actorMentions": 28,
+        "coordinationSignals": 12,
+        "actorMentions": 42,
         "crossRole": true
       },
-      "weightedScore": 4.35,
-      "score100": 87,
-      "warnings": [],
+      "weightedScore": 4.55,
+      "score100": 91,
+      "warnings": [
+        "STEP_TEXT_STRUCTURE_MISMATCH"
+      ],
       "stars": 5
     },
     {
@@ -2682,7 +3322,7 @@
         "count": 4,
         "requiredCount": 0,
         "conditionalCount": 2,
-        "dossierSignals": 0,
+        "dossierSignals": 25,
         "evidence": [
           {
             "name": "Đơn đăng ký biến động đất đai, tài sản gắn liền với đất, Mẫu số 18 Phụ lục VI ban hành kèm theo Quyết định số 40/2026/QĐ-UBND ngày 01/7/2026 của UBND tỉnh Lâm Đồng",
@@ -2711,13 +3351,19 @@
         ]
       },
       "c2": {
-        "score": 3,
-        "state": "KNOWN",
+        "score": 4,
+        "state": "TEXT_OVERRIDES_STRUCTURE",
         "structuredStepCount": 1,
-        "textStepCount": 0,
-        "effectiveSteps": 1,
-        "branchSignals": 20,
-        "coordinationSignals": 8
+        "textStepCount": 3,
+        "stepNumbers": [
+          1,
+          2,
+          3
+        ],
+        "effectiveSteps": 3,
+        "branchSignals": 19,
+        "coordinationSignals": 8,
+        "evidenceTextLength": 4575
       },
       "c3": {
         "score": 2,
@@ -2730,12 +3376,14 @@
         "totalSignal": 4
       },
       "c4": {
-        "score": 3,
-        "state": "KNOWN",
-        "minDays": 10,
-        "maxDays": 10,
+        "score": 5,
+        "state": "CONFLICT",
+        "minDays": 9,
+        "maxDays": 20,
         "distinctValues": [
-          "10 WORKING_DAY"
+          "10 WORKING_DAY",
+          "9 NGÀY",
+          "20 NGÀY"
         ],
         "rawValues": [
           {
@@ -2745,16 +3393,52 @@
             "days": 10
           },
           {
-            "value": 10,
-            "unit": "WORKING_DAY",
-            "source": "executionMethods",
-            "days": 10
+            "value": 9,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 9
+          },
+          {
+            "value": 20,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 20
           },
           {
             "value": 10,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
             "days": 10
+          },
+          {
+            "value": 9,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 9
+          },
+          {
+            "value": 20,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 20
+          },
+          {
+            "value": 10,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 10
+          },
+          {
+            "value": 9,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 9
+          },
+          {
+            "value": 20,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 20
           }
         ]
       },
@@ -2782,9 +3466,12 @@
         "actorMentions": 81,
         "crossRole": false
       },
-      "weightedScore": 3.15,
-      "score100": 63,
-      "warnings": [],
+      "weightedScore": 3.65,
+      "score100": 73,
+      "warnings": [
+        "STEP_TEXT_STRUCTURE_MISMATCH",
+        "PROCESSING_TIME_CONFLICT"
+      ],
       "stars": 4
     },
     {
@@ -2798,7 +3485,7 @@
         "count": 5,
         "requiredCount": 0,
         "conditionalCount": 3,
-        "dossierSignals": 0,
+        "dossierSignals": 31,
         "evidence": [
           {
             "name": "Đơn đề nghị tách thửa đất, hợp thửa đất, Mẫu số 21 Phụ lục VI ban hành kèm theo Quyết định số 40/2026/QĐ-UBND",
@@ -2833,13 +3520,19 @@
         ]
       },
       "c2": {
-        "score": 3,
-        "state": "KNOWN",
+        "score": 4,
+        "state": "TEXT_OVERRIDES_STRUCTURE",
         "structuredStepCount": 1,
-        "textStepCount": 0,
-        "effectiveSteps": 1,
+        "textStepCount": 3,
+        "stepNumbers": [
+          1,
+          2,
+          3
+        ],
+        "effectiveSteps": 3,
         "branchSignals": 16,
-        "coordinationSignals": 10
+        "coordinationSignals": 10,
+        "evidenceTextLength": 5018
       },
       "c3": {
         "score": 1,
@@ -2852,12 +3545,14 @@
         "totalSignal": 2
       },
       "c4": {
-        "score": 3,
-        "state": "KNOWN",
-        "minDays": 12,
-        "maxDays": 12,
+        "score": 5,
+        "state": "CONFLICT",
+        "minDays": 11,
+        "maxDays": 22,
         "distinctValues": [
-          "12 WORKING_DAY"
+          "12 WORKING_DAY",
+          "11 NGÀY",
+          "22 NGÀY"
         ],
         "rawValues": [
           {
@@ -2867,16 +3562,52 @@
             "days": 12
           },
           {
-            "value": 12,
-            "unit": "WORKING_DAY",
-            "source": "executionMethods",
-            "days": 12
+            "value": 11,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 11
+          },
+          {
+            "value": 22,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 22
           },
           {
             "value": 12,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
             "days": 12
+          },
+          {
+            "value": 11,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 11
+          },
+          {
+            "value": 22,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 22
+          },
+          {
+            "value": 12,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 12
+          },
+          {
+            "value": 11,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 11
+          },
+          {
+            "value": 22,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 22
           }
         ]
       },
@@ -2901,13 +3632,16 @@
           "coordinating": 0
         },
         "coordinationSignals": 7,
-        "actorMentions": 81,
+        "actorMentions": 82,
         "crossRole": false
       },
-      "weightedScore": 3,
-      "score100": 60,
-      "warnings": [],
-      "stars": 3
+      "weightedScore": 3.5,
+      "score100": 70,
+      "warnings": [
+        "STEP_TEXT_STRUCTURE_MISMATCH",
+        "PROCESSING_TIME_CONFLICT"
+      ],
+      "stars": 4
     },
     {
       "goldenNo": 24,
@@ -2920,7 +3654,7 @@
         "count": 48,
         "requiredCount": 0,
         "conditionalCount": 13,
-        "dossierSignals": 0,
+        "dossierSignals": 23,
         "evidence": [
           {
             "name": "Giấy ra viện",
@@ -3000,10 +3734,16 @@
         "score": 2,
         "state": "KNOWN",
         "structuredStepCount": 3,
-        "textStepCount": 0,
+        "textStepCount": 3,
+        "stepNumbers": [
+          1,
+          2,
+          3
+        ],
         "effectiveSteps": 3,
         "branchSignals": 5,
-        "coordinationSignals": 0
+        "coordinationSignals": 0,
+        "evidenceTextLength": 2874
       },
       "c3": {
         "score": 1,
@@ -3016,12 +3756,14 @@
         "totalSignal": 0
       },
       "c4": {
-        "score": 3,
-        "state": "KNOWN",
-        "minDays": 6,
+        "score": 4,
+        "state": "CONFLICT",
+        "minDays": 3,
         "maxDays": 6,
         "distinctValues": [
-          "6 WORKING_DAY"
+          "6 WORKING_DAY",
+          "6 NGÀY",
+          "3 NGÀY"
         ],
         "rawValues": [
           {
@@ -3032,15 +3774,51 @@
           },
           {
             "value": 6,
-            "unit": "WORKING_DAY",
-            "source": "executionMethods",
+            "unit": "NGÀY",
+            "source": "methodDescription",
             "days": 6
+          },
+          {
+            "value": 3,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 3
           },
           {
             "value": 6,
             "unit": "WORKING_DAY",
             "source": "executionMethods",
             "days": 6
+          },
+          {
+            "value": 6,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 6
+          },
+          {
+            "value": 3,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 3
+          },
+          {
+            "value": 6,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 6
+          },
+          {
+            "value": 6,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 6
+          },
+          {
+            "value": 3,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 3
           }
         ]
       },
@@ -3068,9 +3846,11 @@
         "actorMentions": 10,
         "crossRole": true
       },
-      "weightedScore": 3.3,
-      "score100": 66,
-      "warnings": [],
+      "weightedScore": 3.45,
+      "score100": 69,
+      "warnings": [
+        "PROCESSING_TIME_CONFLICT"
+      ],
       "stars": 4
     },
     {
@@ -3084,7 +3864,7 @@
         "count": 33,
         "requiredCount": 0,
         "conditionalCount": 0,
-        "dossierSignals": 10,
+        "dossierSignals": 120,
         "evidence": [
           {
             "name": "(i) Giấy đề nghị đăng ký thay đổi nội dung đăng ký hoạt động của Ngân hàng Chính sách xã hội theo Mẫu số 1, Phụ lục kèm theo Thông tư số 106/2026/TT-BTC;",
@@ -3165,9 +3945,11 @@
         "state": "KNOWN",
         "structuredStepCount": 3,
         "textStepCount": 0,
+        "stepNumbers": [],
         "effectiveSteps": 3,
-        "branchSignals": 77,
-        "coordinationSignals": 17
+        "branchSignals": 69,
+        "coordinationSignals": 12,
+        "evidenceTextLength": 22075
       },
       "c3": {
         "score": 5,
@@ -3207,13 +3989,15 @@
           "authorized": 0,
           "coordinating": 0
         },
-        "coordinationSignals": 7,
-        "actorMentions": 152,
+        "coordinationSignals": 11,
+        "actorMentions": 165,
         "crossRole": false
       },
       "weightedScore": 3.4,
       "score100": 68,
-      "warnings": [],
+      "warnings": [
+        "PROCESSING_TIME_UNKNOWN"
+      ],
       "stars": 4
     },
     {
@@ -3222,22 +4006,28 @@
       "name": "Đăng ký, cấp Giấy chứng nhận đối với trường hợp chuyển nhượng dự án đầu tư có sử dụng đất",
       "category": "Đất đai",
       "c1": {
-        "score": 0,
-        "state": "KNOWN",
+        "score": 1,
+        "state": "UNKNOWN_STRUCTURED_ZERO",
         "count": 0,
         "requiredCount": 0,
         "conditionalCount": 0,
-        "dossierSignals": 0,
+        "dossierSignals": 31,
         "evidence": []
       },
       "c2": {
-        "score": 5,
-        "state": "KNOWN",
+        "score": 4,
+        "state": "TEXT_OVERRIDES_STRUCTURE",
         "structuredStepCount": 6,
-        "textStepCount": 0,
-        "effectiveSteps": 6,
+        "textStepCount": 3,
+        "stepNumbers": [
+          1,
+          2,
+          3
+        ],
+        "effectiveSteps": 3,
         "branchSignals": 25,
-        "coordinationSignals": 8
+        "coordinationSignals": 8,
+        "evidenceTextLength": 5460
       },
       "c3": {
         "score": 1,
@@ -3256,7 +4046,9 @@
         "maxDays": 30,
         "distinctValues": [
           "30 DAY",
-          "18 DAY"
+          "30 NGÀY",
+          "18 DAY",
+          "18 NGÀY"
         ],
         "rawValues": [
           {
@@ -3267,8 +4059,8 @@
           },
           {
             "value": 30,
-            "unit": "DAY",
-            "source": "executionMethods",
+            "unit": "NGÀY",
+            "source": "methodDescription",
             "days": 30
           },
           {
@@ -3278,9 +4070,33 @@
             "days": 30
           },
           {
+            "value": 30,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 30
+          },
+          {
+            "value": 30,
+            "unit": "DAY",
+            "source": "executionMethods",
+            "days": 30
+          },
+          {
+            "value": 30,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 30
+          },
+          {
             "value": 18,
             "unit": "DAY",
             "source": "executionMethods",
+            "days": 18
+          },
+          {
+            "value": 18,
+            "unit": "NGÀY",
+            "source": "methodDescription",
             "days": 18
           },
           {
@@ -3291,8 +4107,20 @@
           },
           {
             "value": 18,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 18
+          },
+          {
+            "value": 18,
             "unit": "DAY",
             "source": "executionMethods",
+            "days": 18
+          },
+          {
+            "value": 18,
+            "unit": "NGÀY",
+            "source": "methodDescription",
             "days": 18
           }
         ]
@@ -3324,6 +4152,8 @@
       "weightedScore": 2.6999999999999997,
       "score100": 54,
       "warnings": [
+        "STEP_TEXT_STRUCTURE_MISMATCH",
+        "PROFILE_TEXT_STRUCTURED_ZERO",
         "PROCESSING_TIME_CONFLICT"
       ],
       "stars": 3
@@ -3334,22 +4164,28 @@
       "name": "Đăng ký biến động đối với trường hợp thay đổi quyền sử dụng đất, quyền sở hữu tài sản gắn liền với đất theo thỏa thuận của các thành viên hộ gia đình hoặc của vợ và chồng; quyền sử dụng đất xây dựng công trình trên mặt đất phục vụ cho việc vận hành, khai thác sử dụng công trình ngầm, quyền sở hữu công trình ngầm; bán tài sản, điều chuyển, chuyển nhượng quyền sử dụng đất là tài sản công theo quy định của pháp luật về quản lý, sử dụng tài sản công; nhận quyền sử dụng đất, quyền sở hữu tài sản gắn liền với đất theo kết quả giải quyết tranh chấp, khiếu nại, tố cáo về đất đai hoặc bản án, quyết định của Tòa án, quyết định thi hành án của cơ quan thi hành án đã được thi hành; quyết định hoặc phán quyết của Trọng tài thương mại Việt Nam về giải quyết tranh chấp giữa các bên phát sinh từ hoạt động thương mại liên quan đến đất đai; nhận quyền sử dụng đất, quyền sở hữu tài sản gắn liền với đất do xử lý tài sản thế chấp là quyền sử dụng đất, tài sản gắn liền với đất đã được đăng ký, bao gồm cả xử lý khoản nợ có nguồn gốc từ khoản nợ xấu của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài",
       "category": "Đất đai",
       "c1": {
-        "score": 0,
-        "state": "KNOWN",
+        "score": 1,
+        "state": "UNKNOWN_STRUCTURED_ZERO",
         "count": 0,
         "requiredCount": 0,
         "conditionalCount": 0,
-        "dossierSignals": 0,
+        "dossierSignals": 26,
         "evidence": []
       },
       "c2": {
-        "score": 4,
-        "state": "KNOWN",
+        "score": 3,
+        "state": "TEXT_OVERRIDES_STRUCTURE",
         "structuredStepCount": 5,
-        "textStepCount": 0,
-        "effectiveSteps": 5,
+        "textStepCount": 3,
+        "stepNumbers": [
+          1,
+          2,
+          3
+        ],
+        "effectiveSteps": 3,
         "branchSignals": 19,
-        "coordinationSignals": 6
+        "coordinationSignals": 6,
+        "evidenceTextLength": 3914
       },
       "c3": {
         "score": 1,
@@ -3368,7 +4204,9 @@
         "maxDays": 20,
         "distinctValues": [
           "18 DAY",
-          "20 DAY"
+          "18 NGÀY",
+          "20 DAY",
+          "20 NGÀY"
         ],
         "rawValues": [
           {
@@ -3379,8 +4217,8 @@
           },
           {
             "value": 18,
-            "unit": "DAY",
-            "source": "executionMethods",
+            "unit": "NGÀY",
+            "source": "methodDescription",
             "days": 18
           },
           {
@@ -3390,9 +4228,33 @@
             "days": 18
           },
           {
+            "value": 18,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 18
+          },
+          {
+            "value": 18,
+            "unit": "DAY",
+            "source": "executionMethods",
+            "days": 18
+          },
+          {
+            "value": 18,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 18
+          },
+          {
             "value": 20,
             "unit": "DAY",
             "source": "executionMethods",
+            "days": 20
+          },
+          {
+            "value": 20,
+            "unit": "NGÀY",
+            "source": "methodDescription",
             "days": 20
           },
           {
@@ -3403,8 +4265,20 @@
           },
           {
             "value": 20,
+            "unit": "NGÀY",
+            "source": "methodDescription",
+            "days": 20
+          },
+          {
+            "value": 20,
             "unit": "DAY",
             "source": "executionMethods",
+            "days": 20
+          },
+          {
+            "value": 20,
+            "unit": "NGÀY",
+            "source": "methodDescription",
             "days": 20
           }
         ]
@@ -3436,6 +4310,8 @@
       "weightedScore": 2.6,
       "score100": 52,
       "warnings": [
+        "STEP_TEXT_STRUCTURE_MISMATCH",
+        "PROFILE_TEXT_STRUCTURED_ZERO",
         "PROCESSING_TIME_CONFLICT"
       ],
       "stars": 3
@@ -3451,7 +4327,7 @@
         "count": 50,
         "requiredCount": 0,
         "conditionalCount": 14,
-        "dossierSignals": 0,
+        "dossierSignals": 8,
         "evidence": [
           {
             "name": "Văn bản đề nghị điều chỉnh dự án đầu tư",
@@ -3528,13 +4404,21 @@
         ]
       },
       "c2": {
-        "score": 3,
-        "state": "KNOWN",
+        "score": 5,
+        "state": "TEXT_OVERRIDES_STRUCTURE",
         "structuredStepCount": 2,
-        "textStepCount": 0,
-        "effectiveSteps": 2,
-        "branchSignals": 104,
-        "coordinationSignals": 16
+        "textStepCount": 5,
+        "stepNumbers": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "effectiveSteps": 5,
+        "branchSignals": 59,
+        "coordinationSignals": 10,
+        "evidenceTextLength": 10858
       },
       "c3": {
         "score": 5,
@@ -3595,14 +4479,16 @@
           "authorized": 0,
           "coordinating": 0
         },
-        "coordinationSignals": 4,
-        "actorMentions": 15,
+        "coordinationSignals": 12,
+        "actorMentions": 20,
         "crossRole": true
       },
-      "weightedScore": 3.95,
-      "score100": 79,
-      "warnings": [],
-      "stars": 4
+      "weightedScore": 4.35,
+      "score100": 87,
+      "warnings": [
+        "STEP_TEXT_STRUCTURE_MISMATCH"
+      ],
+      "stars": 5
     },
     {
       "goldenNo": 29,
@@ -3615,7 +4501,7 @@
         "count": 38,
         "requiredCount": 0,
         "conditionalCount": 9,
-        "dossierSignals": 26,
+        "dossierSignals": 88,
         "evidence": [
           {
             "name": "+ Giấy đề nghị cấp lại Giấy chứng nhận đăng ký hộ kinh doanh theo Mẫu số 5, Phụ lục II, Thông tư số 68/2025/TT-BTC ngày 01/7/2025 của Bộ trưởng Bộ Tài chính.",
@@ -3696,9 +4582,11 @@
         "state": "KNOWN",
         "structuredStepCount": 2,
         "textStepCount": 0,
+        "stepNumbers": [],
         "effectiveSteps": 2,
-        "branchSignals": 22,
-        "coordinationSignals": 1
+        "branchSignals": 21,
+        "coordinationSignals": 1,
+        "evidenceTextLength": 8079
       },
       "c3": {
         "score": 3,
@@ -3779,7 +4667,7 @@
         "count": 3,
         "requiredCount": 0,
         "conditionalCount": 0,
-        "dossierSignals": 0,
+        "dossierSignals": 6,
         "evidence": [
           {
             "name": "Văn bản đề nghị chấp thuận độ cao công trình thực hiện theo Mẫu quy định tại Phụ lục V ban hành kèm theo Nghị định số 222/2026/NĐ-CP",
@@ -3806,9 +4694,11 @@
         "state": "KNOWN",
         "structuredStepCount": 14,
         "textStepCount": 0,
+        "stepNumbers": [],
         "effectiveSteps": 14,
-        "branchSignals": 6,
-        "coordinationSignals": 13
+        "branchSignals": 5,
+        "coordinationSignals": 11,
+        "evidenceTextLength": 3900
       },
       "c3": {
         "score": 2,
@@ -3926,8 +4816,8 @@
           "authorized": 0,
           "coordinating": 0
         },
-        "coordinationSignals": 9,
-        "actorMentions": 25,
+        "coordinationSignals": 11,
+        "actorMentions": 27,
         "crossRole": true
       },
       "weightedScore": 3.35,
