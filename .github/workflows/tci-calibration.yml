@@ -5,6 +5,7 @@ on:
   push:
     paths:
       - 'tci/select-tci-calibration.js'
+      - 'tci/select-golden-cases.js'
       - 'details/**'
 
 permissions:
@@ -27,10 +28,13 @@ jobs:
       - name: Select TCI calibration cases
         run: node tci/select-tci-calibration.js
 
+      - name: Select Golden Cases
+        run: node tci/select-golden-cases.js
+
       - name: Commit calibration results
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add tci-results
-          git diff --cached --quiet || git commit -m "TCI: generate calibration sample report"
+          git diff --cached --quiet || git commit -m "TCI: generate calibration and golden case reports"
           git push origin HEAD:tci-calibration
