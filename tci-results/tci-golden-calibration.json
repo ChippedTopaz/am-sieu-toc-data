@@ -1,0 +1,3941 @@
+{
+  "metadata": {
+    "version": "TCI_V1_GOLDEN_CALIBRATION_DRAFT_1.0",
+    "goldenCount": 30,
+    "note": "Điểm nháp để hiệu chuẩn; chưa khóa công thức triển khai sản xuất. Phân tích ưu tiên text, dùng cấu trúc để đối chiếu và audit."
+  },
+  "weights": {
+    "C1": 0.2,
+    "C2": 0.2,
+    "C3": 0.15,
+    "C4": 0.15,
+    "C5": 0.1,
+    "C6": 0.2
+  },
+  "results": [
+    {
+      "goldenNo": 1,
+      "code": "1.014977",
+      "name": "Chủ tịch, Phó Chủ tịch UBND tỉnh tiếp khách nước ngoài",
+      "category": "Công tác Văn phòng",
+      "c1": {
+        "score": 0,
+        "state": "KNOWN",
+        "count": 0,
+        "requiredCount": 0,
+        "conditionalCount": 0,
+        "dossierSignals": 0,
+        "evidence": []
+      },
+      "c2": {
+        "score": 1,
+        "state": "KNOWN",
+        "structuredStepCount": 1,
+        "textStepCount": 0,
+        "effectiveSteps": 1,
+        "branchSignals": 3,
+        "coordinationSignals": 4
+      },
+      "c3": {
+        "score": 1,
+        "state": "UNKNOWN",
+        "condition": 0,
+        "requirement": 0,
+        "branches": 0,
+        "negation": 0,
+        "thresholds": 0,
+        "totalSignal": 0
+      },
+      "c4": {
+        "score": 1,
+        "state": "UNKNOWN",
+        "minDays": null,
+        "maxDays": null,
+        "distinctValues": [],
+        "rawValues": []
+      },
+      "c5": {
+        "score": 1,
+        "state": "KNOWN",
+        "uniqueMethods": [
+          "ONLINE"
+        ],
+        "conditionalRouteSignals": 0,
+        "returnMethodCount": 0
+      },
+      "c6": {
+        "score": 4,
+        "state": "KNOWN_WITH_TEXT",
+        "roleCounts": {
+          "executing": 4,
+          "authority": 0,
+          "authorized": 0,
+          "coordinating": 0
+        },
+        "coordinationSignals": 8,
+        "actorMentions": 31,
+        "crossRole": false
+      },
+      "weightedScore": 1.4,
+      "score100": 28,
+      "warnings": [],
+      "stars": 2
+    },
+    {
+      "goldenNo": 2,
+      "code": "1.014978",
+      "name": "Chủ tịch, Phó Chủ tịch UBND tỉnh tiếp khách trong nước",
+      "category": "Công tác Văn phòng",
+      "c1": {
+        "score": 0,
+        "state": "KNOWN",
+        "count": 0,
+        "requiredCount": 0,
+        "conditionalCount": 0,
+        "dossierSignals": 0,
+        "evidence": []
+      },
+      "c2": {
+        "score": 1,
+        "state": "KNOWN",
+        "structuredStepCount": 1,
+        "textStepCount": 0,
+        "effectiveSteps": 1,
+        "branchSignals": 4,
+        "coordinationSignals": 7
+      },
+      "c3": {
+        "score": 1,
+        "state": "UNKNOWN",
+        "condition": 0,
+        "requirement": 0,
+        "branches": 0,
+        "negation": 0,
+        "thresholds": 0,
+        "totalSignal": 0
+      },
+      "c4": {
+        "score": 1,
+        "state": "UNKNOWN",
+        "minDays": null,
+        "maxDays": null,
+        "distinctValues": [],
+        "rawValues": []
+      },
+      "c5": {
+        "score": 1,
+        "state": "KNOWN",
+        "uniqueMethods": [
+          "DIRECT"
+        ],
+        "conditionalRouteSignals": 0,
+        "returnMethodCount": 0
+      },
+      "c6": {
+        "score": 4,
+        "state": "KNOWN_WITH_TEXT",
+        "roleCounts": {
+          "executing": 4,
+          "authority": 0,
+          "authorized": 0,
+          "coordinating": 0
+        },
+        "coordinationSignals": 11,
+        "actorMentions": 41,
+        "crossRole": false
+      },
+      "weightedScore": 1.4,
+      "score100": 28,
+      "warnings": [],
+      "stars": 2
+    },
+    {
+      "goldenNo": 3,
+      "code": "1.000253",
+      "name": "Khai báo tạm trú cho người nước ngoài tại Việt Nam bằng Phiếu khai báo tạm trú",
+      "category": "Quản lý xuất nhập cảnh",
+      "c1": {
+        "score": 1,
+        "state": "KNOWN",
+        "count": 2,
+        "requiredCount": 0,
+        "conditionalCount": 0,
+        "dossierSignals": 0,
+        "evidence": [
+          {
+            "name": "Thông tin khai báo tạm trú bao gồm các thông tin sau đây của người nước ngoài: Họ tên, giới tính, ngày, tháng, năm sinh, quốc tịch, số hộ chiếu hoặc giấy tờ có giá trị đi lại quốc tế, thời hạn chứng nhận tạm trú hoặc gia hạn tạm trú hoặc thẻ tạm trú do cơ quan có thẩm quyền cấp và thời gian dự kiến tạm trú tại cơ sở lưu trú.",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "Phiếu khai báo tạm trú (mẫu NA17) ban hành kèm theo Thông tư số 04/2015/TT-BCA ngày 05/01/2015 của Bộ trưởng Bộ Công an quy định mẫu giấy tờ liên quan đến việc nhập cảnh, xuất cảnh, cư trú của người nước ngoài tại Việt Nam, được sửa đổi, bổ sung một số điều bởi Thông tư số 57/2020/TT-BCA ngày 10/6/2020, Thông tư số 22/2023/TT-BCA ngày 30/6/2023 và Thông tư số 70/2026/TT-BCA ngày 25/5/2026.",
+            "required": false,
+            "hasElectronicForm": true,
+            "isConditional": false
+          }
+        ]
+      },
+      "c2": {
+        "score": 1,
+        "state": "KNOWN",
+        "structuredStepCount": 1,
+        "textStepCount": 0,
+        "effectiveSteps": 1,
+        "branchSignals": 4,
+        "coordinationSignals": 0
+      },
+      "c3": {
+        "score": 2,
+        "state": "KNOWN",
+        "condition": 0,
+        "requirement": 0,
+        "branches": 2,
+        "negation": 0,
+        "thresholds": 0,
+        "totalSignal": 4
+      },
+      "c4": {
+        "score": 3,
+        "state": "KNOWN",
+        "minDays": 7,
+        "maxDays": 7,
+        "distinctValues": [
+          "7 DAY"
+        ],
+        "rawValues": [
+          {
+            "value": 7,
+            "unit": "DAY",
+            "source": "executionMethods",
+            "days": 7
+          }
+        ]
+      },
+      "c5": {
+        "score": 1,
+        "state": "KNOWN",
+        "uniqueMethods": [
+          "DIRECT"
+        ],
+        "conditionalRouteSignals": 0,
+        "returnMethodCount": 1
+      },
+      "c6": {
+        "score": 3,
+        "state": "KNOWN_WITH_TEXT",
+        "roleCounts": {
+          "executing": 1,
+          "authority": 1,
+          "authorized": 0,
+          "coordinating": 0
+        },
+        "coordinationSignals": 0,
+        "actorMentions": 12,
+        "crossRole": true
+      },
+      "weightedScore": 1.85,
+      "score100": 37,
+      "warnings": [],
+      "stars": 2
+    },
+    {
+      "goldenNo": 4,
+      "code": "1.000771",
+      "name": "Gia hạn tạm trú cho người đã được cấp giấy miễn thị thực tại Cục Quản lý xuất nhập cảnh Bộ Công an",
+      "category": "Quản lý xuất nhập cảnh",
+      "c1": {
+        "score": 2,
+        "state": "KNOWN",
+        "count": 4,
+        "requiredCount": 0,
+        "conditionalCount": 1,
+        "dossierSignals": 2,
+        "evidence": [
+          {
+            "name": "Hộ chiếu hoặc giấy tờ có giá trị đi lại quốc tế hoặc giấy tờ cho phép thường trú do cơ quan có thẩm quyền của nước ngoài cấp cho người Việt Nam định cư ở nước ngoài.",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "Trường hợp nộp hồ sơ trực tuyến thì hộ chiếu hoặc giấy tờ có giá trị đi lại quốc tế hoặc giấy tờ cho phép thường trú do cơ quan có thẩm quyền của nước ngoài cấp cho người Việt Nam định cư ở nước ngoài phải gửi qua dịch vụ bưu chính công ích về cơ quan tiếp nhận; thành phần hồ sơ khác phải được chứng thực điện tử theo quy định, trường hợp chưa được chứng thực điện tử thì gửi hồ sơ về cơ quan tiếp nhận thông qua dịch vụ bưu chính công ích.",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": true
+          },
+          {
+            "name": "Tờ khai đề nghị cấp thị thực, gia hạn tạm trú (mẫu NA5) ban hành kèm theo Thông tư số 22/2023/TT-BCA ngày 30/6/2023 của Bộ Công an.",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "Giấy miễn thị thực.",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          }
+        ]
+      },
+      "c2": {
+        "score": 2,
+        "state": "KNOWN",
+        "structuredStepCount": 1,
+        "textStepCount": 0,
+        "effectiveSteps": 1,
+        "branchSignals": 10,
+        "coordinationSignals": 2
+      },
+      "c3": {
+        "score": 2,
+        "state": "KNOWN",
+        "condition": 0,
+        "requirement": 0,
+        "branches": 2,
+        "negation": 2,
+        "thresholds": 0,
+        "totalSignal": 6
+      },
+      "c4": {
+        "score": 2,
+        "state": "KNOWN",
+        "minDays": 5,
+        "maxDays": 5,
+        "distinctValues": [
+          "5 WORKING_DAY"
+        ],
+        "rawValues": [
+          {
+            "value": 5,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 5
+          },
+          {
+            "value": 5,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 5
+          },
+          {
+            "value": 5,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 5
+          }
+        ]
+      },
+      "c5": {
+        "score": 4,
+        "state": "KNOWN",
+        "uniqueMethods": [
+          "ONLINE",
+          "POSTAL",
+          "DIRECT"
+        ],
+        "conditionalRouteSignals": 3,
+        "returnMethodCount": 2
+      },
+      "c6": {
+        "score": 3,
+        "state": "KNOWN_WITH_TEXT",
+        "roleCounts": {
+          "executing": 1,
+          "authority": 1,
+          "authorized": 0,
+          "coordinating": 0
+        },
+        "coordinationSignals": 1,
+        "actorMentions": 27,
+        "crossRole": true
+      },
+      "weightedScore": 2.4000000000000004,
+      "score100": 48,
+      "warnings": [],
+      "stars": 3
+    },
+    {
+      "goldenNo": 5,
+      "code": "1.001445",
+      "name": "Trình báo mất hộ chiếu phổ thông (thực hiện tại cấp tỉnh)",
+      "category": "Quản lý xuất nhập cảnh",
+      "c1": {
+        "score": 1,
+        "state": "KNOWN",
+        "count": 1,
+        "requiredCount": 0,
+        "conditionalCount": 1,
+        "dossierSignals": 0,
+        "evidence": [
+          {
+            "name": "Đơn trình báo mất hộ chiếu phổ thông (mẫu TK05) ban hành kèm theo Thông tư số 69/2026/TT-BCA ngày 22/5/2026  của Bộ Công an. Đối với người mất năng lực hành vi dân sự, có khó khăn trong nhận thức và làm chủ hành vi, người chưa đủ 14 tuổi thì người đại diện hợp pháp khai và ký thay.",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": true
+          }
+        ]
+      },
+      "c2": {
+        "score": 1,
+        "state": "KNOWN",
+        "structuredStepCount": 1,
+        "textStepCount": 0,
+        "effectiveSteps": 1,
+        "branchSignals": 5,
+        "coordinationSignals": 4
+      },
+      "c3": {
+        "score": 2,
+        "state": "KNOWN",
+        "condition": 0,
+        "requirement": 0,
+        "branches": 2,
+        "negation": 0,
+        "thresholds": 0,
+        "totalSignal": 4
+      },
+      "c4": {
+        "score": 1,
+        "state": "KNOWN",
+        "minDays": 1,
+        "maxDays": 1,
+        "distinctValues": [
+          "1 WORKING_DAY"
+        ],
+        "rawValues": [
+          {
+            "value": 1,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 1
+          },
+          {
+            "value": 1,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 1
+          },
+          {
+            "value": 1,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 1
+          }
+        ]
+      },
+      "c5": {
+        "score": 3,
+        "state": "KNOWN",
+        "uniqueMethods": [
+          "ONLINE",
+          "POSTAL",
+          "DIRECT"
+        ],
+        "conditionalRouteSignals": 0,
+        "returnMethodCount": 2
+      },
+      "c6": {
+        "score": 2,
+        "state": "KNOWN_WITH_TEXT",
+        "roleCounts": {
+          "executing": 1,
+          "authority": 1,
+          "authorized": 0,
+          "coordinating": 0
+        },
+        "coordinationSignals": 3,
+        "actorMentions": 7,
+        "crossRole": true
+      },
+      "weightedScore": 1.5499999999999998,
+      "score100": 31,
+      "warnings": [],
+      "stars": 2
+    },
+    {
+      "goldenNo": 6,
+      "code": "1.010386",
+      "name": "Trình báo mất hộ chiếu phổ thông (thực hiện tại cấp xã)",
+      "category": "Quản lý xuất nhập cảnh",
+      "c1": {
+        "score": 1,
+        "state": "KNOWN",
+        "count": 1,
+        "requiredCount": 0,
+        "conditionalCount": 1,
+        "dossierSignals": 0,
+        "evidence": [
+          {
+            "name": "Đơn trình báo mất hộ chiếu phổ thông (mẫu TK05) ban hành kèm theo Thông tư số 69/2026/TT-BCA ngày 22/5/2026  của Bộ Công an. Đối với người mất năng lực hành vi dân sự, có khó khăn trong nhận thức và làm chủ hành vi, người chưa đủ 14 tuổi thì người đại diện hợp pháp khai và ký thay.",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": true
+          }
+        ]
+      },
+      "c2": {
+        "score": 1,
+        "state": "KNOWN",
+        "structuredStepCount": 1,
+        "textStepCount": 0,
+        "effectiveSteps": 1,
+        "branchSignals": 5,
+        "coordinationSignals": 7
+      },
+      "c3": {
+        "score": 2,
+        "state": "KNOWN",
+        "condition": 0,
+        "requirement": 0,
+        "branches": 2,
+        "negation": 0,
+        "thresholds": 0,
+        "totalSignal": 4
+      },
+      "c4": {
+        "score": 1,
+        "state": "KNOWN",
+        "minDays": 1,
+        "maxDays": 1,
+        "distinctValues": [
+          "1 WORKING_DAY"
+        ],
+        "rawValues": [
+          {
+            "value": 1,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 1
+          },
+          {
+            "value": 1,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 1
+          },
+          {
+            "value": 1,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 1
+          }
+        ]
+      },
+      "c5": {
+        "score": 3,
+        "state": "KNOWN",
+        "uniqueMethods": [
+          "ONLINE",
+          "POSTAL",
+          "DIRECT"
+        ],
+        "conditionalRouteSignals": 1,
+        "returnMethodCount": 2
+      },
+      "c6": {
+        "score": 3,
+        "state": "KNOWN_WITH_TEXT",
+        "roleCounts": {
+          "executing": 1,
+          "authority": 1,
+          "authorized": 0,
+          "coordinating": 0
+        },
+        "coordinationSignals": 5,
+        "actorMentions": 10,
+        "crossRole": true
+      },
+      "weightedScore": 1.75,
+      "score100": 35,
+      "warnings": [],
+      "stars": 2
+    },
+    {
+      "goldenNo": 7,
+      "code": "1.115797",
+      "name": "Giao đất, cho thuê đất, chuyển mục đích sử dụng đất đối với trường hợp giao đất, cho thuê đất không đấu giá quyền sử dụng đất, không đấu thầu lựa chọn nhà đầu tư thực hiện dự án có sử dụng đất; trường hợp giao đất, cho thuê đất thông qua đấu thầu lựa chọn nhà đầu tư thực hiện dự án có sử dụng đất; giao đất và giao rừng; cho thuê đất và cho thuê rừng; gia hạn sử dụng đất khi hết thời hạn sử dụng đất; trường hợp giao đất, cho thuê đất thông qua hình thức đấu giá quyền sử dụng đất (cấp tỉnh)",
+      "category": "Đất đai",
+      "c1": {
+        "score": 5,
+        "state": "KNOWN",
+        "count": 15,
+        "requiredCount": 0,
+        "conditionalCount": 10,
+        "dossierSignals": 2,
+        "evidence": [
+          {
+            "name": "Đơn đề nghị giao đất/thuê đất/chuyển mục đích sử dụng đất/giao đất và giao rừng/cho thuê đất và cho thuê rừng",
+            "required": false,
+            "hasElectronicForm": true,
+            "isConditional": false
+          },
+          {
+            "name": "Kết quả đấu giá thuê rừng; biên bản đấu giá cho thuê rừng; danh sách người trúng đấu giá thuê rừng; thông báo hoàn thành nghĩa vụ tài chính đối với người trúng đấu giá thuê rừng (đối với trường hợp cho thuê đất và cho thuê rừng).",
+            "required": false,
+            "hasElectronicForm": true,
+            "isConditional": true
+          },
+          {
+            "name": "Dự án đầu tư đối với khu rừng đề nghị giao; báo cáo điều tra, đánh giá hiện trạng rừng và bản đồ hiện trạng rừng theo quy định của pháp luật về lâm nghiệp (đối với trường hợp đề nghị giao đất và giao rừng).",
+            "required": false,
+            "hasElectronicForm": true,
+            "isConditional": true
+          },
+          {
+            "name": "Một trong các loại giấy tờ sau: + Bản sao văn bản phê duyệt dự án đầu tư, quyết định chấp thuận chủ trương đầu tư, quyết định chấp thuận chủ trương đầu tư đồng thời chấp thuận nhà đầu tư theo quy định của pháp luật về đầu tư công, pháp luật về đầu tư; văn bản phê duyệt kết quả lựa chọn nhà đầu tư đối với dự án đầu tư theo phương thức đối tác công tư (nếu có); + Bản sao văn bản của cơ quan nhà nước có thẩm quyền chấp thuận nhà đầu tư theo quy định của pháp luật về đầu tư đối với trường hợp quy định tại khoản 5 Điều 124 Luật Đất đai; + Bản sao văn bản của đơn vị được giao tổ chức thực hiện việc đấu giá quyền sử dụng đất về kết quả đấu giá quyền sử dụng đất không thành quy định tại điểm b khoản 6 Điều 125 Luật Đất đai; + Bản sao văn bản về kết quả thực hiện việc nhận chuyển nhượng dự án bất động sản theo quy định của pháp luật về kinh doanh bất động sản đối với trường hợp quy định tại khoản 7 Điều 124 Luật Đất đai; + Bản sao các văn bản theo quy định của pháp luật đối với trường hợp quy định tại điểm i khoản 1 Điều 133 Luật Đất đai mà phải thu hồi đất.",
+            "required": false,
+            "hasElectronicForm": true,
+            "isConditional": true
+          },
+          {
+            "name": "Bản sao văn bản phê duyệt kết quả lựa chọn nhà đầu tư của cơ quan nhà nước có thẩm quyền đối với trường hợp quy định tại khoản 2 Điều 116 Luật Đất đai.",
+            "required": false,
+            "hasElectronicForm": true,
+            "isConditional": true
+          },
+          {
+            "name": "Bản sao văn bản phê duyệt dự án đầu tư, quyết định chấp thuận chủ trương đầu tư, quyết định chấp thuận chủ trương đầu tư đồng thời chấp thuận nhà đầu tư theo quy định của pháp luật về đầu tư công, pháp luật về đầu tư; văn bản phê duyệt kết quả lựa chọn nhà đầu tư đối với dự án đầu tư theo phương thức đối tác công tư (nếu có)",
+            "required": false,
+            "hasElectronicForm": true,
+            "isConditional": true
+          },
+          {
+            "name": "Một trong các giấy chứng nhận quy định tại khoản 21 Điều 3, khoản 3 Điều 256 Luật Đất đai hoặc một trong các loại giấy tờ quy định tại Điều 137 Luật Đất đai hoặc quyết định giao đất, quyết định cho thuê đất, quyết định cho phép chuyển mục đích sử dụng đất của cơ quan nhà nước có thẩm quyền theo quy định của pháp luật về đất đai qua các thời kỳ",
+            "required": false,
+            "hasElectronicForm": true,
+            "isConditional": false
+          },
+          {
+            "name": "Bản sao Phương án sử dụng đất đã được cơ quan, tổ chức có thẩm quyền phê duyệt đối với tổ chức kinh tế, đơn vị sự nghiệp công lập đã được Nhà nước giao đất, cho thuê đất trước ngày Luật Đất đai có hiệu lực thi hành;",
+            "required": false,
+            "hasElectronicForm": true,
+            "isConditional": true
+          },
+          {
+            "name": "Một trong các loại giấy tờ sau: + Bản sao văn bản phê duyệt dự án đầu tư, quyết định chấp thuận chủ trương đầu tư, quyết định chấp thuận chủ trương đầu tư đồng thời chấp thuận nhà đầu tư theo quy định của pháp luật về đầu tư công, pháp luật về đầu tư; văn bản phê duyệt kết quả lựa chọn nhà đầu tư đối với dự án đầu tư theo phương thức đối tác công tư (nếu có); + Bản sao văn bản của cơ quan nhà nước có thẩm quyền chấp thuận nhà đầu tư theo quy định của pháp luật về đầu tư đối với trường hợp quy định tại khoản 5 Điều 124 Luật Đất đai; + Bản sao văn bản của đơn vị được giao tổ chức thực hiện việc đấu giá quyền sử dụng đất về kết quả đấu giá quyền sử dụng đất không thành quy định tại điểm b khoản 6 Điều 125 Luật Đất đai; + Bản sao văn bản về kết quả thực hiện việc nhận chuyển nhượng dự án bất động sản theo quy định của pháp luật về kinh doanh bất động sản đối với trường hợp quy định tại khoản 7 Điều 124 Luật Đất đai; + Bản sao các văn bản theo quy định của pháp luật đối với trường hợp quy định tại điểm i khoản 1 Điều 133 Luật Đất đai mà phải thu hồi đất.",
+            "required": false,
+            "hasElectronicForm": true,
+            "isConditional": true
+          },
+          {
+            "name": "- Bản sao Phương án sử dụng đất của công ty nông, lâm nghiệp tại địa phương đã được cơ quan, tổ chức có thẩm quyền phê duyệt. - Bản sao Phương án sử dụng đất đã được cơ quan, tổ chức có thẩm quyền phê duyệt đối với diện tích đất thu hồi của công ty nông, lâm nghiệp quản lý, sử dụng để giao đất, cho thuê đất quy định tại các điểm c, d và đ khoản 2 Điều 181 Luật Đất đai.",
+            "required": false,
+            "hasElectronicForm": true,
+            "isConditional": true
+          },
+          {
+            "name": "Một trong các loại giấy tờ sau: + Bản sao văn bản phê duyệt dự án đầu tư, quyết định chấp thuận chủ trương đầu tư, quyết định chấp thuận chủ trương đầu tư đồng thời chấp thuận nhà đầu tư theo quy định của pháp luật về đầu tư công, pháp luật về đầu tư; văn bản phê duyệt kết quả lựa chọn nhà đầu tư đối với dự án đầu tư theo phương thức đối tác công tư (nếu có); + Bản sao văn bản của cơ quan nhà nước có thẩm quyền chấp thuận nhà đầu tư theo quy định của pháp luật về đầu tư đối với trường hợp quy định tại khoản 5 Điều 124 Luật Đất đai; + Bản sao văn bản của đơn vị được giao tổ chức thực hiện việc đấu giá quyền sử dụng đất về kết quả đấu giá quyền sử dụng đất không thành quy định tại điểm b khoản 6 Điều 125 Luật Đất đai; + Bản sao văn bản về kết quả thực hiện việc nhận chuyển nhượng dự án bất động sản theo quy định của pháp luật về kinh doanh bất động sản đối với trường hợp quy định tại khoản 7 Điều 124 Luật Đất đai; + Bản sao các văn bản theo quy định của pháp luật đối với trường hợp quy định tại điểm i khoản 1 Điều 133 Luật Đất đai mà phải thu hồi đất.",
+            "required": false,
+            "hasElectronicForm": true,
+            "isConditional": true
+          },
+          {
+            "name": "Đơn đề nghị gia hạn sử dụng đất",
+            "required": false,
+            "hasElectronicForm": true,
+            "isConditional": false
+          }
+        ]
+      },
+      "c2": {
+        "score": 5,
+        "state": "KNOWN",
+        "structuredStepCount": 16,
+        "textStepCount": 0,
+        "effectiveSteps": 16,
+        "branchSignals": 67,
+        "coordinationSignals": 25
+      },
+      "c3": {
+        "score": 5,
+        "state": "KNOWN",
+        "condition": 0,
+        "requirement": 2,
+        "branches": 22,
+        "negation": 2,
+        "thresholds": 0,
+        "totalSignal": 48
+      },
+      "c4": {
+        "score": 5,
+        "state": "CONFLICT",
+        "minDays": 15,
+        "maxDays": 24,
+        "distinctValues": [
+          "15 WORKING_DAY",
+          "22 WORKING_DAY",
+          "17 WORKING_DAY",
+          "24 WORKING_DAY"
+        ],
+        "rawValues": [
+          {
+            "value": 15,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 15
+          },
+          {
+            "value": 15,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 15
+          },
+          {
+            "value": 15,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 15
+          },
+          {
+            "value": 22,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 22
+          },
+          {
+            "value": 22,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 22
+          },
+          {
+            "value": 22,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 22
+          },
+          {
+            "value": 15,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 15
+          },
+          {
+            "value": 15,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 15
+          },
+          {
+            "value": 15,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 15
+          },
+          {
+            "value": 17,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 17
+          },
+          {
+            "value": 17,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 17
+          },
+          {
+            "value": 17,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 17
+          },
+          {
+            "value": 22,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 22
+          },
+          {
+            "value": 22,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 22
+          },
+          {
+            "value": 22,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 22
+          },
+          {
+            "value": 24,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 24
+          },
+          {
+            "value": 24,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 24
+          },
+          {
+            "value": 24,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 24
+          }
+        ]
+      },
+      "c5": {
+        "score": 5,
+        "state": "KNOWN",
+        "uniqueMethods": [
+          "DIRECT",
+          "ONLINE",
+          "POSTAL"
+        ],
+        "conditionalRouteSignals": 54,
+        "returnMethodCount": 2
+      },
+      "c6": {
+        "score": 2,
+        "state": "KNOWN_WITH_TEXT",
+        "roleCounts": {
+          "executing": 1,
+          "authority": 0,
+          "authorized": 0,
+          "coordinating": 0
+        },
+        "coordinationSignals": 14,
+        "actorMentions": 66,
+        "crossRole": false
+      },
+      "weightedScore": 4.4,
+      "score100": 88,
+      "warnings": [
+        "PROCESSING_TIME_CONFLICT"
+      ],
+      "stars": 5
+    },
+    {
+      "goldenNo": 8,
+      "code": "3.000671",
+      "name": "Đăng ký, cấp Giấy chứng nhận đối với thửa đất có diện tích tăng thêm do thay đổi ranh giới so với Giấy chứng nhận đã cấp (quy định tại điểm b và điểm c khoản 2 Điều 24 Nghị định số 101/2024/NĐ-CP và khoản 4 Điều 24 Nghị định số 101/2024/NĐ-CP)",
+      "category": "Đất đai",
+      "c1": {
+        "score": 0,
+        "state": "KNOWN",
+        "count": 0,
+        "requiredCount": 0,
+        "conditionalCount": 0,
+        "dossierSignals": 0,
+        "evidence": []
+      },
+      "c2": {
+        "score": 5,
+        "state": "KNOWN",
+        "structuredStepCount": 19,
+        "textStepCount": 0,
+        "effectiveSteps": 19,
+        "branchSignals": 29,
+        "coordinationSignals": 17
+      },
+      "c3": {
+        "score": 1,
+        "state": "UNKNOWN",
+        "condition": 0,
+        "requirement": 0,
+        "branches": 0,
+        "negation": 0,
+        "thresholds": 0,
+        "totalSignal": 0
+      },
+      "c4": {
+        "score": 4,
+        "state": "KNOWN",
+        "minDays": 30,
+        "maxDays": 30,
+        "distinctValues": [
+          "30 DAY"
+        ],
+        "rawValues": [
+          {
+            "value": 30,
+            "unit": "DAY",
+            "source": "executionMethods",
+            "days": 30
+          },
+          {
+            "value": 30,
+            "unit": "DAY",
+            "source": "executionMethods",
+            "days": 30
+          },
+          {
+            "value": 30,
+            "unit": "DAY",
+            "source": "executionMethods",
+            "days": 30
+          }
+        ]
+      },
+      "c5": {
+        "score": 4,
+        "state": "KNOWN",
+        "uniqueMethods": [
+          "DIRECT",
+          "ONLINE",
+          "POSTAL"
+        ],
+        "conditionalRouteSignals": 3,
+        "returnMethodCount": 2
+      },
+      "c6": {
+        "score": 2,
+        "state": "KNOWN_WITH_TEXT",
+        "roleCounts": {
+          "executing": 0,
+          "authority": 0,
+          "authorized": 0,
+          "coordinating": 0
+        },
+        "coordinationSignals": 14,
+        "actorMentions": 44,
+        "crossRole": false
+      },
+      "weightedScore": 2.55,
+      "score100": 51,
+      "warnings": [],
+      "stars": 3
+    },
+    {
+      "goldenNo": 9,
+      "code": "3.000579",
+      "name": "Giải quyết trợ cấp hằng tháng đối với thanh niên xung phong đã hoàn thành nhiệm vụ trong kháng chiến trở về địa phương (khoản01 Điều 09 Nghị Quyếtsố 182/2025/NQHĐND)",
+      "category": "Người có công",
+      "c1": {
+        "score": 2,
+        "state": "KNOWN",
+        "count": 3,
+        "requiredCount": 0,
+        "conditionalCount": 2,
+        "dossierSignals": 0,
+        "evidence": [
+          {
+            "name": "Bản khai cá nhân đề nghị hưởng chế độ trợ cấp hàng tháng đối với thanh niên xung phong, theo mẫu BM.NCC.20.01 Hoặc Bản khai cá nhân đề nghị hưởng chế độ trợ cấp một lần đối với thanh niên xung phong đã từ trần, theo mẫu BM.NCC.20.02 Hoặc Bản khai cá nhân đề nghị hưởng chế độ trợ cấp một lần đối với thanh niên xung phong, theo mẫu BM.NCC.20.03",
+            "required": false,
+            "hasElectronicForm": true,
+            "isConditional": true
+          },
+          {
+            "name": "Một trong các giấy tờ chứng minh là TNXP: - Lý lịch cán bộ hoặc lý lịch đảng viên (khai trước ngày Quyết định số 104/1999/QĐ-TTG ngày 14/4/1999 có hiệu lực thi hành); - Giấy tờ do cơ quan có thẩm quyền cấp trước khi TNXP trở về địa phương như: Giấy chứng nhận hoàn thành nhiệm vụ của đơn vị quản lý TNXP; Giấy chuyển thương, chuyển viện, phiếu sức khỏe; Giấy khen trong thời gian tham gia lực lượng TNXP; Giấy chứng nhận tham gia TNXP; Giấy điều động công tác, bổ nhiệm, giao nhiệm vụ; - Trưởng hợp TNXP không còn một trong các giấy tờ thì phải nộp bản khai có chứng thực của UBND cấp xã nơi đăng ký hộ khẩu thường trú trước khi tham gia TNXP.",
+            "required": false,
+            "hasElectronicForm": true,
+            "isConditional": true
+          },
+          {
+            "name": "Giấy chứng nhận hộ nghèo",
+            "required": false,
+            "hasElectronicForm": true,
+            "isConditional": false
+          }
+        ]
+      },
+      "c2": {
+        "score": 5,
+        "state": "KNOWN",
+        "structuredStepCount": 14,
+        "textStepCount": 0,
+        "effectiveSteps": 14,
+        "branchSignals": 10,
+        "coordinationSignals": 7
+      },
+      "c3": {
+        "score": 1,
+        "state": "KNOWN",
+        "condition": 0,
+        "requirement": 0,
+        "branches": 0,
+        "negation": 2,
+        "thresholds": 0,
+        "totalSignal": 2
+      },
+      "c4": {
+        "score": 3,
+        "state": "KNOWN",
+        "minDays": 7,
+        "maxDays": 7,
+        "distinctValues": [
+          "7 DAY"
+        ],
+        "rawValues": [
+          {
+            "value": 7,
+            "unit": "DAY",
+            "source": "executionMethods",
+            "days": 7
+          },
+          {
+            "value": 7,
+            "unit": "DAY",
+            "source": "executionMethods",
+            "days": 7
+          },
+          {
+            "value": 7,
+            "unit": "DAY",
+            "source": "executionMethods",
+            "days": 7
+          }
+        ]
+      },
+      "c5": {
+        "score": 3,
+        "state": "KNOWN",
+        "uniqueMethods": [
+          "DIRECT",
+          "ONLINE",
+          "POSTAL"
+        ],
+        "conditionalRouteSignals": 0,
+        "returnMethodCount": 2
+      },
+      "c6": {
+        "score": 2,
+        "state": "KNOWN_WITH_TEXT",
+        "roleCounts": {
+          "executing": 0,
+          "authority": 0,
+          "authorized": 0,
+          "coordinating": 0
+        },
+        "coordinationSignals": 5,
+        "actorMentions": 12,
+        "crossRole": false
+      },
+      "weightedScore": 2.6999999999999997,
+      "score100": 54,
+      "warnings": [],
+      "stars": 3
+    },
+    {
+      "goldenNo": 10,
+      "code": "2.002011",
+      "name": "Đăng ký thay đổi: thành viên hợp danh; thành viên công ty trách nhiệm hữu hạn hai thành viên trở lên; người đại diện theo pháp luật của công ty trách nhiệm hữu hạn, công ty cổ phần; chủ sở hữu công ty trách nhiệm hữu hạn một thành viên; chủ doanh nghiệp tư nhân trong trường hợp bán, tặng cho doanh nghiệp, chủ doanh nghiệp chết",
+      "category": "Thành lập và hoạt động của doanh nghiệp",
+      "c1": {
+        "score": 5,
+        "state": "KNOWN",
+        "count": 115,
+        "requiredCount": 0,
+        "conditionalCount": 43,
+        "dossierSignals": 36,
+        "evidence": [
+          {
+            "name": "(i) Giấy đề nghị đăng ký thay đổi nội dung đăng ký doanh nghiệp theo Mẫu số 12 Phụ lục kèm theo Thông tư số 121/2026/TT-BTC;",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "(ii) Danh sách thành viên công ty hợp danh quy định tại Điều 25 Luật Doanh nghiệp, trong đó không bao gồm nội dung kê khai về thành viên góp vốn theo Mẫu số 9 Phụ lục I kèm theo Thông tư số 68/2025/TT-BTC.",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "(i) Giấy đề nghị đăng ký thay đổi nội dung đăng ký doanh nghiệp theo Mẫu số 12 Phụ lục kèm theo Thông tư số 121/2026/TT-BTC;",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "(ii) Danh sách thành viên công ty TNHH hai thành viên trở lên. Danh sách thành viên phải bao gồm chữ ký của thành viên mới và thành viên có phần vốn góp thay đổi, không bắt buộc phải có chữ ký của thành viên có phần vốn góp không thay đổi theo Mẫu số 6 Phụ lục I kèm theo Thông tư số 68/2025/TT-BTC;",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "(iii) Bản sao hoặc bản chính nghị quyết hoặc quyết định của Hội đồng thành viên về việc thay đổi thành viên;",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "(iv) Giấy tờ chứng minh việc góp vốn của thành viên mới của công ty;",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "(v) Bản sao giấy tờ pháp lý của tổ chức và bản sao văn bản cử người đại diện theo ủy quyền trong trường hợp thành viên mới là tổ chức. Đối với thành viên là tổ chức nước ngoài thì bản sao giấy tờ pháp lý của tổ chức phải được hợp pháp hóa lãnh sự;",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": true
+          },
+          {
+            "name": "(vi) Bản sao văn bản của cơ quan đăng ký đầu tư chấp thuận về việc góp vốn, mua cổ phần, mua phần vốn góp của nhà đầu tư nước ngoài, tổ chức kinh tế có vốn đầu tư nước ngoài đối với trường hợp phải thực hiện thủ tục đăng ký góp vốn, mua cổ phần, mua phần vốn góp theo quy định của Luật Đầu tư;",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": true
+          },
+          {
+            "name": "(vii) Hợp đồng chuyển nhượng hoặc giấy tờ chứng minh việc hoàn tất chuyển nhượng;",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "(viii) Bản sao văn bản xác nhận quyền thừa kế hợp pháp của người thừa kế;",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "(ix) Danh sách thành viên còn lại của công ty. Danh sách thành viên phải bao gồm chữ ký của thành viên có phần vốn góp thay đổi, không bắt buộc phải có chữ ký của thành viên có phần vốn góp không thay đổi theo Mẫu số 6 Phụ lục I kèm theo Thông tư số 68/2025/TT-BTC;",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "(x) Hợp đồng tặng cho phần vốn góp;",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          }
+        ]
+      },
+      "c2": {
+        "score": 4,
+        "state": "KNOWN",
+        "structuredStepCount": 3,
+        "textStepCount": 0,
+        "effectiveSteps": 3,
+        "branchSignals": 61,
+        "coordinationSignals": 9
+      },
+      "c3": {
+        "score": 5,
+        "state": "KNOWN",
+        "condition": 0,
+        "requirement": 20,
+        "branches": 42,
+        "negation": 2,
+        "thresholds": 0,
+        "totalSignal": 106
+      },
+      "c4": {
+        "score": 2,
+        "state": "KNOWN",
+        "minDays": 3,
+        "maxDays": 3,
+        "distinctValues": [
+          "3 WORKING_DAY"
+        ],
+        "rawValues": [
+          {
+            "value": 3,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 3
+          },
+          {
+            "value": 3,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 3
+          },
+          {
+            "value": 3,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 3
+          }
+        ]
+      },
+      "c5": {
+        "score": 5,
+        "state": "KNOWN",
+        "uniqueMethods": [
+          "DIRECT",
+          "POSTAL",
+          "ONLINE"
+        ],
+        "conditionalRouteSignals": 10,
+        "returnMethodCount": 2
+      },
+      "c6": {
+        "score": 2,
+        "state": "KNOWN_WITH_TEXT",
+        "roleCounts": {
+          "executing": 1,
+          "authority": 0,
+          "authorized": 0,
+          "coordinating": 0
+        },
+        "coordinationSignals": 1,
+        "actorMentions": 12,
+        "crossRole": false
+      },
+      "weightedScore": 3.7499999999999996,
+      "score100": 75,
+      "warnings": [],
+      "stars": 4
+    },
+    {
+      "goldenNo": 11,
+      "code": "1.004881",
+      "name": "Cấp Giấy chứng nhận lưu hành thuốc thú y; Cấp lại Giấy chứng nhận lưu hành thuốc thú y (trong trường hợp thay đổi thành phần, công thức, dạng bào chế, đường dùng, liều dùng, chỉ định điều trị của thuốc thú y; thay đổi phương pháp, quy trình sản xuất mà làm thay đổi chất lượng sản phẩm; đánh giá lại chất lượng, hiệu quả, độ an toàn của thuốc thú y theo quy định)",
+      "category": "",
+      "c1": {
+        "score": 5,
+        "state": "KNOWN",
+        "count": 77,
+        "requiredCount": 0,
+        "conditionalCount": 15,
+        "dossierSignals": 0,
+        "evidence": [
+          {
+            "name": "Những thông tin về thuốc gốc, thuốc Generic (tên sản phẩm, tên nhà sản xuất, công thức, dạng bào chế, công dụng, chỉ định điều trị, chống chỉ định, liều lượng sử dụng, thời gian ngừng sử dụng thuốc, những lưu ý đối với động vật được chỉ định, với người sử dụng và các đặc tính kỹ thuật khác của sản phẩm)",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": true
+          },
+          {
+            "name": "- Bản cam kết không vi phạm các quy định của luật sở hữu trí tuệ theo mẫu quy định tại Phụ lục VII ban hành kèm theo Thông tư số 13/2016/TT-BNNPTNT;",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "- Tài liệu nghiên cứu về độ ổn định và hạn sử dụng của thuốc;",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "- Tóm tắt đặc tính của sản phẩm theo mẫu quy định tại Phụ lục VIII ban hành kèm theo Thông tư số 13/2016/TT-BNNPTNT;",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "Giấy chứng nhận GMP hoặc văn bản của cơ quan nhà nước có thẩm quyền của nước sản xuất xác nhận cơ sở sản xuất đáp ứng tiêu chuẩn GMP đối với thuốc nhập khẩu hoặc Giấy chứng nhận hệ thống quản lý chất lượng (ISO) đối với hoá chất, chế phẩm sinh học nhập khẩu (trừ vắc-xin, kháng thể, KIT xét nghiệm) (bản chính hoặc bản chụp có đóng dấu xác nhận của doanh nghiệp đăng ký); Giấy chứng nhận hoặc văn bản của cơ quan thẩm quyền nước sản xuất hoặc nước xuất khẩu cấp xác nhận sản phẩm được phép lưu hành hoặc sử dụng tại quốc gia đó hoặc giấy chứng nhận hoặc văn bản của cơ quan nhà nước có thẩm quyền quốc gia khác xác nhận sản phẩm được phép lưu hành hoặc sử dụng tại quốc gia đó đối với sản phẩm chưa được cấp phép lưu hành, sử dụng tại nước sản xuất (bản chính hoặc bản chụp có đóng dấu xác nhận của doanh nghiệp đăng ký);",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": true
+          },
+          {
+            "name": "- Phiếu phân tích chất lượng sản phẩm của nhà sản xuất và phiếu phân tích chất lượng sản phẩm của cơ quan kiểm nghiệm thuốc thú y được chỉ định tại Việt Nam cấp (bản chính hoặc bản chụp có đóng dấu xác nhận của doanh nghiệp đăng ký)",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "- Đơn đăng ký lưu hành theo mẫu quy định tại Phụ lục I ban hành kèm theo Thông tư số 13/2016/TT-BNNPTNT;",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "- Mẫu nhãn sản phẩm, tờ hướng dẫn sử dụng;",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "- Các thông tin kỹ thuật khác (nếu có).",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": true
+          },
+          {
+            "name": "- Tiêu chuẩn chất lượng và phương pháp kiểm nghiệm;",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "- Kết quả khảo nghiệm;",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "- Những nghiên cứu về tồn dư trong tất cả các loài động vật được chỉ định dùng thuốc để xác định thời gian ngừng sử dụng thuốc;",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          }
+        ]
+      },
+      "c2": {
+        "score": 2,
+        "state": "KNOWN",
+        "structuredStepCount": 1,
+        "textStepCount": 0,
+        "effectiveSteps": 1,
+        "branchSignals": 5,
+        "coordinationSignals": 12
+      },
+      "c3": {
+        "score": 1,
+        "state": "KNOWN",
+        "condition": 0,
+        "requirement": 0,
+        "branches": 0,
+        "negation": 0,
+        "thresholds": 0,
+        "totalSignal": 0
+      },
+      "c4": {
+        "score": 1,
+        "state": "UNKNOWN",
+        "minDays": null,
+        "maxDays": null,
+        "distinctValues": [],
+        "rawValues": []
+      },
+      "c5": {
+        "score": 2,
+        "state": "KNOWN",
+        "uniqueMethods": [
+          "ONLINE",
+          "POSTAL",
+          "DIRECT"
+        ],
+        "conditionalRouteSignals": 0,
+        "returnMethodCount": 0
+      },
+      "c6": {
+        "score": 2,
+        "state": "KNOWN_WITH_TEXT",
+        "roleCounts": {
+          "executing": 1,
+          "authority": 0,
+          "authorized": 0,
+          "coordinating": 0
+        },
+        "coordinationSignals": 10,
+        "actorMentions": 17,
+        "crossRole": false
+      },
+      "weightedScore": 2.3,
+      "score100": 46,
+      "warnings": [],
+      "stars": 3
+    },
+    {
+      "goldenNo": 12,
+      "code": "1.014199",
+      "name": "Cấp giấy phép lao động đối với người lao động nước ngoài làm việc tại Việt Nam",
+      "category": "Việc làm",
+      "c1": {
+        "score": 5,
+        "state": "KNOWN",
+        "count": 66,
+        "requiredCount": 0,
+        "conditionalCount": 40,
+        "dossierSignals": 10,
+        "evidence": [
+          {
+            "name": "(1) Văn bản của người sử dụng lao động báo cáo giải trình nhu cầu sử dụng lao động nước ngoài và đề nghị cấp giấy phép lao động theo Mẫu số 03 Phụ lục ban hành kèm theo Nghị định số 219/2025/NĐ-CP, .",
+            "required": false,
+            "hasElectronicForm": true,
+            "isConditional": false
+          },
+          {
+            "name": "(2) Giấy khám sức khỏe do cơ sở khám bệnh, chữa bệnh có đủ điều kiện cấp, trừ trường hợp kết quả khám sức khỏe đã được kết nối, chia sẻ trên Hệ thống thông tin về quản lý hoạt động khám bệnh, chữa bệnh hoặc cơ sở dữ liệu quốc gia về y tế. Đối với giấy khám sức khỏe do cơ sở y tế có thẩm quyền của nước ngoài cấp được sử dụng trong trường hợp Việt Nam và quốc gia hoặc vùng lãnh thổ cấp giấy khám sức khỏe có điều ước hoặc thỏa thuận thừa nhận lẫn nhau và thời hạn sử dụng của giấy khám sức khỏe đó không quá 12 tháng kể từ ngày được cấp.",
+            "required": false,
+            "hasElectronicForm": true,
+            "isConditional": true
+          },
+          {
+            "name": "(3) Hộ chiếu còn thời hạn,.",
+            "required": false,
+            "hasElectronicForm": true,
+            "isConditional": false
+          },
+          {
+            "name": "(4) Phiếu lý lịch tư pháp hoặc văn bản xác nhận người lao động nước ngoài không phải là người đang trong thời gian chấp hành hình phạt hoặc chưa được xóa án tích hoặc đang trong thời gian bị truy cứu trách nhiệm hình sự là một trong các trường hợp sau:",
+            "required": false,
+            "hasElectronicForm": true,
+            "isConditional": true
+          },
+          {
+            "name": "- Phiếu lý lịch tư pháp hoặc văn bản xác nhận người lao động nước ngoài không phải là người đang trong thời gian chấp hành hình phạt hoặc chưa được xóa án tích hoặc đang trong thời gian bị truy cứu trách nhiệm hình sự của Việt Nam cấp không quá 6 tháng, kể từ ngày cấp đến ngày nộp hồ sơ, trừ trường hợp đã thực hiện liên thông thủ tục hành chính về cấp Phiếu lý lịch tư pháp và cấp giấy phép lao động theo quy định tại khoản 3 Điều 6 Nghị định số 219/2025/NĐ-CP.",
+            "required": false,
+            "hasElectronicForm": true,
+            "isConditional": true
+          },
+          {
+            "name": "- Phiếu lý lịch tư pháp hoặc văn bản xác nhận người lao động nước ngoài không phải là người đang trong thời gian chấp hành hình phạt hoặc chưa được xóa án tích hoặc đang trong thời gian bị truy cứu trách nhiệm hình sự của nước ngoài cấp không quá 6 tháng, kể từ ngày cấp đến ngày nộp hồ sơ.",
+            "required": false,
+            "hasElectronicForm": true,
+            "isConditional": false
+          },
+          {
+            "name": "(5) 02 ảnh màu (kích thước 4 cm x 6 cm, phông nền trắng, mặt nhìn thẳng, đầu để trần, không đeo kính),.",
+            "required": false,
+            "hasElectronicForm": true,
+            "isConditional": false
+          },
+          {
+            "name": "(6) Giấy tờ chứng minh người lao động nước ngoài là nhà quản lý là một trong các giấy tờ sau:",
+            "required": false,
+            "hasElectronicForm": true,
+            "isConditional": false
+          },
+          {
+            "name": "+ Điều lệ công ty và giấy tờ chứng minh là nhà quản lý hoặc văn bản bổ nhiệm, điều động đối với các vị trí là nhà quản lý theo quy định tại khoản 24 Điều 4 Luật Doanh nghiệp;",
+            "required": false,
+            "hasElectronicForm": true,
+            "isConditional": true
+          },
+          {
+            "name": "+ Giấy phép thành lập cơ quan, tổ chức hoặc văn bản bổ nhiệm, điều động đối với người đứng đầu, cấp phó của người đứng đầu cơ quan, tổ chức.",
+            "required": false,
+            "hasElectronicForm": true,
+            "isConditional": true
+          },
+          {
+            "name": "(7) Giấy tờ chứng minh hình thức làm việc của người lao động nước ngoài là một trong những giấy tờ sau:",
+            "required": false,
+            "hasElectronicForm": true,
+            "isConditional": false
+          },
+          {
+            "name": "(7.1) Đối với hình thức là di chuyển trong nội bộ doanh nghiệp: Văn bản của người sử dụng lao động tại nước ngoài cử người lao động nước ngoài sang làm việc có thời hạn tại hiện diện thương mại trên lãnh thổ Việt Nam và xác nhận đã được người sử dụng lao động tại nước ngoài tuyển dụng trước đó ít nhất 12 tháng liên tục ngay trước khi vào Việt Nam làm việc.",
+            "required": false,
+            "hasElectronicForm": true,
+            "isConditional": true
+          }
+        ]
+      },
+      "c2": {
+        "score": 3,
+        "state": "KNOWN",
+        "structuredStepCount": 3,
+        "textStepCount": 0,
+        "effectiveSteps": 3,
+        "branchSignals": 9,
+        "coordinationSignals": 0
+      },
+      "c3": {
+        "score": 4,
+        "state": "KNOWN",
+        "condition": 0,
+        "requirement": 0,
+        "branches": 8,
+        "negation": 0,
+        "thresholds": 0,
+        "totalSignal": 16
+      },
+      "c4": {
+        "score": 4,
+        "state": "CONFLICT",
+        "minDays": 3,
+        "maxDays": 10,
+        "distinctValues": [
+          "10 WORKING_DAY",
+          "3 WORKING_DAY"
+        ],
+        "rawValues": [
+          {
+            "value": 10,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 10
+          },
+          {
+            "value": 10,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 10
+          },
+          {
+            "value": 10,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 10
+          },
+          {
+            "value": 3,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 3
+          },
+          {
+            "value": 3,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 3
+          },
+          {
+            "value": 3,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 3
+          }
+        ]
+      },
+      "c5": {
+        "score": 4,
+        "state": "KNOWN",
+        "uniqueMethods": [
+          "ONLINE",
+          "POSTAL",
+          "DIRECT"
+        ],
+        "conditionalRouteSignals": 12,
+        "returnMethodCount": 0
+      },
+      "c6": {
+        "score": 1,
+        "state": "KNOWN_WITH_TEXT",
+        "roleCounts": {
+          "executing": 0,
+          "authority": 0,
+          "authorized": 0,
+          "coordinating": 0
+        },
+        "coordinationSignals": 2,
+        "actorMentions": 3,
+        "crossRole": false
+      },
+      "weightedScore": 3.4000000000000004,
+      "score100": 68,
+      "warnings": [
+        "PROCESSING_TIME_CONFLICT"
+      ],
+      "stars": 4
+    },
+    {
+      "goldenNo": 13,
+      "code": "1.001226",
+      "name": "Cấp giấy phép đến các tỉnh, thành phố của Việt Nam cho công dân Lào nhập cảnh bằng Giấy thông hành biên giới tại Công an cấp tỉnh",
+      "category": "",
+      "c1": {
+        "score": 1,
+        "state": "KNOWN",
+        "count": 2,
+        "requiredCount": 0,
+        "conditionalCount": 0,
+        "dossierSignals": 0,
+        "evidence": [
+          {
+            "name": "Tờ khai đề nghị cấp giấy phép đến các tỉnh, thành phố của Việt Nam (mẫu N24 ban hành kèm theo Thông tư số 41/2011/TT-BCA, ngày 29/06/2011 của Bộ Công an)",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "Giấy thông hành biên giới của người đề nghị cấp giấy phép",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          }
+        ]
+      },
+      "c2": {
+        "score": 1,
+        "state": "KNOWN",
+        "structuredStepCount": 1,
+        "textStepCount": 0,
+        "effectiveSteps": 1,
+        "branchSignals": 3,
+        "coordinationSignals": 1
+      },
+      "c3": {
+        "score": 1,
+        "state": "KNOWN",
+        "condition": 0,
+        "requirement": 0,
+        "branches": 0,
+        "negation": 0,
+        "thresholds": 0,
+        "totalSignal": 0
+      },
+      "c4": {
+        "score": 1,
+        "state": "KNOWN",
+        "minDays": 1,
+        "maxDays": 1,
+        "distinctValues": [
+          "1 WORKING_DAY"
+        ],
+        "rawValues": [
+          {
+            "value": 1,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 1
+          }
+        ]
+      },
+      "c5": {
+        "score": 1,
+        "state": "KNOWN",
+        "uniqueMethods": [
+          "DIRECT"
+        ],
+        "conditionalRouteSignals": 0,
+        "returnMethodCount": 0
+      },
+      "c6": {
+        "score": 3,
+        "state": "KNOWN_WITH_TEXT",
+        "roleCounts": {
+          "executing": 1,
+          "authority": 1,
+          "authorized": 0,
+          "coordinating": 0
+        },
+        "coordinationSignals": 1,
+        "actorMentions": 11,
+        "crossRole": true
+      },
+      "weightedScore": 1.4000000000000001,
+      "score100": 28,
+      "warnings": [],
+      "stars": 2
+    },
+    {
+      "goldenNo": 14,
+      "code": "1.003677",
+      "name": "Khai báo tạm vắng",
+      "category": "",
+      "c1": {
+        "score": 2,
+        "state": "KNOWN",
+        "count": 3,
+        "requiredCount": 0,
+        "conditionalCount": 0,
+        "dossierSignals": 0,
+        "evidence": [
+          {
+            "name": "+ Đề nghị khai báo tạm vắng;",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "+ Văn bản đồng ý của cơ quan có thẩm quyền giám sát, quản lý, giáo dục người đó.",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "Nội dung khai báo tạm vắng gồm: họ và tên, số định danh cá nhân hoặc số Chứng minh nhân dân, số hộ chiếu của người khai báo tạm vắng; lý do tạm vắng; thời gian tạm vắng; địa chỉ nơi đến.",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          }
+        ]
+      },
+      "c2": {
+        "score": 2,
+        "state": "KNOWN",
+        "structuredStepCount": 1,
+        "textStepCount": 0,
+        "effectiveSteps": 1,
+        "branchSignals": 6,
+        "coordinationSignals": 1
+      },
+      "c3": {
+        "score": 2,
+        "state": "KNOWN",
+        "condition": 0,
+        "requirement": 0,
+        "branches": 2,
+        "negation": 0,
+        "thresholds": 0,
+        "totalSignal": 4
+      },
+      "c4": {
+        "score": 3,
+        "state": "CONFLICT",
+        "minDays": 1,
+        "maxDays": 2,
+        "distinctValues": [
+          "1 WORKING_DAY",
+          "2 WORKING_DAY"
+        ],
+        "rawValues": [
+          {
+            "value": 1,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 1
+          },
+          {
+            "value": 2,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 2
+          }
+        ]
+      },
+      "c5": {
+        "score": 1,
+        "state": "KNOWN",
+        "uniqueMethods": [
+          "ONLINE"
+        ],
+        "conditionalRouteSignals": 2,
+        "returnMethodCount": 0
+      },
+      "c6": {
+        "score": 2,
+        "state": "KNOWN_WITH_TEXT",
+        "roleCounts": {
+          "executing": 1,
+          "authority": 1,
+          "authorized": 0,
+          "coordinating": 0
+        },
+        "coordinationSignals": 0,
+        "actorMentions": 7,
+        "crossRole": true
+      },
+      "weightedScore": 2.0500000000000003,
+      "score100": 41,
+      "warnings": [
+        "PROCESSING_TIME_CONFLICT"
+      ],
+      "stars": 3
+    },
+    {
+      "goldenNo": 15,
+      "code": "1.014999",
+      "name": "Thủ tục đăng ký sáng chế",
+      "category": "Sở hữu trí tuệ",
+      "c1": {
+        "score": 3,
+        "state": "KNOWN",
+        "count": 8,
+        "requiredCount": 0,
+        "conditionalCount": 6,
+        "dossierSignals": 0,
+        "evidence": [
+          {
+            "name": "Tờ khai đăng ký sáng chế",
+            "required": false,
+            "hasElectronicForm": true,
+            "isConditional": false
+          },
+          {
+            "name": "Bản mô tả, trong đó có yêu cầu bảo hộ (01 bản, bao gồm cả  hình vẽ, nếu có);",
+            "required": false,
+            "hasElectronicForm": true,
+            "isConditional": true
+          },
+          {
+            "name": "Bản tóm tắt sáng chế (01 bản);",
+            "required": false,
+            "hasElectronicForm": true,
+            "isConditional": false
+          },
+          {
+            "name": "Tài liệu chứng minh quyền đăng ký nếu người nộp đơn thụ  hưởng quyền đăng ký của người khác (nếu có);+ Bản sao đơn hoặc các đơn đầu tiên của cơ quan đã nhận đơn  đầu tiên, trừ đơn PCT).  + Giấy chuyển nhượng quyền ưu tiên nếu quyền đó được thụ  hưởng từ người khác.",
+            "required": false,
+            "hasElectronicForm": true,
+            "isConditional": true
+          },
+          {
+            "name": "Tài liệu thuyết minh về nguồn gốc của nguồn gen hoặc tri thức  truyền thống về nguồn gen trong đơn đăng ký sáng chế, đối với  sáng chế được trực tiếp tạo ra dựa trên nguồn gen hoặc tri thức  truyền thống về nguồn gen;",
+            "required": false,
+            "hasElectronicForm": true,
+            "isConditional": true
+          },
+          {
+            "name": "Văn bản ủy quyền (nếu nộp đơn thông qua đại diện)",
+            "required": false,
+            "hasElectronicForm": true,
+            "isConditional": true
+          },
+          {
+            "name": "Tài liệu khác bổ trợ cho đơn (nếu có).",
+            "required": false,
+            "hasElectronicForm": true,
+            "isConditional": true
+          },
+          {
+            "name": "Đối với đơn đăng ký sáng chế mật ngoài các tài liệu nêu trên  đóng dấu mật theo quy định của pháp luật về bảo vệ bí mật nhà  nước, người nộp đơn cần nộp văn bản xác nhận đối tượng đăng  ký trong đơn là bí mật nhà nước theo quy định của pháp luật về  bảo vệ bí mật nhà nước",
+            "required": false,
+            "hasElectronicForm": true,
+            "isConditional": true
+          }
+        ]
+      },
+      "c2": {
+        "score": 3,
+        "state": "KNOWN",
+        "structuredStepCount": 1,
+        "textStepCount": 0,
+        "effectiveSteps": 1,
+        "branchSignals": 44,
+        "coordinationSignals": 50
+      },
+      "c3": {
+        "score": 3,
+        "state": "KNOWN",
+        "condition": 0,
+        "requirement": 4,
+        "branches": 2,
+        "negation": 2,
+        "thresholds": 0,
+        "totalSignal": 10
+      },
+      "c4": {
+        "score": 5,
+        "state": "KNOWN",
+        "minDays": 420,
+        "maxDays": 420,
+        "distinctValues": [
+          "420 DAY"
+        ],
+        "rawValues": [
+          {
+            "value": 420,
+            "unit": "DAY",
+            "source": "executionMethods",
+            "days": 420
+          },
+          {
+            "value": 420,
+            "unit": "DAY",
+            "source": "executionMethods",
+            "days": 420
+          },
+          {
+            "value": 420,
+            "unit": "DAY",
+            "source": "executionMethods",
+            "days": 420
+          }
+        ]
+      },
+      "c5": {
+        "score": 4,
+        "state": "KNOWN",
+        "uniqueMethods": [
+          "DIRECT",
+          "ONLINE",
+          "POSTAL"
+        ],
+        "conditionalRouteSignals": 18,
+        "returnMethodCount": 0
+      },
+      "c6": {
+        "score": 3,
+        "state": "KNOWN_WITH_TEXT",
+        "roleCounts": {
+          "executing": 1,
+          "authority": 1,
+          "authorized": 0,
+          "coordinating": 0
+        },
+        "coordinationSignals": 44,
+        "actorMentions": 118,
+        "crossRole": true
+      },
+      "weightedScore": 3.4000000000000004,
+      "score100": 68,
+      "warnings": [],
+      "stars": 4
+    },
+    {
+      "goldenNo": 16,
+      "code": "1.015003",
+      "name": "Thủ tục xử lý đơn Madrid có chỉ định Việt Nam",
+      "category": "Sở hữu trí tuệ",
+      "c1": {
+        "score": 0,
+        "state": "KNOWN",
+        "count": 0,
+        "requiredCount": 0,
+        "conditionalCount": 0,
+        "dossierSignals": 0,
+        "evidence": []
+      },
+      "c2": {
+        "score": 2,
+        "state": "KNOWN",
+        "structuredStepCount": 1,
+        "textStepCount": 0,
+        "effectiveSteps": 1,
+        "branchSignals": 10,
+        "coordinationSignals": 4
+      },
+      "c3": {
+        "score": 2,
+        "state": "KNOWN",
+        "condition": 0,
+        "requirement": 0,
+        "branches": 2,
+        "negation": 0,
+        "thresholds": 0,
+        "totalSignal": 4
+      },
+      "c4": {
+        "score": 5,
+        "state": "KNOWN",
+        "minDays": 360,
+        "maxDays": 360,
+        "distinctValues": [
+          "360 WORKING_DAY"
+        ],
+        "rawValues": [
+          {
+            "value": 360,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 360
+          },
+          {
+            "value": 360,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 360
+          },
+          {
+            "value": 360,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 360
+          }
+        ]
+      },
+      "c5": {
+        "score": 2,
+        "state": "KNOWN",
+        "uniqueMethods": [
+          "DIRECT",
+          "ONLINE",
+          "POSTAL"
+        ],
+        "conditionalRouteSignals": 0,
+        "returnMethodCount": 0
+      },
+      "c6": {
+        "score": 3,
+        "state": "KNOWN_WITH_TEXT",
+        "roleCounts": {
+          "executing": 1,
+          "authority": 1,
+          "authorized": 0,
+          "coordinating": 0
+        },
+        "coordinationSignals": 2,
+        "actorMentions": 53,
+        "crossRole": true
+      },
+      "weightedScore": 2.25,
+      "score100": 45,
+      "warnings": [],
+      "stars": 3
+    },
+    {
+      "goldenNo": 17,
+      "code": "1.000807",
+      "name": "Cấp lại giấy miễn thị thực tại Cục Quản lý xuất nhập cảnh, Bộ Công an",
+      "category": "Quản lý xuất nhập cảnh",
+      "c1": {
+        "score": 3,
+        "state": "KNOWN",
+        "count": 9,
+        "requiredCount": 0,
+        "conditionalCount": 2,
+        "dossierSignals": 4,
+        "evidence": [
+          {
+            "name": "Người Việt Nam định cư ở nước ngoài nộp bản sao được chứng thực từ bản chính hoặc kèm theo bản chính để đối chiếu một trong các giấy tờ sau: Giấy khai sinh, quyết định cho thôi quốc tịch Việt Nam hoặc giấy xác nhận mất quốc tịch Việt Nam, giấy tờ khác có ghi quốc tịch Việt Nam hoặc có giá trị chứng minh có quốc tịch Việt Nam trước đây của người đó;",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "Người nước ngoài nộp bản sao được chứng thực từ bản chính hoặc kèm theo bản chính để đối chiếu giấy tờ chứng minh là vợ, chồng, con của công dân Việt Nam hoặc của người Việt Nam định cư ở nước ngoài.",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "Hộ chiếu hoặc giấy tờ có giá trị đi lại quốc tế hoặc giấy tờ cho phép thường trú do cơ quan có thẩm quyền của nước ngoài cấp cho người Việt Nam định cư ở nước ngoài.",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "Giấy miễn thị thực, nếu mất phải có đơn trình báo.",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": true
+          },
+          {
+            "name": "01 Tờ khai đề nghị cấp Giấy miễn thị thực (Mẫu NA9).",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "Bản sao chứng thực từ bản chính hoặc kèm theo bản chính để đối chiếu giấy tờ chứng minh nội dung cần điều chỉnh trong giấy miễn thị thực.",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "Trường hợp nộp hồ sơ trực tuyến thì hộ chiếu hoặc giấy tờ có giá trị đi lại quốc tế hoặc giấy tờ cho phép thường trú do cơ quan có thẩm quyền của nước ngoài cấp cho người Việt Nam định cư ở nước ngoài  phải gửi qua dịch vụ bưu chính công ích về cơ quan tiếp nhận; thành phần hồ sơ khác phải được chứng thực điện tử theo quy định, trường hợp chưa được chứng thực điện tử thì gửi hồ sơ về cơ quan tiếp nhận thông qua dịch vụ bưu chính công ích.",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": true
+          },
+          {
+            "name": "* Số lượng hồ sơ: 01 (một) bộ.",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "02 ảnh mới chụp, cỡ 4cm x 6cm, phông nền trắng, mặt nhìn thẳng, đầu để trần, không đeo kính màu (01 ảnh dán vào tờ khai, 01 ảnh để rời).",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          }
+        ]
+      },
+      "c2": {
+        "score": 2,
+        "state": "KNOWN",
+        "structuredStepCount": 1,
+        "textStepCount": 0,
+        "effectiveSteps": 1,
+        "branchSignals": 8,
+        "coordinationSignals": 2
+      },
+      "c3": {
+        "score": 2,
+        "state": "KNOWN",
+        "condition": 0,
+        "requirement": 0,
+        "branches": 2,
+        "negation": 2,
+        "thresholds": 0,
+        "totalSignal": 6
+      },
+      "c4": {
+        "score": 2,
+        "state": "KNOWN",
+        "minDays": 5,
+        "maxDays": 5,
+        "distinctValues": [
+          "5 DAY"
+        ],
+        "rawValues": [
+          {
+            "value": 5,
+            "unit": "DAY",
+            "source": "executionMethods",
+            "days": 5
+          },
+          {
+            "value": 5,
+            "unit": "DAY",
+            "source": "executionMethods",
+            "days": 5
+          },
+          {
+            "value": 5,
+            "unit": "DAY",
+            "source": "executionMethods",
+            "days": 5
+          }
+        ]
+      },
+      "c5": {
+        "score": 4,
+        "state": "KNOWN",
+        "uniqueMethods": [
+          "ONLINE",
+          "POSTAL",
+          "DIRECT"
+        ],
+        "conditionalRouteSignals": 3,
+        "returnMethodCount": 2
+      },
+      "c6": {
+        "score": 3,
+        "state": "KNOWN_WITH_TEXT",
+        "roleCounts": {
+          "executing": 1,
+          "authority": 1,
+          "authorized": 0,
+          "coordinating": 0
+        },
+        "coordinationSignals": 1,
+        "actorMentions": 23,
+        "crossRole": true
+      },
+      "weightedScore": 2.6,
+      "score100": 52,
+      "warnings": [],
+      "stars": 3
+    },
+    {
+      "goldenNo": 18,
+      "code": "1.000811",
+      "name": "Cấp mới thẻ ABTC (thực hiện tại cấp trung ương)",
+      "category": "Quản lý xuất nhập cảnh",
+      "c1": {
+        "score": 2,
+        "state": "KNOWN",
+        "count": 5,
+        "requiredCount": 0,
+        "conditionalCount": 0,
+        "dossierSignals": 0,
+        "evidence": [
+          {
+            "name": "Tờ khai đề nghị cấp thẻ ABTC theo mẫu AP05 (có đóng dấu giáp lai ảnh và xác nhận của lãnh đạo cơ quan tổ chức cán bộ của các ngành kinh tế, cơ quan quản lý nhà nước chuyên ngành về hoạt động của các doanh nghiệp hoặc lãnh đạo cơ quan, tổ chức hoặc người đại diện theo pháp luật của doanh nghiệp hoặc người được người đại diện theo pháp luật của doanh nghiệp ủy quyền xác nhận lời khai trên là đúng)",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "Bản chính văn bản đồng ý cho phép sử dụng thẻ của cấp có thẩm quyền",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "+ 02 ảnh mới chụp, cỡ 3cm x 4cm, đầu để trần, mặt nhìn thẳng, không đeo kính, phông nền màu trắng.",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "Bản chính văn bản đề nghị cấp thẻ ABTC do lãnh đạo của cơ quan, tổ chức hoặc người đại diện theo pháp luật của doanh nghiệp hoặc người được người đại diện theo pháp luật của doanh nghiệp ủy quyền ký theo mẫu AP03",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "* Số lượng hồ sơ: 01 (một) bộ.",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          }
+        ]
+      },
+      "c2": {
+        "score": 2,
+        "state": "KNOWN",
+        "structuredStepCount": 1,
+        "textStepCount": 0,
+        "effectiveSteps": 1,
+        "branchSignals": 7,
+        "coordinationSignals": 2
+      },
+      "c3": {
+        "score": 3,
+        "state": "KNOWN",
+        "condition": 0,
+        "requirement": 0,
+        "branches": 4,
+        "negation": 4,
+        "thresholds": 0,
+        "totalSignal": 12
+      },
+      "c4": {
+        "score": 5,
+        "state": "CONFLICT",
+        "minDays": 21,
+        "maxDays": 21,
+        "distinctValues": [
+          "21 DAY",
+          "21 WORKING_DAY"
+        ],
+        "rawValues": [
+          {
+            "value": 21,
+            "unit": "DAY",
+            "source": "executionMethods",
+            "days": 21
+          },
+          {
+            "value": 21,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 21
+          },
+          {
+            "value": 21,
+            "unit": "DAY",
+            "source": "executionMethods",
+            "days": 21
+          }
+        ]
+      },
+      "c5": {
+        "score": 3,
+        "state": "KNOWN",
+        "uniqueMethods": [
+          "ONLINE",
+          "POSTAL",
+          "DIRECT"
+        ],
+        "conditionalRouteSignals": 0,
+        "returnMethodCount": 2
+      },
+      "c6": {
+        "score": 3,
+        "state": "KNOWN_WITH_TEXT",
+        "roleCounts": {
+          "executing": 1,
+          "authority": 1,
+          "authorized": 0,
+          "coordinating": 0
+        },
+        "coordinationSignals": 0,
+        "actorMentions": 24,
+        "crossRole": true
+      },
+      "weightedScore": 2.9,
+      "score100": 58,
+      "warnings": [
+        "PROCESSING_TIME_CONFLICT"
+      ],
+      "stars": 3
+    },
+    {
+      "goldenNo": 19,
+      "code": "1.013742",
+      "name": "Cấp giấy đăng ký lưu hành thuốc, nguyên liệu làm thuốc",
+      "category": "",
+      "c1": {
+        "score": 5,
+        "state": "KNOWN",
+        "count": 48,
+        "requiredCount": 0,
+        "conditionalCount": 31,
+        "dossierSignals": 192,
+        "evidence": [
+          {
+            "name": "I. Hồ sơ hành chính:",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "1. Đơn đăng ký theo Mẫu 4A/TT ban hành kèm theo Thông tư số 12/2025/TT-BYT.",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "2. Các giấy ủy quyền trong hồ sơ đăng ký thuốc, nguyên liệu làm thuốc:",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "a) Giấy ủy quyền đứng tên cơ sở đăng ký trong trường hợp cơ sở đăng ký không phải là cơ sở sản xuất;",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": true
+          },
+          {
+            "name": "b) Giấy ủy quyền ký tên trên hồ sơ đăng ký thuốc, nguyên liệu làm thuốc (nếu có).",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": true
+          },
+          {
+            "name": "3. CPP (đối với hồ sơ đăng ký thuốc nhập khẩu).",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": true
+          },
+          {
+            "name": "4. Giấy phép sản xuất, kinh doanh thuốc tại nước sở tại; giấy phép thành lập Văn phòng đại diện tại Việt Nam (đối với cơ sở đăng ký nước ngoài).",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": true
+          },
+          {
+            "name": "5. Giấy chứng nhận đủ điều kiện kinh doanh dược (đối với cơ sở đăng ký của Việt Nam).",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": true
+          },
+          {
+            "name": "6. Giấy tờ pháp lý của cơ sở sản xuất dược chất, tá dược, vỏ nang, dược liệu theo quy định tại khoản 7 Điều 22 Thông tư số 12/2025/TT-BYT.",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "7. Giấy chứng nhận nguyên liệu làm thuốc được phép sản xuất hoặc lưu hành ở nước sản xuất (đối với hồ sơ đăng ký nguyên liệu làm thuốc sản xuất tại nước ngoài).",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": true
+          },
+          {
+            "name": "8. Mẫu nhãn thuốc, nguyên liệu làm thuốc và tờ hướng dẫn sử dụng:",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "a) Của thuốc, nguyên liệu làm thuốc dự kiến lưu hành tại Việt Nam;",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          }
+        ]
+      },
+      "c2": {
+        "score": 5,
+        "state": "KNOWN",
+        "structuredStepCount": 6,
+        "textStepCount": 0,
+        "effectiveSteps": 6,
+        "branchSignals": 189,
+        "coordinationSignals": 195
+      },
+      "c3": {
+        "score": 5,
+        "state": "KNOWN",
+        "condition": 0,
+        "requirement": 26,
+        "branches": 170,
+        "negation": 6,
+        "thresholds": 10,
+        "totalSignal": 382
+      },
+      "c4": {
+        "score": 5,
+        "state": "KNOWN",
+        "minDays": 360,
+        "maxDays": 360,
+        "distinctValues": [
+          "12 MONTH"
+        ],
+        "rawValues": [
+          {
+            "value": 12,
+            "unit": "MONTH",
+            "source": "executionMethods",
+            "days": 360
+          },
+          {
+            "value": 12,
+            "unit": "MONTH",
+            "source": "executionMethods",
+            "days": 360
+          },
+          {
+            "value": 12,
+            "unit": "MONTH",
+            "source": "executionMethods",
+            "days": 360
+          }
+        ]
+      },
+      "c5": {
+        "score": 4,
+        "state": "KNOWN",
+        "uniqueMethods": [
+          "DIRECT",
+          "ONLINE",
+          "POSTAL"
+        ],
+        "conditionalRouteSignals": 9,
+        "returnMethodCount": 0
+      },
+      "c6": {
+        "score": 2,
+        "state": "KNOWN_WITH_TEXT",
+        "roleCounts": {
+          "executing": 1,
+          "authority": 0,
+          "authorized": 0,
+          "coordinating": 0
+        },
+        "coordinationSignals": 32,
+        "actorMentions": 59,
+        "crossRole": false
+      },
+      "weightedScore": 4.3,
+      "score100": 86,
+      "warnings": [],
+      "stars": 5
+    },
+    {
+      "goldenNo": 20,
+      "code": "1.007659",
+      "name": "Thủ tục miễn thuế đối với hàng hóa xuất khẩu, nhập khẩu",
+      "category": "Hải quan",
+      "c1": {
+        "score": 5,
+        "state": "KNOWN",
+        "count": 43,
+        "requiredCount": 0,
+        "conditionalCount": 34,
+        "dossierSignals": 12,
+        "evidence": [
+          {
+            "name": "- Hồ sơ miễn thuế là hồ sơ hải quan theo quy định tại Luật số 54/2015/QH13 và các văn bản hướng dẫn thi hành.",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "- Ngoài ra, tùy từng trường hợp, người nộp thuế nộp thêm một trong các chứng từ sau: + Hợp đồng ủy thác trong trường hợp ủy thác xuất khẩu, nhập khẩu hàng hóa;",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": true
+          },
+          {
+            "name": "+ Hợp đồng cung cấp hàng hóa theo văn bản trúng thầu hoặc văn bản chỉ định thầu trong đó ghi rõ giá cung cấp hàng hóa không bao gồm thuế nhập khẩu;",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "+ Hợp đồng cung cấp hàng hóa cho tổ chức, cá nhân tiến hành hoạt động dầu khí trong đó ghi rõ giá cung cấp hàng hóa không bao gồm thuế nhập khẩu trong trường hợp tổ chức, cá nhân nhập khẩu hàng hóa cho hoạt động dầu khí;",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": true
+          },
+          {
+            "name": "+ Hợp đồng cho thuê tài chính trong trường hợp Công ty cho thuê tài chính nhập khẩu hàng hóa cung cấp cho đối tượng được hưởng ưu đãi miễn thuế, trong đó ghi rõ giá cung cấp hàng hóa không bao gồm thuế nhập khẩu;",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": true
+          },
+          {
+            "name": "+ Chứng từ chuyển nhượng hàng hóa thuộc đối tượng miễn thuế đối với trường hợp hàng hóa thuộc đối tượng miễn thuế chuyển nhượng cho đối tượng miễn thuế khác, trong đó ghi rõ giá chuyển nhượng hàng hóa không bao gồm thuế nhập khẩu;",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": true
+          },
+          {
+            "name": "+ Danh mục miễn thuế đã được cơ quan hải quan tiếp nhận đối với trường hợp thông báo Danh mục miễn thuế bằng giấy kèm Phiếu theo dõi trừ lùi đã được cơ quan hải quan tiếp nhận. Trường hợp thông báo Danh mục miễn thuế thông qua Hệ thống xử lý dữ liệu điện tử, người nộp thuế không phải nộp Danh mục miễn thuế, cơ quan hải quan sử dụng Danh mục miễn thuế trên Hệ thống xử lý dữ liệu điện tử để thực hiện miễn thuế theo quy định.",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": true
+          },
+          {
+            "name": "+ Quyết định miễn thuế của Thủ tướng Chính phủ đối với trường hợp quy định tại các điểm a, điểm b và điểm đ khoản 1 Điều 28 Nghị định số 134/2016/NĐ-CP được sửa đổi, bổ sung bởi Nghị định số 18/2021/NĐ-CP;",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": true
+          },
+          {
+            "name": "+ Người nộp thuế tự kê khai và chịu trách nhiệm đối với hàng hóa nhập khẩu miễn thuế là phương tiện vận tải chuyên dùng quy định tại điểm b khoản 11, điểm a khoản 15 và điểm a khoản 16 Điều 16 Luật số 107/2016/QH13",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": true
+          },
+          {
+            "name": "Sổ định mức miễn thuế;",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "- Giấy tờ chứng minh đã hoàn thành việc tái xuất khẩu hoặc tiêu hủy hoặc chuyển nhượng đối với các trường hợp quy định tại khoản 5 Điều 5 Nghị định số 134/2016/NĐ-CP;",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": true
+          },
+          {
+            "name": "- Văn bản xác nhận của Bộ Ngoại giao đối với trường hợp nhập khẩu hàng hóa quy định tại khoản 2, khoản 3 Điều 5 Nghị định số 134/2016/NĐ-CP được sửa đổi, bổ sung tại khoản 2 Điều 1 Nghị định số 18/2021/NĐ-CP;",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": true
+          }
+        ]
+      },
+      "c2": {
+        "score": 3,
+        "state": "KNOWN",
+        "structuredStepCount": 1,
+        "textStepCount": 0,
+        "effectiveSteps": 1,
+        "branchSignals": 76,
+        "coordinationSignals": 19
+      },
+      "c3": {
+        "score": 5,
+        "state": "KNOWN",
+        "condition": 0,
+        "requirement": 0,
+        "branches": 64,
+        "negation": 10,
+        "thresholds": 2,
+        "totalSignal": 140
+      },
+      "c4": {
+        "score": 1,
+        "state": "UNKNOWN",
+        "minDays": null,
+        "maxDays": null,
+        "distinctValues": [],
+        "rawValues": []
+      },
+      "c5": {
+        "score": 5,
+        "state": "KNOWN",
+        "uniqueMethods": [
+          "ONLINE",
+          "DIRECT",
+          "POSTAL"
+        ],
+        "conditionalRouteSignals": 7,
+        "returnMethodCount": 2
+      },
+      "c6": {
+        "score": 2,
+        "state": "KNOWN_WITH_TEXT",
+        "roleCounts": {
+          "executing": 1,
+          "authority": 0,
+          "authorized": 0,
+          "coordinating": 0
+        },
+        "coordinationSignals": 7,
+        "actorMentions": 11,
+        "crossRole": false
+      },
+      "weightedScore": 3.4,
+      "score100": 68,
+      "warnings": [],
+      "stars": 4
+    },
+    {
+      "goldenNo": 21,
+      "code": "1.009646",
+      "name": "Thủ tục chấp thuận điều chỉnh chủ trương đầu tư thuộc thẩm quyền của Chủ tịch Uỷ ban nhân dân cấp tỉnh",
+      "category": "Đầu tư tại Việt nam",
+      "c1": {
+        "score": 5,
+        "state": "KNOWN",
+        "count": 46,
+        "requiredCount": 0,
+        "conditionalCount": 15,
+        "dossierSignals": 0,
+        "evidence": [
+          {
+            "name": "Văn bản đề nghị điều chỉnh dự án đầu tư;",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "Quyết định của nhà đầu tư về việc điều chỉnh dự án đầu tư đối với nhà đầu tư là tổ chức",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": true
+          },
+          {
+            "name": "Giải trình hoặc cung cấp tài liệu liên quan đến việc điều chỉnh những nội dung quy định tại các điểm b, c, d, đ, e, g và h khoản 1 Điều 31 Nghị định số 96/2026/NĐ-CP (nếu có)",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": true
+          },
+          {
+            "name": "Bản sao Giấy chứng nhận đăng ký đầu tư; Quyết định chấp thuận chủ trương đầu tư; Quyết định chấp thuận nhà đầu tư (nếu có)",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": true
+          },
+          {
+            "name": "Bản sao Hợp đồng BCC (đối với dự án đầu tư theo hình thức Hợp đồng BCC)",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": true
+          },
+          {
+            "name": "Báo cáo tình hình thực hiện dự án đầu tư đến thời điểm chuyển nhượng dự án đầu tư",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "Tài liệu về tư cách pháp lý của nhà đầu tư chuyển nhượng và nhận chuyển nhượng",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "Hợp đồng hoặc hợp đồng nguyên tắc về việc chuyển nhượng một phần hoặc toàn bộ dự án đầu tư",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "Văn bản đề nghị điều chỉnh dự án đầu tư",
+            "required": false,
+            "hasElectronicForm": true,
+            "isConditional": false
+          },
+          {
+            "name": "Văn bản đề nghị điều chỉnh dự án đầu tư",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "Hợp đồng chuyển nhượng dự án đầu tư giữa bên nhận bảo đảm và nhà đầu tư nhận chuyển nhượng",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "Tài liệu khác (nếu có)",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": true
+          }
+        ]
+      },
+      "c2": {
+        "score": 4,
+        "state": "KNOWN",
+        "structuredStepCount": 3,
+        "textStepCount": 0,
+        "effectiveSteps": 3,
+        "branchSignals": 113,
+        "coordinationSignals": 16
+      },
+      "c3": {
+        "score": 5,
+        "state": "KNOWN",
+        "condition": 0,
+        "requirement": 0,
+        "branches": 92,
+        "negation": 2,
+        "thresholds": 0,
+        "totalSignal": 186
+      },
+      "c4": {
+        "score": 4,
+        "state": "KNOWN",
+        "minDays": 17,
+        "maxDays": 17,
+        "distinctValues": [
+          "17 WORKING_DAY"
+        ],
+        "rawValues": [
+          {
+            "value": 17,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 17
+          },
+          {
+            "value": 17,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 17
+          },
+          {
+            "value": 17,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 17
+          }
+        ]
+      },
+      "c5": {
+        "score": 4,
+        "state": "KNOWN",
+        "uniqueMethods": [
+          "DIRECT",
+          "ONLINE",
+          "POSTAL"
+        ],
+        "conditionalRouteSignals": 9,
+        "returnMethodCount": 0
+      },
+      "c6": {
+        "score": 4,
+        "state": "KNOWN_WITH_TEXT",
+        "roleCounts": {
+          "executing": 2,
+          "authority": 1,
+          "authorized": 0,
+          "coordinating": 0
+        },
+        "coordinationSignals": 4,
+        "actorMentions": 28,
+        "crossRole": true
+      },
+      "weightedScore": 4.35,
+      "score100": 87,
+      "warnings": [],
+      "stars": 5
+    },
+    {
+      "goldenNo": 22,
+      "code": "1.116389",
+      "name": "Đăng ký, cấp Giấy chứng nhận đối với thửa đất có diện tích tăng thêm do thay đổi ranh giới so với Giấy chứng nhận đã cấp (đối với trường hợp quy định tại điểm a khoản 2 Điều 24 Nghị định số 101/2024/NĐ-CP).",
+      "category": "Đất đai",
+      "c1": {
+        "score": 2,
+        "state": "KNOWN",
+        "count": 4,
+        "requiredCount": 0,
+        "conditionalCount": 2,
+        "dossierSignals": 0,
+        "evidence": [
+          {
+            "name": "Đơn đăng ký biến động đất đai, tài sản gắn liền với đất, Mẫu số 18 Phụ lục VI ban hành kèm theo Quyết định số 40/2026/QĐ-UBND ngày 01/7/2026 của UBND tỉnh Lâm Đồng",
+            "required": false,
+            "hasElectronicForm": true,
+            "isConditional": false
+          },
+          {
+            "name": "Giấy chứng nhận đã cấp",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "Giấy tờ về việc nhận chuyển quyền sử dụng đất của phần diện tích tăng thêm đối với trường hợp quy định tại điểm a khoản 2 Điều 24 Nghị định số 101/2024/NĐ-CP",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": true
+          },
+          {
+            "name": "Văn bản về việc đại diện theo quy định của pháp luật về dân sự đối với trường hợp thực hiện thủ tục đăng ký đất đai, tài sản gắn liền với đất thông qua người đại diện",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": true
+          }
+        ]
+      },
+      "c2": {
+        "score": 3,
+        "state": "KNOWN",
+        "structuredStepCount": 1,
+        "textStepCount": 0,
+        "effectiveSteps": 1,
+        "branchSignals": 20,
+        "coordinationSignals": 8
+      },
+      "c3": {
+        "score": 2,
+        "state": "KNOWN",
+        "condition": 0,
+        "requirement": 0,
+        "branches": 2,
+        "negation": 0,
+        "thresholds": 0,
+        "totalSignal": 4
+      },
+      "c4": {
+        "score": 3,
+        "state": "KNOWN",
+        "minDays": 10,
+        "maxDays": 10,
+        "distinctValues": [
+          "10 WORKING_DAY"
+        ],
+        "rawValues": [
+          {
+            "value": 10,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 10
+          },
+          {
+            "value": 10,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 10
+          },
+          {
+            "value": 10,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 10
+          }
+        ]
+      },
+      "c5": {
+        "score": 4,
+        "state": "KNOWN",
+        "uniqueMethods": [
+          "DIRECT",
+          "ONLINE",
+          "POSTAL"
+        ],
+        "conditionalRouteSignals": 3,
+        "returnMethodCount": 2
+      },
+      "c6": {
+        "score": 5,
+        "state": "KNOWN_WITH_TEXT",
+        "roleCounts": {
+          "executing": 29,
+          "authority": 0,
+          "authorized": 0,
+          "coordinating": 0
+        },
+        "coordinationSignals": 4,
+        "actorMentions": 81,
+        "crossRole": false
+      },
+      "weightedScore": 3.15,
+      "score100": 63,
+      "warnings": [],
+      "stars": 4
+    },
+    {
+      "goldenNo": 23,
+      "code": "1.116400",
+      "name": "Tách thửa đất, hợp thửa đất",
+      "category": "Đất đai",
+      "c1": {
+        "score": 2,
+        "state": "KNOWN",
+        "count": 5,
+        "requiredCount": 0,
+        "conditionalCount": 3,
+        "dossierSignals": 0,
+        "evidence": [
+          {
+            "name": "Đơn đề nghị tách thửa đất, hợp thửa đất, Mẫu số 21 Phụ lục VI ban hành kèm theo Quyết định số 40/2026/QĐ-UBND",
+            "required": false,
+            "hasElectronicForm": true,
+            "isConditional": false
+          },
+          {
+            "name": "Bản vẽ tách thửa đất, hợp thửa đất lập, Mẫu số 22 Phụ lục VI ban hành kèm theo Quyết định số 40/2026/QĐ-UBND do Văn phòng Đăng ký đất đai, Chi nhánh Văn phòng Đăng ký đất đai thực hiện hoặc do đơn vị đo đạc có Giấy phép về hoạt động đo đạc, thành lập bản đồ địa chính thực hiện",
+            "required": false,
+            "hasElectronicForm": true,
+            "isConditional": false
+          },
+          {
+            "name": "Giấy chứng nhận đã cấp, trừ trường hợp thực hiện quyết định hoặc bản án của Tòa án nhân dân, quyết định thi hành án của cơ quan thi hành án đã có hiệu lực thi hành hoặc trường hợp đấu giá, giao quyền sử dụng đất, tài sản gắn liền với đất theo yêu cầu của Tòa án, cơ quan thi hành án mà không thu hồi được Giấy chứng nhận đã cấp",
+            "required": false,
+            "hasElectronicForm": true,
+            "isConditional": true
+          },
+          {
+            "name": "Các văn bản của cơ quan có thẩm quyền có thể hiện nội dung tách thửa đất, hợp thửa đất (nếu có)",
+            "required": false,
+            "hasElectronicForm": true,
+            "isConditional": true
+          },
+          {
+            "name": "Văn bản về việc đại diện theo quy định của pháp luật về dân sự đối với trường hợp thực hiện thủ tục đăng ký đất đai, tài sản gắn liền với đất thông qua người đại diện",
+            "required": false,
+            "hasElectronicForm": true,
+            "isConditional": true
+          }
+        ]
+      },
+      "c2": {
+        "score": 3,
+        "state": "KNOWN",
+        "structuredStepCount": 1,
+        "textStepCount": 0,
+        "effectiveSteps": 1,
+        "branchSignals": 16,
+        "coordinationSignals": 10
+      },
+      "c3": {
+        "score": 1,
+        "state": "KNOWN",
+        "condition": 0,
+        "requirement": 0,
+        "branches": 0,
+        "negation": 0,
+        "thresholds": 2,
+        "totalSignal": 2
+      },
+      "c4": {
+        "score": 3,
+        "state": "KNOWN",
+        "minDays": 12,
+        "maxDays": 12,
+        "distinctValues": [
+          "12 WORKING_DAY"
+        ],
+        "rawValues": [
+          {
+            "value": 12,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 12
+          },
+          {
+            "value": 12,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 12
+          },
+          {
+            "value": 12,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 12
+          }
+        ]
+      },
+      "c5": {
+        "score": 4,
+        "state": "KNOWN",
+        "uniqueMethods": [
+          "DIRECT",
+          "ONLINE",
+          "POSTAL"
+        ],
+        "conditionalRouteSignals": 3,
+        "returnMethodCount": 2
+      },
+      "c6": {
+        "score": 5,
+        "state": "KNOWN_WITH_TEXT",
+        "roleCounts": {
+          "executing": 29,
+          "authority": 0,
+          "authorized": 0,
+          "coordinating": 0
+        },
+        "coordinationSignals": 7,
+        "actorMentions": 81,
+        "crossRole": false
+      },
+      "weightedScore": 3,
+      "score100": 60,
+      "warnings": [],
+      "stars": 3
+    },
+    {
+      "goldenNo": 24,
+      "code": "1.001667",
+      "name": "Giải quyết hưởng chế độ ốm đau, thai sản, trợ cấp dưỡng sức phục hồi sức khỏe sau ốm đau, thai sản, TNLĐ, BNN",
+      "category": "Thực hiện chính sách BHXH",
+      "c1": {
+        "score": 5,
+        "state": "KNOWN",
+        "count": 48,
+        "requiredCount": 0,
+        "conditionalCount": 13,
+        "dossierSignals": 0,
+        "evidence": [
+          {
+            "name": "Giấy ra viện",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "Tóm tắt hồ sơ bệnh án",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "Giấy báo tử đối với trường hợp người bệnh điều trị nội trú tử vong tại cơ sở khám bệnh, chữa bệnh",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": true
+          },
+          {
+            "name": "Giấy xác nhận quá trình điều trị nội trú",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "Bản chính Giấy chứng nhận nghỉ việc hưởng BHXH. Trường hợp cả cha và mẹ đều nghỉ việc chăm con dưới 7 tuổi bị ốm đau thì giấy chứng nhận nghỉ việc của một trong hai người là bản sao",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": true
+          },
+          {
+            "name": "Bản chính hoặc bản sao giấy ra viện có ghi chỉ định thời gian cần điều trị ngoại trú sau thời gian điều trị nội trú",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "Bản chính hoặc bản sao bản tóm tắt hồ sơ bệnh án có ghi chỉ định thời gian cần điều trị ngoại trú sau thời gian điều trị nội trú",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "Có bản dịch tiếng Việt được công chứng hoặc chứng thực theo quy định của pháp luật về công chứng, chứng thực",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "Được hợp pháp hóa lãnh sự, trừ trường hợp điều ước quốc tế mà nước Cộng hòa xã hội chủ nghĩa Việt Nam là thành viên có quy định khác",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": true
+          },
+          {
+            "name": "Quyết định áp dụng biện pháp cách ly",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "Giấy xác nhận điều trị",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "Giấy ra viện",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          }
+        ]
+      },
+      "c2": {
+        "score": 2,
+        "state": "KNOWN",
+        "structuredStepCount": 3,
+        "textStepCount": 0,
+        "effectiveSteps": 3,
+        "branchSignals": 5,
+        "coordinationSignals": 0
+      },
+      "c3": {
+        "score": 1,
+        "state": "KNOWN",
+        "condition": 0,
+        "requirement": 0,
+        "branches": 0,
+        "negation": 0,
+        "thresholds": 0,
+        "totalSignal": 0
+      },
+      "c4": {
+        "score": 3,
+        "state": "KNOWN",
+        "minDays": 6,
+        "maxDays": 6,
+        "distinctValues": [
+          "6 WORKING_DAY"
+        ],
+        "rawValues": [
+          {
+            "value": 6,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 6
+          },
+          {
+            "value": 6,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 6
+          },
+          {
+            "value": 6,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 6
+          }
+        ]
+      },
+      "c5": {
+        "score": 5,
+        "state": "KNOWN",
+        "uniqueMethods": [
+          "DIRECT",
+          "ONLINE",
+          "POSTAL"
+        ],
+        "conditionalRouteSignals": 7,
+        "returnMethodCount": 2
+      },
+      "c6": {
+        "score": 4,
+        "state": "KNOWN_WITH_TEXT",
+        "roleCounts": {
+          "executing": 2,
+          "authority": 2,
+          "authorized": 0,
+          "coordinating": 0
+        },
+        "coordinationSignals": 0,
+        "actorMentions": 10,
+        "crossRole": true
+      },
+      "weightedScore": 3.3,
+      "score100": 66,
+      "warnings": [],
+      "stars": 4
+    },
+    {
+      "goldenNo": 25,
+      "code": "1.116038",
+      "name": "Đăng ký thay đổi nội dung, cập nhật, bổ sung thông tin, cấp lại giấy chứng nhận, hiệu đính thông tin đăng ký hoạt động của Ngân hàng Chính sách xã hội, chi nhánh, phòng giao dịch Ngân hàng Chính sách xã hội. Đăng ký hoạt động lần đầu của chi nhánh, phòng giao dịch Ngân hàng Chính sách xã hội",
+      "category": "Đăng ký hoạt động của Ngân hàng Chính sách xã hội",
+      "c1": {
+        "score": 5,
+        "state": "KNOWN",
+        "count": 33,
+        "requiredCount": 0,
+        "conditionalCount": 0,
+        "dossierSignals": 10,
+        "evidence": [
+          {
+            "name": "(i) Giấy đề nghị đăng ký thay đổi nội dung đăng ký hoạt động của Ngân hàng Chính sách xã hội theo Mẫu số 1, Phụ lục kèm theo Thông tư số 106/2026/TT-BTC;",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "(ii) Bản sao quyết định của Thủ tướng Chính phủ về việc bổ nhiệm người đại diện theo pháp luật mới",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "(i) Giấy đề nghị đăng ký thay đổi nội dung đăng ký hoạt động của Ngân hàng Chính sách xã hội theo Mẫu số 1, Phụ lục kèm theo Thông tư số 106/2026/TT-BTC;",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "(ii) Bản sao Quyết định hoặc văn bản thể hiện ý kiến chỉ đạo của Thủ tướng Chính phủ về nội dung thay đổi của Ngân hàng Chính sách xã hội.",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "Giấy đề nghị đăng ký thay đổi nội dung đăng ký hoạt động của Ngân hàng Chính sách xã hội theo Mẫu số 1, Phụ lục kèm theo Thông tư số 106/2026/TT-BTC.",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "(i) Giấy đề nghị đăng ký thay đổi nội dung đăng ký hoạt động của Ngân hàng Chính sách xã hội theo Mẫu số 1, Phụ lục kèm theo Thông tư số 106/2026/TT-BTC;",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "(ii) Bản sao Báo cáo tài chính năm của Ngân hàng Chính sách xã hội đã được Hội đồng quản trị Ngân hàng Chính sách xã hội phê duyệt theo quy định.",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "Giấy đề nghị đăng ký thay đổi nội dung đăng ký hoạt động của Ngân hàng Chính sách xã hội theo Mẫu số 1, Phụ lục kèm theo Thông tư số 106/2026/TT-BTC.",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "Văn bản đề nghị cấp lại theo Mẫu số 4, Phụ lục kèm theo Thông tư số 106/2026/TT-BTC.",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "Văn bản đề nghị hiệu đính thông tin theo theo Mẫu số 1, Phụ lục kèm theo Thông tư số 106/2026/TT-BTC.",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "(i) Văn bản đề nghị hiệu đính theo theo Mẫu số 1, Phụ lục kèm theo Thông tư số 106/2026/TT-BTC;",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "(ii) Bản sao giấy chứng nhận đăng ký hoạt động của Ngân hàng Chính sách xã hội.",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          }
+        ]
+      },
+      "c2": {
+        "score": 4,
+        "state": "KNOWN",
+        "structuredStepCount": 3,
+        "textStepCount": 0,
+        "effectiveSteps": 3,
+        "branchSignals": 77,
+        "coordinationSignals": 17
+      },
+      "c3": {
+        "score": 5,
+        "state": "KNOWN",
+        "condition": 0,
+        "requirement": 6,
+        "branches": 16,
+        "negation": 0,
+        "thresholds": 0,
+        "totalSignal": 38
+      },
+      "c4": {
+        "score": 1,
+        "state": "UNKNOWN",
+        "minDays": null,
+        "maxDays": null,
+        "distinctValues": [],
+        "rawValues": []
+      },
+      "c5": {
+        "score": 3,
+        "state": "KNOWN",
+        "uniqueMethods": [
+          "DIRECT",
+          "ONLINE",
+          "POSTAL"
+        ],
+        "conditionalRouteSignals": 1,
+        "returnMethodCount": 2
+      },
+      "c6": {
+        "score": 2,
+        "state": "KNOWN_WITH_TEXT",
+        "roleCounts": {
+          "executing": 0,
+          "authority": 0,
+          "authorized": 0,
+          "coordinating": 0
+        },
+        "coordinationSignals": 7,
+        "actorMentions": 152,
+        "crossRole": false
+      },
+      "weightedScore": 3.4,
+      "score100": 68,
+      "warnings": [],
+      "stars": 4
+    },
+    {
+      "goldenNo": 26,
+      "code": "3.000654",
+      "name": "Đăng ký, cấp Giấy chứng nhận đối với trường hợp chuyển nhượng dự án đầu tư có sử dụng đất",
+      "category": "Đất đai",
+      "c1": {
+        "score": 0,
+        "state": "KNOWN",
+        "count": 0,
+        "requiredCount": 0,
+        "conditionalCount": 0,
+        "dossierSignals": 0,
+        "evidence": []
+      },
+      "c2": {
+        "score": 5,
+        "state": "KNOWN",
+        "structuredStepCount": 6,
+        "textStepCount": 0,
+        "effectiveSteps": 6,
+        "branchSignals": 25,
+        "coordinationSignals": 8
+      },
+      "c3": {
+        "score": 1,
+        "state": "UNKNOWN",
+        "condition": 0,
+        "requirement": 0,
+        "branches": 0,
+        "negation": 0,
+        "thresholds": 0,
+        "totalSignal": 0
+      },
+      "c4": {
+        "score": 5,
+        "state": "CONFLICT",
+        "minDays": 18,
+        "maxDays": 30,
+        "distinctValues": [
+          "30 DAY",
+          "18 DAY"
+        ],
+        "rawValues": [
+          {
+            "value": 30,
+            "unit": "DAY",
+            "source": "executionMethods",
+            "days": 30
+          },
+          {
+            "value": 30,
+            "unit": "DAY",
+            "source": "executionMethods",
+            "days": 30
+          },
+          {
+            "value": 30,
+            "unit": "DAY",
+            "source": "executionMethods",
+            "days": 30
+          },
+          {
+            "value": 18,
+            "unit": "DAY",
+            "source": "executionMethods",
+            "days": 18
+          },
+          {
+            "value": 18,
+            "unit": "DAY",
+            "source": "executionMethods",
+            "days": 18
+          },
+          {
+            "value": 18,
+            "unit": "DAY",
+            "source": "executionMethods",
+            "days": 18
+          }
+        ]
+      },
+      "c5": {
+        "score": 4,
+        "state": "KNOWN",
+        "uniqueMethods": [
+          "DIRECT",
+          "ONLINE",
+          "POSTAL"
+        ],
+        "conditionalRouteSignals": 6,
+        "returnMethodCount": 2
+      },
+      "c6": {
+        "score": 2,
+        "state": "KNOWN_WITH_TEXT",
+        "roleCounts": {
+          "executing": 0,
+          "authority": 0,
+          "authorized": 0,
+          "coordinating": 0
+        },
+        "coordinationSignals": 4,
+        "actorMentions": 26,
+        "crossRole": false
+      },
+      "weightedScore": 2.6999999999999997,
+      "score100": 54,
+      "warnings": [
+        "PROCESSING_TIME_CONFLICT"
+      ],
+      "stars": 3
+    },
+    {
+      "goldenNo": 27,
+      "code": "3.000650",
+      "name": "Đăng ký biến động đối với trường hợp thay đổi quyền sử dụng đất, quyền sở hữu tài sản gắn liền với đất theo thỏa thuận của các thành viên hộ gia đình hoặc của vợ và chồng; quyền sử dụng đất xây dựng công trình trên mặt đất phục vụ cho việc vận hành, khai thác sử dụng công trình ngầm, quyền sở hữu công trình ngầm; bán tài sản, điều chuyển, chuyển nhượng quyền sử dụng đất là tài sản công theo quy định của pháp luật về quản lý, sử dụng tài sản công; nhận quyền sử dụng đất, quyền sở hữu tài sản gắn liền với đất theo kết quả giải quyết tranh chấp, khiếu nại, tố cáo về đất đai hoặc bản án, quyết định của Tòa án, quyết định thi hành án của cơ quan thi hành án đã được thi hành; quyết định hoặc phán quyết của Trọng tài thương mại Việt Nam về giải quyết tranh chấp giữa các bên phát sinh từ hoạt động thương mại liên quan đến đất đai; nhận quyền sử dụng đất, quyền sở hữu tài sản gắn liền với đất do xử lý tài sản thế chấp là quyền sử dụng đất, tài sản gắn liền với đất đã được đăng ký, bao gồm cả xử lý khoản nợ có nguồn gốc từ khoản nợ xấu của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài",
+      "category": "Đất đai",
+      "c1": {
+        "score": 0,
+        "state": "KNOWN",
+        "count": 0,
+        "requiredCount": 0,
+        "conditionalCount": 0,
+        "dossierSignals": 0,
+        "evidence": []
+      },
+      "c2": {
+        "score": 4,
+        "state": "KNOWN",
+        "structuredStepCount": 5,
+        "textStepCount": 0,
+        "effectiveSteps": 5,
+        "branchSignals": 19,
+        "coordinationSignals": 6
+      },
+      "c3": {
+        "score": 1,
+        "state": "UNKNOWN",
+        "condition": 0,
+        "requirement": 0,
+        "branches": 0,
+        "negation": 0,
+        "thresholds": 0,
+        "totalSignal": 0
+      },
+      "c4": {
+        "score": 5,
+        "state": "CONFLICT",
+        "minDays": 18,
+        "maxDays": 20,
+        "distinctValues": [
+          "18 DAY",
+          "20 DAY"
+        ],
+        "rawValues": [
+          {
+            "value": 18,
+            "unit": "DAY",
+            "source": "executionMethods",
+            "days": 18
+          },
+          {
+            "value": 18,
+            "unit": "DAY",
+            "source": "executionMethods",
+            "days": 18
+          },
+          {
+            "value": 18,
+            "unit": "DAY",
+            "source": "executionMethods",
+            "days": 18
+          },
+          {
+            "value": 20,
+            "unit": "DAY",
+            "source": "executionMethods",
+            "days": 20
+          },
+          {
+            "value": 20,
+            "unit": "DAY",
+            "source": "executionMethods",
+            "days": 20
+          },
+          {
+            "value": 20,
+            "unit": "DAY",
+            "source": "executionMethods",
+            "days": 20
+          }
+        ]
+      },
+      "c5": {
+        "score": 5,
+        "state": "KNOWN",
+        "uniqueMethods": [
+          "DIRECT",
+          "ONLINE",
+          "POSTAL"
+        ],
+        "conditionalRouteSignals": 12,
+        "returnMethodCount": 2
+      },
+      "c6": {
+        "score": 2,
+        "state": "KNOWN_WITH_TEXT",
+        "roleCounts": {
+          "executing": 0,
+          "authority": 0,
+          "authorized": 0,
+          "coordinating": 0
+        },
+        "coordinationSignals": 2,
+        "actorMentions": 20,
+        "crossRole": false
+      },
+      "weightedScore": 2.6,
+      "score100": 52,
+      "warnings": [
+        "PROCESSING_TIME_CONFLICT"
+      ],
+      "stars": 3
+    },
+    {
+      "goldenNo": 28,
+      "code": "1.009628",
+      "name": "Thủ tục điều chỉnh dự án đầu tư thuộc thẩm quyền chấp thuận chủ trương đầu tư của Thủ tướng Chính phủ",
+      "category": "Đầu tư tại Việt nam",
+      "c1": {
+        "score": 5,
+        "state": "KNOWN",
+        "count": 50,
+        "requiredCount": 0,
+        "conditionalCount": 14,
+        "dossierSignals": 0,
+        "evidence": [
+          {
+            "name": "Văn bản đề nghị điều chỉnh dự án đầu tư",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "Báo cáo tình hình triển khai dự án đầu tư đến thời điểm điều chỉnh",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "Quyết định của nhà đầu tư về việc điều chỉnh dự án đầu tư đối với nhà đầu tư là tổ chức",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": true
+          },
+          {
+            "name": "Giải trình hoặc cung cấp tài liệu liên quan đến việc điều chỉnh những nội dung quy định tại các điểm b, c, d, đ, e, g và h khoản 1 Điều 31 Nghị định số 96/2026/NĐ-CP (nếu có)",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": true
+          },
+          {
+            "name": "Văn bản đề nghị điều chỉnh dự án đầu tư",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "Tài liệu về tư cách pháp lý của nhà đầu tư chuyển nhượng và nhận chuyển nhượng",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "Văn bản đề nghị điều chỉnh dự án đầu tư",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "Tài liệu về tư cách pháp lý của nhà đầu tư chuyển nhượng và nhận chuyển nhượng",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "Hợp đồng hoặc hợp đồng nguyên tắc về việc chuyển nhượng một phần hoặc toàn bộ dự án đầu tư",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "Báo cáo tình hình thực hiện dự án đầu tư đến thời điểm chuyển nhượng dự án đầu tư",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "Bản sao một trong các tài liệu sau của nhà đầu tư nhận chuyển nhượng dự án đầu tư: báo cáo tài chính 02 năm gần nhất hoặc báo cáo kiểm toán vốn chủ sở hữu của nhà đầu tư, cam kết hỗ trợ tài chính của công ty mẹ, cam kết hỗ trợ tài chính của tổ chức tài chính, bảo lãnh về năng lực tài chính của nhà đầu tư, tài liệu thuyết minh năng lực tài chính của nhà đầu tư",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "Văn bản đề nghị điều chỉnh dự án đầu tư",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          }
+        ]
+      },
+      "c2": {
+        "score": 3,
+        "state": "KNOWN",
+        "structuredStepCount": 2,
+        "textStepCount": 0,
+        "effectiveSteps": 2,
+        "branchSignals": 104,
+        "coordinationSignals": 16
+      },
+      "c3": {
+        "score": 5,
+        "state": "KNOWN",
+        "condition": 0,
+        "requirement": 0,
+        "branches": 90,
+        "negation": 2,
+        "thresholds": 0,
+        "totalSignal": 182
+      },
+      "c4": {
+        "score": 4,
+        "state": "KNOWN",
+        "minDays": 25,
+        "maxDays": 25,
+        "distinctValues": [
+          "25 WORKING_DAY"
+        ],
+        "rawValues": [
+          {
+            "value": 25,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 25
+          },
+          {
+            "value": 25,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 25
+          },
+          {
+            "value": 25,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 25
+          }
+        ]
+      },
+      "c5": {
+        "score": 4,
+        "state": "KNOWN",
+        "uniqueMethods": [
+          "DIRECT",
+          "ONLINE",
+          "POSTAL"
+        ],
+        "conditionalRouteSignals": 8,
+        "returnMethodCount": 0
+      },
+      "c6": {
+        "score": 3,
+        "state": "KNOWN_WITH_TEXT",
+        "roleCounts": {
+          "executing": 1,
+          "authority": 1,
+          "authorized": 0,
+          "coordinating": 0
+        },
+        "coordinationSignals": 4,
+        "actorMentions": 15,
+        "crossRole": true
+      },
+      "weightedScore": 3.95,
+      "score100": 79,
+      "warnings": [],
+      "stars": 4
+    },
+    {
+      "goldenNo": 29,
+      "code": "2.000575",
+      "name": "Cấp lại Giấy chứng nhận đăng ký hộ kinh doanh, Cấp đổi sang Giấy chứng nhận đăng ký hộ kinh doanh",
+      "category": "Thành lập và hoạt động doanh nghiệp (hộ kinh doanh)",
+      "c1": {
+        "score": 5,
+        "state": "KNOWN",
+        "count": 38,
+        "requiredCount": 0,
+        "conditionalCount": 9,
+        "dossierSignals": 26,
+        "evidence": [
+          {
+            "name": "+ Giấy đề nghị cấp lại Giấy chứng nhận đăng ký hộ kinh doanh theo Mẫu số 5, Phụ lục II, Thông tư số 68/2025/TT-BTC ngày 01/7/2025 của Bộ trưởng Bộ Tài chính.",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "Giấy đề nghị đăng ký thay đổi nội dung đăng ký hộ kinh doanh do chủ hộ kinh doanh ký theo Mẫu số 2, Phụ lục II, Thông tư số 68/2025/TT-BTC ngày 01/7/2025 của Bộ trưởng Bộ Tài chính;",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "Biên bản họp nhóm cá nhân tham gia hộ kinh doanh về việc đăng ký thay đổi nội dung đăng ký hộ kinh doanh đối với trường hợp hộ kinh doanh do nhóm cá nhân thành lập trước ngày Nghị định số 168/2025/NĐ-CP có hiệu lực thi hành.",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": true
+          },
+          {
+            "name": "Giấy đề nghị đăng ký thay đổi nội dung đăng ký hộ kinh doanh theo Mẫu số 2, Phụ lục II, Thông tư số 68/2025/TT-BTC ngày 01/7/2025 của Bộ trưởng Bộ Tài chính;",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "Bản sao văn bản ủy quyền của các thành viên hộ gia đình cho một thành viên làm chủ hộ kinh doanh. Văn bản ủy quyền này phải được công chứng hoặc chứng thực theo quy định của pháp luật.",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "Giấy đề nghị đăng ký thay đổi nội dung đăng ký hộ kinh doanh theo Mẫu số 2, Phụ lục II, Thông tư số 68/2025/TT-BTC ngày 01/7/2025 của Bộ trưởng Bộ Tài chính;",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "Bản sao văn bản ủy quyền của các thành viên hộ gia đình cho một thành viên làm chủ hộ kinh doanh. Văn bản ủy quyền này phải được công chứng hoặc chứng thực theo quy định của pháp luật.",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "Bản sao giấy chứng tử hoặc quyết định của Tòa án tuyên bố đã chết, mất tích, bị hạn chế hoặc mất năng lực hành vi dân sự, có khó khăn trong nhận thức, làm chủ hành vi.",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "Giấy đề nghị đăng ký thay đổi nội dung đăng ký hộ kinh doanh theo Mẫu số 2, Phụ lục II, Thông tư số 68/2025/TT-BTC ngày 01/7/2025 của Bộ trưởng Bộ Tài chính;",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "Bản sao giấy chứng tử hoặc quyết định của Tòa án tuyên bố đã chết, mất tích, bị hạn chế hoặc mất năng lực hành vi dân sự, có khó khăn trong nhận thức, làm chủ hành vi.",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "Giấy đề nghị đăng ký thay đổi nội dung đăng ký hộ kinh doanh theo Mẫu số 2, Phụ lục II, Thông tư số 68/2025/TT-BTC ngày 01/7/2025 của Bộ trưởng Bộ Tài chính;",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "Bản sao văn bản ủy quyền của thành viên mới cho chủ hộ kinh doanh trong trường hợp tiếp nhận thành viên mới. Văn bản ủy quyền này phải được công chứng hoặc chứng thực theo quy định của pháp luật.",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": true
+          }
+        ]
+      },
+      "c2": {
+        "score": 2,
+        "state": "KNOWN",
+        "structuredStepCount": 2,
+        "textStepCount": 0,
+        "effectiveSteps": 2,
+        "branchSignals": 22,
+        "coordinationSignals": 1
+      },
+      "c3": {
+        "score": 3,
+        "state": "KNOWN",
+        "condition": 0,
+        "requirement": 4,
+        "branches": 2,
+        "negation": 0,
+        "thresholds": 0,
+        "totalSignal": 8
+      },
+      "c4": {
+        "score": 2,
+        "state": "KNOWN",
+        "minDays": 3,
+        "maxDays": 3,
+        "distinctValues": [
+          "3 WORKING_DAY"
+        ],
+        "rawValues": [
+          {
+            "value": 3,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 3
+          },
+          {
+            "value": 3,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 3
+          },
+          {
+            "value": 3,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 3
+          }
+        ]
+      },
+      "c5": {
+        "score": 5,
+        "state": "KNOWN",
+        "uniqueMethods": [
+          "ONLINE",
+          "POSTAL",
+          "DIRECT"
+        ],
+        "conditionalRouteSignals": 8,
+        "returnMethodCount": 2
+      },
+      "c6": {
+        "score": 2,
+        "state": "KNOWN_WITH_TEXT",
+        "roleCounts": {
+          "executing": 0,
+          "authority": 0,
+          "authorized": 0,
+          "coordinating": 0
+        },
+        "coordinationSignals": 1,
+        "actorMentions": 27,
+        "crossRole": false
+      },
+      "weightedScore": 3.05,
+      "score100": 61,
+      "warnings": [],
+      "stars": 4
+    },
+    {
+      "goldenNo": 30,
+      "code": "1.013285",
+      "name": "Thủ tục chấp thuận độ cao công trình",
+      "category": "Quản lý vùng trời",
+      "c1": {
+        "score": 2,
+        "state": "KNOWN",
+        "count": 3,
+        "requiredCount": 0,
+        "conditionalCount": 0,
+        "dossierSignals": 0,
+        "evidence": [
+          {
+            "name": "Văn bản đề nghị chấp thuận độ cao công trình thực hiện theo Mẫu quy định tại Phụ lục V ban hành kèm theo Nghị định số 222/2026/NĐ-CP",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "Bản sao hoặc bản điện tử bản đồ hoặc sơ đồ không gian, vị trí khu vực xây dựng công trình có đánh dấu vị trí xây dựng công trình",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          },
+          {
+            "name": "Bản sao hoặc bản điện tử một trong những giấy tờ chứng minh về quyền sở hữu, quản lý, sử dụng công trình, nhà ở theo quy định của pháp luật",
+            "required": false,
+            "hasElectronicForm": false,
+            "isConditional": false
+          }
+        ]
+      },
+      "c2": {
+        "score": 5,
+        "state": "KNOWN",
+        "structuredStepCount": 14,
+        "textStepCount": 0,
+        "effectiveSteps": 14,
+        "branchSignals": 6,
+        "coordinationSignals": 13
+      },
+      "c3": {
+        "score": 2,
+        "state": "KNOWN",
+        "condition": 0,
+        "requirement": 0,
+        "branches": 2,
+        "negation": 0,
+        "thresholds": 0,
+        "totalSignal": 4
+      },
+      "c4": {
+        "score": 5,
+        "state": "CONFLICT",
+        "minDays": 10,
+        "maxDays": 30,
+        "distinctValues": [
+          "10 WORKING_DAY",
+          "15 WORKING_DAY",
+          "20 WORKING_DAY",
+          "30 WORKING_DAY"
+        ],
+        "rawValues": [
+          {
+            "value": 10,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 10
+          },
+          {
+            "value": 15,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 15
+          },
+          {
+            "value": 20,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 20
+          },
+          {
+            "value": 30,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 30
+          },
+          {
+            "value": 10,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 10
+          },
+          {
+            "value": 15,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 15
+          },
+          {
+            "value": 20,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 20
+          },
+          {
+            "value": 30,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 30
+          },
+          {
+            "value": 10,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 10
+          },
+          {
+            "value": 15,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 15
+          },
+          {
+            "value": 20,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 20
+          },
+          {
+            "value": 30,
+            "unit": "WORKING_DAY",
+            "source": "executionMethods",
+            "days": 30
+          }
+        ]
+      },
+      "c5": {
+        "score": 3,
+        "state": "KNOWN",
+        "uniqueMethods": [
+          "DIRECT",
+          "ONLINE",
+          "POSTAL"
+        ],
+        "conditionalRouteSignals": 0,
+        "returnMethodCount": 2
+      },
+      "c6": {
+        "score": 3,
+        "state": "KNOWN_WITH_TEXT",
+        "roleCounts": {
+          "executing": 1,
+          "authority": 1,
+          "authorized": 0,
+          "coordinating": 0
+        },
+        "coordinationSignals": 9,
+        "actorMentions": 25,
+        "crossRole": true
+      },
+      "weightedScore": 3.35,
+      "score100": 67,
+      "warnings": [
+        "PROCESSING_TIME_CONFLICT"
+      ],
+      "stars": 4
+    }
+  ]
+}
