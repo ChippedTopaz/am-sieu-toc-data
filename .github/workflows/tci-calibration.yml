@@ -8,6 +8,7 @@ on:
       - 'tci/select-tci-calibration.js'
       - 'tci/select-golden-cases.js'
       - 'tci/export-golden-review.js'
+      - 'tci/analyze-golden-calibration.js'
       - 'details/**'
 
 permissions:
@@ -36,10 +37,13 @@ jobs:
       - name: Export Golden Review Evidence
         run: node tci/export-golden-review.js
 
+      - name: Analyze Golden Calibration (text-first)
+        run: node tci/analyze-golden-calibration.js
+
       - name: Commit calibration results
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add tci-results
-          git diff --cached --quiet || git commit -m "TCI: generate calibration, golden cases and review evidence"
+          git diff --cached --quiet || git commit -m "TCI: generate text-first Golden calibration analysis"
           git push origin HEAD:tci-calibration
