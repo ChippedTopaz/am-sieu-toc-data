@@ -1,13 +1,13 @@
 # TCI V1 — MASTER SPECIFICATION
 
-Version: V1.0-CALIBRATION-V2
+Version: V1.0-CALIBRATION-V2.2
 Status: Calibration specification
 
 ## 1. Objective
 
 TCI measures the practical complexity of an administrative procedure for citizens/organizations. It is not a document-count index only.
 
-## 2. Criteria and weights
+## 2. Criteria and working weights
 
 | Code | Criterion | Weight |
 |---|---|---:|
@@ -18,13 +18,13 @@ TCI measures the practical complexity of an administrative procedure for citizen
 | C5 | Khả năng tiếp cận và thực hiện | 10% |
 | C6 | Phối hợp | 10% |
 
-These weights are the current V1 working specification. The legacy calibration matrix on branch `tci-calibration` used a different allocation (20/20/15/15/10/20) and must not overwrite this V1 specification.
+These are current V1 working weights for calibration and remain adjustable during Golden Case calibration. The legacy calibration matrix on branch `tci-calibration` used 20/20/15/15/10/20 and must not overwrite this V1 specification.
 
 ## 3. Processing architecture
 
-RAW JSON → EXTRACT → NORMALIZE → FEATURE EXTRACTION → CLASSIFY → SCORE → AUDIT.
+RAW TTHC JSON + DVC mapping → EXTRACT → NORMALIZE → FEATURE ENRICHMENT → CLASSIFY → SCORE → AUDIT.
 
-Unknown must never silently become zero or false, except where a V1 field-level business rule explicitly defines a missing value as a meaningful category. C5 `implementLevel` is such an exception: missing means no online public-service level.
+Unknown must never silently become zero or false, except where an explicit business rule below defines the value.
 
 ## 4. C1 — Thành phần hồ sơ
 
@@ -38,7 +38,7 @@ Exclude `isProcessingResult=true` from input-dossier burden. Distinguish require
 
 Primary source: `executionSteps[]`, especially `description`.
 
-Do not use `executionSteps.length` as the score. The extractor should identify explicit steps, actions, decisions, branches, verification, assessment, consultation, approval and dialogue signals. Exact scoring coefficients remain calibration-required.
+Do not use `executionSteps.length` as the score. Extract explicit steps, actions, decisions, branches, verification, assessment, consultation, approval and dialogue signals. Exact scoring coefficients remain calibration-required.
 
 ## 6. C3 — Điều kiện
 
@@ -56,43 +56,61 @@ Do not select the first time in an array. Canonical scoring requires calibrated 
 
 ## 8. C5 — Khả năng tiếp cận và thực hiện
 
-### A. implementLevel — 40 points
+C5 has independent data dimensions. The JSON TTHC dataset does not contain the authoritative Toàn trình/Một phần field. Therefore those values must come from the DVC mapping source, not be invented from unrelated JSON fields.
 
-`FULL` = 40, `PARTIAL` = 30, `NONE` = 0.
+### A. Xác định có DVC trực tuyến — JSON source
 
-**V1 business rule:** when `implementLevel` is missing, null or empty in the source JSON, normalize it to `NONE` (Chưa cung cấp DVC trực tuyến). This is intentional business semantics, not an UNKNOWN state.
+Source: `executionMethods[].submissionMethod`.
 
-A present but unsupported/malformed value remains `INVALID` and must be audited.
+- At least one `ONLINE` → `hasOnlineSubmission = true`.
+- No `ONLINE` → `hasOnlineSubmission = false` and `implementLevel = NONE`.
 
-`implementLevel` is the only source for user-facing DVC level. Never infer it from submission method, returning method or `isFullProcess`.
+Thus the absence of an ONLINE submission method in the TTHC JSON is sufficient to conclude that the procedure has no online execution route for this C5 dimension.
 
-### B. returningMethods — 10 points
+`DIRECT` does not imply `isOfflineOnly=true`; `isOfflineOnly` remains an independent audit signal.
+
+### B. Mức độ cung cấp DVC — DVC mapping source — 40 points
+
+Only when `hasOnlineSubmission=true`, match the TTHC code (`JSON.code`) to `DVC mapping.MaTTHC`, then use `MucDo` for the corresponding `MaDVC`.
+
+- `Toàn trình` → `FULL` → 40 points
+- `Một phần` → `PARTIAL` → 30 points
+- configured NONE equivalents such as `Chưa cung cấp` → `NONE` → 0 points
+- mapping not found → `UNKNOWN`
+- conflicting levels for the same MaTTHC → `UNKNOWN` + audit
+- invalid/unrecognized `MucDo` → `UNKNOWN` + audit
+
+Never infer FULL/PARTIAL from `isFullProcess`, `returningMethods`, `submissionMethod`, `formalityType`, or `formalityTargetType`.
+
+A MaTTHC can have multiple mapping rows because of multiple MaDVC, agencies or records. Identical levels across rows are compatible; conflicting levels are not resolved by picking the highest or first value.
+
+### C. returningMethods — 10 points
 
 ONLINE = 10; ONLINE + OFFLINE/BOTH = 10; OFFLINE = 0; missing/invalid = UNKNOWN.
 
-This component must never determine FULL/PARTIAL/NONE.
+This component never determines FULL/PARTIAL/NONE.
 
-### C. isFullProcess — 20 points
+### D. isFullProcess — 20 points
 
 true = 20; false = 0; missing/invalid = UNKNOWN.
 
-It is independent of `implementLevel`.
+Independent from the DVC `MucDo` classification.
 
-### D. Authorization — 10 points
+### E. Authorization — 10 points
 
 ALLOWED or ALLOWED_CONDITIONAL = 10; NOT_ALLOWED = 0; UNKNOWN = UNKNOWN.
 
-Use relevant evidence such as `requirementsAndConditions`, `description`, execution steps and profile-component wording. Do not use agency authorization fields to infer citizen delegation.
+Use relevant citizen-delegation evidence in `requirementsAndConditions`, `description`, execution steps and profile-component wording. Do not use agency authorization fields to infer citizen delegation.
 
-### E. isNonTerritorial — 20 points
+### F. isNonTerritorial — 20 points
 
 true = 20; false = 0; missing/invalid = UNKNOWN.
 
 User-facing label: `Không phụ thuộc địa giới hành chính.`
 
-### isOfflineOnly
+### G. isOfflineOnly
 
-Audit/diagnostic signal only in V1; not a scoring input until its semantics are verified across the dataset.
+Audit/diagnostic signal only; not a scoring input.
 
 ## 9. C6 — Phối hợp
 
@@ -112,11 +130,10 @@ Normalize actors to distinct canonical identities. Count actual actors, handoffs
 ## 11. Status semantics
 
 `KNOWN`: enough evidence for the feature.
-`UNKNOWN`: evidence absent.
-`INVALID`: evidence present but malformed or contradictory.
+`UNKNOWN`: authoritative evidence absent.
+`INVALID`: evidence present but malformed/unrecognized.
+`CONFLICT`: multiple authoritative mapping values disagree.
 `PARTIAL`: some components scored, some unresolved.
-
-Field-level exception: C5 `implementLevel` missing/null/empty is normalized to the explicit category `NONE` by V1 business rule.
 
 ## 12. Calibration rule
 
@@ -125,3 +142,5 @@ Reference judgments are anchors, not immutable truth. Any change to a rule must 
 ## 13. Golden-set principles
 
 Golden cases must be based primarily on real TTHC records, with synthetic edge cases only for logic guards. Selection must be deterministic and explainable.
+
+When the external DVC mapping is unavailable, do not fabricate FULL/PARTIAL. TTHC records without ONLINE can still form valid NONE cases; ONLINE records without mapping must retain `UNKNOWN` for the DVC level dimension until enriched.
