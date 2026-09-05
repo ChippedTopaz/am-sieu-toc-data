@@ -4,6 +4,7 @@ on:
   workflow_dispatch:
   push:
     paths:
+      - '.github/workflows/tci-calibration.yml'
       - 'tci/select-tci-calibration.js'
       - 'tci/select-golden-cases.js'
       - 'tci/export-golden-review.js'
