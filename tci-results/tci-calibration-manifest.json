@@ -1,0 +1,352 @@
+[
+  {
+    "sampleNo": 1,
+    "id": "019d2bf7-4fc1-768b-9ba3-94be4bca58ee",
+    "file": "details/019d2bf7-4fc1-768b-9ba3-94be4bca58ee.json",
+    "code": "1.000178",
+    "name": "Giải quyết khiếu nại về quyết định hành chính, hành vi hành chính của công dân đối với lực lượng Công an nhân dân (thực hiện tại cấp Trung ương)"
+  },
+  {
+    "sampleNo": 2,
+    "id": "019d2bf7-4fc4-7716-bab8-167242b3fcda",
+    "file": "details/019d2bf7-4fc4-7716-bab8-167242b3fcda.json",
+    "code": "1.000253",
+    "name": "Khai báo tạm trú cho người nước ngoài tại Việt Nam bằng Phiếu khai báo tạm trú"
+  },
+  {
+    "sampleNo": 3,
+    "id": "019d2bfd-a5b3-7363-b270-cf1c7e239942",
+    "file": "details/019d2bfd-a5b3-7363-b270-cf1c7e239942.json",
+    "code": "1.000564",
+    "name": "Thủ tục xét tặng “Giải thưởng Nhà nước” về văn học, nghệ thuật"
+  },
+  {
+    "sampleNo": 4,
+    "id": "019d2bf7-57ba-70d3-8771-4bbb754b4b31",
+    "file": "details/019d2bf7-57ba-70d3-8771-4bbb754b4b31.json",
+    "code": "1.000771",
+    "name": "Gia hạn tạm trú cho người đã được cấp giấy miễn thị thực tại Cục Quản lý xuất nhập cảnh Bộ Công an"
+  },
+  {
+    "sampleNo": 5,
+    "id": "019d2bf7-57cb-7599-a263-9b6b5f854f74",
+    "file": "details/019d2bf7-57cb-7599-a263-9b6b5f854f74.json",
+    "code": "1.000807",
+    "name": "Cấp lại giấy miễn thị thực tại Cục Quản lý xuất nhập cảnh, Bộ Công an"
+  },
+  {
+    "sampleNo": 6,
+    "id": "019d2bf7-57cf-774b-9de0-6289bec06f7f",
+    "file": "details/019d2bf7-57cf-774b-9de0-6289bec06f7f.json",
+    "code": "1.000811",
+    "name": "Cấp mới thẻ ABTC (thực hiện tại cấp trung ương)"
+  },
+  {
+    "sampleNo": 7,
+    "id": "019d2bfd-ad5c-72bb-8875-8e3dce825af6",
+    "file": "details/019d2bfd-ad5c-72bb-8875-8e3dce825af6.json",
+    "code": "1.000871",
+    "name": "Thủ tục xét tặng “Giải thưởng Hồ Chí Minh” về văn học, nghệ thuật"
+  },
+  {
+    "sampleNo": 8,
+    "id": "019d2bf7-57bc-77d4-9b08-282dcd32ed61",
+    "file": "details/019d2bf7-57bc-77d4-9b08-282dcd32ed61.json",
+    "code": "1.000931",
+    "name": "Cấp giấy phép vào khu vực cấm, khu vực biên giới cho người nước ngoài tại Công an cấp tỉnh"
+  },
+  {
+    "sampleNo": 9,
+    "id": "019d2bf7-57ce-729c-9ce2-c21c84a1d816",
+    "file": "details/019d2bf7-57ce-729c-9ce2-c21c84a1d816.json",
+    "code": "1.001010",
+    "name": "Cấp thẻ thường trú cho người nước ngoài tại Việt Nam (thực hiện tại cấp tinh)"
+  },
+  {
+    "sampleNo": 10,
+    "id": "019d2bf7-5f61-72e9-acd7-30da53e18cc9",
+    "file": "details/019d2bf7-5f61-72e9-acd7-30da53e18cc9.json",
+    "code": "1.001146",
+    "name": "Gia hạn tạm trú cho người nước ngoài tại Việt Nam (thực hiện tại cấp tỉnh)"
+  },
+  {
+    "sampleNo": 11,
+    "id": "019d2bf7-5f69-70ab-9d13-d5340d911532",
+    "file": "details/019d2bf7-5f69-70ab-9d13-d5340d911532.json",
+    "code": "1.001194",
+    "name": "Cấp thị thực cho người nước ngoài tại Việt Nam (thực hiện tại cấp tỉnh)"
+  },
+  {
+    "sampleNo": 12,
+    "id": "019d2bf7-5f66-7658-b87a-e989fe923e7a",
+    "file": "details/019d2bf7-5f66-7658-b87a-e989fe923e7a.json",
+    "code": "1.001200",
+    "name": "Cấp giấy thông hành biên giới cho cán bộ, công chức, viên chức, công nhân sang Campuchia tại Công an cấp tỉnh biên giới tiếp giáp với Campuchia"
+  },
+  {
+    "sampleNo": 13,
+    "id": "019d2bf7-5f64-749f-b550-79b243ce8fb3",
+    "file": "details/019d2bf7-5f64-749f-b550-79b243ce8fb3.json",
+    "code": "1.001226",
+    "name": "Cấp giấy phép đến các tỉnh, thành phố của Việt Nam cho công dân Lào nhập cảnh bằng Giấy thông hành biên giới tại Công an cấp tỉnh"
+  },
+  {
+    "sampleNo": 14,
+    "id": "019d2bf7-5f68-75eb-b0c1-df13de15452b",
+    "file": "details/019d2bf7-5f68-75eb-b0c1-df13de15452b.json",
+    "code": "1.001258",
+    "name": "Cấp giấy thông hành biên giới Việt Nam – Lào cho công dân Việt Nam làm việc trong các cơ quan, tổ chức, doanh nghiệp có trụ sở tại tỉnh có chung đường biên giới với Lào"
+  },
+  {
+    "sampleNo": 15,
+    "id": "019d2bf7-5f78-765a-8c6b-e3afd0e88c7f",
+    "file": "details/019d2bf7-5f78-765a-8c6b-e3afd0e88c7f.json",
+    "code": "1.001303",
+    "name": "Tuyển chọn công dân thực hiên nghĩa vụ tham gia Công an nhân dân (thực hiện tại cấp tỉnh)"
+  },
+  {
+    "sampleNo": 16,
+    "id": "019d2bf7-5fc6-72ba-a7f1-3506927a9517",
+    "file": "details/019d2bf7-5fc6-72ba-a7f1-3506927a9517.json",
+    "code": "1.001445",
+    "name": "Trình báo mất hộ chiếu phổ thông (thực hiện tại cấp tỉnh)"
+  },
+  {
+    "sampleNo": 17,
+    "id": "019d2bf7-5fda-7370-bc07-6f1fd02ffcc4",
+    "file": "details/019d2bf7-5fda-7370-bc07-6f1fd02ffcc4.json",
+    "code": "1.001456",
+    "name": "Cấp hộ chiếu phổ thông ở trong nước (thực hiện tại cấp tỉnh)"
+  },
+  {
+    "sampleNo": 18,
+    "id": "019d2bf7-5fd3-7230-83db-26ed88f516aa",
+    "file": "details/019d2bf7-5fd3-7230-83db-26ed88f516aa.json",
+    "code": "1.001471",
+    "name": "Cấp hộ chiếu phổ thông ở trong nước (thực hiện tại cấp trung ương)"
+  },
+  {
+    "sampleNo": 19,
+    "id": "019d2bf7-673f-774d-b510-c7f30a19d5b9",
+    "file": "details/019d2bf7-673f-774d-b510-c7f30a19d5b9.json",
+    "code": "1.002359",
+    "name": "Cấp lại giấy phép xuất nhập cảnh cho người không quốc tịch cư trú tại Việt Nam"
+  },
+  {
+    "sampleNo": 20,
+    "id": "019d2bf7-6f17-7724-a4c5-88d1e3d5b31d",
+    "file": "details/019d2bf7-6f17-7724-a4c5-88d1e3d5b31d.json",
+    "code": "1.003220",
+    "name": "Xét hưởng chế độ trợ cấp một lần đối với hạ sĩ quan, chiến sĩ quân đội nhân dân, công an nhân dân tham gia chiến đấu, hoạt động ở các chiến trường B, C, K sau đó trở thành người hưởng lương; thanh niên xung phong hưởng lương từ ngân sách Nhà nước, cán bộ dân chính đảng hoạt động cách mạng ở chiến trường B, C, K từ 30-4-1975 trở về trước không có thân nhân chủ yếu (vợ hoặc chồng; bố đẻ, mẹ đẻ, bố nuôi, mẹ nuôi; con đẻ, con nuôi hợp pháp) phải trực tiếp nuôi dưỡng ở miền Bắc (thực hiện tại cấp tỉnh)"
+  },
+  {
+    "sampleNo": 21,
+    "id": "019d2bf7-6f53-735d-9ffc-1981c4e2862a",
+    "file": "details/019d2bf7-6f53-735d-9ffc-1981c4e2862a.json",
+    "code": "1.003494",
+    "name": "Cấp giấy thông hành nhập, xuất cảnh cho công dân Việt Nam sang du lịch các tỉnh, thành phố biên giới Trung Quốc tiếp giáp với Việt Nam tại Công an cấp tỉnh"
+  },
+  {
+    "sampleNo": 22,
+    "id": "019d2bf7-6f72-7618-b33f-12ea086b15e5",
+    "file": "details/019d2bf7-6f72-7618-b33f-12ea086b15e5.json",
+    "code": "1.003777",
+    "name": "Xét hưởng chế độ đối với cán bộ, chiến sĩ Công an nhân dân tham gia kháng chiến chống Mỹ có dưới 20 năm công tác trong Công an nhân dân đã thôi việc, xuất ngũ về địa phương (thực hiện tại cấp tỉnh)"
+  },
+  {
+    "sampleNo": 23,
+    "id": "019d2bf7-6f5f-706a-9432-20029f910282",
+    "file": "details/019d2bf7-6f5f-706a-9432-20029f910282.json",
+    "code": "1.003799",
+    "name": "Xét hưởng chế độ trợ cấp một lần đối với sĩ quan, hạ sĩ quan, cán bộ, chiến sĩ, công nhân viên Công an nhân dân trực tiếp tham gia kháng chiến chống Mỹ cứu nước ở chiến trường B, C, K trong khoảng thời gian từ ngày 20-7-1954 đến 30-4-1975, về gia đình từ ngày 31-12-1976 trở về trước, chưa được hưởng một trong các chế độ phục viên, xuất ngũ, thôi việc, bệnh binh, mất sức lao động hàng tháng và chế độ hưu trí hàng tháng, trước khi về gia đình thuộc biên chế Công an nhân dân (thực hiện tại cấp tỉnh)"
+  },
+  {
+    "sampleNo": 24,
+    "id": "019d2bf7-76dc-76b8-a191-7bbe8e01c91d",
+    "file": "details/019d2bf7-76dc-76b8-a191-7bbe8e01c91d.json",
+    "code": "1.004045",
+    "name": "Tuyển sinh vào các trường Công an nhân dân tại Công an cấp tỉnh"
+  },
+  {
+    "sampleNo": 25,
+    "id": "019d2bf7-76df-76b4-a16c-1b01528d0c9e",
+    "file": "details/019d2bf7-76df-76b4-a16c-1b01528d0c9e.json",
+    "code": "1.004151",
+    "name": "Xét công nhận người hoạt động cách mạng trước ngày 01/01/1945 và người hoạt động cách mạng từ 01/01/1945 đến trước tổng khởi nghĩa 19/8/1945 tại Công an cấp tỉnh"
+  },
+  {
+    "sampleNo": 26,
+    "id": "019d2bf7-76e2-7609-9552-5b5f9eb33396",
+    "file": "details/019d2bf7-76e2-7609-9552-5b5f9eb33396.json",
+    "code": "1.004163",
+    "name": "Xét công nhận liệt sỹ, cấp bằng Tổ quốc ghi công và Giấy chứng nhận gia đình liệt sỹ đối với liệt sỹ và thân nhân liệt sỹ tại Công an cấp tỉnh"
+  },
+  {
+    "sampleNo": 27,
+    "id": "019d2bfb-df29-704d-8fe8-deafd721c54b",
+    "file": "details/019d2bfb-df29-704d-8fe8-deafd721c54b.json",
+    "code": "1.004979",
+    "name": "Thông báo thay đổi nội dung đăng ký hợp tác xã, liên hiệp hợp tác xã; Thông báo thay đổi nội dung đăng ký đối với hợp tác xã, liên hiệp hợp tác xã bị tách, nhận sáp nhập; Thông báo thay đổi nội dung đăng ký hợp tác xã, liên hiệp hợp tác xã theo quyết định của Tòa án đã có hiệu lực pháp luật hoặc phán quyết của Trọng tài có hiệu lực"
+  },
+  {
+    "sampleNo": 28,
+    "id": "019d2bfc-2615-7489-ae4c-dc1cd8317dcb",
+    "file": "details/019d2bfc-2615-7489-ae4c-dc1cd8317dcb.json",
+    "code": "1.007659",
+    "name": "Thủ tục miễn thuế đối với hàng hóa xuất khẩu, nhập khẩu"
+  },
+  {
+    "sampleNo": 29,
+    "id": "019d2bfc-7428-7107-b445-7089eeb05dec",
+    "file": "details/019d2bfc-7428-7107-b445-7089eeb05dec.json",
+    "code": "1.008759",
+    "name": "Đăng ký thuế trong trường hợp chia, tách, hợp nhất, sáp nhập tổ chức"
+  },
+  {
+    "sampleNo": 30,
+    "id": "019d2bfc-9380-700d-b295-7c6705fc9313",
+    "file": "details/019d2bfc-9380-700d-b295-7c6705fc9313.json",
+    "code": "1.009646",
+    "name": "Thủ tục chấp thuận điều chỉnh chủ trương đầu tư thuộc thẩm quyền của Chủ tịch Uỷ ban nhân dân cấp tỉnh"
+  },
+  {
+    "sampleNo": 31,
+    "id": "019d2bfc-9b56-7242-84c0-ad39936561d8",
+    "file": "details/019d2bfc-9b56-7242-84c0-ad39936561d8.json",
+    "code": "1.009759",
+    "name": "Thủ tục chấp thuận điều chỉnh chủ trương đầu tư thuộc thẩm quyền của Ban quản lý khu công nghiệp, khu chế xuất, khu công nghệ cao, khu kinh tế"
+  },
+  {
+    "sampleNo": 32,
+    "id": "019d2bf7-7efc-770c-b60b-dcb21433cea1",
+    "file": "details/019d2bf7-7efc-770c-b60b-dcb21433cea1.json",
+    "code": "1.010039",
+    "name": "Điều chỉnh thông tin về cư trú trong Cơ sở dữ liệu về cư trú"
+  },
+  {
+    "sampleNo": 33,
+    "id": "019d2bf7-7f19-762d-be5e-741f71796016",
+    "file": "details/019d2bf7-7f19-762d-be5e-741f71796016.json",
+    "code": "1.010041",
+    "name": "Xác nhận thông tin về cư trú"
+  },
+  {
+    "sampleNo": 34,
+    "id": "019d2bf7-86d7-7661-825b-ac185d610609",
+    "file": "details/019d2bf7-86d7-7661-825b-ac185d610609.json",
+    "code": "1.011410",
+    "name": "Cấp tài khoản định danh điện tử mức độ 01 cho công dân Việt Nam"
+  },
+  {
+    "sampleNo": 35,
+    "id": "019d2bfb-98cb-728d-b499-207d165ed70e",
+    "file": "details/019d2bfb-98cb-728d-b499-207d165ed70e.json",
+    "code": "1.013285",
+    "name": "Thủ tục chấp thuận độ cao công trình"
+  },
+  {
+    "sampleNo": 36,
+    "id": "019d86f7-6442-745b-bd78-704907bbfcb3",
+    "file": "details/019d86f7-6442-745b-bd78-704907bbfcb3.json",
+    "code": "1.013742",
+    "name": "Cấp giấy đăng ký lưu hành thuốc, nguyên liệu làm thuốc"
+  },
+  {
+    "sampleNo": 37,
+    "id": "019d2bff-350b-74e8-acf9-ce12da50710d",
+    "file": "details/019d2bff-350b-74e8-acf9-ce12da50710d.json",
+    "code": "1.014039",
+    "name": "Cấp giấy đăng ký lưu hành thuốc cổ truyền"
+  },
+  {
+    "sampleNo": 38,
+    "id": "019d2bf7-9e0a-740a-9386-5f5b86bd98d8",
+    "file": "details/019d2bf7-9e0a-740a-9386-5f5b86bd98d8.json",
+    "code": "1.014066",
+    "name": "Điều chỉnh thông tin trong Cơ sở dữ liệu quốc gia về dân cư, Cơ sở dữ liệu căn cước theo đề nghị của người gốc Việt Nam chưa xác định được quốc tịch (thực hiện tại cấp xã)"
+  },
+  {
+    "sampleNo": 39,
+    "id": "019dd34c-cf37-735a-b1d6-ab2d3951ea53",
+    "file": "details/019dd34c-cf37-735a-b1d6-ab2d3951ea53.json",
+    "code": "1.014999",
+    "name": "Thủ tục đăng ký sáng chế"
+  },
+  {
+    "sampleNo": 40,
+    "id": "019dd459-97b2-743b-b7b3-5d386ddf10bb",
+    "file": "details/019dd459-97b2-743b-b7b3-5d386ddf10bb.json",
+    "code": "1.015003",
+    "name": "Thủ tục xử lý đơn Madrid có chỉ định Việt Nam"
+  },
+  {
+    "sampleNo": 41,
+    "id": "019f1277-71ca-7508-bb33-d71f57921b95",
+    "file": "details/019f1277-71ca-7508-bb33-d71f57921b95.json",
+    "code": "1.115342",
+    "name": "Đăng ký, cấp Giấy chứng nhận đối với trường hợp chuyển nhượng dự án đầu tư có sử dụng đất"
+  },
+  {
+    "sampleNo": 42,
+    "id": "019f12f5-a063-7299-a9dd-aac324d978a3",
+    "file": "details/019f12f5-a063-7299-a9dd-aac324d978a3.json",
+    "code": "1.115353",
+    "name": "Thu hồi Giấy chứng nhận đã cấp không đúng quy định của pháp luật đất đai do người sử dụng đất, chủ sở hữu tài sản gắn liền với đất phát hiện và cấp lại Giấy chứng nhận sau khi thu hồi"
+  },
+  {
+    "sampleNo": 43,
+    "id": "019f5e3a-bfe2-702f-85b1-da41a26bb824",
+    "file": "details/019f5e3a-bfe2-702f-85b1-da41a26bb824.json",
+    "code": "1.115797",
+    "name": "Giao đất, cho thuê đất, chuyển mục đích sử dụng đất đối với trường hợp giao đất, cho thuê đất không đấu giá quyền sử dụng đất, không đấu thầu lựa chọn nhà đầu tư thực hiện dự án có sử dụng đất; trường hợp giao đất, cho thuê đất thông qua đấu thầu lựa chọn nhà đầu tư thực hiện dự án có sử dụng đất; giao đất và giao rừng; cho thuê đất và cho thuê rừng; gia hạn sử dụng đất khi hết thời hạn sử dụng đất; trường hợp giao đất, cho thuê đất thông qua hình thức đấu giá quyền sử dụng đất (cấp tỉnh)"
+  },
+  {
+    "sampleNo": 44,
+    "id": "019d2bf7-adb9-77f9-ac8d-5050f166e833",
+    "file": "details/019d2bf7-adb9-77f9-ac8d-5050f166e833.json",
+    "code": "2.000511",
+    "name": "Xét khen thưởng trong phong trào toàn dân bảo vệ an ninh Tổ quốc tại Công an cấp tỉnh"
+  },
+  {
+    "sampleNo": 45,
+    "id": "019d2bff-d1c6-7532-a88a-2138ebfa7d7e",
+    "file": "details/019d2bff-d1c6-7532-a88a-2138ebfa7d7e.json",
+    "code": "2.001538",
+    "name": "Thủ tục đề nghị danh hiệu thi đua, hình thức khen thưởng thuộc phạm vi chức năng quản lý của NHNN"
+  },
+  {
+    "sampleNo": 46,
+    "id": "019d2bfc-f17b-739d-a085-c6d92d95c6df",
+    "file": "details/019d2bfc-f17b-739d-a085-c6d92d95c6df.json",
+    "code": "2.002643",
+    "name": "Dừng thực hiện thủ tục đăng ký tổ hợp tác, hợp tác xã, liên hiệp hợp tác xã; Dừng thực hiện thủ tục giải thể hợp tác xã, liên hiệp hợp tác xã"
+  },
+  {
+    "sampleNo": 47,
+    "id": "019d2bfc-f93f-72cb-8d37-12aebb031aeb",
+    "file": "details/019d2bfc-f93f-72cb-8d37-12aebb031aeb.json",
+    "code": "3.000029",
+    "name": "Thủ tục cấp, cấp lại, điều chỉnh Giấy chứng nhận đủ điều kiện kinh doanh dịch vụ xếp hạng tín nhiệm"
+  },
+  {
+    "sampleNo": 48,
+    "id": "019d2bf7-b5d4-75ed-a3db-11a8bd08eb4f",
+    "file": "details/019d2bf7-b5d4-75ed-a3db-11a8bd08eb4f.json",
+    "code": "3.000272",
+    "name": "Mở khóa căn cước điện tử (thực hiện tại cấp trung ương)"
+  },
+  {
+    "sampleNo": 49,
+    "id": "019e96c8-22fd-7617-9581-cf4e32745304",
+    "file": "details/019e96c8-22fd-7617-9581-cf4e32745304.json",
+    "code": "3.000579",
+    "name": "Giải quyết trợ cấp hằng tháng đối với thanh niên xung phong đã hoàn thành nhiệm vụ trong kháng chiến trở về địa phương (khoản01 Điều 09 Nghị Quyếtsố 182/2025/NQHĐND)"
+  },
+  {
+    "sampleNo": 50,
+    "id": "019fb923-aca1-7681-b21b-01b6f62e28ef",
+    "file": "details/019fb923-aca1-7681-b21b-01b6f62e28ef.json",
+    "code": "3.000671",
+    "name": "Đăng ký, cấp Giấy chứng nhận đối với thửa đất có diện tích tăng thêm do thay đổi ranh giới so với Giấy chứng nhận đã cấp (quy định tại điểm b và điểm c khoản 2 Điều 24 Nghị định số 101/2024/NĐ-CP và khoản 4 Điều 24 Nghị định số 101/2024/NĐ-CP)"
+  }
+]
