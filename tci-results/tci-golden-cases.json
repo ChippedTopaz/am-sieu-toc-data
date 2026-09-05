@@ -1,14 +1,16 @@
 {
   "metadata": {
-    "version": "TCI_V1_GOLDEN_SELECTOR_1.0",
+    "version": "TCI_V1_GOLDEN_SELECTOR_1.1",
     "source": "tci-results/tci-calibration-selection.json",
     "candidateCount": 50,
     "goldenCount": 30,
     "random": false,
+    "quotaTotal": 30,
+    "quota": {},
     "note": "Golden Cases ứng viên để hiệu chuẩn TCI; chưa tính điểm TCI."
   },
   "coverage": {
-    "G12_VERY_SIMPLE": 3,
+    "G12_VERY_SIMPLE": 2,
     "G01_SIMPLE_STEPS": 5,
     "G03_FEW_PROFILES": 3,
     "G02_MANY_STEPS": 4,
@@ -17,9 +19,9 @@
     "G06_LONG_TIME": 2,
     "G07_MULTIPLE_METHODS": 4,
     "G08_COMPLEX_CONDITIONS": 4,
-    "G09_MANY_ACTORS": 3,
+    "G09_MANY_ACTORS": 2,
     "G10_EXECUTION_CASES": 6,
-    "G11_ANOMALIES": 0,
+    "G11_ANOMALIES": 2,
     "G13_VERY_COMPLEX": 6
   },
   "golden": [
@@ -121,54 +123,6 @@
     },
     {
       "goldenNo": 3,
-      "id": "019d9496-f6c3-7362-812a-bca40dcd6003",
-      "code": "6.006578",
-      "name": "Thẩm định báo cáo rà soát tiêu chí phân loại đô thị, báo cáo đánh giá trình độ phát triển cơ sở hạ tầng đô thị",
-      "category": "",
-      "groups": [
-        "G12_VERY_SIMPLE"
-      ],
-      "reasons": [
-        "Chọn từ G12_VERY_SIMPLE",
-        "Bắt buộc có mẫu rất đơn giản",
-        "Golden anchor: G12_VERY_SIMPLE"
-      ],
-      "features": {
-        "steps": 1,
-        "profileComponents": 0,
-        "profileComponentsRaw": 0,
-        "profileComponentSource": "none",
-        "profileComponentIds": [],
-        "profileComponentsByCase": [
-          0
-        ],
-        "methods": 1,
-        "methodNames": [
-          "POSTAL"
-        ],
-        "executionCases": 1,
-        "processingMin": 30,
-        "processingMax": 30,
-        "processingValues": [
-          "30 DAY"
-        ],
-        "timeConflict": false,
-        "timeMultiSource": false,
-        "conditionSignal": 0,
-        "actorSignal": 3,
-        "unitGroups": 1,
-        "departments": 2,
-        "agencies": 0,
-        "narrativeLength": 1,
-        "hasExecutionCases": true,
-        "dataWarnings": [
-          "EMPTY_PROFILE_COMPONENTS"
-        ]
-      },
-      "sourceSampleNo": 50
-    },
-    {
-      "goldenNo": 4,
       "id": "019d2bf7-4fc4-7716-bab8-167242b3fcda",
       "code": "1.000253",
       "name": "Khai báo tạm trú cho người nước ngoài tại Việt Nam bằng Phiếu khai báo tạm trú",
@@ -219,7 +173,7 @@
       "sourceSampleNo": 2
     },
     {
-      "goldenNo": 5,
+      "goldenNo": 4,
       "id": "019d2bf7-57ba-70d3-8771-4bbb754b4b31",
       "code": "1.000771",
       "name": "Gia hạn tạm trú cho người đã được cấp giấy miễn thị thực tại Cục Quản lý xuất nhập cảnh Bộ Công an",
@@ -274,7 +228,7 @@
       "sourceSampleNo": 4
     },
     {
-      "goldenNo": 6,
+      "goldenNo": 5,
       "id": "019d2bf7-5fc6-72ba-a7f1-3506927a9517",
       "code": "1.001445",
       "name": "Trình báo mất hộ chiếu phổ thông (thực hiện tại cấp tỉnh)",
@@ -328,7 +282,7 @@
       "sourceSampleNo": 9
     },
     {
-      "goldenNo": 7,
+      "goldenNo": 6,
       "id": "019d2bf7-868d-73ed-93ce-00643818b2e7",
       "code": "1.010386",
       "name": "Trình báo mất hộ chiếu phổ thông (thực hiện tại cấp xã)",
@@ -380,7 +334,7 @@
       "sourceSampleNo": 16
     },
     {
-      "goldenNo": 8,
+      "goldenNo": 7,
       "id": "019f5e3a-bfe2-702f-85b1-da41a26bb824",
       "code": "1.115797",
       "name": "Giao đất, cho thuê đất, chuyển mục đích sử dụng đất đối với trường hợp giao đất, cho thuê đất không đấu giá quyền sử dụng đất, không đấu thầu lựa chọn nhà đầu tư thực hiện dự án có sử dụng đất; trường hợp giao đất, cho thuê đất thông qua đấu thầu lựa chọn nhà đầu tư thực hiện dự án có sử dụng đất; giao đất và giao rừng; cho thuê đất và cho thuê rừng; gia hạn sử dụng đất khi hết thời hạn sử dụng đất; trường hợp giao đất, cho thuê đất thông qua hình thức đấu giá quyền sử dụng đất (cấp tỉnh)",
@@ -459,7 +413,7 @@
       "sourceSampleNo": 25
     },
     {
-      "goldenNo": 9,
+      "goldenNo": 8,
       "id": "019fb923-aca1-7681-b21b-01b6f62e28ef",
       "code": "3.000671",
       "name": "Đăng ký, cấp Giấy chứng nhận đối với thửa đất có diện tích tăng thêm do thay đổi ranh giới so với Giấy chứng nhận đã cấp (quy định tại điểm b và điểm c khoản 2 Điều 24 Nghị định số 101/2024/NĐ-CP và khoản 4 Điều 24 Nghị định số 101/2024/NĐ-CP)",
@@ -509,7 +463,7 @@
       "sourceSampleNo": 47
     },
     {
-      "goldenNo": 10,
+      "goldenNo": 9,
       "id": "019e96c8-22fd-7617-9581-cf4e32745304",
       "code": "3.000579",
       "name": "Giải quyết trợ cấp hằng tháng đối với thanh niên xung phong đã hoàn thành nhiệm vụ trong kháng chiến trở về địa phương (khoản01 Điều 09 Nghị Quyếtsố 182/2025/NQHĐND)",
@@ -561,64 +515,7 @@
       "sourceSampleNo": 35
     },
     {
-      "goldenNo": 11,
-      "id": "019d2bfb-98cb-728d-b499-207d165ed70e",
-      "code": "1.013285",
-      "name": "Thủ tục chấp thuận độ cao công trình",
-      "category": "Quản lý vùng trời",
-      "groups": [
-        "G02_MANY_STEPS"
-      ],
-      "reasons": [
-        "Chọn từ G02_MANY_STEPS",
-        "Bắt buộc coverage nhiều bước",
-        "Golden anchor: G02_MANY_STEPS"
-      ],
-      "features": {
-        "steps": 14,
-        "profileComponents": 3,
-        "profileComponentsRaw": 3,
-        "profileComponentSource": "executionCases",
-        "profileComponentIds": [
-          "000.00.00.g11-kq003838",
-          "000.00.00.g11-kq1063",
-          "000.00.00.h12-kq0064"
-        ],
-        "profileComponentsByCase": [
-          3
-        ],
-        "methods": 3,
-        "methodNames": [
-          "DIRECT",
-          "ONLINE",
-          "POSTAL"
-        ],
-        "executionCases": 1,
-        "processingMin": 10,
-        "processingMax": 30,
-        "processingValues": [
-          "10 WORKING_DAY",
-          "15 WORKING_DAY",
-          "20 WORKING_DAY",
-          "30 WORKING_DAY"
-        ],
-        "timeConflict": true,
-        "timeMultiSource": false,
-        "conditionSignal": 5,
-        "actorSignal": 1,
-        "unitGroups": 0,
-        "departments": 1,
-        "agencies": 0,
-        "narrativeLength": 2153,
-        "hasExecutionCases": true,
-        "dataWarnings": [
-          "PROCESSING_TIME_CONFLICT_SAME_METHOD"
-        ]
-      },
-      "sourceSampleNo": 17
-    },
-    {
-      "goldenNo": 12,
+      "goldenNo": 10,
       "id": "019d2bfc-da19-7628-836f-646ce74db96a",
       "code": "2.002011",
       "name": "Đăng ký thay đổi: thành viên hợp danh; thành viên công ty trách nhiệm hữu hạn hai thành viên trở lên; người đại diện theo pháp luật của công ty trách nhiệm hữu hạn, công ty cổ phần; chủ sở hữu công ty trách nhiệm hữu hạn một thành viên; chủ doanh nghiệp tư nhân trong trường hợp bán, tặng cho doanh nghiệp, chủ doanh nghiệp chết",
@@ -796,7 +693,7 @@
       "sourceSampleNo": 34
     },
     {
-      "goldenNo": 13,
+      "goldenNo": 11,
       "id": "019d2bfa-401c-7185-871b-1e4375c166ac",
       "code": "1.004881",
       "name": "Cấp Giấy chứng nhận lưu hành thuốc thú y; Cấp lại Giấy chứng nhận lưu hành thuốc thú y (trong trường hợp thay đổi thành phần, công thức, dạng bào chế, đường dùng, liều dùng, chỉ định điều trị của thuốc thú y; thay đổi phương pháp, quy trình sản xuất mà làm thay đổi chất lượng sản phẩm; đánh giá lại chất lượng, hiệu quả, độ an toàn của thuốc thú y theo quy định)",
@@ -929,7 +826,7 @@
       "sourceSampleNo": 12
     },
     {
-      "goldenNo": 14,
+      "goldenNo": 12,
       "id": "019d2bfb-2af9-774b-995e-ea7085c65ef6",
       "code": "1.014199",
       "name": "Cấp giấy phép lao động đối với người lao động nước ngoài làm việc tại Việt Nam",
@@ -1062,118 +959,7 @@
       "sourceSampleNo": 19
     },
     {
-      "goldenNo": 15,
-      "id": "019d2bfc-93a3-764c-945d-714845436ee5",
-      "code": "1.009628",
-      "name": "Thủ tục điều chỉnh dự án đầu tư thuộc thẩm quyền chấp thuận chủ trương đầu tư của Thủ tướng Chính phủ",
-      "category": "Đầu tư tại Việt nam",
-      "groups": [
-        "G04_MANY_PROFILES",
-        "G08_COMPLEX_CONDITIONS",
-        "G13_VERY_COMPLEX"
-      ],
-      "reasons": [
-        "Chọn từ G04_MANY_PROFILES",
-        "Chọn từ G08_COMPLEX_CONDITIONS",
-        "Chọn từ G13_VERY_COMPLEX",
-        "Bắt buộc coverage điều kiện/nhánh",
-        "Golden anchor: G04_MANY_PROFILES"
-      ],
-      "features": {
-        "steps": 2,
-        "profileComponents": 50,
-        "profileComponentsRaw": 52,
-        "profileComponentSource": "executionCases",
-        "profileComponentIds": [
-          "g05-kq006740",
-          "g05-kq006742",
-          "g05-kq006739",
-          "g05-kq006741",
-          "000.00.00.g05-kq1182",
-          "tp-g12.0001322",
-          "tp-g12.0001319",
-          "000.00.00.g05-kq2762",
-          "tp-g12.0001321",
-          "tp-g12.0001320",
-          "000.00.00.g05-kq0484",
-          "tp-g12.0001326",
-          "tp-g12.0001314",
-          "000.00.00.g05-kq1214",
-          "tp-g12.0001317",
-          "tp-g12.0001328",
-          "tp-g12.0001275",
-          "tp-g12.0001276",
-          "tp-g12.0001277",
-          "tp-g12.0001278",
-          "tp-g12.0001279",
-          "000.00.00.g05-kq2771",
-          "tp-g12.0001368",
-          "tp-g12.0001335",
-          "tp-g12.0001336",
-          "tp-g12.0001337",
-          "tp-g12.0001367",
-          "000.00.00.g05-kq1021",
-          "tp-g12.0001333",
-          "tp-g12.0001325",
-          "tp-g12.0001341",
-          "tp-g12.0001338",
-          "000.00.00.g05-kq2862",
-          "tp-g12.0001280",
-          "tp-g12.0001344",
-          "tp-g12.0001348",
-          "tp-g12.0001313",
-          "tp-g12.0001345",
-          "tp-g12.0001347",
-          "tp-g12.0001346",
-          "tp-g12.0001353",
-          "tp-g12.0001352",
-          "000.00.00.g05-kq2905",
-          "tp-g12.0001350",
-          "tp-g12.0001351",
-          "tp-g12.0001355",
-          "tp-g12.0001359",
-          "000.00.00.g05-kq2032",
-          "tp-g12.0001357",
-          "tp-g12.0001358"
-        ],
-        "profileComponentsByCase": [
-          4,
-          7,
-          10,
-          9,
-          5,
-          6,
-          7,
-          4,
-          0
-        ],
-        "methods": 3,
-        "methodNames": [
-          "DIRECT",
-          "ONLINE",
-          "POSTAL"
-        ],
-        "executionCases": 9,
-        "processingMin": 25,
-        "processingMax": 25,
-        "processingValues": [
-          "25 WORKING_DAY"
-        ],
-        "timeConflict": false,
-        "timeMultiSource": false,
-        "conditionSignal": 45,
-        "actorSignal": 2,
-        "unitGroups": 0,
-        "departments": 2,
-        "agencies": 0,
-        "narrativeLength": 16799,
-        "hasExecutionCases": true,
-        "dataWarnings": []
-      },
-      "sourceSampleNo": 14
-    },
-    {
-      "goldenNo": 16,
+      "goldenNo": 13,
       "id": "019d2bf7-5f64-749f-b550-79b243ce8fb3",
       "code": "1.001226",
       "name": "Cấp giấy phép đến các tỉnh, thành phố của Việt Nam cho công dân Lào nhập cảnh bằng Giấy thông hành biên giới tại Công an cấp tỉnh",
@@ -1224,7 +1010,7 @@
       "sourceSampleNo": 8
     },
     {
-      "goldenNo": 17,
+      "goldenNo": 14,
       "id": "019d2bf7-6f56-704f-95b8-8d949272c6ad",
       "code": "1.003677",
       "name": "Khai báo tạm vắng",
@@ -1278,7 +1064,7 @@
       "sourceSampleNo": 11
     },
     {
-      "goldenNo": 18,
+      "goldenNo": 15,
       "id": "019dd34c-cf37-735a-b1d6-ab2d3951ea53",
       "code": "1.014999",
       "name": "Thủ tục đăng ký sáng chế",
@@ -1336,7 +1122,7 @@
       "sourceSampleNo": 22
     },
     {
-      "goldenNo": 19,
+      "goldenNo": 16,
       "id": "019dd459-97b2-743b-b7b3-5d386ddf10bb",
       "code": "1.015003",
       "name": "Thủ tục xử lý đơn Madrid có chỉ định Việt Nam",
@@ -1386,7 +1172,7 @@
       "sourceSampleNo": 23
     },
     {
-      "goldenNo": 20,
+      "goldenNo": 17,
       "id": "019d2bf7-57cb-7599-a263-9b6b5f854f74",
       "code": "1.000807",
       "name": "Cấp lại giấy miễn thị thực tại Cục Quản lý xuất nhập cảnh, Bộ Công an",
@@ -1447,7 +1233,7 @@
       "sourceSampleNo": 5
     },
     {
-      "goldenNo": 21,
+      "goldenNo": 18,
       "id": "019d2bf7-57cf-774b-9de0-6289bec06f7f",
       "code": "1.000811",
       "name": "Cấp mới thẻ ABTC (thực hiện tại cấp trung ương)",
@@ -1506,7 +1292,7 @@
       "sourceSampleNo": 6
     },
     {
-      "goldenNo": 22,
+      "goldenNo": 19,
       "id": "019d86f7-6442-745b-bd78-704907bbfcb3",
       "code": "1.013742",
       "name": "Cấp giấy đăng ký lưu hành thuốc, nguyên liệu làm thuốc",
@@ -1608,7 +1394,7 @@
       "sourceSampleNo": 18
     },
     {
-      "goldenNo": 23,
+      "goldenNo": 20,
       "id": "019d2bfc-2615-7489-ae4c-dc1cd8317dcb",
       "code": "1.007659",
       "name": "Thủ tục miễn thuế đối với hàng hóa xuất khẩu, nhập khẩu",
@@ -1715,7 +1501,7 @@
       "sourceSampleNo": 13
     },
     {
-      "goldenNo": 24,
+      "goldenNo": 21,
       "id": "019d2bfc-9380-700d-b295-7c6705fc9313",
       "code": "1.009646",
       "name": "Thủ tục chấp thuận điều chỉnh chủ trương đầu tư thuộc thẩm quyền của Chủ tịch Uỷ ban nhân dân cấp tỉnh",
@@ -1824,7 +1610,7 @@
       "sourceSampleNo": 15
     },
     {
-      "goldenNo": 25,
+      "goldenNo": 22,
       "id": "019ff8f6-f80d-72dd-a69d-b0f2468821d2",
       "code": "1.116389",
       "name": "Đăng ký, cấp Giấy chứng nhận đối với thửa đất có diện tích tăng thêm do thay đổi ranh giới so với Giấy chứng nhận đã cấp (đối với trường hợp quy định tại điểm a khoản 2 Điều 24 Nghị định số 101/2024/NĐ-CP).",
@@ -1877,7 +1663,7 @@
       "sourceSampleNo": 31
     },
     {
-      "goldenNo": 26,
+      "goldenNo": 23,
       "id": "019ff5be-f90b-744a-bf31-aa9fec429c19",
       "code": "1.116400",
       "name": "Tách thửa đất, hợp thửa đất",
@@ -1931,61 +1717,7 @@
       "sourceSampleNo": 32
     },
     {
-      "goldenNo": 27,
-      "id": "019f12f5-a063-7299-a9dd-aac324d978a3",
-      "code": "1.115353",
-      "name": "Thu hồi Giấy chứng nhận đã cấp không đúng quy định của pháp luật đất đai do người sử dụng đất, chủ sở hữu tài sản gắn liền với đất phát hiện và cấp lại Giấy chứng nhận sau khi thu hồi",
-      "category": "Đất đai",
-      "groups": [
-        "G09_MANY_ACTORS"
-      ],
-      "reasons": [
-        "Chọn từ G09_MANY_ACTORS",
-        "Bắt buộc coverage nhiều tác nhân",
-        "Golden anchor: G09_MANY_ACTORS"
-      ],
-      "features": {
-        "steps": 2,
-        "profileComponents": 2,
-        "profileComponentsRaw": 2,
-        "profileComponentSource": "executionCases",
-        "profileComponentIds": [
-          "tphs.68",
-          "tphs.15"
-        ],
-        "profileComponentsByCase": [
-          2
-        ],
-        "methods": 3,
-        "methodNames": [
-          "DIRECT",
-          "ONLINE",
-          "POSTAL"
-        ],
-        "executionCases": 1,
-        "processingMin": 26.5,
-        "processingMax": 30,
-        "processingValues": [
-          "26.5 WORKING_DAY",
-          "30 WORKING_DAY"
-        ],
-        "timeConflict": true,
-        "timeMultiSource": false,
-        "conditionSignal": 0,
-        "actorSignal": 29,
-        "unitGroups": 2,
-        "departments": 27,
-        "agencies": 0,
-        "narrativeLength": 1,
-        "hasExecutionCases": true,
-        "dataWarnings": [
-          "PROCESSING_TIME_CONFLICT_SAME_METHOD"
-        ]
-      },
-      "sourceSampleNo": 24
-    },
-    {
-      "goldenNo": 28,
+      "goldenNo": 24,
       "id": "019d2bfb-d7a1-70cd-b177-166039682b48",
       "code": "1.001667",
       "name": "Giải quyết hưởng chế độ ốm đau, thai sản, trợ cấp dưỡng sức phục hồi sức khỏe sau ốm đau, thai sản, TNLĐ, BNN",
@@ -2111,7 +1843,7 @@
       "sourceSampleNo": 10
     },
     {
-      "goldenNo": 29,
+      "goldenNo": 25,
       "id": "019fa89c-2a0e-71cc-a46e-20a3f8ae8d9a",
       "code": "1.116038",
       "name": "Đăng ký thay đổi nội dung, cập nhật, bổ sung thông tin, cấp lại giấy chứng nhận, hiệu đính thông tin đăng ký hoạt động của Ngân hàng Chính sách xã hội, chi nhánh, phòng giao dịch Ngân hàng Chính sách xã hội. Đăng ký hoạt động lần đầu của chi nhánh, phòng giao dịch Ngân hàng Chính sách xã hội",
@@ -2212,7 +1944,222 @@
       "sourceSampleNo": 29
     },
     {
-      "goldenNo": 30,
+      "goldenNo": 26,
+      "id": "019fb7c8-f7c9-70bf-aa81-c64ee59ea09c",
+      "code": "3.000654",
+      "name": "Đăng ký, cấp Giấy chứng nhận đối với trường hợp chuyển nhượng dự án đầu tư có sử dụng đất",
+      "category": "Đất đai",
+      "groups": [
+        "G11_ANOMALIES"
+      ],
+      "reasons": [
+        "Chọn từ G11_ANOMALIES",
+        "Bổ sung anomaly để audit",
+        "Golden anchor: G11_ANOMALIES"
+      ],
+      "features": {
+        "steps": 6,
+        "profileComponents": 0,
+        "profileComponentsRaw": 0,
+        "profileComponentSource": "none",
+        "profileComponentIds": [],
+        "profileComponentsByCase": [
+          0
+        ],
+        "methods": 3,
+        "methodNames": [
+          "DIRECT",
+          "ONLINE",
+          "POSTAL"
+        ],
+        "executionCases": 1,
+        "processingMin": 18,
+        "processingMax": 30,
+        "processingValues": [
+          "30 DAY",
+          "18 DAY"
+        ],
+        "timeConflict": true,
+        "timeMultiSource": false,
+        "conditionSignal": 0,
+        "actorSignal": 1,
+        "unitGroups": 1,
+        "departments": 0,
+        "agencies": 0,
+        "narrativeLength": 1,
+        "hasExecutionCases": true,
+        "dataWarnings": [
+          "EMPTY_PROFILE_COMPONENTS",
+          "PROCESSING_TIME_CONFLICT_SAME_METHOD"
+        ]
+      },
+      "sourceSampleNo": 42
+    },
+    {
+      "goldenNo": 27,
+      "id": "019fb7be-6c8b-7054-819d-5e470608e389",
+      "code": "3.000650",
+      "name": "Đăng ký biến động đối với trường hợp thay đổi quyền sử dụng đất, quyền sở hữu tài sản gắn liền với đất theo thỏa thuận của các thành viên hộ gia đình hoặc của vợ và chồng; quyền sử dụng đất xây dựng công trình trên mặt đất phục vụ cho việc vận hành, khai thác sử dụng công trình ngầm, quyền sở hữu công trình ngầm; bán tài sản, điều chuyển, chuyển nhượng quyền sử dụng đất là tài sản công theo quy định của pháp luật về quản lý, sử dụng tài sản công; nhận quyền sử dụng đất, quyền sở hữu tài sản gắn liền với đất theo kết quả giải quyết tranh chấp, khiếu nại, tố cáo về đất đai hoặc bản án, quyết định của Tòa án, quyết định thi hành án của cơ quan thi hành án đã được thi hành; quyết định hoặc phán quyết của Trọng tài thương mại Việt Nam về giải quyết tranh chấp giữa các bên phát sinh từ hoạt động thương mại liên quan đến đất đai; nhận quyền sử dụng đất, quyền sở hữu tài sản gắn liền với đất do xử lý tài sản thế chấp là quyền sử dụng đất, tài sản gắn liền với đất đã được đăng ký, bao gồm cả xử lý khoản nợ có nguồn gốc từ khoản nợ xấu của tổ chức tín dụng, chi nhánh ngân hàng nước ngoài",
+      "category": "Đất đai",
+      "groups": [
+        "G11_ANOMALIES"
+      ],
+      "reasons": [
+        "Chọn từ G11_ANOMALIES",
+        "Bổ sung anomaly để audit",
+        "Golden anchor: G11_ANOMALIES"
+      ],
+      "features": {
+        "steps": 5,
+        "profileComponents": 0,
+        "profileComponentsRaw": 0,
+        "profileComponentSource": "none",
+        "profileComponentIds": [],
+        "profileComponentsByCase": [
+          0
+        ],
+        "methods": 3,
+        "methodNames": [
+          "DIRECT",
+          "ONLINE",
+          "POSTAL"
+        ],
+        "executionCases": 1,
+        "processingMin": 18,
+        "processingMax": 20,
+        "processingValues": [
+          "18 DAY",
+          "20 DAY"
+        ],
+        "timeConflict": true,
+        "timeMultiSource": false,
+        "conditionSignal": 0,
+        "actorSignal": 1,
+        "unitGroups": 1,
+        "departments": 0,
+        "agencies": 0,
+        "narrativeLength": 1,
+        "hasExecutionCases": true,
+        "dataWarnings": [
+          "EMPTY_PROFILE_COMPONENTS",
+          "PROCESSING_TIME_CONFLICT_SAME_METHOD"
+        ]
+      },
+      "sourceSampleNo": 41
+    },
+    {
+      "goldenNo": 28,
+      "id": "019d2bfc-93a3-764c-945d-714845436ee5",
+      "code": "1.009628",
+      "name": "Thủ tục điều chỉnh dự án đầu tư thuộc thẩm quyền chấp thuận chủ trương đầu tư của Thủ tướng Chính phủ",
+      "category": "Đầu tư tại Việt nam",
+      "groups": [
+        "G04_MANY_PROFILES",
+        "G08_COMPLEX_CONDITIONS",
+        "G13_VERY_COMPLEX"
+      ],
+      "reasons": [
+        "Chọn từ G04_MANY_PROFILES",
+        "Chọn từ G08_COMPLEX_CONDITIONS",
+        "Chọn từ G13_VERY_COMPLEX",
+        "Bắt buộc coverage điều kiện/nhánh",
+        "Golden anchor: G13_VERY_COMPLEX"
+      ],
+      "features": {
+        "steps": 2,
+        "profileComponents": 50,
+        "profileComponentsRaw": 52,
+        "profileComponentSource": "executionCases",
+        "profileComponentIds": [
+          "g05-kq006740",
+          "g05-kq006742",
+          "g05-kq006739",
+          "g05-kq006741",
+          "000.00.00.g05-kq1182",
+          "tp-g12.0001322",
+          "tp-g12.0001319",
+          "000.00.00.g05-kq2762",
+          "tp-g12.0001321",
+          "tp-g12.0001320",
+          "000.00.00.g05-kq0484",
+          "tp-g12.0001326",
+          "tp-g12.0001314",
+          "000.00.00.g05-kq1214",
+          "tp-g12.0001317",
+          "tp-g12.0001328",
+          "tp-g12.0001275",
+          "tp-g12.0001276",
+          "tp-g12.0001277",
+          "tp-g12.0001278",
+          "tp-g12.0001279",
+          "000.00.00.g05-kq2771",
+          "tp-g12.0001368",
+          "tp-g12.0001335",
+          "tp-g12.0001336",
+          "tp-g12.0001337",
+          "tp-g12.0001367",
+          "000.00.00.g05-kq1021",
+          "tp-g12.0001333",
+          "tp-g12.0001325",
+          "tp-g12.0001341",
+          "tp-g12.0001338",
+          "000.00.00.g05-kq2862",
+          "tp-g12.0001280",
+          "tp-g12.0001344",
+          "tp-g12.0001348",
+          "tp-g12.0001313",
+          "tp-g12.0001345",
+          "tp-g12.0001347",
+          "tp-g12.0001346",
+          "tp-g12.0001353",
+          "tp-g12.0001352",
+          "000.00.00.g05-kq2905",
+          "tp-g12.0001350",
+          "tp-g12.0001351",
+          "tp-g12.0001355",
+          "tp-g12.0001359",
+          "000.00.00.g05-kq2032",
+          "tp-g12.0001357",
+          "tp-g12.0001358"
+        ],
+        "profileComponentsByCase": [
+          4,
+          7,
+          10,
+          9,
+          5,
+          6,
+          7,
+          4,
+          0
+        ],
+        "methods": 3,
+        "methodNames": [
+          "DIRECT",
+          "ONLINE",
+          "POSTAL"
+        ],
+        "executionCases": 9,
+        "processingMin": 25,
+        "processingMax": 25,
+        "processingValues": [
+          "25 WORKING_DAY"
+        ],
+        "timeConflict": false,
+        "timeMultiSource": false,
+        "conditionSignal": 45,
+        "actorSignal": 2,
+        "unitGroups": 0,
+        "departments": 2,
+        "agencies": 0,
+        "narrativeLength": 16799,
+        "hasExecutionCases": true,
+        "dataWarnings": []
+      },
+      "sourceSampleNo": 14
+    },
+    {
+      "goldenNo": 29,
       "id": "019d2bfc-d9d1-7475-8e58-1aa4479901eb",
       "code": "2.000575",
       "name": "Cấp lại Giấy chứng nhận đăng ký hộ kinh doanh, Cấp đổi sang Giấy chứng nhận đăng ký hộ kinh doanh",
@@ -2223,7 +2170,7 @@
       "reasons": [
         "Chọn từ G10_EXECUTION_CASES",
         "Bắt buộc coverage executionCases",
-        "Golden anchor: G10_EXECUTION_CASES"
+        "Golden bổ sung để lấp coverage"
       ],
       "features": {
         "steps": 2,
@@ -2314,6 +2261,63 @@
         "dataWarnings": []
       },
       "sourceSampleNo": 33
+    },
+    {
+      "goldenNo": 30,
+      "id": "019d2bfb-98cb-728d-b499-207d165ed70e",
+      "code": "1.013285",
+      "name": "Thủ tục chấp thuận độ cao công trình",
+      "category": "Quản lý vùng trời",
+      "groups": [
+        "G02_MANY_STEPS"
+      ],
+      "reasons": [
+        "Chọn từ G02_MANY_STEPS",
+        "Bắt buộc coverage nhiều bước",
+        "Golden bổ sung để lấp coverage"
+      ],
+      "features": {
+        "steps": 14,
+        "profileComponents": 3,
+        "profileComponentsRaw": 3,
+        "profileComponentSource": "executionCases",
+        "profileComponentIds": [
+          "000.00.00.g11-kq003838",
+          "000.00.00.g11-kq1063",
+          "000.00.00.h12-kq0064"
+        ],
+        "profileComponentsByCase": [
+          3
+        ],
+        "methods": 3,
+        "methodNames": [
+          "DIRECT",
+          "ONLINE",
+          "POSTAL"
+        ],
+        "executionCases": 1,
+        "processingMin": 10,
+        "processingMax": 30,
+        "processingValues": [
+          "10 WORKING_DAY",
+          "15 WORKING_DAY",
+          "20 WORKING_DAY",
+          "30 WORKING_DAY"
+        ],
+        "timeConflict": true,
+        "timeMultiSource": false,
+        "conditionSignal": 5,
+        "actorSignal": 1,
+        "unitGroups": 0,
+        "departments": 1,
+        "agencies": 0,
+        "narrativeLength": 2153,
+        "hasExecutionCases": true,
+        "dataWarnings": [
+          "PROCESSING_TIME_CONFLICT_SAME_METHOD"
+        ]
+      },
+      "sourceSampleNo": 17
     }
   ]
 }
