@@ -24,7 +24,7 @@ These weights are the current V1 working specification. The legacy calibration m
 
 RAW JSON → EXTRACT → NORMALIZE → FEATURE EXTRACTION → CLASSIFY → SCORE → AUDIT.
 
-Unknown must never silently become zero or false.
+Unknown must never silently become zero or false, except where a V1 field-level business rule explicitly defines a missing value as a meaningful category. C5 `implementLevel` is such an exception: missing means no online public-service level.
 
 ## 4. C1 — Thành phần hồ sơ
 
@@ -58,7 +58,11 @@ Do not select the first time in an array. Canonical scoring requires calibrated 
 
 ### A. implementLevel — 40 points
 
-`FULL` = 40, `PARTIAL` = 30, `NONE` = 0. Missing/invalid = UNKNOWN/INVALID.
+`FULL` = 40, `PARTIAL` = 30, `NONE` = 0.
+
+**V1 business rule:** when `implementLevel` is missing, null or empty in the source JSON, normalize it to `NONE` (Chưa cung cấp DVC trực tuyến). This is intentional business semantics, not an UNKNOWN state.
+
+A present but unsupported/malformed value remains `INVALID` and must be audited.
 
 `implementLevel` is the only source for user-facing DVC level. Never infer it from submission method, returning method or `isFullProcess`.
 
@@ -111,6 +115,8 @@ Normalize actors to distinct canonical identities. Count actual actors, handoffs
 `UNKNOWN`: evidence absent.
 `INVALID`: evidence present but malformed or contradictory.
 `PARTIAL`: some components scored, some unresolved.
+
+Field-level exception: C5 `implementLevel` missing/null/empty is normalized to the explicit category `NONE` by V1 business rule.
 
 ## 12. Calibration rule
 
