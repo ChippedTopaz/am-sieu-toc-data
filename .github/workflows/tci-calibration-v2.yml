@@ -7,6 +7,7 @@ on:
       - 'details/**'
       - 'tci/select-tci-calibration-v2.js'
       - 'tci/select-golden-cases-v2.js'
+      - 'tci/diagnose-c5-fields-v2.js'
       - 'tci/TCI_V1_MASTER_SPEC.md'
       - '.github/workflows/tci-calibration-v2.yml'
   schedule:
@@ -31,6 +32,9 @@ jobs:
 
       - name: Select calibration samples V2
         run: node tci/select-tci-calibration-v2.js
+
+      - name: Diagnose C5 source fields
+        run: node tci/diagnose-c5-fields-v2.js
 
       - name: Select Golden Cases V2
         run: node tci/select-golden-cases-v2.js
