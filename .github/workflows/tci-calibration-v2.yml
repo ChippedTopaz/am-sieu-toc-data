@@ -1,0 +1,54 @@
+name: TCI Calibration V2
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'details/**'
+      - 'tci/input/dvc-mapping.csv'
+      - 'tci/select-tci-calibration-v2.js'
+      - 'tci/select-golden-cases-v2.js'
+      - 'tci/diagnose-c5-fields-v2.js'
+      - 'tci/DVC_MAPPING_SCHEMA.md'
+      - 'tci/TCI_V1_MASTER_SPEC.md'
+      - '.github/workflows/tci-calibration-v2.yml'
+  schedule:
+    - cron: '15 17 * * *'
+
+permissions:
+  contents: write
+
+jobs:
+  calibration:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout current calibration branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Select calibration samples V2
+        run: node tci/select-tci-calibration-v2.js
+
+      - name: Diagnose C5 source fields
+        run: node tci/diagnose-c5-fields-v2.js
+
+      - name: Select Golden Cases V2
+        run: node tci/select-golden-cases-v2.js
+
+      - name: Commit generated calibration results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add tci-results-v2
+          if git diff --cached --quiet; then
+            echo "No calibration output changes."
+          else
+            git commit -m "TCI: refresh calibration V2 samples and golden cases"
+            git push origin HEAD:${{ github.ref_name }}
+          fi
