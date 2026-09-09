@@ -1,0 +1,23 @@
+{
+  "kioskProvince": "Đồng Nai",
+  "kioskLevel": "xa",
+  "kioskName": "TRUNG TÂM PHỤC VỤ HÀNH CHÍNH CÔNG XÃ BÙ ĐĂNG - THÀNH PHỐ ĐỒNG NAI",
+  "kioskAddress": "Quốc lộ 14, Thôn Hoà Đồng, xã Bù Đăng, thành phố Đồng Nai",
+  "kioskPhone": "0917.012.993",
+  "kioskTime": "Sáng: 07h30 - 11h30 | Chiều: 13h00 - 17h00. Riêng Sáng thứ Bẩy: 07h30 - 11h30",
+  "fields": [
+    "Hộ tịch",
+    "Đất đai",
+    "Chứng thực",
+    "Người có công",
+    "Thành lập và hoạt động doanh nghiệp (hộ kinh doanh)",
+    "Giáo dục và đào tạo thuộc hệ thống giáo dục quốc dân",
+    "Văn hóa",
+    "Công tác dân tộc",
+    "Bảo trợ xã hội",
+    "An toàn thực phẩm",
+    "Tín ngưỡng, tôn giáo",
+    "Bảo hiểm xã hội"
+  ],
+  "lastSync": "07:03:16 9/9/2026"
+}

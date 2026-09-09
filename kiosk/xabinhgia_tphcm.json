@@ -1,0 +1,23 @@
+{
+  "kioskProvince": "Hồ Chí Minh",
+  "kioskLevel": "xa",
+  "kioskName": "TRUNG TÂM PHỤC VỤ HÀNH CHÍNH CÔNG XÃ BÌNH GIÃ - THÀNH PHỐ HỒ CHÍ MINH",
+  "kioskAddress": "Ấp Vĩnh Bình, xã Bình Giã, thành phố Hồ Chí Minh",
+  "kioskPhone": "Giám đốc Thái Quang Vịnh - 0986286686",
+  "kioskTime": "Sáng: 07h00 - 11h30 | Chiều: 13h30 - 17h00",
+  "fields": [
+    "Đất đai",
+    "Hộ tịch",
+    "Chứng thực",
+    "Thành lập và hoạt động doanh nghiệp (hộ kinh doanh)",
+    "An toàn thực phẩm",
+    "Bảo hiểm xã hội",
+    "Bảo trợ xã hội",
+    "Giáo dục và đào tạo thuộc hệ thống giáo dục quốc dân",
+    "Hòa giải ở cơ sở",
+    "Người có công",
+    "Tín ngưỡng, tôn giáo",
+    "Văn hóa"
+  ],
+  "lastSync": "07:03:10 9/9/2026"
+}

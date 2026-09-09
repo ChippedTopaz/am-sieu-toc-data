@@ -1,0 +1,23 @@
+{
+  "kioskProvince": "Lạng Sơn",
+  "kioskLevel": "xa",
+  "kioskName": "TRUNG TÂM PHỤC VỤ HÀNH CHÍNH CÔNG PHƯỜNG ĐÔNG KINH",
+  "kioskAddress": "Số 2, đường Lê Lợi, khối 1, phường Đông Kinh, tỉnh Lạng Sơn",
+  "kioskPhone": "0983.512.388",
+  "kioskTime": "Sáng: 07h00 - 11h30 | Chiều: 13h30 - 17h00",
+  "fields": [
+    "Đất đai",
+    "Chứng thực",
+    "Hộ tịch",
+    "Người có công",
+    "Văn hóa",
+    "Thành lập và hoạt động doanh nghiệp (hộ kinh doanh)",
+    "Hoạt động xây dựng",
+    "Bảo trợ xã hội",
+    "An toàn thực phẩm",
+    "Giáo dục và đào tạo thuộc hệ thống giáo dục quốc dân",
+    "Tín ngưỡng, tôn giáo",
+    "Bảo hiểm xã hội"
+  ],
+  "lastSync": "07:03:20 9/9/2026"
+}

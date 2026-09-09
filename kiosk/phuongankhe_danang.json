@@ -1,0 +1,22 @@
+{
+  "kioskProvince": "Đà Nẵng",
+  "kioskLevel": "xa",
+  "kioskName": "TRUNG TÂM PHỤC VỤ HÀNH CHÍNH CÔNG PHƯỜNG AN KHÊ - THÀNH PHỐ ĐÀ NẴNG",
+  "kioskAddress": "Số 916 đường Tôn Đản, phường An Khê, thành phố Đà Nẵng",
+  "kioskPhone": "0236.368.3723",
+  "kioskTime": "Sáng: 07h30 - 11h30 | Chiều: 13h00 - 17h00",
+  "fields": [
+    "Hộ tịch",
+    "Chứng thực",
+    "Đất đai",
+    "Thành lập và hoạt động doanh nghiệp (hộ kinh doanh)",
+    "Người có công",
+    "An toàn thực phẩm",
+    "Bảo hiểm xã hội",
+    "Giáo dục và đào tạo thuộc hệ thống giáo dục quốc dân",
+    "Hòa giải ở cơ sở",
+    "Tín ngưỡng, tôn giáo",
+    "Văn hóa"
+  ],
+  "lastSync": "07:03:05 9/9/2026"
+}
