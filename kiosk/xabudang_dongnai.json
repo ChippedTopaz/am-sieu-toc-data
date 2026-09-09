@@ -1,6 +1,7 @@
 {
   "kioskProvince": "Đồng Nai",
   "kioskLevel": "xa",
+  "kioskDefaultAgency": "UBND Xã Bù Đăng",
   "kioskName": "TRUNG TÂM PHỤC VỤ HÀNH CHÍNH CÔNG XÃ BÙ ĐĂNG - THÀNH PHỐ ĐỒNG NAI",
   "kioskAddress": "Quốc lộ 14, Thôn Hoà Đồng, xã Bù Đăng, thành phố Đồng Nai",
   "kioskPhone": "0917.012.993",
@@ -19,5 +20,5 @@
     "Tín ngưỡng, tôn giáo",
     "Bảo hiểm xã hội"
   ],
-  "lastSync": "07:03:16 9/9/2026"
+  "lastSync": "05:42:04 10/9/2026"
 }
