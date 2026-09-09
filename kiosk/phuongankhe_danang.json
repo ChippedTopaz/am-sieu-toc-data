@@ -1,6 +1,7 @@
 {
   "kioskProvince": "Đà Nẵng",
   "kioskLevel": "xa",
+  "kioskDefaultAgency": "UBND Phường An Khê",
   "kioskName": "TRUNG TÂM PHỤC VỤ HÀNH CHÍNH CÔNG PHƯỜNG AN KHÊ - THÀNH PHỐ ĐÀ NẴNG",
   "kioskAddress": "Số 916 đường Tôn Đản, phường An Khê, thành phố Đà Nẵng",
   "kioskPhone": "0236.368.3723",
@@ -18,5 +19,5 @@
     "Tín ngưỡng, tôn giáo",
     "Văn hóa"
   ],
-  "lastSync": "07:03:05 9/9/2026"
+  "lastSync": "05:41:23 10/9/2026"
 }
