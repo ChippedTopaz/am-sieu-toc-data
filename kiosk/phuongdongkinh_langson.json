@@ -1,6 +1,7 @@
 {
   "kioskProvince": "Lạng Sơn",
   "kioskLevel": "xa",
+  "kioskDefaultAgency": "UBND phường Đông Kinh - tỉnh Lạng Sơn",
   "kioskName": "TRUNG TÂM PHỤC VỤ HÀNH CHÍNH CÔNG PHƯỜNG ĐÔNG KINH",
   "kioskAddress": "Số 2, đường Lê Lợi, khối 1, phường Đông Kinh, tỉnh Lạng Sơn",
   "kioskPhone": "0983.512.388",
@@ -19,5 +20,5 @@
     "Tín ngưỡng, tôn giáo",
     "Bảo hiểm xã hội"
   ],
-  "lastSync": "07:03:20 9/9/2026"
+  "lastSync": "05:20:55 10/9/2026"
 }
