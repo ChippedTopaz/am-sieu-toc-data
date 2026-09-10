@@ -1,7 +1,7 @@
 {
   "kioskProvince": "Lạng Sơn",
   "kioskLevel": "xa",
-  "kioskDefaultAgency": "",
+  "kioskDefaultAgency": "UBND xã Đoàn Kết - tỉnh Lạng Sơn",
   "kioskName": "TRUNG TÂM PHỤC VỤ HÀNH CHÍNH CÔNG XÃ ĐOÀN KẾT",
   "kioskAddress": "Thôn Khuổi Bây, xã Đoàn Kết, tỉnh Lạng Sơn",
   "kioskPhone": "0862726866",
@@ -20,5 +20,5 @@
     "Tín ngưỡng, tôn giáo",
     "Văn hóa"
   ],
-  "lastSync": "09:43:28 10/9/2026"
+  "lastSync": "09:43:57 10/9/2026"
 }
