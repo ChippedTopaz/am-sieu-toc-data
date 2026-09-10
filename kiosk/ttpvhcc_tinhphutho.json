@@ -1,0 +1,24 @@
+{
+  "kioskProvince": "Phú Thọ",
+  "kioskLevel": "tinh_xa",
+  "kioskDefaultAgency": "",
+  "kioskName": "TRUNG TÂM PHỤC VỤ HÀNH CHÍNH CÔNG TỈNH PHÚ THỌ",
+  "kioskAddress": "Số 398 đường Trần Phú, phường Việt Trì, tỉnh Phú Thọ",
+  "kioskPhone": "",
+  "kioskTime": "Sáng: 07h30 - 11h30 | Chiều: 13h00 - 17h00",
+  "fields": [
+    "An toàn thực phẩm",
+    "Bảo hiểm xã hội",
+    "Bảo trợ xã hội",
+    "Chứng thực",
+    "Đất đai",
+    "Giáo dục và đào tạo thuộc hệ thống giáo dục quốc dân",
+    "Hoạt động xây dựng",
+    "Hộ tịch",
+    "Người có công",
+    "Thành lập và hoạt động doanh nghiệp (hộ kinh doanh)",
+    "Tín ngưỡng, tôn giáo",
+    "Văn hóa"
+  ],
+  "lastSync": "16:23:41 10/9/2026"
+}
