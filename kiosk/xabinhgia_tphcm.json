@@ -7,18 +7,20 @@
   "kioskPhone": "Giám đốc Thái Quang Vịnh - 0986286686",
   "kioskTime": "Sáng: 07h00 - 11h30 | Chiều: 13h30 - 17h00",
   "fields": [
-    "Đất đai",
-    "Hộ tịch",
-    "Chứng thực",
-    "Thành lập và hoạt động doanh nghiệp (hộ kinh doanh)",
-    "An toàn thực phẩm",
     "Bảo hiểm xã hội",
-    "Bảo trợ xã hội",
-    "Giáo dục và đào tạo thuộc hệ thống giáo dục quốc dân",
     "Hòa giải ở cơ sở",
+    "An toàn thực phẩm",
+    "Thủ tục hành chính liên thông",
+    "Bảo trợ xã hội",
+    "Chứng thực",
+    "Đất đai",
+    "Giáo dục và đào tạo thuộc hệ thống giáo dục quốc dân",
+    "Hoạt động xây dựng",
+    "Hộ tịch",
     "Người có công",
+    "Thành lập và hoạt động doanh nghiệp (hộ kinh doanh)",
     "Tín ngưỡng, tôn giáo",
     "Văn hóa"
   ],
-  "lastSync": "05:41:42 10/9/2026"
+  "lastSync": "22:04:46 10/9/2026"
 }
