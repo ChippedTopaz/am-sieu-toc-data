@@ -7,7 +7,6 @@
   "kioskPhone": "",
   "kioskTime": "Sáng: 07h30 - 11h30 | Chiều: 13h00 - 17h00",
   "fields": [
-    "Bảo hiểm xã hội",
     "An toàn thực phẩm",
     "Thủ tục hành chính liên thông",
     "Bảo trợ xã hội",
@@ -21,5 +20,5 @@
     "Tín ngưỡng, tôn giáo",
     "Văn hóa"
   ],
-  "lastSync": "22:04:27 10/9/2026"
+  "lastSync": "22:13:26 10/9/2026"
 }
