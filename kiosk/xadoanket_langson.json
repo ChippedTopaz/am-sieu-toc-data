@@ -1,0 +1,24 @@
+{
+  "kioskProvince": "Lạng Sơn",
+  "kioskLevel": "xa",
+  "kioskDefaultAgency": "",
+  "kioskName": "TRUNG TÂM PHỤC VỤ HÀNH CHÍNH CÔNG XÃ ĐOÀN KẾT",
+  "kioskAddress": "Thôn Khuổi Bây, xã Đoàn Kết, tỉnh Lạng Sơn",
+  "kioskPhone": "0862726866",
+  "kioskTime": "Sáng: 07h00 - 11h30 | Chiều: 13h30 - 17h00",
+  "fields": [
+    "An toàn thực phẩm",
+    "Bảo hiểm xã hội",
+    "Bảo trợ xã hội",
+    "Chứng thực",
+    "Đất đai",
+    "Giáo dục và đào tạo thuộc hệ thống giáo dục quốc dân",
+    "Hoạt động xây dựng",
+    "Hộ tịch",
+    "Người có công",
+    "Thành lập và hoạt động của tổ hợp tác, hợp tác xã, liên hiệp hợp tác xã",
+    "Tín ngưỡng, tôn giáo",
+    "Văn hóa"
+  ],
+  "lastSync": "09:43:28 10/9/2026"
+}
