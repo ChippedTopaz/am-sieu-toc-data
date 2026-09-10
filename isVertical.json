@@ -1,0 +1,334 @@
+{
+  "banned_domains": [
+    {
+      "linh_vuc": "Hải quan",
+      "co_quan_cong_bo": "Bộ Tài chính"
+    },
+    {
+      "linh_vuc": "Thuế",
+      "co_quan_cong_bo": "Bộ Tài chính"
+    },
+    {
+      "linh_vuc": "Kho bạc",
+      "co_quan_cong_bo": "Bộ Tài chính"
+    },
+    {
+      "linh_vuc": "cư trú",
+      "co_quan_cong_bo": "Bộ Công an"
+    },
+    {
+      "linh_vuc": "căn cước",
+      "co_quan_cong_bo": "Bộ Công an"
+    },
+    {
+      "linh_vuc": "phòng cháy",
+      "co_quan_cong_bo": "Bộ Công an"
+    },
+    {
+      "linh_vuc": "xuất nhập cảnh",
+      "co_quan_cong_bo": "Bộ Công an"
+    },
+    {
+      "linh_vuc": "vũ khí",
+      "co_quan_cong_bo": "Bộ Công an"
+    },
+    {
+      "linh_vuc": "giao thông",
+      "co_quan_cong_bo": "Bộ Công an"
+    },
+    {
+      "linh_vuc": "con dấu",
+      "co_quan_cong_bo": "Bộ Công an"
+    },
+    {
+      "linh_vuc": "cai nghiện ma túy",
+      "co_quan_cong_bo": "Bộ Công an"
+    },
+    {
+      "linh_vuc": "Lý lịch tư pháp",
+      "co_quan_cong_bo": "Bộ Ngoại giao"
+    },
+    {
+      "linh_vuc": "Tòa án",
+      "co_quan_cong_bo": "Tòa án nhân dân"
+    }
+  ],
+  "banned_codes": [
+    "1.116538",
+    "1.116466",
+    "1.116462",
+    "1.116414",
+    "1.116413",
+    "1.116412",
+    "1.116411",
+    "1.116410",
+    "1.116216",
+    "1.115979",
+    "1.115971",
+    "1.115970",
+    "1.115960",
+    "1.115959",
+    "1.115489",
+    "1.115406",
+    "1.115232",
+    "1.115231",
+    "1.115230",
+    "3.000163",
+    "1.014193",
+    "3.000115",
+    "2.002264",
+    "2.001204",
+    "2.001201",
+    "2.000020",
+    "2.000038",
+    "2.000048",
+    "1.014535",
+    "1.009092",
+    "1.009094",
+    "1.009093",
+    "1.009097",
+    "1.009091",
+    "1.009070",
+    "1.009076",
+    "1.009063",
+    "1.009069",
+    "1.009056",
+    "1.009064",
+    "1.008618",
+    "1.008615",
+    "1.001342",
+    "1.000086",
+    "1.000115",
+    "1.000096",
+    "1.000106",
+    "3.000494",
+    "1.014364",
+    "1.014363",
+    "1.012533",
+    "1.011728",
+    "1.116476",
+    "1.116473",
+    "1.116472",
+    "1.116465",
+    "1.116464",
+    "1.116463",
+    "1.116409",
+    "1.116408",
+    "1.116407",
+    "1.115978",
+    "1.115977",
+    "1.115976",
+    "1.115975",
+    "1.115973",
+    "1.115972",
+    "1.115488",
+    "1.115487",
+    "1.115404",
+    "1.115393",
+    "1.115392",
+    "1.115391",
+    "1.115229",
+    "1.015027",
+    "1.014981",
+    "1.014983",
+    "1.014980",
+    "1.014984",
+    "1.014982",
+    "3.000499",
+    "1.014140",
+    "1.014137",
+    "3.000251",
+    "3.000252",
+    "3.000255",
+    "1.009156",
+    "1.009129",
+    "1.009110",
+    "1.007658",
+    "1.001664",
+    "3.000526",
+    "3.000523",
+    "3.000525",
+    "3.000524",
+    "3.000522",
+    "3.000521",
+    "1.014905",
+    "1.014903",
+    "1.014904",
+    "1.014906",
+    "1.013211",
+    "1.011726"
+  ],
+  "whitelist_domains": [
+    {
+      "linh_vuc": "Tín ngưỡng, tôn giáo",
+      "co_quan_cong_bo": "Bộ Dân tộc và Tôn giáo"
+    },
+    {
+      "linh_vuc": "Thành lập và hoạt động của doanh nghiệp",
+      "co_quan_cong_bo": "Bộ Tài chính"
+    },
+    {
+      "linh_vuc": "Thành lập và hoạt động doanh nghiệp xã hội",
+      "co_quan_cong_bo": "Bộ Tài chính"
+    },
+    {
+      "linh_vuc": "Đường bộ",
+      "co_quan_cong_bo": "Bộ Xây dựng"
+    },
+    {
+      "linh_vuc": "Đường sắt",
+      "co_quan_cong_bo": "Bộ Xây dựng"
+    },
+    {
+      "linh_vuc": "Hàng hải và đường thủy nội địa",
+      "co_quan_cong_bo": "Bộ Xây dựng"
+    },
+    {
+      "linh_vuc": "Công tác dân tộc",
+      "co_quan_cong_bo": "Bộ Dân tộc và Tôn giáo"
+    },
+    {
+      "linh_vuc": "Khám bệnh, chữa bệnh",
+      "co_quan_cong_bo": "Bộ Y tế"
+    }
+  ],
+  "whitelist_codes": [
+    "1.001266",
+    "1.001570",
+    "1.001612",
+    "1.005277",
+    "1.004982",
+    "1.005010",
+    "1.004979",
+    "1.004901",
+    "1.005280",
+    "1.005378",
+    "1.013040",
+    "1.014034",
+    "1.014035",
+    "2.000720",
+    "2.000575",
+    "2.001958",
+    "2.002123",
+    "2.002637",
+    "2.002636",
+    "2.002639",
+    "2.002643",
+    "2.002635",
+    "2.002638",
+    "2.002642",
+    "2.002649",
+    "2.002641",
+    "2.002648",
+    "1.000314",
+    "1.002372",
+    "1.009465",
+    "1.012897",
+    "1.013061",
+    "1.013274",
+    "1.014632",
+    "2.001217",
+    "2.001921",
+    "1.004946",
+    "2.000282",
+    "2.001947",
+    "1.009661",
+    "1.002636",
+    "1.014783",
+    "1.010772",
+    "1.010781",
+    "1.010821",
+    "1.014113",
+    "1.013128",
+    "1.002551",
+    "2.001116",
+    "2.000033"
+  ],
+  "outlaw_links": {
+    "1.116410": {
+      "cases": [
+        {
+          "name": "Cấp thẻ căn cước cho người từ đủ 14 tuổi trở lên",
+          "url": "https://dichvucong.dancuquocgia.gov.vn/portal/p/home/dvc-CCCD-tren-14-tuoi.html"
+        },
+        {
+          "name": "Cấp thẻ căn cước cho người dưới 14 tuổi",
+          "url": "https://dichvucong.dancuquocgia.gov.vn/portal/p/home/dvc-CCCD-duoi-14-tuoi.html"
+        },
+        {
+          "name": "Cấp đổi thẻ căn cước",
+          "url": "https://dichvucong.dancuquocgia.gov.vn/portal/p/home/dvc-CCCD-cap-doi-hoac-cap-lai.html?TT=CAP_DOI"
+        },
+        {
+          "name": "Cấp lại thẻ căn cước",
+          "url": "https://dichvucong.dancuquocgia.gov.vn/portal/p/home/dvc-CCCD-cap-doi-hoac-cap-lai.html?TT=CAP_LAI"
+        }
+      ]
+    },
+    "3.000722": "https://lienthong.dichvucong.gov.vn/?redirect_uri=/#/ke-khai/2.000987",
+    "2.002913": "https://lienthong.dichvucong.gov.vn/?redirect_uri=/#/ke-khai/1.006714",
+    "1.115978": "https://dvc-gplx.csgt.bocongan.gov.vn/p/home/dvc-cap-doi-gplx.html?matthc=3.000347",
+    "1.001456": "https://dichvucong.bocongan.gov.vn/bo-cong-an/tiep-nhan-online/chon-truong-hop-ho-so?ma-thu-tuc-public=29497",
+    "1.001471": "https://dichvucong.bocongan.gov.vn/bo-cong-an/tiep-nhan-online/chon-truong-hop-ho-so?ma-thu-tuc-public=26270",
+    "1.002756": "https://dichvucong.bocongan.gov.vn/bo-cong-an/tiep-nhan-online/chon-truong-hop-ho-so?ma-thu-tuc-public=26276",
+    "1.002757": "https://dichvucong.bocongan.gov.vn/bo-cong-an/tiep-nhan-online/chon-truong-hop-ho-so?ma-thu-tuc-public=26277",
+    "1.001437": "https://dichvucong.bocongan.gov.vn/bo-cong-an/tiep-nhan-online/chon-truong-hop-ho-so?ma-thu-tuc-public=26265",
+    "2.002351": "https://dichvucong.bocongan.gov.vn/bo-cong-an/tiep-nhan-online/chon-truong-hop-ho-so?ma-thu-tuc-public=26692&utm_source=chatgpt.com",
+    "1.010046": "https://dichvucong.bocongan.gov.vn/bo-cong-an/tiep-nhan-online/chon-truong-hop-ho-so?ma-thu-tuc-public=26496&utm_source=chatgpt.com",
+    "1.003144": "https://dichvucong.bocongan.gov.vn/bo-cong-an/tiep-nhan-online/chon-truong-hop-ho-so?ma-thu-tuc-public=26279",
+    "1.000807": "https://dichvucong.bocongan.gov.vn/bo-cong-an/tiep-nhan-online/chon-truong-hop-ho-so?ma-thu-tuc-public=26249&utm_source=chatgpt.com",
+    "1.000771": "https://dichvucong.bocongan.gov.vn/bo-cong-an/tiep-nhan-online/chon-truong-hop-ho-so?ma-thu-tuc-public=26248",
+    "1.002411": "https://dichvucong.bocongan.gov.vn/bo-cong-an/tiep-nhan-online/chon-truong-hop-ho-so?ma-thu-tuc-public=35700",
+    "2.000332": "https://dichvucong.bocongan.gov.vn/bo-cong-an/tiep-nhan-online/chon-truong-hop-ho-so?ma-thu-tuc-public=26247&utm_source=chatgpt.com",
+    "1.001280": "https://dichvucong.bocongan.gov.vn/bo-cong-an/tiep-nhan-online/chon-truong-hop-ho-so?ma-thu-tuc-public=121796",
+    "2.000281": "https://dichvucong.bocongan.gov.vn/bo-cong-an/tiep-nhan-online/chon-truong-hop-ho-so?ma-thu-tuc-public=26245&utm_source=chatgpt.com",
+    "1.002390": "https://dichvucong.bocongan.gov.vn/bo-cong-an/tiep-nhan-online/chon-truong-hop-ho-so?ma-thu-tuc-public=35699&utm_source=chatgpt.com",
+    "1.001258": "https://dichvucong.bocongan.gov.vn/bo-cong-an/tiep-nhan-online/chon-truong-hop-ho-so?ma-thu-tuc-public=121936",
+    "1.010049": "https://dichvucong.bocongan.gov.vn/bo-cong-an/tiep-nhan-online/chon-truong-hop-ho-so?ma-thu-tuc-public=35694",
+    "1.010055": "https://dichvucong.bocongan.gov.vn/bo-cong-an/tiep-nhan-online/chon-truong-hop-ho-so?ma-thu-tuc-public=64187",
+    "2.000539": "https://dichvucong.bocongan.gov.vn/bo-cong-an/tiep-nhan-online/chon-truong-hop-ho-so?ma-thu-tuc-public=26256&utm_source=chatgpt.com",
+    "1.001445": "https://dichvucong.bocongan.gov.vn/bo-cong-an/tiep-nhan-online/chon-truong-hop-ho-so?ma-thu-tuc-public=35714&utm_source=chatgpt.com",
+    "1.010386": "https://dichvucong.bocongan.gov.vn/bo-cong-an/tiep-nhan-online/chon-truong-hop-ho-so?ma-thu-tuc-public=64227",
+    "1.001458": "https://dichvucong.bocongan.gov.vn/bo-cong-an/tiep-nhan-online/chon-truong-hop-ho-so?ma-thu-tuc-public=26269",
+    "1.001200": "https://dichvucong.bocongan.gov.vn/bo-cong-an/tiep-nhan-online/chon-truong-hop-ho-so?ma-thu-tuc-public=26261",
+    "2.000293": "https://dichvucong.bocongan.gov.vn/bo-cong-an/tiep-nhan-online/chon-truong-hop-ho-so?ma-thu-tuc-public=26246",
+    "1.003358": "https://dichvucong.bocongan.gov.vn/bo-cong-an/tiep-nhan-online/chon-truong-hop-ho-so?ma-thu-tuc-public=26285&utm_source=chatgpt.com",
+    "1.003460": "https://dichvucong.bocongan.gov.vn/bo-cong-an/tiep-nhan-online/chon-truong-hop-ho-so?ma-thu-tuc-public=52392",
+    "1.003342": "https://dichvucong.bocongan.gov.vn/bo-cong-an/tiep-nhan-online/chon-truong-hop-ho-so?ma-thu-tuc-public=26284",
+    "1.001194": "https://dichvucong.bocongan.gov.vn/bo-cong-an/tiep-nhan-online/chon-truong-hop-ho-so?ma-thu-tuc-public=35697&utm_source=chatgpt.com",
+    "1.003326": "https://dichvucong.bocongan.gov.vn/bo-cong-an/tiep-nhan-online/chon-truong-hop-ho-so?ma-thu-tuc-public=26283",
+    "1.001146": "https://dichvucong.bocongan.gov.vn/bo-cong-an/tiep-nhan-online/chon-truong-hop-ho-so?ma-thu-tuc-public=35696",
+    "1.010382": "https://dichvucong.bocongan.gov.vn/bo-cong-an/tiep-nhan-online/chon-truong-hop-ho-so?ma-thu-tuc-public=26690",
+    "1.010384": "https://dichvucong.bocongan.gov.vn/bo-cong-an/tiep-nhan-online/chon-truong-hop-ho-so?ma-thu-tuc-public=35692",
+    "1.010048": "https://dichvucong.bocongan.gov.vn/bo-cong-an/tiep-nhan-online/chon-truong-hop-ho-so?ma-thu-tuc-public=26513",
+    "1.012680": "https://dichvucong.bocongan.gov.vn/bo-cong-an/tiep-nhan-online/chon-truong-hop-ho-so?ma-thu-tuc-public=122096",
+    "1.014364": "https://dichvucong.bocongan.gov.vn/bo-cong-an/tiep-nhan-online/chon-truong-hop-ho-so?ma-thu-tuc-public=122076&utm_source=chatgpt.com",
+    "1.003133": "https://dichvucong.bocongan.gov.vn/bo-cong-an/tiep-nhan-online/chon-truong-hop-ho-so?ma-thu-tuc-public=26278",
+    "1.000253": "https://dichvucong.bocongan.gov.vn/bo-cong-an/tiep-nhan-online/chon-truong-hop-ho-so?ma-thu-tuc-public=26244",
+    "2.000473": "https://dichvucong.bocongan.gov.vn/bo-cong-an/tiep-nhan-online/chon-truong-hop-ho-so?ma-thu-tuc-public=26253",
+    "1.001010": "https://dichvucong.bocongan.gov.vn/bo-cong-an/tiep-nhan-online/chon-truong-hop-ho-so?ma-thu-tuc-public=54873",
+    "1.001226": "https://dichvucong.bocongan.gov.vn/bo-cong-an/tiep-nhan-online/chon-truong-hop-ho-so?ma-thu-tuc-public=26262&utm_source=chatgpt.com",
+    "1.003290": "https://dichvucong.bocongan.gov.vn/bo-cong-an/tiep-nhan-online/chon-truong-hop-ho-so?ma-thu-tuc-public=26281",
+    "1.003425": "https://dichvucong.bocongan.gov.vn/bo-cong-an/tiep-nhan-online/chon-truong-hop-ho-so?ma-thu-tuc-public=26287",
+    "1.003494": "https://dichvucong.bocongan.gov.vn/bo-cong-an/tiep-nhan-online/chon-truong-hop-ho-so?ma-thu-tuc-public=26289",
+    "1.004127": "https://dichvucong.bocongan.gov.vn/bo-cong-an/tiep-nhan-online/chon-truong-hop-ho-so?ma-thu-tuc-public=26365",
+    "2.002180": "https://dichvucong.bocongan.gov.vn/bo-cong-an/tiep-nhan-online/chon-truong-hop-ho-so?ma-thu-tuc-public=26368",
+    "2.000480": "https://dichvucong.bocongan.gov.vn/bo-cong-an/tiep-nhan-online/chon-truong-hop-ho-so?ma-thu-tuc-public=26254",
+    "1.000931": "https://dichvucong.bocongan.gov.vn/bo-cong-an/tiep-nhan-online/chon-truong-hop-ho-so?ma-thu-tuc-public=26251",
+    "2.000460": "https://dichvucong.bocongan.gov.vn/bo-cong-an/tiep-nhan-online/chon-truong-hop-ho-so?ma-thu-tuc-public=26252",
+    "1.000811": "https://dichvucong.bocongan.gov.vn/bo-cong-an/tiep-nhan-online/chon-truong-hop-ho-so?ma-thu-tuc-public=26250",
+    "1.011726": "https://dichvucong.bocongan.gov.vn/bo-cong-an/tiep-nhan-online/chon-truong-hop-ho-so?ma-thu-tuc-public=54713",
+    "1.011728": "https://dichvucong.bocongan.gov.vn/bo-cong-an/tiep-nhan-online/chon-truong-hop-ho-so?ma-thu-tuc-public=54733",
+    "1.002755": "https://dichvucong.bocongan.gov.vn/bo-cong-an/tiep-nhan-online/chon-truong-hop-ho-so?ma-thu-tuc-public=26345",
+    "2.001159": "https://dichvucong.bocongan.gov.vn/bo-cong-an/tiep-nhan-online/chon-truong-hop-ho-so?ma-thu-tuc-public=26346",
+    "1.003197": "https://dichvucong.bocongan.gov.vn/bo-cong-an/tiep-nhan-online/chon-truong-hop-ho-so?ma-thu-tuc-public=26348&utm_source=chatgpt.com",
+    "1.003677": "https://dichvucong.bocongan.gov.vn/bo-cong-an/tiep-nhan-online/chon-truong-hop-ho-so?ma-thu-tuc-public=26351",
+    "1.004194": "https://dichvucong.bocongan.gov.vn/bo-cong-an/tiep-nhan-online/chon-truong-hop-ho-so?ma-thu-tuc-public=26356",
+    "1.004222": "https://dichvucong.bocongan.gov.vn/bo-cong-an/tiep-nhan-online/chon-truong-hop-ho-so?ma-thu-tuc-public=26360",
+    "1.010040": "https://dichvucong.bocongan.gov.vn/bo-cong-an/tiep-nhan-online/chon-truong-hop-ho-so?ma-thu-tuc-public=26492",
+    "1.010038": "https://dichvucong.bocongan.gov.vn/bo-cong-an/tiep-nhan-online/chon-truong-hop-ho-so?ma-thu-tuc-public=26499&utm_source=chatgpt.com",
+    "1.010041": "https://dichvucong.bocongan.gov.vn/bo-cong-an/tiep-nhan-online/chon-truong-hop-ho-so?ma-thu-tuc-public=26497&utm_source=chatgpt.com",
+    "1.010028": "https://dichvucong.bocongan.gov.vn/bo-cong-an/tiep-nhan-online/chon-truong-hop-ho-so?ma-thu-tuc-public=26552",
+    "1.010039": "https://dichvucong.bocongan.gov.vn/bo-cong-an/tiep-nhan-online/chon-truong-hop-ho-so?ma-thu-tuc-public=26498&utm_source=chatgpt.com"
+  }
+}
