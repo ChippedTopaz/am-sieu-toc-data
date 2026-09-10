@@ -7,8 +7,6 @@
   "kioskPhone": "0983.512.388",
   "kioskTime": "Sáng: 07h00 - 11h30 | Chiều: 13h30 - 17h00",
   "fields": [
-    "Bảo hiểm xã hội",
-    "An toàn thực phẩm",
     "Thủ tục hành chính liên thông",
     "Bảo trợ xã hội",
     "Chứng thực",
@@ -21,5 +19,5 @@
     "Tín ngưỡng, tôn giáo",
     "Văn hóa"
   ],
-  "lastSync": "22:04:12 10/9/2026"
+  "lastSync": "22:13:15 10/9/2026"
 }
