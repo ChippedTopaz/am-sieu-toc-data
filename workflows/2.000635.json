@@ -49,27 +49,35 @@
         },
         {
           "type": "delay",
-          "description": "CHỐT CHẶN AN TOÀN: Chờ E-Form vẽ xong giao diện mới can thiệp UI",
+          "description": "Chờ E-Form bung giao diện",
           "ms": 1000
         },
+        
         {
           "type": "inject_custom_ui",
-          "description": "Ghi đè giao diện Trường (5) Quan hệ",
+          "description": "Ghi đè giao diện Trường (5) Quan hệ bằng XPath Index bất tử",
           "title": "BƯỚC 1: CHỌN QUAN HỆ VỚI NGƯỜI ĐƯỢC CẤP:",
           "containerSelector": "xpath://*[contains(text(), '(5) Quan hệ')]/parent::*",
           "options": [
-            { "label": "👤 Bản thân (Hệ thống tự điền)", "targetNativeSelector": "xpath://label[contains(@class, 'checkbox_showOnly') and contains(., 'Bản thân')]//input[@name='NYC_QuanHe']" },
-            { "label": "👶 Con đẻ", "targetNativeSelector": "xpath://label[contains(@class, 'checkbox_showOnly') and contains(., 'Con Đẻ')]//input[@name='NYC_QuanHe']" },
-            { "label": "👰 Vợ", "targetNativeSelector": "xpath://label[contains(@class, 'checkbox_showOnly') and contains(., 'Vợ')]//input[@name='NYC_QuanHe']" },
-            { "label": "🤵 Chồng", "targetNativeSelector": "xpath://label[contains(@class, 'checkbox_showOnly') and contains(., 'Chồng')]//input[@name='NYC_QuanHe']" }
+            { "label": "👤 Bản thân (Hệ thống tự điền)", "targetNativeSelector": "xpath:(//input[@name='NYC_QuanHe'])[1]" },
+            { "label": "👶 Con đẻ", "targetNativeSelector": "xpath:(//input[@name='NYC_QuanHe'])[2]" },
+            { "label": "👰 Vợ", "targetNativeSelector": "xpath:(//input[@name='NYC_QuanHe'])[3]" },
+            { "label": "🤵 Chồng", "targetNativeSelector": "xpath:(//input[@name='NYC_QuanHe'])[4]" }
           ]
         },
+        
+        {
+          "type": "delay",
+          "description": "Chờ form gốc kích hoạt logic Auto-fill và bung các ô ẩn sau khi click Quan hệ",
+          "ms": 1200
+        },
+
         {
           "type": "inject_custom_ui",
-          "description": "Ghi đè giao diện Trường (12) Loại việc bằng thẻ name bất tử",
+          "description": "Ghi đè giao diện Trường (12) Loại việc",
           "title": "BƯỚC 2: CHỌN LOẠI VIỆC YÊU CẦU:",
           "containerSelector": "xpath://*[contains(text(), '(12) Loại việc')]/parent::*",
-          "targetNativeSelector": "input[name='HoSo_LoaiYeuCau'], select[name='HoSo_LoaiYeuCau']",
+          "targetNativeSelector": "select[name='HoSo_LoaiYeuCau']",
           "options": [
             { "label": "👶 Giấy khai sinh (Bản sao)", "value": "Giấy khai sinh bản sao/Trích lục ghi vào Sổ hộ tịch việc khai sinh (bản sao)" },
             { "label": "💍 Trích lục kết hôn", "value": " Trích lục kết hôn (bản sao)/ Trích lục ghi chú kết hôn (bản sao)" },
@@ -84,14 +92,12 @@
         },
         {
           "type": "wizard_step",
-          "description": "Gom 3 trường Tên Giấy tờ, Số, Quyển vào 1 bước hướng dẫn",
           "selectors": "input[name='HoSo_TenGiayTo'], input[name='HoSo_So'], input[name='HoSo_QuyenSo']",
           "message": "Vui lòng nhập <b style='color:#D2232A'>(14) Tên giấy tờ, Số và Quyển số</b>.",
           "voiceText": "Vui lòng nhập tên giấy tờ, số và quyển số."
         },
         {
           "type": "wizard_step",
-          "description": "Gom 3 ô Ngày, Tháng, Năm đăng ký",
           "selectors": "input[name='HoSo_NgayCapSo-day'], input[name='HoSo_NgayCapSo-month'], input[name='HoSo_NgayCapSo-year']",
           "message": "Vui lòng nhập <b style='color:#D2232A'>Ngày, tháng, năm đăng ký</b>.",
           "voiceText": "Vui lòng nhập ngày tháng năm đăng ký."
