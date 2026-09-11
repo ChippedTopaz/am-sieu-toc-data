@@ -1,3 +1,29 @@
+{
+  "maDVC": "2.000635.02",
+  "tenThuTuc": "Cấp bản sao Trích lục hộ tịch, bản sao Giấy khai sinh",
+  "states": [
+    {
+      "stateId": "modal_khoi_tao",
+      "urlPattern": "*dichvucongnganhtuphap.moj.gov.vn/danh-sach-thu-tuc*",
+      "assistantUI": {
+        "title": "Bước 1: Khởi tạo hồ sơ",
+        "message": "Đang đồng bộ Cơ quan tiếp nhận...",
+        "voiceText": "Đang khởi tạo hồ sơ."
+      },
+      "actions": [
+        { "type": "delay", "ms": 1000 },
+        { "type": "wait_and_click_text", "selector": "button", "text": "Xác nhận", "delayAfter": 200 }
+      ]
+    },
+    {
+      "stateId": "thong_tin_chu_ho_so",
+      "urlPattern": "*dichvucongnganhtuphap.moj.gov.vn/nop-ho-so/*",
+      "assistantUI": {
+        "title": "Bước 2: Thông tin chủ hồ sơ",
+        "message": "Đang kiểm tra lịch sử đồng bộ...",
+        "voiceText": ""
+      },
+            
 "actions": [
         {
           "type": "conditional_branch",
