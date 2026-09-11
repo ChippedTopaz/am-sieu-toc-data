@@ -19,12 +19,11 @@
       "stateId": "thong_tin_chu_ho_so",
       "urlPattern": "*dichvucongnganhtuphap.moj.gov.vn/nop-ho-so/*",
       "assistantUI": {
-        "title": "Bước 2: Thông tin chủ hồ sơ",
+        "title": "Bước 2 & 3: Xử lý biểu mẫu",
         "message": "Đang kiểm tra lịch sử đồng bộ...",
         "voiceText": ""
       },
-            
-"actions": [
+      "actions": [
         {
           "type": "conditional_branch",
           "condition": { "type": "check_by_label", "label": "Ngày cấp" },
@@ -46,9 +45,13 @@
           "description": "Bấm qua Bước 2",
           "selector": "button", 
           "text": "Bước tiếp theo", 
-          "delayAfter": 1500 
-        },       
-        
+          "delayAfter": 200 
+        },
+        {
+          "type": "delay",
+          "description": "CHỐT CHẶN AN TOÀN: Chờ E-Form vẽ xong giao diện mới can thiệp UI",
+          "ms": 1000
+        },
         {
           "type": "inject_custom_ui",
           "description": "Ghi đè giao diện Trường (5) Quan hệ",
@@ -115,9 +118,12 @@
               "actions": [
                 { "type": "wait_and_click_text", "selector": "button", "text": "Xem trước", "delayAfter": 1500 },
                 { "type": "wait_and_click_text", "selector": "div.el-message-box__btns button", "text": "Xác nhận", "delayAfter": 1000 },
-                { "type": "wait_and_click_text", "description": "Auto cho qua màn hình Ảnh 3", "selector": "button", "text": "Bước tiếp theo" }
+                { "type": "wait_and_click_text", "description": "Auto cho qua màn hình Thành phần hồ sơ", "selector": "button", "text": "Bước tiếp theo" }
               ]
             }
           ]
         }
       ]
+    }
+  ]
+}
