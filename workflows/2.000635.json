@@ -1,1 +1,89 @@
-
+{
+  "maDVC": "2.000635",
+  "tenThuTuc": "Cấp bản sao Trích lục hộ tịch, bản sao Giấy khai sinh",
+  "states": [
+    {
+      "stateId": "modal_khoi_tao",
+      "urlPattern": "*dichvucongnganhtuphap.moj.gov.vn/danh-sach-thu-tuc*",
+      "assistantUI": {
+        "title": "Bước 1: Khởi tạo hồ sơ",
+        "message": "Đang chờ hệ thống đồng bộ danh mục Cơ quan tiếp nhận từ CSDL Quốc gia...",
+        "voiceText": "Hệ thống đang đồng bộ dữ liệu cơ quan tiếp nhận. Vui lòng đợi trong giây lát."
+      },
+      "actions": [
+        {
+          "type": "wait_for_values",
+          "description": "Chờ các ô dropdown load xong API mới được đi tiếp",
+          "selectors": [
+            "select[name='DonViTiepNhan']", 
+            "select[name='CoQuanThucHien']"
+          ]
+        },
+        {
+          "type": "wait_and_click",
+          "description": "Bấm nút Xác nhận trên Modal Thông tin chung",
+          "selector": "button.el-button--primary:contains('Xác nhận')",
+          "delayAfter": 2000
+        }
+      ]
+    },
+    {
+      "stateId": "thong_tin_chu_ho_so",
+      "urlPattern": "*dichvucongnganhtuphap.moj.gov.vn/nop-ho-so/*",
+      "assistantUI": {
+        "title": "Bước 2: Thông tin chủ hồ sơ",
+        "message": "Đang kiểm tra và đối chiếu thông tin định danh...",
+        "voiceText": "Đang kiểm tra thông tin định danh."
+      },
+      "actions": [
+        {
+          "type": "conditional_branch",
+          "description": "Kiểm tra xem các trường bắt buộc có bị trống không",
+          "condition": {
+            "type": "check_empty",
+            "selectors": ["input[placeholder='Nhập số điện thoại']", "input[placeholder='Nhập nơi cấp']"]
+          },
+          "if_true": [
+            {
+              "type": "fill_from_storage",
+              "description": "Điền mặc định Nơi cấp (Bộ Công an) và bóc data CCCD điền vào ô trống",
+              "mapping": [
+                { "target": "input[placeholder='Nhập nơi cấp']", "source": "Bộ Công an" },
+                { "target": "input[placeholder='Nhập địa chỉ chi tiết']", "source": "{{cccdData.thuongTru}}" }
+              ]
+            },
+            {
+              "type": "highlight_missing",
+              "description": "Bắt buộc công dân tự gõ SĐT vì trên thẻ CCCD không có",
+              "selector": "input[placeholder='Nhập số điện thoại']"
+            },
+            {
+              "type": "wait_for_values",
+              "description": "Dừng kịch bản, CHỜ công dân gõ xong Số điện thoại mới chạy tiếp",
+              "selectors": ["input[placeholder='Nhập số điện thoại']"]
+            },
+            {
+              "type": "wait_and_click",
+              "description": "Tích chọn ô Lưu thông tin mới sửa đổi",
+              "selector": "input[type='checkbox'][name='isLuuThongTin']"
+            },
+            {
+              "type": "wait_and_click",
+              "description": "Chờ Modal cảnh báo hiện lên và bấm Xác nhận",
+              "selector": "div.el-message-box__btns button.el-button--primary",
+              "delayAfter": 1000
+            }
+          ],
+          "if_false": [
+             // Nhánh này để trống, FSM Engine sẽ không làm gì cả (TH1: Đã đủ thông tin)
+          ]
+        },
+        {
+          "type": "wait_and_click",
+          "description": "Bấm chuyển sang bước Tờ khai (Ảnh 2 sang Ảnh 3)",
+          "selector": "button:contains('Bước tiếp theo')"
+        }
+      ]
+    }
+  ]
+}
