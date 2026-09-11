@@ -21,12 +21,7 @@
           "selector": "button", 
           "text": "Bước tiếp theo", 
           "delayAfter": 1500 
-        },     
-      
-        
-        // ==========================================
-        // GIAI ĐOẠN 3: XỬ LÝ E-FORM TƯƠNG TÁC
-        // ==========================================
+        },       
         
         {
           "type": "inject_custom_ui",
