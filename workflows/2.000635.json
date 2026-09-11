@@ -1,39 +1,8 @@
-{
-  "maDVC": "2.000635",
-  "tenThuTuc": "Cấp bản sao Trích lục hộ tịch, bản sao Giấy khai sinh",
-  "states": [
-    {
-      "stateId": "modal_khoi_tao",
-      "urlPattern": "*dichvucongnganhtuphap.moj.gov.vn/danh-sach-thu-tuc*",
-      "assistantUI": {
-        "title": "Bước 1: Khởi tạo hồ sơ",
-        "message": "Đang đồng bộ Cơ quan tiếp nhận...",
-        "voiceText": "Đang khởi tạo hồ sơ."
-      },
-      "actions": [
-        { "type": "delay", "ms": 1000 },
-        { "type": "wait_and_click_text", "selector": "button", "text": "Xác nhận", "delayAfter": 200 }
-      ]
-    },
-    {
-      "stateId": "thong_tin_chu_ho_so",
-      "urlPattern": "*dichvucongnganhtuphap.moj.gov.vn/nop-ho-so/*",
-      "assistantUI": {
-        "title": "Bước 2: Thông tin chủ hồ sơ",
-        "message": "Đang kiểm tra lịch sử đồng bộ...",
-        "voiceText": ""
-      },
-      "actions": [
+"actions": [
         {
           "type": "conditional_branch",
-          "description": "Quét xem ô Ngày cấp đã có dữ liệu chưa",
-          "condition": {
-            "type": "check_by_label",
-            "label": "Ngày cấp"
-          },
-          "if_true": [
-            { "type": "delay", "ms": 200 } 
-          ],
+          "condition": { "type": "check_by_label", "label": "Ngày cấp" },
+          "if_true": [ { "type": "delay", "ms": 200 } ],
           "if_false": [
             {
               "type": "fill_from_storage",
@@ -48,12 +17,96 @@
         },
         { 
           "type": "wait_and_click_text", 
-          "description": "Bất chấp TH1 hay TH2, đều spam nút Bước tiếp theo",
+          "description": "Bấm qua Bước 2",
           "selector": "button", 
           "text": "Bước tiếp theo", 
-          "delayAfter": 200 
+          "delayAfter": 1500 
+        },
+
+        
+        // ==========================================
+        // GIAI ĐOẠN 3: XỬ LÝ E-FORM TƯƠNG TÁC
+        // ==========================================
+        
+        {
+          "type": "inject_custom_ui",
+          "description": "Ghi đè giao diện Trường (5) Quan hệ",
+          "title": "BƯỚC 1: CHỌN QUAN HỆ VỚI NGƯỜI ĐƯỢC CẤP:",
+          
+          // Tìm khối cha chứa toàn bộ câu hỏi (5) để gắn giao diện mới vào
+          "containerSelector": "xpath://*[contains(text(), '(5) Quan hệ')]/parent::*",
+          
+          // Các thẻ lựa chọn hiển thị trên Extension
+          "options": [
+            { 
+              "label": "👤 Bản thân (Hệ thống tự điền)", 
+              "targetNativeSelector": "xpath://label[contains(@class, 'checkbox_showOnly') and contains(., 'Bản thân')]//input[@name='NYC_QuanHe']" 
+            },
+            { 
+              "label": "👶 Con đẻ", 
+              "targetNativeSelector": "xpath://label[contains(@class, 'checkbox_showOnly') and contains(., 'Con Đẻ')]//input[@name='NYC_QuanHe']" 
+            },
+            { 
+              "label": "👰 Vợ", 
+              "targetNativeSelector": "xpath://label[contains(@class, 'checkbox_showOnly') and contains(., 'Vợ')]//input[@name='NYC_QuanHe']" 
+            },
+            { 
+              "label": "🤵 Chồng", 
+              "targetNativeSelector": "xpath://label[contains(@class, 'checkbox_showOnly') and contains(., 'Chồng')]//input[@name='NYC_QuanHe']" 
+            },
+            { 
+              "label": "👴 Bố đẻ", 
+              "targetNativeSelector": "xpath://label[contains(@class, 'checkbox_showOnly') and contains(., 'Bố Đẻ')]//input[@name='NYC_QuanHe']" 
+            },
+            { 
+              "label": "👵 Mẹ đẻ", 
+              "targetNativeSelector": "xpath://label[contains(@class, 'checkbox_showOnly') and contains(., 'Mẹ đẻ')]//input[@name='NYC_QuanHe']" 
+            }
+          ]
+        },
+        {
+          "type": "inject_custom_ui",
+          "description": "Biến hình ô (12) Loại việc thành Thẻ Card",
+          "title": "BƯỚC 2: CHỌN LOẠI VIỆC YÊU CẦU:",
+          "containerSelector": "xpath://*[contains(text(), '(12) Loại việc')]/parent::*",
+          "targetNativeSelector": "xpath://*[contains(text(), '(12) Loại việc')]/following::select[1]",
+          "options": [
+            { "label": "💍 Trích lục kết hôn", "value": "Trích lục kết hôn (bản sao)" },
+            { "label": "⚰️ Trích lục khai tử", "value": "Trích lục khai tử (bản sao)" },
+            { "label": "👶 Bản sao Khai sinh", "value": "Giấy khai sinh bản sao" }
+          ]
+        },
+        {
+          "type": "wizard_step",
+          "selector": "xpath://*[contains(text(), '(13) Cơ quan')]/following::input[1]",
+          "message": "Vui lòng nhập <b style='color:#D2232A'>(13) Cơ quan đã đăng ký</b>. Xong thì bấm nút bên dưới 👉",
+          "voiceText": "Vui lòng nhập cơ quan đã đăng ký."
+        },
+        {
+          "type": "wizard_step",
+          "selector": "xpath://*[contains(text(), '(14) Tên giấy')]/following::input[1]",
+          "message": "Vui lòng nhập <b style='color:#D2232A'>(14) Tên giấy tờ & Số</b>.",
+          "voiceText": "Vui lòng nhập tên giấy tờ."
+        },
+        {
+          "type": "macro_buttons",
+          "message": "🎉 <b>Tuyệt vời!</b> Anh/chị đã điền xong biểu mẫu. Vui lòng chọn hành động tiếp theo:",
+          "voiceText": "Đã điền xong. Vui lòng bấm Nộp ngay.",
+          "buttons": [
+            {
+              "label": "Xem trước",
+              "bgColor": "#f59e0b", "color": "#fff",
+              "actions": [ { "type": "wait_and_click_text", "selector": "button", "text": "Xem trước" } ]
+            },
+            {
+              "label": "🚀 NỘP NGAY",
+              "bgColor": "#D2232A", "color": "#fff",
+              "actions": [
+                { "type": "wait_and_click_text", "selector": "button", "text": "Xem trước", "delayAfter": 1500 },
+                { "type": "wait_and_click_text", "selector": "div.el-message-box__btns button", "text": "Xác nhận", "delayAfter": 1000 },
+                { "type": "wait_and_click_text", "description": "Auto cho qua màn hình Ảnh 3", "selector": "button", "text": "Bước tiếp theo" }
+              ]
+            }
+          ]
         }
       ]
-    }
-  ]
-}
