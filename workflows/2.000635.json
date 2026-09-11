@@ -55,14 +55,14 @@
         
         {
           "type": "inject_custom_ui",
-          "description": "Ghi đè giao diện Trường (5) Quan hệ bằng XPath Index bất tử",
+          "description": "Ghi đè giao diện Trường (5) Quan hệ bằng nhận diện Chữ",
           "title": "BƯỚC 1: CHỌN QUAN HỆ VỚI NGƯỜI ĐƯỢC CẤP:",
           "containerSelector": "xpath://*[contains(text(), '(5) Quan hệ')]/parent::*",
           "options": [
-            { "label": "👤 Bản thân (Hệ thống tự điền)", "targetNativeSelector": "xpath:(//input[@name='NYC_QuanHe'])[1]" },
-            { "label": "👶 Con đẻ", "targetNativeSelector": "xpath:(//input[@name='NYC_QuanHe'])[2]" },
-            { "label": "👰 Vợ", "targetNativeSelector": "xpath:(//input[@name='NYC_QuanHe'])[3]" },
-            { "label": "🤵 Chồng", "targetNativeSelector": "xpath:(//input[@name='NYC_QuanHe'])[4]" }
+            { "label": "👤 Bản thân (Hệ thống tự điền)", "targetText": "Bản thân" },
+            { "label": "👶 Con đẻ", "targetText": "Con Đẻ" },
+            { "label": "👰 Vợ", "targetText": "Vợ" },
+            { "label": "🤵 Chồng", "targetText": "Chồng" }
           ]
         },
         
@@ -77,7 +77,7 @@
           "description": "Ghi đè giao diện Trường (12) Loại việc",
           "title": "BƯỚC 2: CHỌN LOẠI VIỆC YÊU CẦU:",
           "containerSelector": "xpath://*[contains(text(), '(12) Loại việc')]/parent::*",
-          "targetNativeSelector": "select[name='HoSo_LoaiYeuCau']",
+          "targetNativeSelector": "select[name='HoSo_LoaiYeuCau'], input[name='HoSo_LoaiYeuCau']",
           "options": [
             { "label": "👶 Giấy khai sinh (Bản sao)", "value": "Giấy khai sinh bản sao/Trích lục ghi vào Sổ hộ tịch việc khai sinh (bản sao)" },
             { "label": "💍 Trích lục kết hôn", "value": " Trích lục kết hôn (bản sao)/ Trích lục ghi chú kết hôn (bản sao)" },
