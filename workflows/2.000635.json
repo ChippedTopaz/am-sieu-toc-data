@@ -7,12 +7,12 @@
       "urlPattern": "*dichvucongnganhtuphap.moj.gov.vn/danh-sach-thu-tuc*",
       "assistantUI": {
         "title": "Bước 1: Khởi tạo hồ sơ",
-        "message": "Đang chờ hệ thống đồng bộ danh mục Cơ quan tiếp nhận từ CSDL Quốc gia...",
-        "voiceText": "Hệ thống đang đồng bộ dữ liệu cơ quan tiếp nhận."
+        "message": "Đang đồng bộ Cơ quan tiếp nhận...",
+        "voiceText": "Đang khởi tạo hồ sơ."
       },
       "actions": [
-        { "type": "delay", "ms": 2500 },
-        { "type": "wait_and_click_text", "selector": "button", "text": "Xác nhận", "delayAfter": 2000 }
+        { "type": "delay", "ms": 1000 },
+        { "type": "wait_and_click_text", "selector": "button", "text": "Xác nhận", "delayAfter": 200 }
       ]
     },
     {
@@ -20,57 +20,32 @@
       "urlPattern": "*dichvucongnganhtuphap.moj.gov.vn/nop-ho-so/*",
       "assistantUI": {
         "title": "Bước 2: Thông tin chủ hồ sơ",
-        "message": "Đang kiểm tra và đối chiếu thông tin định danh...",
-        "voiceText": "Đang kiểm tra thông tin định danh."
+        "message": "Đang đối chiếu thông tin định danh...",
+        "voiceText": ""
       },
       "actions": [
         {
           "type": "conditional_branch",
-          "description": "Kiểm tra xem Số điện thoại đã được hệ thống tự điền chưa",
           "condition": {
             "type": "check_all_filled",
             "selectors": ["input[placeholder*='điện thoại']"]
           },
-          "if_true": [
-             { "type": "delay", "description": "TH1: Đã đủ thông tin", "ms": 500 }
-          ],
+          "if_true": [],
           "if_false": [
             {
               "type": "fill_from_storage",
-              "description": "TH2: Thiếu -> Bơm dữ liệu vào ô Nơi cấp và Địa chỉ chi tiết",
               "mapping": [
                 { "target": "input[placeholder*='nơi cấp']", "source": "Bộ Công an" },
                 { "target": "input[placeholder*='chi tiết']", "source": "{{cccdData.thuongTru}}" }
               ]
             },
-            {
-              "type": "highlight_missing",
-              "selector": "input[placeholder*='điện thoại']"
-            },
-            {
-              "type": "wait_for_values",
-              "description": "CHỜ công dân gõ xong số điện thoại mới đi tiếp",
-              "selectors": ["input[placeholder*='điện thoại']"]
-            },
-            {
-              "type": "wait_and_click",
-              "selector": "input[type='checkbox'][name='isLuuThongTin']"
-            },
-            {
-              "type": "wait_and_click_text",
-              "description": "Bấm Xác nhận trên hộp thoại cảnh báo",
-              "selector": "div.el-message-box__btns button",
-              "text": "Xác nhận",
-              "delayAfter": 1500
-            }
+            { "type": "highlight_missing", "selector": "input[placeholder*='điện thoại']" },
+            { "type": "wait_for_values", "selectors": ["input[placeholder*='điện thoại']"] },
+            { "type": "wait_and_click", "selector": "input[type='checkbox'][name='isLuuThongTin']" },
+            { "type": "wait_and_click_text", "selector": "div.el-message-box__btns button", "text": "Xác nhận", "delayAfter": 500 }
           ]
         },
-        {
-          "type": "wait_and_click_text",
-          "description": "Chuyển sang Bước 3 (E-Form)",
-          "selector": "button",
-          "text": "Bước tiếp theo"
-        }
+        { "type": "wait_and_click_text", "selector": "button", "text": "Bước tiếp theo", "delayAfter": 200 }
       ]
     }
   ]
