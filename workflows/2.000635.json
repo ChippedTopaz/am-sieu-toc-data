@@ -20,17 +20,20 @@
       "urlPattern": "*dichvucongnganhtuphap.moj.gov.vn/nop-ho-so/*",
       "assistantUI": {
         "title": "Bước 2: Thông tin chủ hồ sơ",
-        "message": "Đang đối chiếu thông tin định danh...",
+        "message": "Đang kiểm tra lịch sử đồng bộ...",
         "voiceText": ""
       },
       "actions": [
         {
           "type": "conditional_branch",
+          "description": "Quét xem ô Ngày cấp đã có dữ liệu chưa",
           "condition": {
-            "type": "check_all_filled",
-            "selectors": ["input[placeholder*='điện thoại']"]
+            "type": "check_by_label",
+            "label": "Ngày cấp"
           },
-          "if_true": [],
+          "if_true": [
+            { "type": "delay", "ms": 200 } 
+          ],
           "if_false": [
             {
               "type": "fill_from_storage",
@@ -39,13 +42,17 @@
                 { "target": "input[placeholder*='chi tiết']", "source": "{{cccdData.thuongTru}}" }
               ]
             },
-            { "type": "highlight_missing", "selector": "input[placeholder*='điện thoại']" },
-            { "type": "wait_for_values", "selectors": ["input[placeholder*='điện thoại']"] },
             { "type": "wait_and_click", "selector": "input[type='checkbox'][name='isLuuThongTin']" },
             { "type": "wait_and_click_text", "selector": "div.el-message-box__btns button", "text": "Xác nhận", "delayAfter": 500 }
           ]
         },
-        { "type": "wait_and_click_text", "selector": "button", "text": "Bước tiếp theo", "delayAfter": 200 }
+        { 
+          "type": "wait_and_click_text", 
+          "description": "Bất chấp TH1 hay TH2, đều spam nút Bước tiếp theo",
+          "selector": "button", 
+          "text": "Bước tiếp theo", 
+          "delayAfter": 200 
+        }
       ]
     }
   ]
