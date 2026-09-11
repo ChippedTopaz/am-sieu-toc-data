@@ -1,5 +1,5 @@
 {
-  "maDVC": "2.000635.02",
+  "maDVC": "2.000635",
   "tenThuTuc": "Cấp bản sao Trích lục hộ tịch, bản sao Giấy khai sinh",
   "states": [
     {
@@ -12,17 +12,15 @@
       },
       "actions": [
         {
-          "type": "wait_for_values",
-          "description": "Chờ các ô dropdown load xong API mới được đi tiếp",
-          "selectors": [
-            "select[name='DonViTiepNhan']", 
-            "select[name='CoQuanThucHien']"
-          ]
+          "type": "delay",
+          "description": "Chờ 2.5 giây cho API điền đủ dữ liệu vào modal",
+          "ms": 2500
         },
         {
-          "type": "wait_and_click",
-          "description": "Bấm nút Xác nhận trên Modal Thông tin chung",
-          "selector": "button.el-button--primary:contains('Xác nhận')",
+          "type": "wait_and_click_text",
+          "description": "Tìm và bấm nút Xác nhận",
+          "selector": "button",
+          "text": "Xác nhận",
           "delayAfter": 2000
         }
       ]
@@ -38,7 +36,6 @@
       "actions": [
         {
           "type": "conditional_branch",
-          "description": "Kiểm tra xem các trường bắt buộc có bị trống không",
           "condition": {
             "type": "check_empty",
             "selectors": ["input[placeholder='Nhập số điện thoại']", "input[placeholder='Nhập nơi cấp']"]
@@ -46,7 +43,6 @@
           "if_true": [
             {
               "type": "fill_from_storage",
-              "description": "Điền mặc định Nơi cấp (Bộ Công an) và bóc data CCCD điền vào ô trống",
               "mapping": [
                 { "target": "input[placeholder='Nhập nơi cấp']", "source": "Bộ Công an" },
                 { "target": "input[placeholder='Nhập địa chỉ chi tiết']", "source": "{{cccdData.thuongTru}}" }
@@ -54,32 +50,31 @@
             },
             {
               "type": "highlight_missing",
-              "description": "Bắt buộc công dân tự gõ SĐT vì trên thẻ CCCD không có",
               "selector": "input[placeholder='Nhập số điện thoại']"
             },
             {
               "type": "wait_for_values",
-              "description": "Dừng kịch bản, CHỜ công dân gõ xong Số điện thoại mới chạy tiếp",
               "selectors": ["input[placeholder='Nhập số điện thoại']"]
             },
             {
               "type": "wait_and_click",
-              "description": "Tích chọn ô Lưu thông tin mới sửa đổi",
               "selector": "input[type='checkbox'][name='isLuuThongTin']"
             },
             {
-              "type": "wait_and_click",
-              "description": "Chờ Modal cảnh báo hiện lên và bấm Xác nhận",
-              "selector": "div.el-message-box__btns button.el-button--primary",
+              "type": "wait_and_click_text",
+              "description": "Bấm Xác nhận trên hộp thoại cảnh báo nhỏ",
+              "selector": "div.el-message-box__btns button",
+              "text": "Xác nhận",
               "delayAfter": 1000
             }
           ],
           "if_false": []
         },
         {
-          "type": "wait_and_click",
-          "description": "Bấm chuyển sang bước Tờ khai (Ảnh 2 sang Ảnh 3)",
-          "selector": "button:contains('Bước tiếp theo')"
+          "type": "wait_and_click_text",
+          "description": "Chuyển bước",
+          "selector": "button",
+          "text": "Bước tiếp theo"
         }
       ]
     }
