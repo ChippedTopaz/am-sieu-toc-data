@@ -74,9 +74,7 @@
               "delayAfter": 1000
             }
           ],
-          "if_false": [
-             // Nhánh này để trống, FSM Engine sẽ không làm gì cả (TH1: Đã đủ thông tin)
-          ]
+          "if_false": []
         },
         {
           "type": "wait_and_click",
