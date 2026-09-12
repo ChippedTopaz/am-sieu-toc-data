@@ -70,11 +70,11 @@
           ]
         },
         {
-          "type": "ask_user_input",
-          "title": "BƯỚC 3: CƠ QUAN ĐĂNG KÝ TRƯỚC ĐÂY",
-          "inputs": [
-            { "label": "Nhập Cơ quan đã đăng ký (13):", "targetNativeSelector": "input[name='HoSo_CoQuanDangKy']", "placeholder": "Ví dụ: UBND Phường..." }
-          ]
+          "type": "ai_voice_input",
+          "botSpeaks": "Xin vui lòng cho biết tên Cơ quan đã đăng ký sự kiện hộ tịch trước đây?",
+          "geminiPrompt": "Công dân trả lời: '{speech_text}'. Hãy trích xuất TÊN CƠ QUAN HÀNH CHÍNH...",
+          "targetNativeSelectors": "input[name='HoSo_CoQuanDangKy']",
+          "isDateGroup": false
         },
         {
           "type": "ask_user_input",
