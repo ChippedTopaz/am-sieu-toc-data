@@ -72,18 +72,16 @@
         {
           "type": "ai_voice_input",
           "botSpeaks": "Xin vui lòng cho biết tên Cơ quan đã đăng ký sự kiện hộ tịch trước đây?",
-          "geminiPrompt": "Công dân trả lời: '{speech_text}'. Hãy trích xuất TÊN CƠ QUAN HÀNH CHÍNH...",
+          "geminiPrompt": "Công dân trả lời: '{speech_text}'. Hãy trích xuất TÊN CƠ QUAN HÀNH CHÍNH, kiểm tra danh sách cơ quan hành chính cấp xã của tỉnh đã được cấu hình, so sánh để tìm ra tên cơ quan đúng nhất...",
           "targetNativeSelectors": "input[name='HoSo_CoQuanDangKy']",
           "isDateGroup": false
         },
         {
-          "type": "ask_user_input",
-          "title": "BƯỚC 4: THÔNG TIN GIẤY TỜ",
-          "inputs": [
-            { "label": "Tên giấy tờ (Ví dụ: Giấy khai sinh)", "targetNativeSelector": "input[name='HoSo_TenGiayTo']" },
-            { "label": "Số quyển", "targetNativeSelector": "input[name='HoSo_QuyenSo']" },
-            { "label": "Số", "targetNativeSelector": "input[name='HoSo_So']" }
-          ]
+          "type": "ai_voice_input",
+          "botSpeaks": "Tiếp theo, xin vui lòng cho biết Tên giấy tờ hộ tịch là gì?",
+          "geminiPrompt": "Công dân trả lời: '{speech_text}'. Hãy trích xuất TÊN GIẤY TỜ HỘ TỊCH (ví dụ: Giấy khai sinh, Giấy chứng nhận kết hôn, Trích lục khai sinh...). Chỉ trả về đúng tên giấy tờ, tuyệt đối không giải thích gì thêm.",
+          "targetNativeSelectors": "input[name='THAY_BẰNG_TÊN_NAME_LẤY_Ở_BƯỚC_1']",
+          "isDateGroup": false
         },
         {
           "type": "ask_user_input",
