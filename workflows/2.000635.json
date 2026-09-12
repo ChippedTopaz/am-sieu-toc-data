@@ -71,8 +71,8 @@
         },
         {
           "type": "ai_voice_input",
-          "botSpeaks": "Xin vui lòng cho biết tên Cơ quan đã đăng ký sự kiện hộ tịch trước đây?",
-          "geminiPrompt": "Công dân nói: '{speech_text}'. Dưới đây là danh sách các cơ quan hành chính hợp lệ: {danh_sach_co_quan}. Nhiệm vụ của bạn: Đối chiếu câu nói của công dân với danh sách trên và trả về ĐÚNG TÊN CƠ QUAN trong danh sách có phát âm hoặc ý nghĩa gần giống nhất. TUYỆT ĐỐI CHỈ TRẢ VỀ TÊN CƠ QUAN, KHÔNG GIẢI THÍCH.",
+          "botSpeaks": "Xin vui lòng cho biết cơ quan đã đăng ký sự kiện hộ tịch trước đây?",
+          "geminiPrompt": "Bạn là hệ thống đối chiếu địa giới hành chính. \n\nDữ liệu đầu vào:\n1. Lời công dân nói: '{speech_text}'\n2. Tỉnh mặc định của Kiosk: '{tinh_mac_dinh}'\n3. Từ điển Quốc gia (34 Tỉnh): {danh_sach_3321}\n\nQuy tắc phân tích:\n- BƯỚC 1: Nếu lời công dân có nhắc đến tên một Tỉnh/Thành phố cụ thể (VD: Hà Nội, Phú Thọ...), bỏ qua Tỉnh mặc định, chỉ tìm Xã/Phường đó trong Tỉnh công dân vừa đọc.\n- BƯỚC 2: Nếu lời công dân KHÔNG nhắc đến Tỉnh nào, mặc định ưu tiên tìm Xã/Phường đó bên trong Tỉnh '{tinh_mac_dinh}'.\n- BƯỚC 3: Nếu trong Tỉnh mặc định không có Xã/Phường nào có phát âm hoặc chính tả gần giống, hãy tìm mở rộng trên toàn quốc.\n- BƯỚC 4: Chấp nhận mọi lỗi nói ngọng, nói nhịu do nhận diện giọng nói (VD: 'thổi tang' -> 'Thổ Tang').\n\nQuy tắc trả kết quả (TỐI QUAN TRỌNG):\nChỉ trả về ĐÚNG MỘT DÒNG theo định dạng: [Tên Xã/Phường/Đặc khu], [Tên Tỉnh/Thành phố].\nTuyệt đối không giải thích, không thêm dấu câu thừa.",
           "targetNativeSelectors": "input[name='HoSo_CoQuanDangKy']",
           "isDateGroup": false
         },
