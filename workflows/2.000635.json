@@ -47,17 +47,10 @@
           "text": "Bước tiếp theo", 
           "delayAfter": 200 
         },
-        {
-          "type": "delay",
-          "description": "Chờ E-Form bung giao diện",
-          "ms": 1000
-        },
-        
+        { "type": "delay", "ms": 1000 },
         {
           "type": "inject_custom_ui",
-          "description": "Ghi đè giao diện Trường (5) Quan hệ bằng nhận diện Chữ",
           "title": "BƯỚC 1: CHỌN QUAN HỆ VỚI NGƯỜI ĐƯỢC CẤP:",
-          "containerSelector": "xpath://*[contains(text(), '(5) Quan hệ')]/parent::*",
           "options": [
             { "label": "👤 Bản thân (Hệ thống tự điền)", "targetText": "Bản thân" },
             { "label": "👶 Con đẻ", "targetText": "Con Đẻ" },
@@ -65,18 +58,10 @@
             { "label": "🤵 Chồng", "targetText": "Chồng" }
           ]
         },
-        
-        {
-          "type": "delay",
-          "description": "Chờ form gốc kích hoạt logic Auto-fill và bung các ô ẩn sau khi click Quan hệ",
-          "ms": 1200
-        },
-
+        { "type": "delay", "ms": 1200 },
         {
           "type": "inject_custom_ui",
-          "description": "Ghi đè giao diện Trường (12) Loại việc",
           "title": "BƯỚC 2: CHỌN LOẠI VIỆC YÊU CẦU:",
-          "containerSelector": "xpath://*[contains(text(), '(12) Loại việc')]/parent::*",
           "targetNativeSelector": "select[name='HoSo_LoaiYeuCau'], input[name='HoSo_LoaiYeuCau']",
           "options": [
             { "label": "👶 Giấy khai sinh (Bản sao)", "value": "Giấy khai sinh bản sao/Trích lục ghi vào Sổ hộ tịch việc khai sinh (bản sao)" },
@@ -85,33 +70,34 @@
           ]
         },
         {
-          "type": "wizard_step",
-          "selectors": "input[name='HoSo_CoQuanDangKy']",
-          "message": "Vui lòng nhập <b style='color:#D2232A'>(13) Cơ quan đã đăng ký</b>. Xong thì bấm nút bên dưới 👉",
-          "voiceText": "Vui lòng nhập cơ quan đã đăng ký."
+          "type": "ask_user_input",
+          "title": "BƯỚC 3: CƠ QUAN ĐĂNG KÝ TRƯỚC ĐÂY",
+          "inputs": [
+            { "label": "Nhập Cơ quan đã đăng ký (13):", "targetNativeSelector": "input[name='HoSo_CoQuanDangKy']", "placeholder": "Ví dụ: UBND Phường..." }
+          ]
         },
         {
-          "type": "wizard_step",
-          "selectors": "input[name='HoSo_TenGiayTo'], input[name='HoSo_So'], input[name='HoSo_QuyenSo']",
-          "message": "Vui lòng nhập <b style='color:#D2232A'>(14) Tên giấy tờ, Số và Quyển số</b>.",
-          "voiceText": "Vui lòng nhập tên giấy tờ, số và quyển số."
+          "type": "ask_user_input",
+          "title": "BƯỚC 4: THÔNG TIN GIẤY TỜ",
+          "inputs": [
+            { "label": "Tên giấy tờ (Ví dụ: Giấy khai sinh)", "targetNativeSelector": "input[name='HoSo_TenGiayTo']" },
+            { "label": "Số quyển", "targetNativeSelector": "input[name='HoSo_QuyenSo']" },
+            { "label": "Số", "targetNativeSelector": "input[name='HoSo_So']" }
+          ]
         },
         {
-          "type": "wizard_step",
-          "selectors": "input[name='HoSo_NgayCapSo-day'], input[name='HoSo_NgayCapSo-month'], input[name='HoSo_NgayCapSo-year']",
-          "message": "Vui lòng nhập <b style='color:#D2232A'>Ngày, tháng, năm đăng ký</b>.",
-          "voiceText": "Vui lòng nhập ngày tháng năm đăng ký."
-        },
-        {
-          "type": "wizard_step",
-          "selectors": "input[name='SoLuong']",
-          "message": "Vui lòng nhập <b style='color:#D2232A'>(15) Số lượng bản sao</b> cần cấp.",
-          "voiceText": "Vui lòng nhập số lượng bản sao."
+          "type": "ask_user_input",
+          "title": "BƯỚC 5: NGÀY CẤP VÀ SỐ LƯỢNG",
+          "inputs": [
+            { "label": "Ngày đăng ký (DD)", "targetNativeSelector": "input[name='HoSo_NgayCapSo-day']" },
+            { "label": "Tháng đăng ký (MM)", "targetNativeSelector": "input[name='HoSo_NgayCapSo-month']" },
+            { "label": "Năm đăng ký (YYYY)", "targetNativeSelector": "input[name='HoSo_NgayCapSo-year']" },
+            { "label": "Số lượng bản sao cần cấp", "targetNativeSelector": "input[name='SoLuong']", "type": "number", "placeholder": "1" }
+          ]
         },
         {
           "type": "macro_buttons",
           "message": "🎉 <b>Tuyệt vời!</b> Anh/chị đã điền xong biểu mẫu. Vui lòng chọn hành động tiếp theo:",
-          "voiceText": "Đã điền xong. Vui lòng bấm Nộp ngay.",
           "buttons": [
             {
               "label": "Xem trước",
@@ -123,8 +109,8 @@
               "bgColor": "#D2232A", "color": "#fff",
               "actions": [
                 { "type": "wait_and_click_text", "selector": "button", "text": "Xem trước", "delayAfter": 1500 },
-                { "type": "wait_and_click_text", "selector": "div.el-message-box__btns button", "text": "Xác nhận", "delayAfter": 1000 },
-                { "type": "wait_and_click_text", "description": "Auto cho qua màn hình Thành phần hồ sơ", "selector": "button", "text": "Bước tiếp theo" }
+                { "type": "wait_and_click_text", "selector": "button", "text": "Xác nhận", "delayAfter": 1000 },
+                { "type": "wait_and_click_text", "selector": "button", "text": "Bước tiếp theo" }
               ]
             }
           ]
