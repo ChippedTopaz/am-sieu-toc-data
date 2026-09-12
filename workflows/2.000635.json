@@ -72,7 +72,7 @@
         {
           "type": "ai_voice_input",
           "botSpeaks": "Xin vui lòng cho biết, cơ quan đã đăng ký sự kiện hộ tịch trước đây của bạn là ở đâu?",
-          "geminiPrompt": "Bạn là công cụ đối chiếu dữ liệu tĩnh. BẮT BUỘC tuân thủ luật sau:\n1. Tỉnh mặc định: '{tinh_mac_dinh}'\n2. Từ điển: {danh_sach_3321}\n\nNHIỆM VỤ:\nTìm Tên cơ quan trong 'Từ điển' khớp nhất với lời công dân nói: '{speech_text}'.\n\nLUẬT TỐI THƯỢNG CHỐNG BỊA ĐẶT:\n- KẾT QUẢ TRẢ VỀ PHẢI NẰM CHÍNH XÁC 100% TRONG TỪ ĐIỂN CUNG CẤP (Phải giữ nguyên chữ UBND, Uỷ ban nhân dân... nếu trong từ điển có ghi).\n- Nếu tìm thấy, xuất JSON: {\"value\": \"[Tên BÊ NGUYÊN TỪ TỪ ĐIỂN], [Tên Tỉnh]\"}\n- Nếu KHÔNG TÌM THẤY trong từ điển, TUYỆT ĐỐI KHÔNG TỰ BỊA. Khi đó xuất JSON: {\"value\": \"{speech_text}\"}",
+          "geminiPrompt": "Danh sách cơ quan hợp lệ: {danh_sach_3321}\nCông dân nói: '{speech_text}'\n\nNHIỆM VỤ:\nTìm trong 'Danh sách cơ quan hợp lệ' MỘT cơ quan có ý nghĩa/phát âm khớp nhất với câu công dân nói (CHẤP NHẬN công dân nói thiếu chữ UBND, Uỷ ban... hoặc nói ngọng).\n\nQUY TẮC TRẢ KẾT QUẢ (BẮT BUỘC):\n- Khi tìm thấy cơ quan khớp, BẮT BUỘC chép nguyên văn tên cơ quan đó từ danh sách (giữ nguyên chữ UBND).\n- Trả về đúng định dạng JSON: {\"value\": \"[Tên chép từ danh sách], {tinh_mac_dinh}\"}\n- Nếu trong danh sách hoàn toàn không có xã/phường nào gần giống, mới trả về JSON: {\"value\": \"{speech_text}\"}",
           "targetNativeSelectors": "input[name='HoSo_CoQuanDangKy']",
           "isDateGroup": false
         },
