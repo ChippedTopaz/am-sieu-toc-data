@@ -72,7 +72,7 @@
         {
           "type": "ai_voice_input",
           "botSpeaks": "Xin vui lòng cho biết, cơ quan đã đăng ký sự kiện hộ tịch trước đây của bạn là ở đâu?",
-          "geminiPrompt": "Bạn là hệ thống phân giải địa danh hành chính.\n\nDỮ LIỆU ĐẦU VÀO:\n1. Công dân nói: '{speech_text}'\n2. Tỉnh mặc định: '{tinh_mac_dinh}'\n3. Từ điển: {danh_sach_3321}\n\nQUY TRÌNH:\n- B1: Nếu lời công dân có nhắc tên Tỉnh/Thành phố cụ thể, chỉ tìm trong Tỉnh đó.\n- B2: Nếu không nhắc đến Tỉnh nào, tìm trong Tỉnh mặc định '{tinh_mac_dinh}'.\n- B3: Nếu không thấy, quét mở rộng toàn quốc.\n\nKẾT QUẢ ĐẦU RA (BẮT BUỘC):\n- Phải ráp đúng Tên cơ quan nằm trong Từ điển.\n- BẮT BUỘC TRẢ VỀ ĐÚNG CHUẨN JSON như mẫu sau, tuyệt đối không giải thích thêm.\nMẫu: {\"value\": \"UBND Xã Thổ Tang, Tỉnh Vĩnh Phúc\"}",
+          "geminiPrompt": "Bạn là công cụ đối chiếu dữ liệu tĩnh. BẮT BUỘC tuân thủ luật sau:\n1. Tỉnh mặc định: '{tinh_mac_dinh}'\n2. Từ điển: {danh_sach_3321}\n\nNHIỆM VỤ:\nTìm Tên cơ quan trong 'Từ điển' khớp nhất với lời công dân nói: '{speech_text}'.\n\nLUẬT TỐI THƯỢNG CHỐNG BỊA ĐẶT:\n- KẾT QUẢ TRẢ VỀ PHẢI NẰM CHÍNH XÁC 100% TRONG TỪ ĐIỂN CUNG CẤP (Phải giữ nguyên chữ UBND, Uỷ ban nhân dân... nếu trong từ điển có ghi).\n- Nếu tìm thấy, xuất JSON: {\"value\": \"[Tên BÊ NGUYÊN TỪ TỪ ĐIỂN], [Tên Tỉnh]\"}\n- Nếu KHÔNG TÌM THẤY trong từ điển, TUYỆT ĐỐI KHÔNG TỰ BỊA. Khi đó xuất JSON: {\"value\": \"{speech_text}\"}",
           "targetNativeSelectors": "input[name='HoSo_CoQuanDangKy']",
           "isDateGroup": false
         },
