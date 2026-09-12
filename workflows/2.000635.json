@@ -90,9 +90,9 @@
           "title": "BƯỚC 5: NGÀY CẤP VÀ SỐ LƯỢNG",
           "inputs": [
             { 
-              "label": "Ngày đăng ký (DD/MM/YYYY)", 
+              "label": "Ngày đăng ký", 
               "targetNativeSelector": "input[name='HoSo_NgayCapSo-day'], input[name='HoSo_NgayCapSo-month'], input[name='HoSo_NgayCapSo-year']",
-              "placeholder": "Ví dụ: 25/08/2023",
+              "type": "date",
               "isDateGroup": true
             },
             { 
@@ -120,6 +120,11 @@
                 { "type": "wait_and_click_text", "selector": "button", "text": "Xác nhận", "delayAfter": 1000 },
                 { "type": "wait_and_click_text", "selector": "button", "text": "Bước tiếp theo" }
               ]
+            },
+            {
+              "label": "🔄 Khai lại",
+              "bgColor": "#64748b", "color": "#fff",
+              "actions": [ { "type": "reload_page" } ]
             }
           ]
         }
