@@ -72,7 +72,7 @@
         {
           "type": "ai_voice_input",
           "botSpeaks": "Xin vui lòng cho biết, cơ quan đã đăng ký sự kiện hộ tịch trước đây của bạn là ở đâu?",
-          "geminiPrompt": "Danh sách cơ quan hợp lệ: {danh_sach_3321}\nCông dân nói: '{speech_text}'\n\nNHIỆM VỤ:\nTìm trong 'Danh sách cơ quan hợp lệ' MỘT cơ quan có ý nghĩa/phát âm khớp nhất với câu công dân nói (CHẤP NHẬN công dân nói thiếu chữ UBND, Uỷ ban... hoặc nói ngọng).\n\nQUY TẮC TRẢ KẾT QUẢ (BẮT BUỘC):\n- Khi tìm thấy cơ quan khớp, BẮT BUỘC chép nguyên văn tên cơ quan đó từ danh sách (giữ nguyên chữ UBND).\n- Trả về đúng định dạng JSON: {\"value\": \"[Tên chép từ danh sách], {tinh_mac_dinh}\"}\n- Nếu trong danh sách hoàn toàn không có xã/phường nào gần giống, mới trả về JSON: {\"value\": \"{speech_text}\"}",
+          "geminiPrompt": "Bạn là chuyên gia chuẩn hóa địa danh.\nDanh sách cơ quan hợp lệ: {danh_sach_3321}\nCông dân nói: '{speech_text}'\n\nLUẬT TÌM KIẾM MỞ RỘNG (BẮT BUỘC ÁP DỤNG):\n1. AI phải tự động sửa lỗi chính tả do phát âm giống nhau (VD: i và y, s và x, d và gi...).\n2. Chấp nhận công dân nói thiếu chữ 'UBND', 'Uỷ ban', 'xã', 'phường'.\n3. VÍ DỤ MẪU: Công dân nói 'hi cương' hoặc 'xã hi cương' -> BẮT BUỘC AI phải tìm và khớp với 'UBND xã Hy Cương'. Công dân nói 'liên châu' -> Khớp với 'UBND xã Liên Châu'.\n\nQUY TẮC ĐẦU RA:\n- Khi đã khớp được, chép nguyên văn tên cơ quan đó từ danh sách.\n- Trả về đúng định dạng JSON: {\"value\": \"[Tên chép từ danh sách], {tinh_mac_dinh}\"}\n- CỰC KỲ HẠN CHẾ việc trả về nguyên văn lời công dân. Chỉ làm vậy khi cái tên công dân nói không có bất kỳ sự liên quan phát âm nào với toàn bộ danh sách.",
           "targetNativeSelectors": "input[name='HoSo_CoQuanDangKy']",
           "isDateGroup": false
         },
