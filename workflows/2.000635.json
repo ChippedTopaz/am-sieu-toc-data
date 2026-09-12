@@ -80,7 +80,7 @@
           "type": "ai_voice_input",
           "botSpeaks": "Tiếp theo, xin vui lòng cho biết Tên giấy tờ hộ tịch là gì?",
           "geminiPrompt": "Công dân trả lời: '{speech_text}'. Hãy trích xuất TÊN GIẤY TỜ HỘ TỊCH (ví dụ: Giấy khai sinh, Giấy chứng nhận kết hôn, Trích lục khai sinh...). Chỉ trả về đúng tên giấy tờ, tuyệt đối không giải thích gì thêm.",
-          "targetNativeSelectors": "input[name='THAY_BẰNG_TÊN_NAME_LẤY_Ở_BƯỚC_1']",
+          "targetNativeSelectors": "input[name='HoSo_TenGiayTo']",
           "isDateGroup": false
         },
         {
