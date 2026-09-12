@@ -72,7 +72,7 @@
         {
           "type": "ai_voice_input",
           "botSpeaks": "Xin vui lòng cho biết tên Cơ quan đã đăng ký sự kiện hộ tịch trước đây?",
-          "geminiPrompt": "Công dân trả lời: '{speech_text}'. Hãy trích xuất TÊN CƠ QUAN HÀNH CHÍNH, kiểm tra danh sách cơ quan hành chính cấp xã của tỉnh đã được cấu hình, so sánh để tìm ra tên cơ quan đúng nhất...",
+          "geminiPrompt": "Công dân nói: '{speech_text}'. Dưới đây là danh sách các cơ quan hành chính hợp lệ: {danh_sach_co_quan}. Nhiệm vụ của bạn: Đối chiếu câu nói của công dân với danh sách trên và trả về ĐÚNG TÊN CƠ QUAN trong danh sách có phát âm hoặc ý nghĩa gần giống nhất. TUYỆT ĐỐI CHỈ TRẢ VỀ TÊN CƠ QUAN, KHÔNG GIẢI THÍCH.",
           "targetNativeSelectors": "input[name='HoSo_CoQuanDangKy']",
           "isDateGroup": false
         },
