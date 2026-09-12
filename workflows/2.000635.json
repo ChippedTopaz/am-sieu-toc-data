@@ -89,10 +89,18 @@
           "type": "ask_user_input",
           "title": "BƯỚC 5: NGÀY CẤP VÀ SỐ LƯỢNG",
           "inputs": [
-            { "label": "Ngày đăng ký (DD)", "targetNativeSelector": "input[name='HoSo_NgayCapSo-day']" },
-            { "label": "Tháng đăng ký (MM)", "targetNativeSelector": "input[name='HoSo_NgayCapSo-month']" },
-            { "label": "Năm đăng ký (YYYY)", "targetNativeSelector": "input[name='HoSo_NgayCapSo-year']" },
-            { "label": "Số lượng bản sao cần cấp", "targetNativeSelector": "input[name='SoLuong']", "type": "number", "placeholder": "1" }
+            { 
+              "label": "Ngày đăng ký (DD/MM/YYYY)", 
+              "targetNativeSelector": "input[name='HoSo_NgayCapSo-day'], input[name='HoSo_NgayCapSo-month'], input[name='HoSo_NgayCapSo-year']",
+              "placeholder": "Ví dụ: 25/08/2023",
+              "isDateGroup": true
+            },
+            { 
+              "label": "Số lượng bản sao cần cấp", 
+              "targetNativeSelector": "input[name='SoLuong']", 
+              "type": "number", 
+              "placeholder": "1" 
+            }
           ]
         },
         {
