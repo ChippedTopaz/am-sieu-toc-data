@@ -1,6 +1,30 @@
 {
   "banned_domains": [
     {
+      "linh_vuc": "Hoạt động tín dụng",
+      "co_quan_cong_bo": "Ngân hàng Nhà nước Việt Nam"
+    },
+    {
+      "linh_vuc": "Hoạt động thông tin tín dụng",
+      "co_quan_cong_bo": "Ngân hàng Nhà nước Việt Nam"
+    },
+    {
+      "linh_vuc": "Hoạt động thanh toán",
+      "co_quan_cong_bo": "Ngân hàng Nhà nước Việt Nam"
+    },
+    {
+      "linh_vuc": "Thành lập và hoạt động ngân hàng",
+      "co_quan_cong_bo": "Ngân hàng Nhà nước Việt Nam"
+    },
+    {
+      "linh_vuc": "Hoạt động ngoại hối",
+      "co_quan_cong_bo": "Ngân hàng Nhà nước Việt Nam"
+    },
+    {
+      "linh_vuc": "Hoạt động khác",
+      "co_quan_cong_bo": "Ngân hàng Nhà nước Việt Nam"
+    },
+    {
       "linh_vuc": "Hải quan",
       "co_quan_cong_bo": "Bộ Tài chính"
     },
