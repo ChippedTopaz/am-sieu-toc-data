@@ -1,0 +1,24 @@
+{
+  "kioskProvince": "Sơn La",
+  "kioskLevel": "xa",
+  "kioskDefaultAgency": "UBND Phường Thảo Nguyên",
+  "kioskName": "TRUNG TÂM PHỤC VỤ HÀNH CHÍNH CÔNG PHƯỜNG THẢO NGUYÊN",
+  "kioskAddress": "Tổ dân phố 40, phường Thảo Nguyên, tỉnh Sơn La",
+  "kioskPhone": "0212 3566 222",
+  "kioskTime": "Sáng: 07h30 - 11h30 | Chiều: 13h30 - 17h30",
+  "fields": [
+    "An toàn thực phẩm",
+    "Thủ tục hành chính liên thông",
+    "Bảo trợ xã hội",
+    "Chứng thực",
+    "Đất đai",
+    "Giáo dục và đào tạo thuộc hệ thống giáo dục quốc dân",
+    "Hoạt động xây dựng",
+    "Hộ tịch",
+    "Người có công",
+    "Thành lập và hoạt động doanh nghiệp (hộ kinh doanh)",
+    "Tín ngưỡng, tôn giáo",
+    "Văn hóa"
+  ],
+  "lastSync": "07:23:31 14/9/2026"
+}
