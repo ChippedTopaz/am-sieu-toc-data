@@ -1,0 +1,24 @@
+{
+  "kioskProvince": "Nghệ An",
+  "kioskLevel": "xa",
+  "kioskDefaultAgency": "UBND xã Nam Đàn - Tỉnh Nghệ An",
+  "kioskName": "TRUNG TÂM PHỤC VỤ HÀNH CHÍNH CÔNG XÃ NAM ĐÀN - TỈNH NGHỆ AN",
+  "kioskAddress": "Xóm Long Bình, Xã Nam Đàn, Tỉnh Nghệ An",
+  "kioskPhone": "02383.922.999",
+  "kioskTime": "Sáng: 07h30 - 12h00 | Chiều: 13h30 - 17h00",
+  "fields": [
+    "An toàn thực phẩm",
+    "Thủ tục hành chính liên thông",
+    "Bảo trợ xã hội",
+    "Chứng thực",
+    "Đất đai",
+    "Giáo dục và đào tạo thuộc hệ thống giáo dục quốc dân",
+    "Hoạt động xây dựng",
+    "Hộ tịch",
+    "Người có công",
+    "Thành lập và hoạt động doanh nghiệp (hộ kinh doanh)",
+    "Tín ngưỡng, tôn giáo",
+    "Văn hóa"
+  ],
+  "lastSync": "09:58:14 16/9/2026"
+}
