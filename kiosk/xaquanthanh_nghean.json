@@ -1,0 +1,24 @@
+{
+  "kioskProvince": "Nghệ An",
+  "kioskLevel": "xa",
+  "kioskDefaultAgency": "UBND xã Quan Thành - Tỉnh Nghệ An",
+  "kioskName": "TRUNG TÂM PHỤC VỤ HÀNH CHÍNH CÔNG XÃ QUAN THÀNH - TỈNH NGHỆ AN",
+  "kioskAddress": "Xóm Trần Phú, xã Quan Thành, tỉnh Nghệ An",
+  "kioskPhone": "0973376177",
+  "kioskTime": "Sáng: 07h30 - 11h30 | Chiều: 13h00 - 17h00",
+  "fields": [
+    "An toàn thực phẩm",
+    "Thủ tục hành chính liên thông",
+    "Bảo trợ xã hội",
+    "Chứng thực",
+    "Đất đai",
+    "Giáo dục và đào tạo thuộc hệ thống giáo dục quốc dân",
+    "Hoạt động xây dựng",
+    "Hộ tịch",
+    "Người có công",
+    "Thành lập và hoạt động doanh nghiệp (hộ kinh doanh)",
+    "Tín ngưỡng, tôn giáo",
+    "Văn hóa"
+  ],
+  "lastSync": "11:05:01 16/9/2026"
+}
