@@ -1,0 +1,47 @@
+name: Test Build Niemyet Province Data
+
+on:
+  workflow_dispatch:
+    inputs:
+      province_code:
+        description: 'Mã tỉnh cần build thử (mặc định 25 = Phú Thọ)'
+        required: true
+        default: '25'
+
+permissions:
+  contents: write
+
+jobs:
+  build-province:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout branch niemyet
+        uses: actions/checkout@v4
+        with:
+          ref: niemyet
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build province JSON
+        run: node build-niemyet-data.js
+        env:
+          PROVINCE_CODE: ${{ github.event.inputs.province_code }}
+
+      - name: Commit generated JSON
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add province-configs/
+          if git diff --cached --quiet; then
+            echo "Không có thay đổi dữ liệu."
+            exit 0
+          fi
+          git commit -m "Build niemyet province ${{ github.event.inputs.province_code }}"
+          git push origin HEAD:niemyet
