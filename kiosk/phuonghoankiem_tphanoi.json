@@ -1,0 +1,24 @@
+{
+  "kioskProvince": "Hà Nội",
+  "kioskLevel": "tinh_xa",
+  "kioskDefaultAgency": "UBND phường Hoàn Kiếm",
+  "kioskName": "TRUNG TÂM PHỤC VỤ HÀNH CHÍNH CÔNG PHƯỜNG HOÀN KIẾM",
+  "kioskAddress": "Phường Hoàn Kiếm",
+  "kioskPhone": "",
+  "kioskTime": "Sáng: 07h30 - 11h30 | Chiều: 13h00 - 17h00",
+  "fields": [
+    "An toàn thực phẩm",
+    "Thủ tục hành chính liên thông",
+    "Bảo trợ xã hội",
+    "Chứng thực",
+    "Đất đai",
+    "Giáo dục và đào tạo thuộc hệ thống giáo dục quốc dân",
+    "Hoạt động xây dựng",
+    "Hộ tịch",
+    "Người có công",
+    "Thành lập và hoạt động doanh nghiệp (hộ kinh doanh)",
+    "Tín ngưỡng, tôn giáo",
+    "Văn hóa"
+  ],
+  "lastSync": "10:37:29 20/9/2026"
+}
