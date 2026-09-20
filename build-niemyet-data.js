@@ -36,7 +36,7 @@ const PROVINCES = [
   { code: '31', name: 'Hải Phòng', sheetId: '1FS--r88vV1GCGq2Ki9SwYaFfcDCO1GfZiFQ5L3z_f9I' },
   { code: '33', name: 'Hưng Yên', sheetId: '1EljJM6qZleVHywEzcmLuuWqbb5JjHDvO8CrNFVn6ZWk' },
   { code: '37', name: 'Ninh Bình', sheetId: '10PPeuVlMuF1_5ruW98_-8rSx1fiIqTyXOmgVwrWreoA' },
-  { code: '38', name: 'Thanh Hóa', sheetId: '1a8eUDctjDrf8BLshBpy1FeeT5yCNBhGU' },
+  { code: '38', name: 'Thanh Hóa', sheetId: '18infmEw3d2yql9iPROrSIdXvCe-ZmmHVRmKb9QRWn58' },
   { code: '40', name: 'Nghệ An', sheetId: '1rmfl05Y_CVK1rTzY_2-Ms-2zJGZSGKeTSgNc1sX34vw' },
   { code: '42', name: 'Hà Tĩnh', sheetId: '11bPBAtqZIQK1C7C3yUMxNvKflKQLTNCfjlCdvfoPh1s' },
   { code: '44', name: 'Quảng Trị', sheetId: '17BxG4hFtrteZnq4SNt0fZuuugr3UdpRVyl8AM4OWK1E' },
