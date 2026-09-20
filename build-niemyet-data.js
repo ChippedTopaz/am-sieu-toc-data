@@ -296,19 +296,37 @@ function buildProvincePayload(province, masterIndex, provinceRows) {
     if (executionRows.length > 0) {
       if (!shards.has(shard)) shards.set(shard, {});
 
-      // Dữ liệu thực thi dùng key ngắn để giảm dung lượng truyền tải.
-      // d=MaDVC, n=TenDVC, a=TenCQTH, c=MaCQTH, m=MucDo,
-      // s=Trạng thái, t=LoaiHeThong, u=Citizen URL
-      shards.get(shard)[maTTHC] = executionRows.map(row => ({
-        d: row.maDVC || '',
-        n: row.tenDVC || '',
-        a: row.tenCQTH || '',
-        c: row.maCQTH || '',
-        m: row.mucDo || '',
-        s: row.trangThai || '',
-        t: row.loaiHeThong || '',
-        u: row.citizenUrl || ''
-      }));
+      // Nhóm đúng nghiệp vụ hiện tại của niemyet:
+      // MaTTHC -> nhiều MaDVC -> các dòng/cơ quan của từng MaDVC.
+      // Một MaTTHC có thể có .01, .02... và tuyệt đối không được gộp lẫn.
+      const dvcGroups = new Map();
+
+      for (const row of executionRows) {
+        const maDVC = row.maDVC || 'CHUA_CO_MA';
+
+        if (!dvcGroups.has(maDVC)) {
+          dvcGroups.set(maDVC, {
+            d: maDVC,
+            n: row.tenDVC || row.tenTTHC || 'Dịch vụ công trực tuyến',
+            r: []
+          });
+        }
+
+        // d,n chỉ lưu một lần ở cấp MaDVC.
+        // Dữ liệu theo cơ quan vẫn giữ riêng từng dòng để không làm sai finalURL.
+        dvcGroups.get(maDVC).r.push({
+          a: row.tenCQTH || '',
+          c: row.maCQTH || '',
+          u: row.citizenUrl || '',
+          m: row.mucDo || '',
+          s: row.trangThai || '',
+          t: row.loaiHeThong || ''
+        });
+      }
+
+      shards.get(shard)[maTTHC] = {
+        dvc: Array.from(dvcGroups.values())
+      };
     }
   }
 
@@ -318,7 +336,7 @@ function buildProvincePayload(province, masterIndex, provinceRows) {
 
   return {
     catalog: {
-      schemaVersion: 2,
+      schemaVersion: 3,
       province: {
         code: province.code,
         name: province.name,
@@ -425,7 +443,7 @@ async function main() {
 
     for (const key of shardKeys) {
       const shardText = JSON.stringify({
-        schemaVersion: 2,
+        schemaVersion: 3,
         provinceCode: province.code,
         shard: key,
         procedures: payload.shards.get(key)
@@ -444,7 +462,7 @@ async function main() {
     ).join('|');
 
     const manifest = {
-      schemaVersion: 2,
+      schemaVersion: 3,
       province: {
         code: province.code,
         name: province.name,
