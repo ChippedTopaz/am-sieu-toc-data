@@ -30,14 +30,17 @@ jobs:
         env:
           PROVINCE_CODE: ''
 
-      - name: Commit generated province data
+      - name: Prepare orphan publish snapshot
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add province-configs/
-          if git diff --cached --quiet; then
-            echo "Không có thay đổi dữ liệu."
-            exit 0
-          fi
-          git commit -m "Build niemyet data for all 34 provinces"
-          git push origin HEAD:niemyet
+          rm -rf niemyet-publish
+          mkdir -p niemyet-publish
+          cp -R province-configs niemyet-publish/province-configs
+
+      - name: Deploy generated data to niemyet-data
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./niemyet-publish
+          publish_branch: niemyet-data
+          force_orphan: true
+          commit_message: "Build niemyet delivery data for all 34 provinces"
