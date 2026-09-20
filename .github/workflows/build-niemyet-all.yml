@@ -9,6 +9,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: niemyet-data-deploy
+  cancel-in-progress: false
+
 jobs:
   build-all-provinces:
     runs-on: ubuntu-latest
