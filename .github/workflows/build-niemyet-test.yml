@@ -4,9 +4,9 @@ on:
   workflow_dispatch:
     inputs:
       province_code:
-        description: 'Mã tỉnh cần build thử (mặc định 25 = Phú Thọ)'
+        description: 'Mã tỉnh cần build thử (mặc định 01 = Hà Nội)'
         required: true
-        default: '25'
+        default: '01'
 
 permissions:
   contents: write
