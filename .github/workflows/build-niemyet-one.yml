@@ -1,0 +1,87 @@
+name: Build One Niemyet Province
+
+on:
+  workflow_dispatch:
+    inputs:
+      province_code:
+        description: 'Mã tỉnh cần cập nhật (VD: 25 = Phú Thọ)'
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: niemyet-data-deploy
+  cancel-in-progress: false
+
+jobs:
+  build-one-province:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout source branch niemyet
+        uses: actions/checkout@v4
+        with:
+          ref: niemyet
+
+      - name: Validate province code
+        shell: bash
+        run: |
+          CODE="${{ github.event.inputs.province_code }}"
+          if [[ ! "$CODE" =~ ^[0-9]{1,2}$ ]]; then
+            echo "Mã tỉnh không hợp lệ: $CODE"
+            exit 1
+          fi
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build selected province
+        run: node build-niemyet-data.js
+        env:
+          PROVINCE_CODE: ${{ github.event.inputs.province_code }}
+
+      - name: Checkout current niemyet-data snapshot
+        uses: actions/checkout@v4
+        with:
+          ref: niemyet-data
+          path: niemyet-current
+
+      - name: Prepare updated full snapshot
+        shell: bash
+        run: |
+          CODE=$(printf "%02d" "${{ github.event.inputs.province_code }}")
+          TARGET_DIR=$(find province-configs -maxdepth 1 -mindepth 1 -type d -name "${CODE}-*" | head -n 1)
+
+          if [ -z "$TARGET_DIR" ]; then
+            echo "Không tìm thấy dữ liệu build cho mã tỉnh $CODE"
+            exit 1
+          fi
+
+          rm -rf niemyet-publish
+          mkdir -p niemyet-publish/province-configs
+
+          if [ -d niemyet-current/province-configs ]; then
+            cp -R niemyet-current/province-configs/. niemyet-publish/province-configs/
+          fi
+
+          rm -rf niemyet-publish/province-configs/${CODE}-*
+          cp -R "$TARGET_DIR" niemyet-publish/province-configs/
+
+          echo "Đã thay snapshot cho: $(basename "$TARGET_DIR")"
+
+      - name: Deploy updated snapshot to niemyet-data
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./niemyet-publish
+          publish_branch: niemyet-data
+          force_orphan: true
+          commit_message: "Update niemyet province ${{ github.event.inputs.province_code }}"
