@@ -1,6 +1,9 @@
 name: Build All Niemyet Province Data
 
 on:
+  schedule:
+    # 00:20 giờ Việt Nam mỗi ngày (17:20 UTC), chạy sau Master Data 20 phút để tránh race.
+    - cron: '20 17 * * *'
   workflow_dispatch:
 
 permissions:
