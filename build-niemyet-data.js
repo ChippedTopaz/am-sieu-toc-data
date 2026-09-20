@@ -1,6 +1,7 @@
 const axios = require('axios');
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
 
 // =======================================================
 // BUILD DATA TỐI ƯU CHO TRANG NIÊM YẾT
@@ -11,6 +12,7 @@ const path = require('path');
 // =======================================================
 
 const OUTPUT_DIR = path.join(__dirname, 'province-configs');
+const SHARD_COUNT = 64;
 
 const MASTER_INDEX_URL =
   'https://raw.githubusercontent.com/ChippedTopaz/am-sieu-toc-data/data/index.json';
@@ -77,6 +79,21 @@ function slugify(str) {
 
 function cleanCode(value) {
   return (value || '').toString().trim().replace(/^'/, '');
+}
+
+function shardKey(value) {
+  const input = cleanCode(value);
+  let hash = 0x811c9dc5;
+  for (let i = 0; i < input.length; i++) {
+    hash ^= input.charCodeAt(i);
+    hash = Math.imul(hash, 0x01000193);
+  }
+  const index = (hash >>> 0) % SHARD_COUNT;
+  return index.toString(16).padStart(2, '0');
+}
+
+function sha256(value) {
+  return crypto.createHash('sha256').update(value).digest('hex');
 }
 
 function normalizeHeader(value) {
@@ -247,7 +264,8 @@ function buildProvincePayload(province, masterIndex, provinceRows) {
   }
 
   const seenMasterCodes = new Set();
-  const items = [];
+  const catalogItems = [];
+  const shards = new Map();
 
   for (const item of masterIndex) {
     if (!item || typeof item !== 'object') continue;
@@ -258,8 +276,9 @@ function buildProvincePayload(province, masterIndex, provinceRows) {
     seenMasterCodes.add(maTTHC);
 
     const executionRows = rowsByMaTTHC.get(maTTHC) || [];
+    const shard = executionRows.length > 0 ? shardKey(maTTHC) : null;
 
-    items.push({
+    catalogItems.push({
       id: (item.id || '').toString().trim(),
       ma: maTTHC,
       ten: (item.ten_tthc || item.name || '').toString().trim(),
@@ -270,29 +289,54 @@ function buildProvincePayload(province, masterIndex, provinceRows) {
       mucDo: (item.muc_do || '').toString().trim(),
       state: (item.state || '').toString().trim(),
       nganhDoc: item.nganh_doc === true,
-      linkNop: executionRows.find(r => r.citizenUrl)?.citizenUrl || null,
-      rows: executionRows
+      hasExecution: executionRows.length > 0,
+      shard
     });
+
+    if (executionRows.length > 0) {
+      if (!shards.has(shard)) shards.set(shard, {});
+
+      // Dữ liệu thực thi dùng key ngắn để giảm dung lượng truyền tải.
+      // d=MaDVC, n=TenDVC, a=TenCQTH, c=MaCQTH, m=MucDo,
+      // s=Trạng thái, t=LoaiHeThong, u=Citizen URL
+      shards.get(shard)[maTTHC] = executionRows.map(row => ({
+        d: row.maDVC || '',
+        n: row.tenDVC || '',
+        a: row.tenCQTH || '',
+        c: row.maCQTH || '',
+        m: row.mucDo || '',
+        s: row.trangThai || '',
+        t: row.loaiHeThong || '',
+        u: row.citizenUrl || ''
+      }));
+    }
   }
 
-  const executionRowCount = items.reduce((sum, item) => sum + item.rows.length, 0);
-  const withExecutionData = items.filter(item => item.rows.length > 0).length;
+  const executionRowCount = Array.from(rowsByMaTTHC.values())
+    .reduce((sum, rows) => sum + rows.length, 0);
+  const withExecutionData = catalogItems.filter(item => item.hasExecution).length;
 
   return {
-    schemaVersion: 1,
-    province: {
-      code: province.code,
-      name: province.name,
-      slug: slugify(province.name)
+    catalog: {
+      schemaVersion: 2,
+      province: {
+        code: province.code,
+        name: province.name,
+        slug: slugify(province.name)
+      },
+      stats: {
+        procedures: catalogItems.length,
+        proceduresWithExecutionData: withExecutionData,
+        proceduresWithoutExecutionData: catalogItems.length - withExecutionData
+      },
+      items: catalogItems
     },
-    builtAt: new Date().toISOString(),
+    shards,
     stats: {
-      procedures: items.length,
+      procedures: catalogItems.length,
       proceduresWithExecutionData: withExecutionData,
-      proceduresWithoutExecutionData: items.length - withExecutionData,
       executionRows: executionRowCount
-    },
-    items
+    }
   };
 }
 
@@ -362,17 +406,79 @@ async function main() {
     const { rows, sourceUrl } = await loadProvinceRows(province, directoryMap);
     const payload = buildProvincePayload(province, masterIndex, rows);
 
-    const fileName = `${province.code}-${slugify(province.name)}.json`;
-    const outputPath = path.join(OUTPUT_DIR, fileName);
+    const provinceDirName = `${province.code}-${slugify(province.name)}`;
+    const provinceDir = path.join(OUTPUT_DIR, provinceDirName);
+    const executionDir = path.join(provinceDir, 'execution');
 
-    fs.writeFileSync(outputPath, JSON.stringify(payload));
+    // Mỗi lần build lại tỉnh: dọn sạch output cũ của riêng tỉnh đó để không còn shard rác.
+    if (fs.existsSync(provinceDir)) {
+      fs.rmSync(provinceDir, { recursive: true, force: true });
+    }
+    fs.mkdirSync(executionDir, { recursive: true });
 
-    const size = fs.statSync(outputPath).size;
+    const catalogText = JSON.stringify(payload.catalog);
+    const catalogPath = path.join(provinceDir, 'catalog.json');
+    fs.writeFileSync(catalogPath, catalogText);
+
+    const shardInfo = [];
+    const shardKeys = Array.from(payload.shards.keys()).sort();
+
+    for (const key of shardKeys) {
+      const shardText = JSON.stringify({
+        schemaVersion: 2,
+        provinceCode: province.code,
+        shard: key,
+        procedures: payload.shards.get(key)
+      });
+      const shardPath = path.join(executionDir, `${key}.json`);
+      fs.writeFileSync(shardPath, shardText);
+      shardInfo.push({
+        key,
+        bytes: Buffer.byteLength(shardText),
+        procedures: Object.keys(payload.shards.get(key)).length
+      });
+    }
+
+    const versionSeed = catalogText + shardKeys.map(key =>
+      key + ':' + JSON.stringify(payload.shards.get(key))
+    ).join('|');
+
+    const manifest = {
+      schemaVersion: 2,
+      province: {
+        code: province.code,
+        name: province.name,
+        slug: slugify(province.name)
+      },
+      version: sha256(versionSeed).slice(0, 16),
+      builtAt: new Date().toISOString(),
+      shardCount: shardInfo.length,
+      configuredShardCount: SHARD_COUNT,
+      stats: payload.stats,
+      files: {
+        catalog: {
+          path: 'catalog.json',
+          bytes: Buffer.byteLength(catalogText)
+        },
+        execution: shardInfo
+      }
+    };
+
+    const manifestText = JSON.stringify(manifest);
+    fs.writeFileSync(path.join(provinceDir, 'manifest.json'), manifestText);
+
+    const executionBytes = shardInfo.reduce((sum, item) => sum + item.bytes, 0);
+    const totalBytes = Buffer.byteLength(catalogText) + executionBytes + Buffer.byteLength(manifestText);
+
     summary.push({
       code: province.code,
       province: province.name,
-      file: fileName,
-      bytes: size,
+      folder: provinceDirName,
+      catalogKB: Math.round(Buffer.byteLength(catalogText) / 1024),
+      shards: shardInfo.length,
+      avgShardKB: shardInfo.length ? Math.round((executionBytes / shardInfo.length) / 1024) : 0,
+      maxShardKB: shardInfo.length ? Math.round(Math.max(...shardInfo.map(x => x.bytes)) / 1024) : 0,
+      totalMB: (totalBytes / 1024 / 1024).toFixed(2),
       procedures: payload.stats.procedures,
       withExecutionData: payload.stats.proceduresWithExecutionData,
       executionRows: payload.stats.executionRows,
@@ -380,8 +486,8 @@ async function main() {
     });
 
     console.log(
-      `✅ ${fileName}: ${payload.stats.procedures} TTHC, ` +
-      `${payload.stats.executionRows} dòng thực thi, ${Math.round(size / 1024)} KB`
+      `✅ ${provinceDirName}: catalog ${Math.round(Buffer.byteLength(catalogText) / 1024)} KB, ` +
+      `${shardInfo.length} shard, TB ${(totalBytes / 1024 / 1024).toFixed(2)} MB`
     );
   }
 
