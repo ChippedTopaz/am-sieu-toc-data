@@ -1,0 +1,43 @@
+name: Build All Niemyet Province Data
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-all-provinces:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout branch niemyet
+        uses: actions/checkout@v4
+        with:
+          ref: niemyet
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build all 34 province datasets
+        run: node build-niemyet-data.js
+        env:
+          PROVINCE_CODE: ''
+
+      - name: Commit generated province data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add province-configs/
+          if git diff --cached --quiet; then
+            echo "Không có thay đổi dữ liệu."
+            exit 0
+          fi
+          git commit -m "Build niemyet data for all 34 provinces"
+          git push origin HEAD:niemyet
