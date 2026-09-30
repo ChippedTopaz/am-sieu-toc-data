@@ -1,0 +1,24 @@
+{
+  "kioskProvince": "Phú Thọ",
+  "kioskLevel": "xa",
+  "kioskDefaultAgency": "UBND xã Tân Lạc",
+  "kioskName": "TRUNG TÂM PHỤC VỤ HÀNH CHÍNH CÔNG XÃ TÂN LẠC",
+  "kioskAddress": "Thôn Minh Khai, Xã Tân Lạc, tỉnh Phú Thọ",
+  "kioskPhone": "02183832678",
+  "kioskTime": "Sáng: 07h30 - 11h30 | Chiều: 13h00 - 17h00",
+  "fields": [
+    "An toàn thực phẩm",
+    "Thủ tục hành chính liên thông",
+    "Bảo trợ xã hội",
+    "Chứng thực",
+    "Đất đai",
+    "Giáo dục và đào tạo thuộc hệ thống giáo dục quốc dân",
+    "Hoạt động xây dựng",
+    "Hộ tịch",
+    "Người có công",
+    "Thành lập và hoạt động doanh nghiệp (hộ kinh doanh)",
+    "Tín ngưỡng, tôn giáo",
+    "Văn hóa"
+  ],
+  "lastSync": "09:47:37 30/9/2026"
+}
