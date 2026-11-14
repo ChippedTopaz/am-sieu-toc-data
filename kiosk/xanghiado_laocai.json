@@ -2,7 +2,7 @@
   "kioskProvince": "Lào Cai",
   "kioskLevel": "tinh_xa",
   "kioskDefaultAgency": "UBND XÃ NGHĨA ĐÔ",
-  "kioskName": "TRUNG TÂM PHỤC VỤ HÀNH CHÍNH CÔNG XÃ NGHĨA ĐÔ - TỈNH NGHỆ AN",
+  "kioskName": "TRUNG TÂM PHỤC VỤ HÀNH CHÍNH CÔNG XÃ NGHĨA ĐÔ - TỈNH LÀO CAI",
   "kioskAddress": "Thôn Nà Đinh, xã Nghĩa Đô, tỉnh Lào Cai",
   "kioskPhone": "",
   "kioskTime": "Sáng: 07h30 - 11h30 | Chiều: 13h00 - 17h00",
@@ -257,5 +257,5 @@
     "Xúc tiến thương mại",
     "Y dược cổ truyền"
   ],
-  "lastSync": "22:20:39 14/11/2026"
+  "lastSync": "22:24:06 14/11/2026"
 }
