@@ -17,6 +17,7 @@
     "Hộ tịch",
     "Người có công",
     "Thành lập và hoạt động doanh nghiệp (hộ kinh doanh)",
+    "Đăng ký biện pháp bảo đảm",
     "Tín ngưỡng, tôn giáo",
     "Văn hóa",
     "An toàn bức xạ và hạt nhân",
@@ -68,7 +69,6 @@
     "Đảm bảo an ninh, trật tự tại cửa khẩu cảng",
     "Đào tạo và nghiên cứu khoa học",
     "Đăng kiểm",
-    "Đăng ký biện pháp bảo đảm",
     "Đăng ký hoạt động của ngân hàng chính sách xã hội",
     "Đăng ký, quản lý con dấu",
     "Đăng ký, quản lý cư trú",
@@ -257,5 +257,5 @@
     "Xúc tiến thương mại",
     "Y dược cổ truyền"
   ],
-  "lastSync": "10:33:45 17/11/2026"
+  "lastSync": "10:36:44 17/11/2026"
 }
