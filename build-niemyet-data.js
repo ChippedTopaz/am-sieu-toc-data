@@ -1,7 +1,12 @@
-const axios = require('axios');
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
+let axiosClient = null;
+
+function getAxios() {
+  if (!axiosClient) axiosClient = require('axios');
+  return axiosClient;
+}
 
 // =======================================================
 // BUILD DATA TỐI ƯU CHO TRANG NIÊM YẾT
@@ -11,7 +16,9 @@ const crypto = require('crypto');
 // - index.json toàn quốc bổ sung TTHC Bộ/ngành + metadata quốc gia
 // =======================================================
 
-const OUTPUT_DIR = path.join(__dirname, 'province-configs');
+const OUTPUT_DIR = process.env.OUTPUT_DIR
+  ? path.resolve(process.env.OUTPUT_DIR)
+  : path.join(__dirname, 'province-configs');
 const SHARD_COUNT = 64;
 
 const MASTER_INDEX_URL =
@@ -172,7 +179,7 @@ function getByAliases(row, aliases) {
 }
 
 async function fetchText(url) {
-  const res = await axios.get(url, {
+  const res = await getAxios().get(url, {
     responseType: 'text',
     timeout: 120000,
     headers: { 'User-Agent': 'am-sieu-toc-niemyet-builder/1.0' }
@@ -181,7 +188,7 @@ async function fetchText(url) {
 }
 
 async function fetchJson(url) {
-  const res = await axios.get(url, {
+  const res = await getAxios().get(url, {
     timeout: 120000,
     headers: { 'User-Agent': 'am-sieu-toc-niemyet-builder/1.0' }
   });
@@ -250,9 +257,14 @@ function dedupeRows(rows) {
 
 function buildProvincePayload(province, masterIndex, provinceRows) {
   const rowsByMaTTHC = new Map();
+  const agencies = new Set();
 
   for (const rawRow of provinceRows) {
     const row = normalizeSheetRow(rawRow);
+    row.tenCQTH.toString().split(/(?:;|,|\n)/).forEach(name => {
+      const cleanName = name.trim();
+      if (cleanName) agencies.add(cleanName);
+    });
     if (!row.maTTHC) continue;
 
     if (!rowsByMaTTHC.has(row.maTTHC)) rowsByMaTTHC.set(row.maTTHC, []);
@@ -335,6 +347,15 @@ function buildProvincePayload(province, masterIndex, provinceRows) {
   const withExecutionData = catalogItems.filter(item => item.hasExecution).length;
 
   return {
+    agencies: {
+      schemaVersion: 1,
+      province: {
+        code: province.code,
+        name: province.name,
+        slug: slugify(province.name)
+      },
+      items: Array.from(agencies).sort((a, b) => a.localeCompare(b, 'vi'))
+    },
     catalog: {
       schemaVersion: 3,
       province: {
@@ -438,6 +459,9 @@ async function main() {
     const catalogPath = path.join(provinceDir, 'catalog.json');
     fs.writeFileSync(catalogPath, catalogText);
 
+    const agenciesText = JSON.stringify(payload.agencies);
+    fs.writeFileSync(path.join(provinceDir, 'agencies.json'), agenciesText);
+
     const shardInfo = [];
     const shardKeys = Array.from(payload.shards.keys()).sort();
 
@@ -457,7 +481,7 @@ async function main() {
       });
     }
 
-    const versionSeed = catalogText + shardKeys.map(key =>
+    const versionSeed = catalogText + agenciesText + shardKeys.map(key =>
       key + ':' + JSON.stringify(payload.shards.get(key))
     ).join('|');
 
@@ -478,6 +502,11 @@ async function main() {
           path: 'catalog.json',
           bytes: Buffer.byteLength(catalogText)
         },
+        agencies: {
+          path: 'agencies.json',
+          bytes: Buffer.byteLength(agenciesText),
+          count: payload.agencies.items.length
+        },
         execution: shardInfo
       }
     };
@@ -486,13 +515,15 @@ async function main() {
     fs.writeFileSync(path.join(provinceDir, 'manifest.json'), manifestText);
 
     const executionBytes = shardInfo.reduce((sum, item) => sum + item.bytes, 0);
-    const totalBytes = Buffer.byteLength(catalogText) + executionBytes + Buffer.byteLength(manifestText);
+    const totalBytes = Buffer.byteLength(catalogText) + Buffer.byteLength(agenciesText) + executionBytes + Buffer.byteLength(manifestText);
 
     summary.push({
       code: province.code,
       province: province.name,
       folder: provinceDirName,
       catalogKB: Math.round(Buffer.byteLength(catalogText) / 1024),
+      agencies: payload.agencies.items.length,
+      agenciesKB: Math.round(Buffer.byteLength(agenciesText) / 1024),
       shards: shardInfo.length,
       avgShardKB: shardInfo.length ? Math.round((executionBytes / shardInfo.length) / 1024) : 0,
       maxShardKB: shardInfo.length ? Math.round(Math.max(...shardInfo.map(x => x.bytes)) / 1024) : 0,
@@ -513,7 +544,11 @@ async function main() {
   console.table(summary.map(({ sourceUrl, ...rest }) => rest));
 }
 
-main().catch(err => {
-  console.error('\n❌ BUILD NIÊM YẾT THẤT BẠI:', err.message);
-  process.exit(1);
-});
+if (require.main === module) {
+  main().catch(err => {
+    console.error('\n❌ BUILD NIÊM YẾT THẤT BẠI:', err.message);
+    process.exit(1);
+  });
+}
+
+module.exports = { buildProvincePayload, normalizeSheetRow };

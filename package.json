@@ -5,7 +5,8 @@
   "main": "pipeline/index.js",
   "scripts": {
     "build-data": "node pipeline/index.js",
-    "test:regression": "node tests/regression.js"
+    "test:regression": "node tests/regression.js",
+    "test:niemyet": "node --test tests/niemyet-agencies.test.js"
   },
   "dependencies": {
     "axios": "^1.6.0",
