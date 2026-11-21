@@ -178,13 +178,32 @@ function getByAliases(row, aliases) {
   return '';
 }
 
-async function fetchText(url) {
-  const res = await getAxios().get(url, {
-    responseType: 'text',
-    timeout: 120000,
-    headers: { 'User-Agent': 'am-sieu-toc-niemyet-builder/1.0' }
-  });
-  return typeof res.data === 'string' ? res.data : JSON.stringify(res.data);
+async function fetchText(url, maxAttempts = 3) {
+  let lastError = null;
+
+  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+    try {
+      const res = await getAxios().get(url, {
+        responseType: 'text',
+        timeout: 120000,
+        headers: { 'User-Agent': 'am-sieu-toc-niemyet-builder/1.0' }
+      });
+      return typeof res.data === 'string' ? res.data : JSON.stringify(res.data);
+    } catch (error) {
+      lastError = error;
+      if (attempt === maxAttempts) break;
+
+      const status = Number(error?.response?.status || 0);
+      const retryable = status === 401 || status === 429 || status >= 500 || !status;
+      if (!retryable) break;
+
+      const delayMs = attempt * 5000;
+      console.warn(`⚠️ Tải CSV lỗi ${status || error.code || 'mạng'}, thử lại ${attempt + 1}/${maxAttempts} sau ${delayMs / 1000}s...`);
+      await new Promise(resolve => setTimeout(resolve, delayMs));
+    }
+  }
+
+  throw lastError;
 }
 
 async function fetchJson(url) {
