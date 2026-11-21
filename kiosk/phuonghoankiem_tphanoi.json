@@ -7,14 +7,14 @@
   "kioskPhone": "0915155633",
   "kioskTime": "Sáng: 07h30 - 11h30 | Chiều: 13h00 - 17h00",
   "fields": [
-    "An toàn thực phẩm",
     "Thủ tục hành chính liên thông",
-    "Bảo trợ xã hội",
     "Chứng thực",
+    "Hộ tịch",
     "Đất đai",
+    "An toàn thực phẩm",
+    "Bảo trợ xã hội",
     "Giáo dục và đào tạo thuộc hệ thống giáo dục quốc dân",
     "Hoạt động xây dựng",
-    "Hộ tịch",
     "Người có công",
     "Thành lập và hoạt động doanh nghiệp (hộ kinh doanh)",
     "Tín ngưỡng, tôn giáo",
@@ -309,5 +309,5 @@
     "Xúc tiến thương mại",
     "Y dược cổ truyền"
   ],
-  "lastSync": "20:37:20 21/11/2026"
+  "lastSync": "20:38:41 21/11/2026"
 }
