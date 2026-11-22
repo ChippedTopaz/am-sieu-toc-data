@@ -1,6 +1,6 @@
 {
   "kioskProvince": "Hải Phòng",
-  "kioskLevel": "tinh_xa",
+  "kioskLevel": "xa",
   "kioskDefaultAgency": "UBND xã Mao Điền",
   "kioskName": "TRUNG TÂM PHỤC VỤ HÀNH CHÍNH CÔNG XÃ MAO ĐIỀN - THÀNH PHỐ HẢI PHÒNG",
   "kioskAddress": "Thôn Tràng Kỹ, xã Mao Điền, thành phố Hải Phòng",
@@ -257,5 +257,5 @@
     "Xúc tiến thương mại",
     "Y dược cổ truyền"
   ],
-  "lastSync": "15:11:23 22/11/2026"
+  "lastSync": "15:53:03 22/11/2026"
 }
