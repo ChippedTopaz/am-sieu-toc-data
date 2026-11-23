@@ -1,6 +1,6 @@
 {
   "kioskProvince": "Hà Tĩnh",
-  "kioskLevel": "xa",
+  "kioskLevel": "tinh_xa",
   "kioskDefaultAgency": "Xã Đức Thịnh",
   "kioskName": "TRUNG TÂM PHỤC VỤ HÀNH CHÍNH CÔNG XÃ ĐỨC THỊNH - TỈNH HÀ TĨNH",
   "kioskAddress": "Thôn Đức Hương Quang, xã Đức Thịnh, tỉnh Hà Tĩnh; Chi nhánh 2: Thôn Thái Yên, xã Đức Thịnh, tỉnh Hà Tĩnh",
@@ -308,5 +308,5 @@
     "Xúc tiến thương mại",
     "Y dược cổ truyền"
   ],
-  "lastSync": "19:22:37 22/11/2026"
+  "lastSync": "08:55:56 23/11/2026"
 }
