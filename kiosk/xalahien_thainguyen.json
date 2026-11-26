@@ -4,7 +4,7 @@
   "kioskDefaultAgency": "UBND xã La Hiên",
   "kioskName": "TRUNG TÂM PHỤC VỤ HÀNH CHÍNH CÔNG XÃ LA HIÊN - TỈNH THÁI NGUYÊN",
   "kioskAddress": "Xóm Phố, xã La Hiên, tỉnh Thái Nguyên",
-  "kioskPhone": "Giám đốc: Hà Đình Quý. Điện thoại: 0948923099",
+  "kioskPhone": "Giám đốc: Hà Đình Quý. ĐT: 0948923099",
   "kioskTime": "Sáng: 07h30 - 12h00 | Chiều: 13h30 - 17h00",
   "fields": [
     "An toàn thực phẩm",
@@ -12,10 +12,10 @@
     "Bảo trợ xã hội",
     "Chứng thực",
     "Đất đai",
-    "Giáo dục và đào tạo thuộc hệ thống giáo dục quốc dân",
     "Hoạt động xây dựng",
     "Hộ tịch",
     "Người có công",
+    "Giáo dục và đào tạo thuộc hệ thống giáo dục quốc dân",
     "Thành lập và hoạt động doanh nghiệp (hộ kinh doanh)",
     "Tín ngưỡng, tôn giáo",
     "An toàn bức xạ và hạt nhân",
@@ -256,5 +256,5 @@
     "Xúc tiến thương mại",
     "Y dược cổ truyền"
   ],
-  "lastSync": "20:35:04 26/11/2026"
+  "lastSync": "20:36:22 26/11/2026"
 }
