@@ -3,8 +3,8 @@
   "kioskLevel": "tinh_xa",
   "kioskDefaultAgency": "UBND phường Cẩm Phả",
   "kioskName": "TRUNG TÂM PHỤC VỤ HÀNH CHÍNH CÔNG PHƯỜNG CẨM PHẢ - TỈNH QUẢNG NINH",
-  "kioskAddress": "",
-  "kioskPhone": "",
+  "kioskAddress": "Số 376, phường Cẩm Phả, thành phố Quảng Ninh",
+  "kioskPhone": "0901566399",
   "kioskTime": "Sáng: 07h30 - 11h30 | Chiều: 13h30 - 16h30",
   "fields": [
     "An toàn thực phẩm",
@@ -257,5 +257,5 @@
     "Xúc tiến thương mại",
     "Y dược cổ truyền"
   ],
-  "lastSync": "20:09:28 26/11/2026"
+  "lastSync": "20:10:45 26/11/2026"
 }
