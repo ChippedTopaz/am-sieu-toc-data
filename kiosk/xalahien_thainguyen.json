@@ -1,10 +1,10 @@
 {
   "kioskProvince": "Thái Nguyên",
-  "kioskLevel": "tinh_xa",
+  "kioskLevel": "xa",
   "kioskDefaultAgency": "UBND xã La Hiên",
   "kioskName": "TRUNG TÂM PHỤC VỤ HÀNH CHÍNH CÔNG XÃ LA HIÊN - TỈNH THÁI NGUYÊN",
   "kioskAddress": "Xóm Phố, xã La Hiên, tỉnh Thái Nguyên",
-  "kioskPhone": "094 8923099",
+  "kioskPhone": "Giám đốc: Hà Đình Quý. Điện thoại: 0948923099",
   "kioskTime": "Sáng: 07h30 - 12h00 | Chiều: 13h30 - 17h00",
   "fields": [
     "An toàn thực phẩm",
@@ -256,5 +256,5 @@
     "Xúc tiến thương mại",
     "Y dược cổ truyền"
   ],
-  "lastSync": "20:15:09 26/11/2026"
+  "lastSync": "20:35:04 26/11/2026"
 }
