@@ -452,6 +452,9 @@ async function main() {
   console.log('📥 Đang tải index.json toàn quốc...');
   const masterIndex = await fetchJson(MASTER_INDEX_URL);
   if (!Array.isArray(masterIndex)) throw new Error('index.json không phải mảng dữ liệu hợp lệ.');
+  if (masterIndex.length < 5000 || masterIndex.some(item => !item.id || !item.ma_tthc)) {
+    throw new Error('Master index empty, incomplete or unexpectedly small. Existing kiosk data must be preserved.');
+  }
 
   console.log('📥 Đang tải danh mục LinkCSV 34 tỉnh...');
   const directoryMap = await loadProvinceDirectory();
@@ -463,6 +466,9 @@ async function main() {
 
     const { rows, sourceUrl } = await loadProvinceRows(province, directoryMap);
     const payload = buildProvincePayload(province, masterIndex, rows);
+    if (payload.catalog.items.length < 1000 || payload.stats.proceduresWithExecutionData === 0 || payload.shards.size === 0) {
+      throw new Error(`Incomplete province data: ${province.code}. Publication blocked.`);
+    }
 
     const provinceDirName = `${province.code}-${slugify(province.name)}`;
     const provinceDir = path.join(OUTPUT_DIR, provinceDirName);
@@ -571,3 +577,4 @@ if (require.main === module) {
 }
 
 module.exports = { buildProvincePayload, normalizeSheetRow };
+

@@ -56,6 +56,8 @@ async function main() {
     // CẤU HÌNH ĐƯỜNG DẪN MÁY CHỦ ẢO (LINUX)
     const DATA_DIR = './data';
     const DETAILS_DIR = `${DATA_DIR}/details`;
+    const previous = await axios.get('https://raw.githubusercontent.com/ChippedTopaz/am-sieu-toc-data/data/index.json?t=' + Date.now(), { timeout: 30000 });
+    if (!Array.isArray(previous.data) || previous.data.length < 5000) throw new Error('Healthy previous index unavailable. Publication blocked.');
     
     // Xóa sạch data cũ mỗi lần cào mới để kho lưu trữ không bị rác
     if (fs.existsSync(DATA_DIR)) fs.rmSync(DATA_DIR, { recursive: true, force: true });
@@ -70,14 +72,17 @@ async function main() {
     while (true) {
         const payload = { limit: 200, lastId: lastId, q: "", categoryId: "", departmentCode: "" };
         const res = await fetchWithRetry('https://dichvucong.gov.vn/api/v1/submitting/formality/list-all-public-formality-by-citizen', payload, headers);
-        if (!res || !res.data || !res.data.items || res.data.items.length === 0) break;
+        if (!res || !res.data || !Array.isArray(res.data.items)) throw new Error('Invalid list API response. Publication blocked.');
+        if (res.data.items.length === 0) break;
         res.data.items.forEach(item => rawList.push(item));
-        if (!res.data.lastId || res.data.lastId === lastId) break;
+        if (!res.data.lastId) break;
+        if (res.data.lastId === lastId) throw new Error('Pagination cursor repeated. Publication blocked.');
         lastId = res.data.lastId;
         console.log(`   Đã tìm thấy: ${rawList.length} mã`);
         await delay(100);
     }
     console.log(`✅ Tổng số TTHC gốc: ${rawList.length}`);
+    if (rawList.length < Math.max(5000, Math.ceil(previous.data.length * 0.9))) throw new Error('Procedure count unexpectedly small. Publication blocked.');
 
     if (rawList.length > 0) {
         console.log(`⚡ Tiến hành tải chi tiết cho: ${rawList.length} thủ tục.`);
@@ -116,6 +121,7 @@ async function main() {
             await delay(150); 
         }
 
+        if (indexData.length !== rawList.length) throw new Error('Missing procedure details. Publication blocked.');
         // Xuất file cấu trúc Index
         fs.writeFileSync(`${DATA_DIR}/index.json`, JSON.stringify(indexData));
         const versionInfo = { 
@@ -128,4 +134,8 @@ async function main() {
     }
 }
 
-main();
+main().catch(err => {
+    console.error('CRAWL FAILED - publication blocked:', err.code || err.message);
+    process.exitCode = 1;
+});
+
